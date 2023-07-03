@@ -38,7 +38,7 @@
 				>
 				and <a href="https://getbootstrap.com/" class="link" target="_parent">Bootstrap</a>. You can
 				find it on Github
-				<a href="https://github.com/nwrenger" class="link" target="_parent">here</a>.
+				<a href="https://github.com/nwrenger/svelte-website" class="link" target="_parent">here</a>.
 			</p>
 		</div>
 	</div>
