@@ -1,13 +1,14 @@
 <script>
 	import { page } from '$app/stores';
 	import logo from '$lib/images/logo.png';
-	import git from '$lib/images/github.svg';
 </script>
 
 <header>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="https://github.com/nwrenger"><img class="navbar-img" src={logo} alt="nwrenger" /></a>
+			<a class="navbar-brand" href="https://github.com/nwrenger"
+				><img class="navbar-img" src={logo} alt="nwrenger" /></a
+			>
 			<button
 				class="navbar-toggler"
 				type="button"
