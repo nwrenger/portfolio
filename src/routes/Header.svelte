@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import logo from '$lib/images/logo.png';
+	const base = $page.url.origin;
 </script>
 
 <header>
@@ -22,21 +23,21 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class={$page.url.pathname === '/' ? 'nav-link active' : 'nav-link'} href="/">Home</a>
+					<a class={$page.url.pathname === '/' ? 'nav-link active' : 'nav-link'} href={base}>Home</a>
 					<a
 						class={$page.url.pathname === '/projects' ? 'nav-link active' : 'nav-link'}
 						href="/projects">Projects</a
 					>
-					<a class={$page.url.pathname === '/about' ? 'nav-link active' : 'nav-link'} href="/about"
+					<a class={$page.url.pathname === '/about' ? 'nav-link active' : 'nav-link'} href={base + "/about"}
 						>About</a
 					>
 					<a
 						class={$page.url.pathname === '/contact' ? 'nav-link active' : 'nav-link'}
-						href="/contact">Contact</a
+						href={base + "/contact"}>Contact</a
 					>
 					<a
 						class={$page.url.pathname === '/legals' ? 'nav-link active' : 'nav-link'}
-						href="/legals">Legals</a
+						href={base + "/legals"}>Legals</a
 					>
 				</div>
 			</div>
