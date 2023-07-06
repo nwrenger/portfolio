@@ -23,7 +23,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class={$page.url.pathname === base + '/' ? 'nav-link active' : 'nav-link'} href="{base}/">Home</a>
+					<a class={$page.url.pathname === base ? 'nav-link active' : 'nav-link'} href="{base}">Home</a>
 					<a
 						class={$page.url.pathname === base + '/projects' ? 'nav-link active' : 'nav-link'}
 						href="{base}/projects">Projects</a
