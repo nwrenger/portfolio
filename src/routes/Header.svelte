@@ -23,20 +23,20 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class={$page.url.pathname === '{base}/' ? 'nav-link active' : 'nav-link'} href="{base}/">Home</a>
+					<a class={$page.url.pathname === base + '/' ? 'nav-link active' : 'nav-link'} href="{base}/">Home</a>
 					<a
-						class={$page.url.pathname === '{base}/projects' ? 'nav-link active' : 'nav-link'}
+						class={$page.url.pathname === base + '/projects' ? 'nav-link active' : 'nav-link'}
 						href="{base}/projects">Projects</a
 					>
-					<a class={$page.url.pathname === '{base}/about' ? 'nav-link active' : 'nav-link'} href="{base}/about"
+					<a class={$page.url.pathname === base + '/about' ? 'nav-link active' : 'nav-link'} href="{base}/about"
 						>About</a
 					>
 					<a
-						class={$page.url.pathname === '{base}/contact' ? 'nav-link active' : 'nav-link'}
+						class={$page.url.pathname === base + '/contact' ? 'nav-link active' : 'nav-link'}
 						href="{base}/contact">Contact</a
 					>
 					<a
-						class={$page.url.pathname === '{base}/legals' ? 'nav-link active' : 'nav-link'}
+						class={$page.url.pathname === base + '/legals' ? 'nav-link active' : 'nav-link'}
 						href="{base}/legals">Legals</a
 					>
 				</div>
