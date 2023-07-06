@@ -8,7 +8,7 @@
 		<h4 class="card-header">My Projects</h4>
 		<div class="card-body">
 			<p class="card-text">
-				Currently, you can see all my Projects on my <a
+				Currently, you can see all my Projects on <a
 					href="https://www.github.com/nwrenger"
 					class="link"
 					target="_parent">Github</a
