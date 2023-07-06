@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 	import { page } from '$app/stores';
 </script>
 
@@ -13,7 +13,7 @@
 		<h4 class="card-header">Oh no! An Error Occurred!</h4>
 		<div class="card-body">
 			<p class="card-text">
-                With the Status Code "{$page.status}" and the Error Message "{$page.error.message}".
+				With the Status Code "{$page.status}" and the Error Message "{$page.error.message}".
 			</p>
 		</div>
 	</div>

@@ -16,8 +16,8 @@
 					href="{base}/projects"
 					class="link">Projects</a
 				>
-				Section or go to my <a href="{base}/about" class="link">About Me</a> Section. Lorem ipsum alum
-				est. Mercator es ibus est. Inuria ia est.<br />
+				Section or go to my <a href="{base}/about" class="link">About Me</a> Section. Lorem ipsum
+				alum est. Mercator es ibus est. Inuria ia est.<br />
 			</p>
 		</div>
 	</div>
