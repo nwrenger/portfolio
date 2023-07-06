@@ -5,8 +5,11 @@ const dev = process.argv.includes('dev');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
+    preprocess: vitePreprocess(),
     kit: {
+        prerender: {
+            entries: ["/", "/about", "/contact", "/legals", "/projects"],
+        },
         adapter: adapter({
             pages: 'build',
             assets: 'build',
