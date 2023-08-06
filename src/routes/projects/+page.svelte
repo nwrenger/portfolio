@@ -11,7 +11,7 @@
 				Currently, you can see all my Projects on <a
 					href="https://www.github.com/nwrenger"
 					class="link"
-					target="_parent">Github</a
+					target="_blank">Github</a
 				>. Here may be something fun in the Future. Or is here something fun?<br />
 			</p>
 		</div>

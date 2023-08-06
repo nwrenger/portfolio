@@ -34,11 +34,11 @@
 				This Website was created and build with <a
 					href="https://svelte.dev/"
 					class="link"
-					target="_parent">Svelte</a
+					target="_blank">Svelte</a
 				>
-				and <a href="https://getbootstrap.com/" class="link" target="_parent">Bootstrap</a>. You can
+				and <a href="https://getbootstrap.com/" class="link" target="_blank">Bootstrap</a>. You can
 				find it on Github
-				<a href="https://github.com/nwrenger/svelte-website" class="link" target="_parent">here</a>.
+				<a href="https://github.com/nwrenger/svelte-website" class="link" target="_blank">here</a>.
 			</p>
 		</div>
 	</div>

@@ -7,7 +7,7 @@
 <header>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="https://github.com/nwrenger"
+			<a target="_blank" class="navbar-brand" href="https://github.com/nwrenger"
 				><img class="navbar-img" src={logo} alt="nwrenger" /></a
 			>
 			<button
