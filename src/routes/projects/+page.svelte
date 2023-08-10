@@ -8,14 +8,23 @@
 		stiffness: 0.1,
 		damping: 0.25
 	});
+
+	/**
+	 * @param {number} min
+	 * @param {number} max
+	 */
+	function getRandomInRange(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
 	function rotateGears() {
 		rotation
 			.update((n) => n + 360)
 			.then(() => {
 				if (fallen) {
-					fall.set(0);
+					fall.set(getRandomInRange(0, 50));
 				} else {
-					fall.set(200);
+					fall.set(getRandomInRange(50, 300));
 				}
 				fallen = !fallen;
 			});
@@ -46,12 +55,12 @@
 			on:pointerenter={rotateGears}
 			on:click={() => {
 				rotation
-					.update((n) => (n -= n))
+					.update((n) => n - 360)
 					.then(() => {
 						if (fallen) {
-							fall.set(0); // This sets the box back to its original position.
+							fall.set(getRandomInRange(0, 50));
 						} else {
-							fall.set(200); // This makes the box fall by 200 pixels.
+							fall.set(getRandomInRange(50, 300));
 						}
 						fallen = !fallen;
 					});
