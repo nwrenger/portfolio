@@ -46,7 +46,7 @@
 			on:pointerenter={rotateGears}
 			on:click={() => {
 				rotation
-					.update((n) => (n -= $rotation))
+					.update((n) => (n -= n))
 					.then(() => {
 						if (fallen) {
 							fall.set(0); // This sets the box back to its original position.
