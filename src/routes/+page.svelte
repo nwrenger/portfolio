@@ -1,7 +1,3 @@
-<script>
-	import { base } from '$app/paths';
-</script>
-
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="My Home" />
@@ -13,10 +9,10 @@
 		<div class="card-body">
 			<p class="card-text">
 				Welcome to my meaningless Website! It can't do anything now. Just go to my <a
-					href="{base}/projects"
+					href="/projects"
 					class="link">Projects</a
 				>
-				Section or go to my <a href="{base}/about" class="link">About Me</a> Section. Lorem ipsum
+				Section or go to my <a href="/about" class="link">About Me</a> Section. Lorem ipsum
 				alum est. Mercator es ibus est. Inuria ia est.<br />
 			</p>
 		</div>
