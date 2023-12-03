@@ -10,12 +10,7 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-8 flex flex-col items-center lg:w-2/3 w-11/12 pt-6 pb-6">
-		<h1 class="h1">
-			<span
-				class="bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent box-decoration-clone"
-				>Hi, there!</span
-			>
-		</h1>
+		<h1 class="h1">Hi, there!</h1>
 
 		<div class="card p-4 w-full">
 			<Accordion autocollapse>
