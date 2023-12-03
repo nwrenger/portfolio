@@ -43,10 +43,11 @@
 					<svelte:fragment slot="lead"><i class="fa-solid fa-user"></i></svelte:fragment>
 					<svelte:fragment slot="summary">About Me</svelte:fragment>
 					<svelte:fragment slot="content"
-						>Hi there! I'm Nils, a high school student passionate about coding, especially in Rust.
-						I love its power, efficiency, and focus on safety. Besides coding, I play clarinet and
-						saxophone to unwind and stay creative. I also explore new technologies and have a keen
-						interest in artificial intelligence, machine learning, and cybersecurity. Feel free to
+						>Hi there! I'm Nils, a high school student passionate about coding, particularly in
+						Rust. I love its power, efficiency, and emphasis on safety. Additionally, I've developed
+						a CLI crate/lib in Rust, and below is an example. Apart from coding, I play clarinet and
+						saxophone to unwind and stay creative. Exploring new technologies is another interest,
+						especially in artificial intelligence, machine learning, and cybersecurity. Feel free to
 						reach out for a chat about coding, music, or anything else!</svelte:fragment
 					>
 				</AccordionItem>
