@@ -9,7 +9,7 @@
 </svelte:head>
 
 <div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-8 flex flex-col items-center md:w-2/3 w-11/12 pt-6 pb-6">
+	<div class="space-y-8 flex flex-col items-center lg:w-2/3 w-11/12 pt-6 pb-6">
 		<h1 class="h1">
 			<span
 				class="bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent box-decoration-clone"
@@ -24,8 +24,7 @@
 					<svelte:fragment slot="summary">Welcome</svelte:fragment>
 					<svelte:fragment slot="content"
 						>Welcome to my meaningless Website! It can't do anything now. Just go to my Projects
-						Section or go to my About Me Section. Lorem ipsum alum est. Mercator es ibus est. Inuria
-						ia est.</svelte:fragment
+						section or go to my About Me section.</svelte:fragment
 					>
 				</AccordionItem>
 				<AccordionItem>
@@ -36,7 +35,7 @@
 							href="https://www.github.com/nwrenger"
 							class="anchor"
 							target="_blank">Github</a
-						>. Here may be something fun in the Future. Or is here something fun?</svelte:fragment
+						>.</svelte:fragment
 					>
 				</AccordionItem>
 				<AccordionItem>
@@ -45,10 +44,12 @@
 					<svelte:fragment slot="content"
 						>Hi there! I'm Nils, a high school student passionate about coding, particularly in
 						Rust. I love its power, efficiency, and emphasis on safety. Additionally, I've developed
-						a CLI crate/lib in Rust, and below is an example. Apart from coding, I play clarinet and
-						saxophone to unwind and stay creative. Exploring new technologies is another interest,
-						especially in artificial intelligence, machine learning, and cybersecurity. Feel free to
-						reach out for a chat about coding, music, or anything else!</svelte:fragment
+						a <a href="https://crates.io/crates/console-utils" class="anchor" target="_blank"
+							>CLI crate/lib</a
+						> in Rust, and below is an example. Apart from coding, I play clarinet and saxophone to unwind
+						and stay creative. Exploring new technologies is another interest, especially in artificial
+						intelligence, machine learning, and cybersecurity. Feel free to reach out for a chat about
+						coding, music, or anything else!</svelte:fragment
 					>
 				</AccordionItem>
 				<AccordionItem>
