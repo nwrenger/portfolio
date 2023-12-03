@@ -1,20 +1,98 @@
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="My Home" />
-</svelte:head>
+<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script>
+	import { Accordion, AccordionItem, CodeBlock } from '@skeletonlabs/skeleton';
+</script>
 
-<section>
-	<div class="card border-secondary" style="margin: 20px;">
-		<h4 class="card-header">Hi, there!</h4>
-		<div class="card-body">
-			<p class="card-text">
-				Welcome to my meaningless Website! It can't do anything now. Just go to my <a
-					href="/projects"
-					class="link">Projects</a
-				>
-				Section or go to my <a href="/about" class="link">About Me</a> Section. Lorem ipsum
-				alum est. Mercator es ibus est. Inuria ia est.<br />
-			</p>
+<div class="container h-full mx-auto flex justify-center items-center">
+	<div class="space-y-10 flex flex-col items-center md:w-2/3 w-11/12 pt-4 pb-4">
+		<h1 class="h1">
+			<span
+				class="bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent box-decoration-clone"
+				>Hi, there!</span
+			>
+		</h1>
+
+		<div class="card p-4 w-full">
+			<Accordion autocollapse>
+				<AccordionItem open>
+					<svelte:fragment slot="lead"><i class="fa-solid fa-house"></i></svelte:fragment>
+					<svelte:fragment slot="summary">Welcome</svelte:fragment>
+					<svelte:fragment slot="content"
+						>Welcome to my meaningless Website! It can't do anything now. Just go to my Projects
+						Section or go to my About Me Section. Lorem ipsum alum est. Mercator es ibus est. Inuria
+						ia est.</svelte:fragment
+					>
+				</AccordionItem>
+				<AccordionItem>
+					<svelte:fragment slot="lead"><i class="fa-solid fa-diagram-project"></i></svelte:fragment>
+					<svelte:fragment slot="summary">Projects</svelte:fragment>
+					<svelte:fragment slot="content"
+						>Currently, you can see all my Projects on <a
+							href="https://www.github.com/nwrenger"
+							class="anchor"
+							target="_blank">Github</a
+						>. Here may be something fun in the Future. Or is here something fun?</svelte:fragment
+					>
+				</AccordionItem>
+				<AccordionItem>
+					<svelte:fragment slot="lead"><i class="fa-solid fa-user"></i></svelte:fragment>
+					<svelte:fragment slot="summary">About Me</svelte:fragment>
+					<svelte:fragment slot="content"
+						>Hi there! I'm Nils, a high school student passionate about coding, especially in Rust.
+						I love its power, efficiency, and focus on safety. Besides coding, I play clarinet and
+						saxophone to unwind and stay creative. I also explore new technologies and have a keen
+						interest in artificial intelligence, machine learning, and cybersecurity. Feel free to
+						reach out for a chat about coding, music, or anything else!</svelte:fragment
+					>
+				</AccordionItem>
+				<AccordionItem>
+					<svelte:fragment slot="lead"><i class="fa-solid fa-code"></i></svelte:fragment>
+					<svelte:fragment slot="summary">About This Website</svelte:fragment>
+					<svelte:fragment slot="content"
+						>This Website was created and build with <a
+							href="https://svelte.dev/"
+							class="anchor"
+							target="_blank">Svelte</a
+						>
+						and <a href="https://www.skeleton.dev/" class="anchor" target="_blank">Skeleton</a>. You
+						can find it on Github
+						<a href="https://github.com/nwrenger/svelte-website" class="anchor" target="_blank"
+							>here</a
+						>.</svelte:fragment
+					>
+				</AccordionItem>
+				<AccordionItem>
+					<svelte:fragment slot="lead"><i class="fa-solid fa-envelope"></i></svelte:fragment>
+					<svelte:fragment slot="summary">Contact</svelte:fragment>
+					<svelte:fragment slot="content"
+						>You can contact me via my E-Mail <a
+							href="mailto:nils@wrenger.net"
+							class="anchor"
+							target="_parent">nils@wrenger.net</a
+						>.</svelte:fragment
+					>
+				</AccordionItem>
+				<AccordionItem>
+					<svelte:fragment slot="lead"><i class="fa-solid fa-gavel"></i></svelte:fragment>
+					<svelte:fragment slot="summary">Legals</svelte:fragment>
+					<svelte:fragment slot="content"
+						>This is my personal website, meant for my friends and as a personal hobby only. I don't
+						make and don't intent to make money with it. All the content represents my own opinion
+						and is not guaranteed to be complete and correct. I cannot provide any liability for any
+						external links and their content found on this website.</svelte:fragment
+					>
+				</AccordionItem>
+			</Accordion>
 		</div>
+		<CodeBlock
+			class="w-full"
+			language="rust"
+			code={`
+use console_utils::input::reveal;
+
+fn main() {
+	reveal("Rust is awesome!", 0.1);
+}`}
+		></CodeBlock>
 	</div>
-</section>
+</div>
