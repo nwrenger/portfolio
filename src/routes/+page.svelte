@@ -94,12 +94,7 @@
 		<CodeBlock
 			class="w-full"
 			language="rust"
-			code={`
-use console_utils::input::reveal;
-
-fn main() {
-	reveal("Rust is awesome!", 0.1);
-}`}
+			code={`use console_utils::input::reveal;\n\nfn main() {\n\t// Display "Rust is awesome!" with a time interval of 0.1 seconds between each character\n\treveal("Rust is awesome!", 0.1);\n}`}
 		></CodeBlock>
 	</div>
 </div>
