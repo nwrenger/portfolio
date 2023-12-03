@@ -3,6 +3,12 @@
 	import { Accordion, AccordionItem, CodeBlock } from '@skeletonlabs/skeleton';
 </script>
 
+<svelte:head>
+	<title>Hi, there!</title>
+	<meta name="description" content="Hi, there!" />
+</svelte:head>
+
+
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 flex flex-col items-center md:w-2/3 w-11/12 pt-4 pb-4">
 		<h1 class="h1">
