@@ -18,7 +18,7 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar>
+		<AppBar class="shadow-2xl">
 			<svelte:fragment slot="lead">
 				<a class="sm:!ml-0 w-[40px] sm:w-auto overflow-hidden flex items-center" href="/">
 					<img class="h-[40px] max-w-full rounded-sm" src={img} alt="profile" />
