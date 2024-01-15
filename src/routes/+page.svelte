@@ -1,4 +1,3 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 <script>
 	import { Accordion, AccordionItem, CodeBlock } from '@skeletonlabs/skeleton';
 </script>
