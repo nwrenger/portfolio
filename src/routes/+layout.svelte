@@ -3,7 +3,7 @@
 	import rust from 'highlight.js/lib/languages/rust';
 	import 'highlight.js/styles/github-dark.css';
 	hljs.registerLanguage('rust', rust);
-	import { storeHighlightJs } from '@skeletonlabs/skeleton';
+	import { popup, storeHighlightJs, type PopupSettings } from '@skeletonlabs/skeleton';
 	storeHighlightJs.set(hljs);
 
 	import '../app.postcss';
@@ -12,30 +12,54 @@
 	import img from '$lib/images/logo.png';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import { storePopup } from '@skeletonlabs/skeleton';
+	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
+	const profile: PopupSettings = {
+		event: 'click',
+		target: 'profileContents',
+		placement: 'bottom'
+	};
 </script>
 
 <!-- App Shell -->
 <AppShell>
-	<svelte:fragment slot="header">
-		<!-- App Bar -->
-		<AppBar class="shadow-2xl">
-			<svelte:fragment slot="lead">
-				<a class="sm:!ml-0 w-[40px] sm:w-auto overflow-hidden flex items-center" href="/">
-					<img class="h-[40px] max-w-full rounded-sm" src={img} alt="profile" />
-					<h4 class="h4 ps-3">nwrenger</h4>
-				</a>
-			</svelte:fragment>
-			<svelte:fragment slot="trail">
-				<LightSwitch />
-				<a
-					class="btn btn-icon hover:variant-soft-primary"
-					href="https://github.com/nwrenger"
-					target="_blank"
-					rel="noreferrer"
-					><i class="fa-brands fa-github text-lg"></i>
-				</a>
-			</svelte:fragment>
-		</AppBar>
+	<svelte:fragment slot="pageHeader">
+		<!-- Page Container -->
+		<div class="page-container !max-w-7xl mx-auto grid grid-cols-[1fr_auto] items-center gap-4 p-4">
+			<button type="button" class="btn-icon" use:popup={profile}>
+				<img class=" max-w-full rounded-sm aspect-square shadow-xl" src={img} alt="profile" />
+			</button>
+
+			<div class="card p-4 w-72 shadow-xl" data-popup="profileContents">
+				<div class="space-y-4">
+					<div>
+						<p class="font-bold">Nils Wrenger</p>
+						<p class="opacity-50">nwrenger</p>
+					</div>
+					<p>Hi, I use Fedora OS and have skills in programming with Rust btw</p>
+					<div class="flex gap-4">
+						<small><strong>9</strong> <span class="opacity-50">Followers</span></small>
+						<small><strong>11</strong> <span class="opacity-50">Following</span></small>
+					</div>
+					<a
+						class="btn variant-soft w-full"
+						href="https://github.com/nwrenger"
+						target="_blank"
+						rel="noreferrer"
+					>
+						View on Github
+					</a>
+				</div>
+				<div class="arrow bg-surface-100-800-token" />
+			</div>
+			<LightSwitch
+				class="bg-surface-50/50 dark:bg-surface-900/50 backdrop-blur-xl shadow-xl"
+				ring="ring-none"
+			/>
+		</div>
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
