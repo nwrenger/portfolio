@@ -48,10 +48,9 @@
 					<svelte:fragment slot="lead"><i class="fa-solid fa-house"></i></svelte:fragment>
 					<svelte:fragment slot="summary">Welcome</svelte:fragment>
 					<svelte:fragment slot="content"
-						>Welcome to my very informative Website! Just go to my <code class="code">Projects</code
-						>
-						section or go to my <code class="code">About Me</code> section.</svelte:fragment
-					>
+						>Welcome to my very informative Website! Just go to <code class="code">Projects</code>
+						or to <code class="code">About Me</code>.
+					</svelte:fragment>
 				</AccordionItem>
 				<AccordionItem>
 					<svelte:fragment slot="lead"><i class="fa-solid fa-diagram-project"></i></svelte:fragment>
@@ -87,9 +86,9 @@
 							target="_blank">Rust</a
 						>
 						and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have
-						done a lot of things, so look for that under the <code class="code">Projects</code> section.
-						Feel free to reach out for a chat about coding or anything else!</svelte:fragment
-					>
+						done a lot of things, so look for that under <code class="code">Projects</code>. Feel
+						free to reach out for a chat about coding or anything else!
+					</svelte:fragment>
 				</AccordionItem>
 				<AccordionItem>
 					<svelte:fragment slot="lead"><i class="fa-solid fa-envelope"></i></svelte:fragment>
