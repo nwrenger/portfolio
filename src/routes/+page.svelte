@@ -86,10 +86,9 @@
 							class="anchor"
 							target="_blank">Rust</a
 						>
-						and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. With a
-						strong passion for everything I do. I have done a lot of things, so look for that under
-						the <code class="code">Projects</code> section. Feel free to reach out for a chat about coding
-						or anything else!</svelte:fragment
+						and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have
+						done a lot of things, so look for that under the <code class="code">Projects</code> section.
+						Feel free to reach out for a chat about coding or anything else!</svelte:fragment
 					>
 				</AccordionItem>
 				<AccordionItem>
