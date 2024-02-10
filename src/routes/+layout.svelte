@@ -9,8 +9,7 @@
 	import '../app.postcss';
 	import '@fortawesome/fontawesome-free/css/all.css';
 
-	import img from '$lib/images/logo.png';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
@@ -30,7 +29,7 @@
 		<!-- Page Container -->
 		<div class="page-container !max-w-7xl mx-auto grid grid-cols-[1fr_auto] items-center gap-4 p-4">
 			<button type="button" class="btn-icon" use:popup={profile}>
-				<img class=" max-w-full rounded-sm aspect-square shadow-xl" src={img} alt="profile" />
+				<img class=" max-w-full rounded-sm aspect-square shadow-xl" src="./favicon.png" alt="nw" />
 			</button>
 
 			<div class="card p-4 w-72 shadow-xl" data-popup="profileContents">
