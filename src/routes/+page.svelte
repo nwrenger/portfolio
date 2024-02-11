@@ -2,21 +2,17 @@
 	import { Accordion, AccordionItem, CodeBlock } from '@skeletonlabs/skeleton';
 
 	const projects = {
-		'nwrenger.github.io': {
-			description: 'My personal Portfolio, or more precise THIS website',
-			url: 'https://github.com/nwrenger/nwrenger.github.io'
-		},
-		'schiller-db': {
-			description: "Schillernova's Database Management Software",
-			url: 'https://github.com/nwrenger/schiller-db'
-		},
-		'schiller-lib': {
-			description: 'The Schiller School Library App',
-			url: 'https://github.com/wrenger/schiller-lib'
-		},
 		'console-utils-rs': {
 			description: 'CLI Input Library for Rust, down below is an Example!',
 			url: 'https://github.com/nwrenger/console-utils-rs'
+		},
+		'doenermann-bot': {
+			description: 'The Dönermann Discord Bot used on a Discord-Server of mine',
+			url: 'https://github.com/nwrenger/doenermann-bot'
+		},
+		'Escaping-from-the-Supernova': {
+			description: ' A procedural generated textadventure coded in Rust',
+			url: 'https://github.com/nwrenger/Escaping-from-the-Supernova'
 		},
 		'flip-ui': {
 			description: 'The UI Builder for the Flipper Zero',
@@ -25,6 +21,22 @@
 		hadar: {
 			description: 'The current code of Hunger of Hadar, a battlesnake agent',
 			url: 'https://github.com/nwrenger/hadar'
+		},
+		'nwrenger.github.io': {
+			description: 'My personal Portfolio, or more precise THIS website',
+			url: 'https://github.com/nwrenger/nwrenger.github.io'
+		},
+		quickmaths: {
+			description: 'A school project...QUICKMATHS!!!',
+			url: 'https://github.com/nwrenger/quickmaths'
+		},
+		'schiller-db': {
+			description: "Schillernova's Database Management Software",
+			url: 'https://github.com/nwrenger/schiller-db'
+		},
+		'schiller-lib': {
+			description: 'The Schiller School Library App',
+			url: 'https://github.com/wrenger/schiller-lib'
 		},
 		'schulen-im-chaos': {
 			description: 'Homework-Sharing Platform',
@@ -86,8 +98,8 @@
 							target="_blank">Rust</a
 						>
 						and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have
-						done a lot of things, so look for that under <code class="code">Projects</code>. Feel
-						free to reach out for a chat about coding or anything else!
+						done a lot of things so far, so look for that under <code class="code">Projects</code>.
+						Feel free to reach out for a chat about coding or anything else!
 					</svelte:fragment>
 				</AccordionItem>
 				<AccordionItem>
