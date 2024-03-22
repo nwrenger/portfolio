@@ -28,7 +28,7 @@
 	<svelte:fragment slot="pageHeader">
 		<!-- Page Container -->
 		<div class="page-container !max-w-6xl mx-auto grid grid-cols-[1fr_auto] items-center gap-4 p-4">
-			<button type="button" class="btn-icon" use:popup={profile}>
+			<button type="button" class="btn-icon" use:popup={profile} title="profile">
 				<img class=" max-w-full rounded-sm aspect-square shadow-xl" src="./favicon.png" alt="nw" />
 			</button>
 
