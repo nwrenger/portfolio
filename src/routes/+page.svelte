@@ -50,75 +50,73 @@
 	<meta name="description" content="Hi, there!" />
 </svelte:head>
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-8 flex flex-col items-center lg:w-2/3 w-11/12 pb-6">
-		<h1 class="h1">Hi, there!</h1>
+<div class="container space-y-8 flex flex-col items-center !max-w-6xl mx-auto p-4">
+	<h1 class="h1">Hi, there!</h1>
 
-		<div class="card p-4 w-full">
-			<Accordion autocollapse>
-				<AccordionItem open>
-					<svelte:fragment slot="lead"><i class="fa-solid fa-house"></i></svelte:fragment>
-					<svelte:fragment slot="summary">Welcome</svelte:fragment>
-					<svelte:fragment slot="content"
-						>Welcome to my very informative Website! Just go to <code class="code">Projects</code>
-						or to <code class="code">About Me</code>.
-					</svelte:fragment>
-				</AccordionItem>
-				<AccordionItem>
-					<svelte:fragment slot="lead"><i class="fa-solid fa-diagram-project"></i></svelte:fragment>
-					<svelte:fragment slot="summary">Projects</svelte:fragment>
-					<svelte:fragment slot="content">
-						<ul class="list pb-2">
-							{#each Object.entries(projects) as [key, val] (key)}
-								<li>
-									<span class="badge-icon p-2 variant-soft-primary"
-										><i class="fa-solid fa-chevron-right"></i></span
-									>
-									<span class="flex-auto"
-										><span class="font-bold">{key}</span>: {val.description}</span
-									>
-									<a href={val.url} class="anchor" target="_blank">
-										<i class="fa-solid fa-up-right-from-square"></i>
-									</a>
-								</li>
-							{/each}
-						</ul>
-						More details and other smaller Projects can be seen on
-						<a href="https://www.github.com/nwrenger" class="anchor" target="_blank">My Github</a
-						>.</svelte:fragment
+	<div class="card p-4 w-full">
+		<Accordion autocollapse>
+			<AccordionItem open>
+				<svelte:fragment slot="lead"><i class="fa-solid fa-house"></i></svelte:fragment>
+				<svelte:fragment slot="summary">Welcome</svelte:fragment>
+				<svelte:fragment slot="content"
+					>Welcome to my very informative Website! Just go to <code class="code">Projects</code>
+					or to <code class="code">About Me</code>.
+				</svelte:fragment>
+			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead"><i class="fa-solid fa-diagram-project"></i></svelte:fragment>
+				<svelte:fragment slot="summary">Projects</svelte:fragment>
+				<svelte:fragment slot="content">
+					<ul class="list pb-2">
+						{#each Object.entries(projects) as [key, val] (key)}
+							<li>
+								<span class="badge-icon p-2 variant-soft-primary"
+									><i class="fa-solid fa-chevron-right"></i></span
+								>
+								<span class="flex-auto"
+									><span class="font-bold">{key}</span>: {val.description}</span
+								>
+								<a href={val.url} class="anchor" target="_blank">
+									<i class="fa-solid fa-up-right-from-square"></i>
+								</a>
+							</li>
+						{/each}
+					</ul>
+					More details and other smaller Projects can be seen on
+					<a href="https://www.github.com/nwrenger" class="anchor" target="_blank">My Github</a
+					>.</svelte:fragment
+				>
+			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead"><i class="fa-solid fa-user"></i></svelte:fragment>
+				<svelte:fragment slot="summary">About Me</svelte:fragment>
+				<svelte:fragment slot="content"
+					>Hi there! I'm Nils, a high school student passionate about coding, particularly in <a
+						href="https://www.rust-lang.org/"
+						class="anchor"
+						target="_blank">Rust</a
 					>
-				</AccordionItem>
-				<AccordionItem>
-					<svelte:fragment slot="lead"><i class="fa-solid fa-user"></i></svelte:fragment>
-					<svelte:fragment slot="summary">About Me</svelte:fragment>
-					<svelte:fragment slot="content"
-						>Hi there! I'm Nils, a high school student passionate about coding, particularly in <a
-							href="https://www.rust-lang.org/"
-							class="anchor"
-							target="_blank">Rust</a
-						>
-						and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have
-						done a lot of things so far, so look for that under <code class="code">Projects</code>.
-						Feel free to reach out for a chat about coding or anything else!
-					</svelte:fragment>
-				</AccordionItem>
-				<AccordionItem>
-					<svelte:fragment slot="lead"><i class="fa-solid fa-envelope"></i></svelte:fragment>
-					<svelte:fragment slot="summary">Contact</svelte:fragment>
-					<svelte:fragment slot="content"
-						>You can contact me via my E-Mail <a
-							href="mailto:nils@wrenger.net"
-							class="anchor"
-							target="_parent">nils@wrenger.net</a
-						>.</svelte:fragment
-					>
-				</AccordionItem>
-			</Accordion>
-		</div>
-		<CodeBlock
-			class="w-full"
-			language="rust"
-			code={`use console_utils::input::reveal;\n\nfn main() {\n\t// Display "Rust is awesome!" with a time interval of 0.1 seconds between each character\n\treveal("Rust is awesome!", 0.1);\n}`}
-		></CodeBlock>
+					and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have
+					done a lot of things so far, so look for that under <code class="code">Projects</code>.
+					Feel free to reach out for a chat about coding or anything else!
+				</svelte:fragment>
+			</AccordionItem>
+			<AccordionItem>
+				<svelte:fragment slot="lead"><i class="fa-solid fa-envelope"></i></svelte:fragment>
+				<svelte:fragment slot="summary">Contact</svelte:fragment>
+				<svelte:fragment slot="content"
+					>You can contact me via my E-Mail <a
+						href="mailto:nils@wrenger.net"
+						class="anchor"
+						target="_parent">nils@wrenger.net</a
+					>.</svelte:fragment
+				>
+			</AccordionItem>
+		</Accordion>
 	</div>
+	<CodeBlock
+		class="w-full"
+		language="rust"
+		code={`use console_utils::input::reveal;\n\nfn main() {\n\t// Display "Rust is awesome!" with a time interval of 0.1 seconds between each character\n\treveal("Rust is awesome!", 0.1);\n}`}
+	></CodeBlock>
 </div>
