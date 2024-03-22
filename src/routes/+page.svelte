@@ -6,13 +6,21 @@
 			description: 'CLI Input Library for Rust, down below is an Example!',
 			url: 'https://github.com/nwrenger/console-utils-rs'
 		},
+		dashboard: {
+			description: 'Dashboard of all my websites',
+			url: 'https://github.com/nwrenger/dashboard'
+		},
 		'doenermann-bot': {
 			description: 'The Dönermann Discord Bot used on a Discord-Server of mine',
 			url: 'https://github.com/nwrenger/doenermann-bot'
 		},
 		'Escaping-from-the-Supernova': {
-			description: ' A procedural generated textadventure coded in Rust',
+			description: 'A procedural generated textadventure coded in Rust',
 			url: 'https://github.com/nwrenger/Escaping-from-the-Supernova'
+		},
+		eta: {
+			description: ' An efficient Code Editor made from scratch using egui! ',
+			url: 'https://github.com/nwrenger/eta'
 		},
 		'flip-ui': {
 			description: 'The UI Builder for the Flipper Zero',
@@ -22,9 +30,9 @@
 			description: 'The current code of Hunger of Hadar, a battlesnake agent',
 			url: 'https://github.com/nwrenger/hadar'
 		},
-		'nwrenger.github.io': {
+		portfolio: {
 			description: 'My personal Portfolio, or more precise THIS website',
-			url: 'https://github.com/nwrenger/nwrenger.github.io'
+			url: 'https://github.com/nwrenger/portfolio'
 		},
 		quickmaths: {
 			description: 'A school project...QUICKMATHS!!!',
@@ -41,6 +49,10 @@
 		'schulen-im-chaos': {
 			description: 'Homework-Sharing Platform',
 			url: 'https://github.com/schulen-im-chaos'
+		},
+		shitboard: {
+			description: 'Soundboard online website',
+			url: 'https://github.com/nwrenger/shitboard'
 		}
 	};
 </script>
