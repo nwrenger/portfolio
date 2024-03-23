@@ -1,19 +1,15 @@
 <script lang="ts">
-	import hljs from 'highlight.js/lib/core';
-	import rust from 'highlight.js/lib/languages/rust';
-	import 'highlight.js/styles/github-dark.css';
-	hljs.registerLanguage('rust', rust);
-	import { popup, storeHighlightJs, type PopupSettings } from '@skeletonlabs/skeleton';
-	storeHighlightJs.set(hljs);
-
 	import '../app.postcss';
 	import '@fortawesome/fontawesome-free/css/all.css';
-
-	import { AppShell } from '@skeletonlabs/skeleton';
-	import { LightSwitch } from '@skeletonlabs/skeleton';
+	import {
+		popup,
+		type PopupSettings,
+		AppShell,
+		LightSwitch,
+		storePopup
+	} from '@skeletonlabs/skeleton';
 
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
-	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	const profile: PopupSettings = {
