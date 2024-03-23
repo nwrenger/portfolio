@@ -93,7 +93,7 @@
 
 	<div class="flex flex-col items-center">
 		<h2 class="h2 pb-2">Projects</h2>
-		<code class="code">Count: {projects.length}</code>
+		<code class="code">Total: {projects.length}</code>
 	</div>
 
 	<div class="grid md:grid-cols-2 gap-4 w-full">
