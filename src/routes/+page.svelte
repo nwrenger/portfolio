@@ -36,6 +36,11 @@
 			href: 'https://github.com/nwrenger/hadar'
 		},
 		{
+			title: 'omega',
+			description: 'A performant terminal-based file editor with extensive shortcuts',
+			href: 'https://github.com/nwrenger/omega'
+		},
+		{
 			title: 'portfolio',
 			description: 'My personal Portfolio, or more precise THIS website',
 			href: 'https://github.com/nwrenger/portfolio'
