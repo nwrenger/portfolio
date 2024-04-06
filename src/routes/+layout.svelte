@@ -6,10 +6,13 @@
 		type PopupSettings,
 		AppShell,
 		LightSwitch,
-		storePopup
+		storePopup,
+		setInitialClassState
 	} from '@skeletonlabs/skeleton';
 
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	const profile: PopupSettings = {
@@ -17,44 +20,54 @@
 		target: 'profileContents',
 		placement: 'bottom'
 	};
+
+	let mounted = false;
+	onMount(() => (mounted = true));
 </script>
+
+<svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head>
 
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="pageHeader">
 		<!-- Page Container -->
-		<div class="page-container !max-w-6xl mx-auto grid grid-cols-[1fr_auto] items-center gap-4 p-4">
-			<button type="button" class="btn-icon" use:popup={profile} title="profile">
-				<img class=" max-w-full rounded-sm aspect-square shadow-xl" src="/favicon.png" alt="nw" />
-			</button>
+		{#if mounted}
+			<div
+				class="page-container !max-w-6xl mx-auto grid grid-cols-[1fr_auto] items-center gap-4 p-4"
+				in:fade={{ duration: 200, delay: 0 }}
+			>
+				<button type="button" class="btn-icon" use:popup={profile} title="profile">
+					<img class=" max-w-full rounded-sm aspect-square shadow-xl" src="/favicon.png" alt="nw" />
+				</button>
 
-			<div class="card p-4 w-72 shadow-xl" data-popup="profileContents">
-				<div class="space-y-4">
-					<div>
-						<p class="font-bold">Nils Wrenger</p>
-						<p class="opacity-50">nwrenger</p>
+				<div class="card p-4 w-72 shadow-xl" data-popup="profileContents">
+					<div class="space-y-4">
+						<div>
+							<p class="font-bold">Nils Wrenger</p>
+							<p class="opacity-50">nwrenger</p>
+						</div>
+						<p>Hi, I use Fedora OS and have skills in programming with Rust btw</p>
+						<div class="flex gap-4">
+							<small><strong>9</strong> <span class="opacity-50">Followers</span></small>
+							<small><strong>11</strong> <span class="opacity-50">Following</span></small>
+						</div>
+						<a
+							class="btn variant-soft w-full"
+							href="https://github.com/nwrenger"
+							target="_blank"
+							rel="noreferrer"
+						>
+							View on Github
+						</a>
 					</div>
-					<p>Hi, I use Fedora OS and have skills in programming with Rust btw</p>
-					<div class="flex gap-4">
-						<small><strong>9</strong> <span class="opacity-50">Followers</span></small>
-						<small><strong>11</strong> <span class="opacity-50">Following</span></small>
-					</div>
-					<a
-						class="btn variant-soft w-full"
-						href="https://github.com/nwrenger"
-						target="_blank"
-						rel="noreferrer"
-					>
-						View on Github
-					</a>
+					<div class="arrow bg-surface-100-800-token" />
 				</div>
-				<div class="arrow bg-surface-100-800-token" />
+				<LightSwitch
+					class="bg-surface-50/50 dark:bg-surface-900/50 backdrop-blur-xl shadow-xl"
+					ring="ring-none"
+				/>
 			</div>
-			<LightSwitch
-				class="bg-surface-50/50 dark:bg-surface-900/50 backdrop-blur-xl shadow-xl"
-				ring="ring-none"
-			/>
-		</div>
+		{/if}
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />

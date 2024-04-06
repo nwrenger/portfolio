@@ -1,4 +1,8 @@
-<script>
+<script lang="ts">
+	import { getRandomInt } from '$lib/utils';
+	import { onMount } from 'svelte';
+	import { fade, fly, slide } from 'svelte/transition';
+
 	let projects = [
 		{
 			title: 'console-utils-rs',
@@ -37,7 +41,7 @@
 		},
 		{
 			title: 'omega',
-			description: 'A performant terminal-based file editor with extensive shortcuts',
+			description: 'A performant terminal-based project editor with extensive shortcuts',
 			href: 'https://github.com/nwrenger/omega'
 		},
 		{
@@ -71,6 +75,9 @@
 			href: 'https://github.com/nwrenger/shitboard'
 		}
 	];
+
+	let mounted = false;
+	onMount(() => (mounted = true));
 </script>
 
 <svelte:head>
@@ -81,39 +88,59 @@
 	/>
 </svelte:head>
 
-<div class="container space-y-8 flex flex-col items-center !max-w-6xl mx-auto p-4">
-	<h1 class="h1">Hi, there!</h1>
+{#if mounted}
+	<div class="container space-y-8 flex flex-col items-center !max-w-6xl mx-auto p-4">
+		<h1 class="h1" in:fade={{ duration: 200, delay: 200 }}>Hi, there!</h1>
 
-	<p class="text-center">
-		I'm Nils, a high school student passionate about coding, particularly in <a
-			href="https://www.rust-lang.org/"
-			class="anchor"
-			target="_blank">Rust</a
+		<p class="text-center" in:fade={{ duration: 200, delay: 400 }}>
+			I'm Nils, a high school student passionate about coding, particularly in <a
+				href="https://www.rust-lang.org/"
+				class="anchor"
+				target="_blank">Rust</a
+			>
+			and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have done a
+			lot of things so far, so look for that under <code class="code">Projects</code>. Feel free to
+			reach out for a chat about coding or anything else via my E-Mail
+			<a href="mailto:nils@wrenger.net" class="anchor" target="_parent">nils@wrenger.net</a>!
+		</p>
+
+		<div
+			class="flex flex-col items-center"
+			in:fly={{
+				duration: 200,
+				delay: 600,
+				y: getRandomInt(-1000, 1000),
+				x: getRandomInt(-1000, 1000)
+			}}
 		>
-		and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have done a
-		lot of things so far, so look for that under <code class="code">Projects</code>. Feel free to
-		reach out for a chat about coding or anything else via my E-Mail
-		<a href="mailto:nils@wrenger.net" class="anchor" target="_parent">nils@wrenger.net</a>!
-	</p>
+			<h2 class="h2 pb-2">Projects</h2>
+			<code class="code">Total: {projects.length}</code>
+		</div>
 
-	<div class="flex flex-col items-center">
-		<h2 class="h2 pb-2">Projects</h2>
-		<code class="code">Total: {projects.length}</code>
+		<div
+			class="grid md:grid-cols-2 gap-4 w-full"
+			in:slide={{ duration: 200, delay: 800, axis: 'x' }}
+		>
+			{#each projects as project, i}
+				<a class="overflow-hidden block card card-hover" href={project.href} target="_blank">
+					<div class="p-4">
+						<h3 class="h3">{project.title}</h3>
+						<p>{project.description}</p>
+					</div>
+				</a>
+			{/each}
+		</div>
+
+		<p
+			class="text-center"
+			in:fly={{
+				duration: 200,
+				delay: 600,
+				y: -1000
+			}}
+		>
+			More details and other smaller Projects can be seen on
+			<a href="https://www.github.com/nwrenger" class="anchor" target="_blank">my Github</a>
+		</p>
 	</div>
-
-	<div class="grid md:grid-cols-2 gap-4 w-full">
-		{#each projects as project}
-			<a class="overflow-hidden block card card-hover" href={project.href} target="_blank">
-				<div class="p-4">
-					<h3 class="h3">{project.title}</h3>
-					<p>{project.description}</p>
-				</div>
-			</a>
-		{/each}
-	</div>
-
-	<p class="text-center">
-		More details and other smaller Projects can be seen on
-		<a href="https://www.github.com/nwrenger" class="anchor" target="_blank">my Github</a>
-	</p>
-</div>
+{/if}
