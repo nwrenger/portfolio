@@ -48,7 +48,7 @@
 						</div>
 						<p>Hi, I use Fedora OS and have skills in programming with Rust btw</p>
 						<div class="flex gap-4">
-							<small><strong>9</strong> <span class="opacity-50">Followers</span></small>
+							<small><strong>10</strong> <span class="opacity-50">Followers</span></small>
 							<small><strong>11</strong> <span class="opacity-50">Following</span></small>
 						</div>
 						<a
