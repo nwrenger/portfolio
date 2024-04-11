@@ -84,7 +84,7 @@ export const projects = [
 		summary: "Schillernova's Database Management Software",
 		picture: 'schiller-db.png',
 		description:
-			"Developed for a project week (a school-wide activity for a week, in my case we were out own state), this project unfortunately didn't meet expectations, but that's a tale for another time! Here, authorities could access an overview of all citizens, including the unemployed, as well as a record of crimes committed by citizens. The aim was to assist authorities in state management by eliminating the need for extensive paperwork, which is typically essential in bureaucratic processes.",
+			"Developed for a project week (a school-wide activity for a week, in my case we were our own state), this project unfortunately didn't meet expectations, but that's a tale for another time! Here, authorities could access an overview of all citizens, including the unemployed, as well as a record of crimes committed by citizens. The aim was to assist authorities in state management by eliminating the need for extensive paperwork, which is typically essential in bureaucratic processes.",
 		link: 'https://github.com/nwrenger/schiller-db'
 	},
 	{
