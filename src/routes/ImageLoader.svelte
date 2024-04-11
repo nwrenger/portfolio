@@ -9,7 +9,7 @@
 </script>
 
 {#if !loaded}
-	<p class="w-full md:h-64 animate-pulse">Loading...</p>
+	<div class="w-full md:h-64 placeholder rounded-lg animate-pulse" />
 {/if}
 <img
 	{src}
