@@ -41,16 +41,20 @@
 	{#each projects as { title, picture, description, link }}
 		{#if $drawerStore.id === title}
 			<div class="p-4 space-y-4">
-				<button
-					type="button"
-					class="btn-icon variant-filled mb-2"
-					title="Close"
-					on:click={drawerStore.close}><i class="fa-solid fa-xmark"></i></button
-				>
-				<h2 class="h2">{title}</h2>
-				<a href="projects/{picture}" target="_blank">
-					<ImageLoader src="projects/{picture}" alt="Picture of {title}" />
-				</a>
+				<h2 class="h2 flex-auto flex justify-between items-center place-self-center">
+					<span class="justify-start">{title}</span>
+					<button
+						type="button"
+						class="btn-icon h-11 w-11 variant-filled"
+						title="Close"
+						on:click={drawerStore.close}><i class="fa-solid fa-xmark"></i></button
+					>
+				</h2>
+				<div>
+					<a href="projects/{picture}" target="_blank">
+						<ImageLoader src="projects/{picture}" alt="Picture of {title}" />
+					</a>
+				</div>
 				<p>{@html description}</p>
 
 				<div>
