@@ -1,83 +1,35 @@
 <script lang="ts">
-	import { getRandomInt } from '$lib/utils';
 	import { onMount } from 'svelte';
-	import { fade, fly, slide } from 'svelte/transition';
+	import { playAnim } from '$lib/stores';
+	import { projects } from '$lib';
+	import { fade, fly, scale } from 'svelte/transition';
+	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
 
-	let projects = [
-		{
-			title: 'console-utils-rs',
-			description: 'CLI Input Library for Rust',
-			href: 'https://github.com/nwrenger/console-utils-rs'
-		},
-		{
-			title: 'dashboard',
-			description: 'Dashboard of all my websites',
-			href: 'https://github.com/nwrenger/dashboard'
-		},
-		{
-			title: 'doenermann-bot',
-			description: 'The Dönermann Discord Bot used on a Discord-Server of mine',
-			href: 'https://github.com/nwrenger/doenermann-bot'
-		},
-		{
-			title: 'Escaping-from-the-Supernova',
-			description: 'A procedural generated textadventure coded in Rust',
-			href: 'https://github.com/nwrenger/Escaping-from-the-Supernova'
-		},
-		{
-			title: 'eta',
-			description: 'An efficient Code Editor made from scratch using egui!',
-			href: 'https://github.com/nwrenger/eta'
-		},
-		{
-			title: 'flip-ui',
-			description: 'The UI Builder for the Flipper Zero',
-			href: 'https://github.com/flip-ui'
-		},
-		{
-			title: 'hadar',
-			description: 'The current code of Hunger of Hadar, a battlesnake agent',
-			href: 'https://github.com/nwrenger/hadar'
-		},
-		{
-			title: 'omega',
-			description: 'A performant terminal-based project editor with extensive shortcuts',
-			href: 'https://github.com/nwrenger/omega'
-		},
-		{
-			title: 'portfolio',
-			description: 'My personal Portfolio, or more precise THIS website',
-			href: 'https://github.com/nwrenger/portfolio'
-		},
-		{
-			title: 'quickmaths',
-			description: 'A school project...QUICKMATHS!!!',
-			href: 'https://github.com/nwrenger/quickmaths'
-		},
-		{
-			title: 'schiller-db',
-			description: "Schillernova's Database Management Software",
-			href: 'https://github.com/nwrenger/schiller-db'
-		},
-		{
-			title: 'schiller-lib',
-			description: 'The Schiller School Library App',
-			href: 'https://github.com/wrenger/schiller-lib'
-		},
-		{
-			title: 'schulen-im-chaos',
-			description: 'Homework-Sharing Platform',
-			href: 'https://github.com/schulen-im-chaos'
-		},
-		{
-			title: 'shitboard',
-			description: 'Online Soundboard App',
-			href: 'https://github.com/nwrenger/shitboard'
-		}
-	];
+	const drawerStore = getDrawerStore();
 
-	let mounted = false;
-	onMount(() => (mounted = true));
+	// if page fully loaded play animation once
+	onMount(() => ($playAnim = true));
+
+	/// Open the popup fitting to the specified title
+	function showDetails(title: string) {
+		const drawerSettings: DrawerSettings = {
+			id: title,
+			position: 'right',
+			bgBackdrop: 'bg-gradient-to-tr from-indigo-500/50 via-purple-500/50 to-pink-500/50',
+			width: 'w-[300px] md:w-[480px]',
+			padding: 'p-4',
+			rounded: 'rounded-xl'
+		};
+		drawerStore.open(drawerSettings);
+	}
+
+	/// Replays the current animation using a timeout (yeah that's a little bit hacky)
+	function replayAnim() {
+		$playAnim = false;
+		setTimeout(() => {
+			$playAnim = true;
+		}, 100);
+	}
 </script>
 
 <svelte:head>
@@ -88,7 +40,7 @@
 	/>
 </svelte:head>
 
-{#if mounted}
+{#if $playAnim}
 	<div class="container space-y-8 flex flex-col items-center !max-w-6xl mx-auto p-4">
 		<h1 class="h1" in:fade={{ duration: 200, delay: 200 }}>Hi, there!</h1>
 
@@ -99,48 +51,57 @@
 				target="_blank">Rust</a
 			>
 			and in <a href="https://svelte.dev/" class="anchor" target="_blank">Svelte</a>. I have done a
-			lot of things so far, so look for that under <code class="code">Projects</code>. Feel free to
-			reach out for a chat about coding or anything else via my E-Mail
+			lot of things so far, so look for that under <a href="#projects" class="anchor">Projects</a>.
+			Feel free to reach out for a chat about coding or anything else via my E-Mail
 			<a href="mailto:nils@wrenger.net" class="anchor" target="_parent">nils@wrenger.net</a>!
 		</p>
 
 		<div
 			class="flex flex-col items-center"
-			in:fly={{
+			in:fade={{
 				duration: 200,
-				delay: 600,
-				y: getRandomInt(-1000, 1000),
-				x: getRandomInt(-1000, 1000)
+				delay: 600
 			}}
 		>
-			<h2 class="h2 pb-2">Projects</h2>
+			<h2 class="h2 pb-2" id="projects">Projects</h2>
 			<code class="code">Total: {projects.length}</code>
 		</div>
 
-		<div
-			class="grid md:grid-cols-2 gap-4 w-full"
-			in:slide={{ duration: 200, delay: 800, axis: 'x' }}
-		>
-			{#each projects as project, i}
-				<a class="overflow-hidden block card card-hover" href={project.href} target="_blank">
+		<div class="grid md:grid-cols-2 gap-4 w-full">
+			{#each projects as { title, summary }, i}
+				<button
+					class="overflow-hidden block card card-hover text-left"
+					on:click={() => showDetails(title)}
+					in:fly|global={{ duration: 200, delay: 800 + i * 100, x: i % 2 == 0 ? -800 : 800 }}
+				>
 					<div class="p-4">
-						<h3 class="h3">{project.title}</h3>
-						<p>{project.description}</p>
+						<h3 class="h3">{title}</h3>
+						<p>{summary}</p>
 					</div>
-				</a>
+				</button>
 			{/each}
 		</div>
 
 		<p
 			class="text-center"
-			in:fly={{
+			in:fade={{
 				duration: 200,
-				delay: 600,
-				y: -1000
+				delay: 1000 + projects.length * 100
 			}}
 		>
 			More details and other smaller Projects can be seen on
 			<a href="https://www.github.com/nwrenger" class="anchor" target="_blank">my Github</a>
 		</p>
+
+		<button
+			type="button"
+			class="btn-icon variant-filled"
+			title="Replay Animation"
+			in:scale={{
+				duration: 200,
+				delay: 1200 + projects.length * 100
+			}}
+			on:click={replayAnim}><i class="fa-solid fa-rotate-right"></i></button
+		>
 	</div>
 {/if}

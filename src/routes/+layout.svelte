@@ -7,12 +7,23 @@
 		AppShell,
 		LightSwitch,
 		storePopup,
-		setInitialClassState
+		initializeStores,
+		setInitialClassState,
+		Drawer,
+		getDrawerStore
 	} from '@skeletonlabs/skeleton';
 
-	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	// drawer
+	initializeStores();
+	const drawerStore = getDrawerStore();
+
+	// animations
 	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
+
+	// popup
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+	import { playAnim } from '$lib/stores';
+	import { projects } from '$lib';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	const profile: PopupSettings = {
@@ -20,18 +31,46 @@
 		target: 'profileContents',
 		placement: 'bottom'
 	};
-
-	let mounted = false;
-	onMount(() => (mounted = true));
 </script>
 
 <svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head>
+
+<!-- Drawer for further infos -->
+<Drawer>
+	{#each projects as { title, picture, description, link }}
+		{#if $drawerStore.id === title}
+			<div class="p-4 space-y-4">
+				<button
+					type="button"
+					class="btn-icon variant-filled mb-2"
+					title="Close"
+					on:click={drawerStore.close}><i class="fa-solid fa-xmark"></i></button
+				>
+				<h2 class="h2">{title}</h2>
+				<a href="projects/{picture}" target="_blank">
+					<img
+						src="projects/{picture}"
+						alt="Picture of {title}"
+						class="bg-black/50 w-full md:h-64 object-cover rounded-lg shadow-md"
+					/>
+				</a>
+				<p>{@html description}</p>
+
+				<div>
+					<a class="anchor" target="_blank" href={link}
+						>See the project here <i class="fa-solid fa-up-right-from-square"></i></a
+					>
+				</div>
+			</div>
+		{/if}
+	{/each}
+</Drawer>
 
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="pageHeader">
 		<!-- Page Container -->
-		{#if mounted}
+		{#if $playAnim}
 			<div
 				class="page-container !max-w-6xl mx-auto grid grid-cols-[1fr_auto] items-center gap-4 p-4"
 				in:fade={{ duration: 200, delay: 0 }}
