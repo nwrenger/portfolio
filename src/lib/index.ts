@@ -60,7 +60,7 @@ export const projects = [
 		summary: 'A performant terminal-based project editor with extensive shortcuts',
 		picture: 'omega.png',
 		description:
-			'This project was created after I created <code class="code">eta</code> from which I learned a lot. It\'s a terminal-based project editor editor with syntax highlighting, great performance and very useful and powerful shortcuts. So please give it a try!',
+			'This project was created after I created <code class="code">eta</code> from which I learned a lot. It\'s a terminal-based project editor with syntax highlighting, great performance and very useful and powerful shortcuts. So please give it a try!',
 		link: 'https://crates.io/crates/omega'
 	},
 	{
