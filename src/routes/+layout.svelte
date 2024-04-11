@@ -45,8 +45,9 @@
 					<span class="justify-start">{title}</span>
 					<button
 						type="button"
-						class="btn-icon h-11 w-11 variant-filled"
+						class="btn-icon variant-filled"
 						title="Close"
+						style="width: 43px; height: 43px;"
 						on:click={drawerStore.close}><i class="fa-solid fa-xmark"></i></button
 					>
 				</h2>
