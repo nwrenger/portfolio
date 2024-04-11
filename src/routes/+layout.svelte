@@ -24,6 +24,7 @@
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { playAnim } from '$lib/stores';
 	import { projects } from '$lib';
+	import ImageLoader from './ImageLoader.svelte';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	const profile: PopupSettings = {
@@ -48,11 +49,7 @@
 				>
 				<h2 class="h2">{title}</h2>
 				<a href="projects/{picture}" target="_blank">
-					<img
-						src="projects/{picture}"
-						alt="Picture of {title}"
-						class="bg-black/50 w-full md:h-64 object-cover rounded-lg shadow-md"
-					/>
+					<ImageLoader src="projects/{picture}" alt="Picture of {title}" />
 				</a>
 				<p>{@html description}</p>
 
