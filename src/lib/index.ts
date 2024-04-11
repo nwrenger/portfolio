@@ -4,7 +4,7 @@ export const projects = [
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.png',
 		description:
-			'Soooo this project was initiated through writing Python in my Computer Science Lessons. The thing is that Rust itself (the std library) does\'nt have a very "nice" way of retrieving user input. In comparison python has the super simple <code class="code" >input</code> function which can do that very easily! Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!',
+			'This project was initiated by writing Python during my Computer Science lessons. The thing is that Rust itself (the std library) does\'nt have a very "nice" way of retrieving user input. In comparison python has the super simple <code class="code" >input</code> function which can do that very easily! Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!',
 		link: 'https://crates.io/crates/console-utils'
 	},
 	{
