@@ -4,8 +4,8 @@
 	export let alt = '';
 
 	export let width = 'w-full';
-	export let height = 'h-full';
-	export let ratio = '';
+	export let height = 'h-auto';
+	export let ratio = 'aspect-auto';
 	export let rounded = 'rounded-lg';
 	const base = `${width} ${height} ${ratio} ${rounded}`;
 
@@ -20,7 +20,7 @@
 </script>
 
 {#if !loaded}
-	<div class="{base} h-auto placeholder animate-pulse" />
+	<div class="{base} placeholder animate-pulse" />
 {/if}
 
 {#if mounted}
