@@ -1,8 +1,11 @@
 <script lang="ts">
 	export let src: string;
 	export let alt = '';
+	export let width = 'w-full';
+	export let height = 'h-full';
+	export let rounded = 'rounded-lg';
 
-	const base = 'w-full h-36 md:h-64 rounded-lg';
+	const base = `${width} ${height} ${rounded}`;
 	let loaded = false;
 
 	function handleLoad() {
@@ -11,7 +14,7 @@
 </script>
 
 {#if !loaded}
-	<div class="{base} placeholder animate-pulse" />
+	<div class="{base} aspect-square placeholder animate-pulse" />
 {/if}
 <img
 	{src}

@@ -53,7 +53,7 @@
 				</h2>
 				<div>
 					<a href="projects/{picture}" target="_blank">
-						<ImageLoader src="projects/{picture}" alt="Picture of {title}" />
+						<ImageLoader src="projects/{picture}" alt="Picture of {title}" height="h-36 md:h-64" />
 					</a>
 				</div>
 				<p>{@html description}</p>
@@ -78,7 +78,7 @@
 				in:fade={{ duration: 200, delay: 0 }}
 			>
 				<button type="button" class="btn-icon" use:popup={profile} title="profile">
-					<img class=" max-w-full rounded-sm aspect-square shadow-xl" src="/favicon.png" alt="nw" />
+					<ImageLoader src="/favicon.png" alt="nw" rounded="rounded-sm" />
 				</button>
 
 				<div class="card p-4 w-72 shadow-xl" data-popup="profileContents">
