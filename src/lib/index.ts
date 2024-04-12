@@ -4,7 +4,7 @@ export const projects = [
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.png',
 		description:
-			'This project was initiated by writing Python during my Computer Science lessons. The thing is that Rust itself (the std library) does\'nt have a very "nice" way of retrieving user input. In comparison python has the super simple <code class="code" >input</code> function which can do that very easily! Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!',
+			'This project was initiated by writing Python during my Computer Science lessons. The thing is that Rust itself (the std library) does\'nt have a very “nice” way of retrieving user input. In comparison, python has the super simple <code class="code" >input</code> function which can do that very easily! Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!',
 		link: 'https://crates.io/crates/console-utils'
 	},
 	{
@@ -12,7 +12,7 @@ export const projects = [
 		summary: 'A dashboard of all my websites',
 		picture: 'dashboard.png',
 		description:
-			'The summary basically is enough to explain this project: A dashboard of all my websites. I am here going to explain further how it came to this project. I bought some time ago the domain <code class="code">nwrenger.dev</code> and wanted to host under that domain some websites, which btw was harder than I thought because of DNS, the provider and GH-Pages. Nevertheless, the idea of an overview of all my websites began to grow and now here we are!',
+			'The summary basically is enough to explain this project: A dashboard of all my websites. I am here going to explain further how it came to this project. I bought some time ago the domain <code class="code">nwrenger.dev</code> and wanted to host under that domain some websites, which btw was harder than I thought because of DNS, the provider and GH-Pages. Nevertheless, the idea of an overview of all my websites began to grow, and now here we are!',
 		link: 'https://nwrenger.dev/'
 	},
 	{
@@ -20,7 +20,7 @@ export const projects = [
 		summary: 'The Dönermann Discord Bot used on a Discord-Server of mine',
 		picture: 'doenermann-bot.png',
 		description:
-			'Before I am explaining the origins/need of this bot please note that the black bars in the picture is there to protect personal information, nothing more, nothing less! So, this bot was created for a discord server which I am also a part of. It can track birthdays (second message seen in the picture), copy messages from a channel (first message seen in the picture), give users automatically roles on certain conditions,... This was created as a drop in replacement of Mee6 which did some very shady stuff lately.',
+			'Before I am explaining the origins/need of this bot, please note that the black bars in the picture are there to protect personal information, nothing more, nothing less! So, this bot was created for a discord server which I am also a part of. It can track birthdays (second message seen in the picture), copy messages from a channel (first message seen in the picture), give users automatically roles on certain conditions, ... This was created as a drop-in replacement of Mee6, which did some very shady stuff lately.',
 		link: 'https://github.com/nwrenger/doenermann-bot'
 	},
 	{
@@ -36,7 +36,7 @@ export const projects = [
 		summary: 'An efficient Code Editor made from scratch using egui',
 		picture: 'eta.png',
 		description:
-			'As explained the summary, this is a code editor made in egui which focusses on efficiency. Furthermore, this was created due to the lack of performance seen in VSC, the most used code editor, and my curiosity of how a project editor app works and how hard is it to create one, which I now know is <code class="code">VERY HARD</code>.',
+			'As explained in the summary, this is a code editor made in <code class="code">egui</code> which focuses on efficiency. Furthermore, this was created due to the lack of performance seen in VSC, the most used code editor, and my curiosity of how a project editor app works and how hard is it to create one, which I now know it is <code class="code">VERY HARD</code>.',
 		link: 'https://github.com/nwrenger/eta'
 	},
 	{
@@ -44,7 +44,7 @@ export const projects = [
 		summary: 'The UI Builder for the Flipper Zero',
 		picture: 'flip-ui.png',
 		description:
-			"This is a UI build for the flipperzero, a small IoT device which was mainly hyped due to it's hacking capabilities. The idea itself came from building a Flipperzero App myself and seeing how unnecessary difficult that was. Nevertheless, the workflow when using this is to create a UI using the website and then use a Rust crate which converts the ui data and your own custom functions into a flipperzero compatible binary.",
+			"This is a UI build for the flipperzero, a small IoT device which was mainly hyped due to it's hacking capabilities. The idea itself came from building a Flipperzero App myself and seeing how unnecessary, difficult that was. Nevertheless, the workflow when using this is to create a UI using the website and then use a Rust crate which converts the UI data and your own custom functions into a flipperzero compatible binary.",
 		link: 'https://github.com/flip-ui'
 	},
 	{
