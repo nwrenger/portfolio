@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Skeleton from '$lib/components/ui/skeleton/skeleton.svelte';
-import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	export let src: string;
 	export let alt = '';
 

@@ -98,7 +98,7 @@
 							</h2>
 						</Sheet.Title>
 						<Sheet.Description class="space-y-4 !text-left">
-							<ImageLoader src={'projects/' + picture} alt={title} />
+							<ImageLoader src={'projects/' + picture} alt={title} height="h-36 md:h-64" />
 							<p class="leading-7">{@html description}</p>
 							<div>
 								<a href={link} class="text-primary underline underline-offset-4" target="_blank"
