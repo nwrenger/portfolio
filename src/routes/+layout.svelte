@@ -1,115 +1,60 @@
-<script lang="ts">
-	import '../app.postcss';
-	import '@fortawesome/fontawesome-free/css/all.css';
-	import {
-		popup,
-		type PopupSettings,
-		AppShell,
-		LightSwitch,
-		storePopup,
-		initializeStores,
-		setInitialClassState,
-		Drawer,
-		getDrawerStore
-	} from '@skeletonlabs/skeleton';
-
-	// drawer
-	initializeStores();
-	const drawerStore = getDrawerStore();
-
-	// animations
-	import { fade } from 'svelte/transition';
-
-	// popup
-	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
-	import { playAnim } from '$lib/stores';
-	import { projects } from '$lib';
-	import ImageLoader from './ImageLoader.svelte';
-	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
-
-	const profile: PopupSettings = {
-		event: 'click',
-		target: 'profileContents',
-		placement: 'bottom'
-	};
+<script>
+	import '../app.pcss';
+	import { ModeWatcher, toggleMode } from 'mode-watcher';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import * as Avatar from '$lib/components/ui/avatar';
+	import { Button } from '$lib/components/ui/button';
+	import { Sun, Moon, Github, User } from 'lucide-svelte';
 </script>
 
-<svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head>
+<ModeWatcher disableTransitions={false} />
 
-<!-- Drawer for further infos -->
-<Drawer>
-	{#each projects as { title, picture, description, link }}
-		{#if $drawerStore.id === title}
-			<div class="p-4 space-y-4">
-				<h2 class="h2 flex-auto flex justify-between items-center place-self-center">
-					<span class="justify-start">{title}</span>
-					<button
-						type="button"
-						class="btn-icon variant-filled"
-						title="Close"
-						style="width: 43px; height: 43px;"
-						on:click={drawerStore.close}><i class="fa-solid fa-xmark"></i></button
-					>
-				</h2>
-				<div>
-					<a href="projects/{picture}" target="_blank">
-						<ImageLoader src="projects/{picture}" alt="Picture of {title}" height="h-36 md:h-64" />
-					</a>
-				</div>
-				<p>{@html description}</p>
-
-				<div>
-					<a class="anchor" target="_blank" href={link}
-						>See the project here <i class="fa-solid fa-up-right-from-square"></i></a
-					>
-				</div>
+<header
+	class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+	<div class="container max-w-6xl pl-4 pr-4">
+		<div class="flex h-[70px] items-center justify-between gap-3">
+			<div class="flex items-center gap-1.5">
+				<DropdownMenu.Root>
+					<DropdownMenu.Trigger>
+						<Avatar.Root>
+							<Avatar.Image src="favicon.png" alt="portfolio" />
+							<Avatar.Fallback>PF</Avatar.Fallback>
+						</Avatar.Root>
+					</DropdownMenu.Trigger>
+					<DropdownMenu.Content>
+						<DropdownMenu.Group>
+							<DropdownMenu.Label>
+								<a href="/" class="hover:underline" data-sveltekit-reload>portfolio</a>
+							</DropdownMenu.Label>
+							<DropdownMenu.Separator />
+							<DropdownMenu.Item href="https://github.com/nwrenger/portfolio" target="_blank">
+								<Github class="mr-2 h-4 w-4" />
+								<span>Github</span>
+							</DropdownMenu.Item>
+							<DropdownMenu.Item href="https://github.com/nwrenger" target="_blank">
+								<User class="mr-2 h-4 w-4" />
+								<span>Profile</span>
+							</DropdownMenu.Item>
+						</DropdownMenu.Group>
+					</DropdownMenu.Content>
+				</DropdownMenu.Root>
 			</div>
-		{/if}
-	{/each}
-</Drawer>
-
-<!-- App Shell -->
-<AppShell>
-	<svelte:fragment slot="pageHeader">
-		<!-- Page Container -->
-		{#if $playAnim}
-			<div
-				class="page-container !max-w-6xl mx-auto grid grid-cols-[1fr_auto] items-center gap-4 p-4"
-				in:fade={{ duration: 200, delay: 0 }}
-			>
-				<button type="button" class="btn-icon" use:popup={profile} title="profile">
-					<ImageLoader src="/favicon.png" alt="nw" rounded="rounded-sm" />
-				</button>
-
-				<div class="card p-4 w-72 shadow-xl" data-popup="profileContents">
-					<div class="space-y-4">
-						<div>
-							<p class="font-bold">Nils Wrenger</p>
-							<p class="opacity-50">nwrenger</p>
-						</div>
-						<p>Hi, I use Fedora OS and have skills in programming with Rust btw</p>
-						<div class="flex gap-4">
-							<small><strong>10</strong> <span class="opacity-50">Followers</span></small>
-							<small><strong>11</strong> <span class="opacity-50">Following</span></small>
-						</div>
-						<a
-							class="btn variant-soft w-full"
-							href="https://github.com/nwrenger"
-							target="_blank"
-							rel="noreferrer"
-						>
-							View on Github
-						</a>
-					</div>
-					<div class="arrow bg-surface-100-800-token" />
-				</div>
-				<LightSwitch
-					class="bg-surface-50/50 dark:bg-surface-900/50 backdrop-blur-xl shadow-xl"
-					ring="ring-none"
-				/>
+			<div class="flex items-center justify-end gap-2.5">
+				<Button on:click={toggleMode} variant="outline" size="icon">
+					<Sun
+						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+					/>
+					<Moon
+						class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+					/>
+					<span class="sr-only">Toggle theme</span>
+				</Button>
 			</div>
-		{/if}
-	</svelte:fragment>
-	<!-- Page Route Content -->
+		</div>
+	</div>
+</header>
+
+<div class="container mx-auto flex max-w-6xl flex-col items-center space-y-8 p-4 text-center">
 	<slot />
-</AppShell>
+</div>
