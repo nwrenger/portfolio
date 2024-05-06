@@ -11,6 +11,7 @@
 
 	let playAnim: boolean = false;
 
+	// Play animation on load
 	onMount(() => (playAnim = true));
 
 	/// Replays the current animation using a timeout (yeah that's a little bit hacky)
@@ -72,7 +73,7 @@
 
 	<div class="grid w-full gap-4 md:grid-cols-2">
 		{#each projects as { title, summary, picture, description, link }, i}
-			<Sheet.Root>
+			<Sheet.Root preventScroll={true}>
 				<Sheet.Trigger asChild let:builder>
 					{@const builders = [builder]}
 					<button
@@ -98,7 +99,9 @@
 							</h2>
 						</Sheet.Title>
 						<Sheet.Description class="space-y-4 !text-left">
-							<ImageLoader src={'projects/' + picture} alt={title} height="h-36 md:h-64" />
+							<a href="projects/{picture}" target="_blank">
+								<ImageLoader src={'projects/' + picture} alt={title} height="h-36 md:h-64" />
+							</a>
 							<p class="leading-7">{@html description}</p>
 							<div>
 								<a href={link} class="text-primary underline underline-offset-4" target="_blank"
