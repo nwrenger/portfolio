@@ -78,10 +78,10 @@
 					{@const builders = [builder]}
 					<button
 						use:builderActions={{ builders }}
-						class="h-full rounded-lg outline-none transition-all hover:scale-[1.01] hover:shadow-lg"
+						class="rounded-lg outline-none transition-all hover:scale-[1.01] hover:shadow-lg"
 						in:fly|global={{ duration: 200, delay: 600 + i * 100, x: i % 2 == 0 ? -800 : 800 }}
 					>
-						<Card.Root class="!h-full">
+						<Card.Root class="h-full">
 							<Card.Header>
 								<Card.Title>{title}</Card.Title>
 								<Card.Description>{summary}</Card.Description>
@@ -89,7 +89,9 @@
 						</Card.Root>
 					</button>
 				</Sheet.Trigger>
-				<Sheet.Content class="w-[340px] overflow-y-scroll sm:!max-w-full md:w-[480px]">
+				<Sheet.Content
+					class="w-[340px] overflow-y-scroll sm:!max-w-full md:w-[480px] 2xl:w-[620px]"
+				>
 					<Sheet.Header>
 						<Sheet.Title>
 							<h2
