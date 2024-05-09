@@ -78,7 +78,7 @@
 					{@const builders = [builder]}
 					<button
 						use:builderActions={{ builders }}
-						class="h-full rounded-lg transition-all hover:scale-[1.01] hover:shadow-lg"
+						class="h-full rounded-lg outline-none transition-all hover:scale-[1.01] hover:shadow-lg"
 						in:fly|global={{ duration: 200, delay: 600 + i * 100, x: i % 2 == 0 ? -800 : 800 }}
 					>
 						<Card.Root class="!h-full">
@@ -99,7 +99,7 @@
 							</h2>
 						</Sheet.Title>
 						<Sheet.Description class="space-y-4 !text-left">
-							<a href="projects/{picture}" target="_blank">
+							<a href="projects/{picture}" target="_blank" class="outline-none">
 								<ImageLoader src={'projects/' + picture} alt={title} height="h-36 md:h-64" />
 							</a>
 							<p class="leading-7">{@html description}</p>
