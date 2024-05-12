@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-	@apply h-full overflow-hidden;
-}
-
 @layer base {
 	:root {
 		--background: 0 0% 100%;
@@ -74,14 +69,17 @@ body {
 }
 
 @layer base {
+	html,
+	body {
+		@apply h-full overflow-hidden;
+	}
 	* {
 		@apply border-border;
 	}
 	body {
 		@apply !overflow-y-scroll bg-gradient-conic from-red-800 via-background to-blue-800 text-foreground;
 	}
-}
-
-.code {
-	@apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+	.code {
+		@apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+	}
 }
