@@ -1,5 +1,13 @@
 export const projects = [
 	{
+		title: 'chadmaths',
+		summary: 'Math Practicing for the real Chads!',
+		picture: 'chadmaths.png',
+		description:
+			'This project is the advanced successor to <code class="code">QuickMaths</code>, designed for the real math <code class="code">CHADS</code>. It extends the original capabilities beyond Mental Calculus to include Graphs, Analysis, and Geometry. Additionally, the user interface has been significantly improved, removing the life system and incorporating more intuitive and user-friendly elements.',
+		link: 'https://chadmaths.nwrenger.dev/'
+	},
+	{
 		title: 'console-utils-rs',
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.png',
@@ -54,6 +62,14 @@ export const projects = [
 		description:
 			'This is a very simple Battlesnake agent, a bot designed to play competitive snake against other bots. Its sole mission is to seek food and avoid killing itself when it gets too long. The results of this strategy are displayed in the picture above!',
 		link: 'https://github.com/nwrenger/hadar'
+	},
+	{
+		title: 'light-magic',
+		summary: 'A lightweight and easy-to-use implementation of an in-memory database',
+		picture: 'light-magic.png',
+		description:
+			'A powerful and user-friendly in-memory database crate that leverages Rust\'s standard data types, such as <code class="code">BTreeMap</code>, and the macro system for generating data types, interactions, and data operations. It features efficient <code class="code">search</code> and <code class="code">join!</code> functions for seamless data management. Give it a try and experience the simplicity and performance of this innovative database solution!',
+		link: 'https://crates.io/crates/light-magic'
 	},
 	{
 		title: 'omega',
