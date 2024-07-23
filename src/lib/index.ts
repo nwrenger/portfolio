@@ -68,7 +68,7 @@ export const projects = [
 		summary: 'A lightweight, fast and easy-to-use implementation of a persistent in-memory database',
 		picture: 'light-magic.png',
 		description:
-			'A powerful and user-friendly in-memory database crate that leverages Rust\'s standard data types, such as <code class="code">BTreeMap</code>, and the macro system for generating data types, interactions, and data operations. It features efficient <code class="code">search</code> and <code class="code">join!</code> functions for seamless data management and a <code class="code">db!</code> macro for creating you database table and scheme. Give it a try and experience the simplicity and performance of this innovative database solution!',
+			'A powerful and user-friendly in-memory database crate that extends Rust\'s standard data types, such as as the <code class="code">Table</code> type, and the macro system for generating data types, interactions, and data operations. It features efficient <code class="code">search</code> and <code class="code">join!</code> functions for seamless data management and rust\'s beautiful type system for creating the database table. Give it a try and experience the simplicity and performance of this innovative database solution!',
 		link: 'https://crates.io/crates/light-magic'
 	},
 	{
