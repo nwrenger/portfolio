@@ -71,7 +71,7 @@
 @layer base {
 	html,
 	body {
-		@apply h-full overflow-hidden;
+		@apply h-full cursor-none overflow-hidden;
 	}
 	* {
 		@apply border-border;
@@ -79,7 +79,15 @@
 	body {
 		@apply !overflow-y-scroll bg-gradient-conic from-red-800 via-background to-blue-800 text-foreground;
 	}
-	.code {
+	body {
+		@apply cursor-none;
+	}
+	a:hover,
+	div:hover,
+	button:hover {
+		@apply cursor-none;
+	}
+	code {
 		@apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
 	}
 }
