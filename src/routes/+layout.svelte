@@ -8,6 +8,7 @@
 
 	import { spring } from 'svelte/motion';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	let coords = spring(
 		{ x: -50, y: -50 },
@@ -43,12 +44,7 @@
 	function handleMouseDown(e: MouseEvent) {
 		const target = e.target as HTMLElement;
 
-		if (
-			target.tagName === 'A' ||
-			target.tagName === 'BUTTON' ||
-			target.tagName === 'SVG' ||
-			target.tagName === 'SPAN'
-		) {
+		if (target.tagName === 'A' || target.tagName === 'BUTTON') {
 			size.set(10);
 		} else {
 			size.set(7);
@@ -68,6 +64,12 @@
 	export let data;
 
 	$: pathname = data.pathname;
+
+	let isTouchDevice = false;
+	let mounted = false;
+
+	onMount(() => (mounted = true));
+	$: if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 </script>
 
 <ModeWatcher disableTransitions={false} />
@@ -75,11 +77,11 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <div
-	on:mouseleave={handleMouseLeave}
-	on:mouseenter={handleMouseEnter}
-	on:mousedown={handleMouseDown}
-	on:mouseup={handleMouseUp}
-	on:mousemove={handleMouseMove}
+	on:mouseleave={!isTouchDevice ? handleMouseLeave : null}
+	on:mouseenter={!isTouchDevice ? handleMouseEnter : null}
+	on:mousedown={!isTouchDevice ? handleMouseDown : null}
+	on:mouseup={!isTouchDevice ? handleMouseUp : null}
+	on:mousemove={!isTouchDevice ? handleMouseMove : null}
 >
 	<header
 		class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
@@ -133,5 +135,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <svg class="pointer-events-none fixed left-0 top-0 z-[1000] h-full w-full mix-blend-difference">
-	<circle cx={$coords.x} cy={$coords.y} r={$size} class="filter-[invert(i)] fill-white" />
+	{#if !isTouchDevice}
+		<circle cx={$coords.x} cy={$coords.y} r={$size} class="filter-[invert(i)] fill-white" />
+	{/if}
 </svg>
