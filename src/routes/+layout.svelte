@@ -10,14 +10,14 @@
 	import { onMount } from 'svelte';
 
 	let coords = spring(
-		{ x: -50, y: -50 },
+		{ x: 50, y: 50 },
 		{
 			stiffness: 1,
 			damping: 1
 		}
 	);
 
-	let size = spring(10);
+	let size = spring(0);
 
 	function handleMouseLeave() {
 		size.set(0);
@@ -78,6 +78,14 @@
 		}
 	}
 
+	function handleVisibilityChange(e: Event) {
+		const target = e.target as Document;
+
+		if (target.visibilityState === 'visible') {
+			size.set(0);
+		}
+	}
+
 	let mounted = false;
 	onMount(() => (mounted = true));
 
@@ -86,6 +94,8 @@
 </script>
 
 <ModeWatcher disableTransitions={false} />
+
+<svelte:document on:visibilitychange={!isTouchDevice ? handleVisibilityChange : null} />
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
@@ -141,8 +151,8 @@
 </div>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<svg class="pointer-events-none fixed left-0 top-0 z-[1000] h-full w-full mix-blend-difference">
-	{#if !isTouchDevice}
+{#if !isTouchDevice || $size > 0}
+	<svg class="pointer-events-none fixed left-0 top-0 z-[1000] h-full w-full mix-blend-difference">
 		<circle cx={$coords.x} cy={$coords.y} r={$size} class="filter-[invert(i)] fill-white" />
-	{/if}
-</svg>
+	</svg>
+{/if}
