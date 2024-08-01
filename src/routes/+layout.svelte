@@ -70,7 +70,7 @@
 	let div: HTMLDivElement | undefined;
 	$: if (mounted && pathname)
 		setTimeout(() => {
-			if (div) div.scrollTo({ top: 0, behavior: 'instant' });
+			if (div) div.scrollTo({ top: 0, behavior: 'smooth' });
 		}, 400);
 
 	let isTouchDevice = false;
