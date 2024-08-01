@@ -4,10 +4,6 @@
 		name="description"
 		content="Hi, there! I'm Nils, a high school student passionate about coding, particularly in Rust and in Svelte."
 	/>
-	<link
-		href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-		rel="stylesheet"
-	/>
 </svelte:head>
 
 <div

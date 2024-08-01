@@ -4,6 +4,14 @@
 	import ImageLoader from './../ImageLoader.svelte';
 </script>
 
+<svelte:head>
+	<title>portfolio - Projects</title>
+	<meta
+		name="description"
+		content="Here you can find all the projects I have worked on so far. They range from web development to game development and even to algorithms."
+	/>
+</svelte:head>
+
 <div
 	class="space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:p-12"
 >
