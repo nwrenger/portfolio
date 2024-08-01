@@ -4,7 +4,6 @@
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
 	import { Sun, Moon } from 'lucide-svelte';
-	import { fade } from 'svelte/transition';
 
 	import { spring } from 'svelte/motion';
 	import { page } from '$app/stores';
@@ -32,8 +31,16 @@
 		coords.set({ x: e.clientX, y: e.clientY });
 		const target = e.target as HTMLElement;
 
+		console.log(target.tagName);
+
 		if (e.buttons !== 1) {
-			if (target.tagName === 'A' || target.tagName === 'BUTTON') {
+			if (
+				target.tagName === 'A' ||
+				target.tagName === 'BUTTON' ||
+				target.tagName === 'IMG' ||
+				target.tagName === 'svg' ||
+				target.tagName === 'path'
+			) {
 				size.set(15);
 			} else {
 				size.set(10);
@@ -44,7 +51,13 @@
 	function handleMouseDown(e: MouseEvent) {
 		const target = e.target as HTMLElement;
 
-		if (target.tagName === 'A' || target.tagName === 'BUTTON') {
+		if (
+			target.tagName === 'A' ||
+			target.tagName === 'BUTTON' ||
+			target.tagName === 'IMG' ||
+			target.tagName === 'svg' ||
+			target.tagName === 'path'
+		) {
 			size.set(10);
 		} else {
 			size.set(7);
@@ -54,7 +67,13 @@
 	function handleMouseUp(e: MouseEvent) {
 		const target = e.target as HTMLElement;
 
-		if (target.tagName === 'A' || target.tagName === 'BUTTON') {
+		if (
+			target.tagName === 'A' ||
+			target.tagName === 'BUTTON' ||
+			target.tagName === 'IMG' ||
+			target.tagName === 'svg' ||
+			target.tagName === 'path'
+		) {
 			size.set(15);
 		} else {
 			size.set(10);
@@ -64,9 +83,6 @@
 	let mounted = false;
 	onMount(() => (mounted = true));
 
-	export let data;
-	$: pathname = data.pathname;
-
 	let isTouchDevice = false;
 	$: if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 </script>
@@ -75,8 +91,8 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+<!-- class="h-full overflow-scroll" -->
 <div
-	class="h-full overflow-scroll"
 	on:mouseleave={!isTouchDevice ? handleMouseLeave : null}
 	on:mouseenter={!isTouchDevice ? handleMouseEnter : null}
 	on:mousedown={!isTouchDevice ? handleMouseDown : null}
@@ -122,15 +138,9 @@
 		</div>
 	</header>
 
-	{#key pathname}
-		<div
-			in:fade={{ duration: 200, delay: 400 }}
-			out:fade={{ duration: 200 }}
-			class="container max-w-7xl space-y-8 p-4"
-		>
-			<slot />
-		</div>
-	{/key}
+	<div class="container h-full max-w-7xl space-y-8 p-4">
+		<slot />
+	</div>
 </div>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->

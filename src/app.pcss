@@ -71,13 +71,13 @@
 @layer base {
 	html,
 	body {
-		@apply h-full cursor-none overflow-hidden;
+		@apply h-fit min-h-screen cursor-none bg-background bg-gradient-conic from-red-800 via-background to-blue-800 text-foreground;
 	}
 	* {
 		@apply border-border;
 	}
 	body {
-		@apply bg-gradient-conic from-red-800 via-background to-blue-800 text-foreground;
+		@apply cursor-none;
 	}
 	body {
 		@apply cursor-none;
