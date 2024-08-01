@@ -61,14 +61,19 @@
 		}
 	}
 
-	export let data;
+	let mounted = false;
+	onMount(() => (mounted = true));
 
+	export let data;
 	$: pathname = data.pathname;
 
-	let isTouchDevice = false;
-	let mounted = false;
+	let div: HTMLDivElement | undefined;
+	$: if (mounted && pathname)
+		setTimeout(() => {
+			if (div) div.scrollTo({ top: 0, behavior: 'instant' });
+		}, 400);
 
-	onMount(() => (mounted = true));
+	let isTouchDevice = false;
 	$: if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 </script>
 
@@ -77,6 +82,8 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <div
+	bind:this={div}
+	class="h-full overflow-scroll"
 	on:mouseleave={!isTouchDevice ? handleMouseLeave : null}
 	on:mouseenter={!isTouchDevice ? handleMouseEnter : null}
 	on:mousedown={!isTouchDevice ? handleMouseDown : null}
