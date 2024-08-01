@@ -67,12 +67,6 @@
 	export let data;
 	$: pathname = data.pathname;
 
-	let div: HTMLDivElement | undefined;
-	$: if (mounted && pathname)
-		setTimeout(() => {
-			if (div) div.scrollTo({ top: 0, behavior: 'smooth' });
-		}, 400);
-
 	let isTouchDevice = false;
 	$: if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 </script>
@@ -82,7 +76,6 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <div
-	bind:this={div}
 	class="h-full overflow-scroll"
 	on:mouseleave={!isTouchDevice ? handleMouseLeave : null}
 	on:mouseenter={!isTouchDevice ? handleMouseEnter : null}
@@ -110,6 +103,7 @@
 					<Button
 						href="/projects"
 						variant="link"
+						data-sveltekit-keepfocus
 						class={$page.url.pathname == '/projects' ? 'underline' : ''}>Projects</Button
 					>
 					<Button href="https://github.com/nwrenger" target="_blank" variant="link">Github</Button>
