@@ -87,7 +87,7 @@
 		class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 	>
 		<div class="container max-w-7xl pl-4 pr-4">
-			<div class="flex h-[70px] items-center justify-between gap-3">
+			<nav class="flex h-[70px] items-center justify-between gap-3" data-sveltekit-preload-code>
 				<div class="hidden items-center gap-1.5 sm:flex">
 					<Button href="/" variant="link" class="p-0">
 						<Avatar.Root>
@@ -103,7 +103,6 @@
 					<Button
 						href="/projects"
 						variant="link"
-						data-sveltekit-keepfocus
 						class={$page.url.pathname == '/projects' ? 'underline' : ''}>Projects</Button
 					>
 					<Button href="https://github.com/nwrenger" target="_blank" variant="link">Github</Button>
@@ -119,7 +118,7 @@
 						<span class="sr-only">Toggle theme</span>
 					</Button>
 				</div>
-			</div>
+			</nav>
 		</div>
 	</header>
 
