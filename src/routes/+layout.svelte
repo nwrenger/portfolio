@@ -87,7 +87,7 @@
 		class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 	>
 		<div class="container max-w-7xl pl-4 pr-4">
-			<nav class="flex h-[70px] items-center justify-between gap-3" data-sveltekit-preload-code>
+			<nav class="flex h-[70px] items-center justify-between gap-3" data-sveltekit-preload-data>
 				<div class="hidden items-center gap-1.5 sm:flex">
 					<Button href="/" variant="link" class="p-0">
 						<Avatar.Root>
