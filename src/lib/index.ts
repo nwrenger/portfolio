@@ -61,7 +61,7 @@ export const projects = [
 		picture: 'gluer.png',
 		description:
 			'As the summary suggests, this project aims to streamline development by eliminating redundant definitions in both the backend and frontend through static analysis of routers, functions, and structs. Utilizing the <code>#[metadata]</code> procedural attribute macro and the <code>extract!</code> procedural macro, the project extracts relevant information and generates the corresponding <code>api</code> in a TypeScript file. Currently, the project supports the <code>axum</code> framework, with plans to extend support to additional backends in the future.',
-		link: 'https://github.com/flip-ui'
+		link: 'https://crates.io/crates/gluer'
 	},
 	{
 		title: 'hadar',
