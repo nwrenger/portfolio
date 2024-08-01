@@ -1,21 +1,18 @@
 <script lang="ts">
 	import { projects } from '$lib';
 	import * as Card from '$lib/components/ui/card';
-	import { SquareArrowOutUpRight } from 'lucide-svelte';
 	import ImageLoader from './../ImageLoader.svelte';
 </script>
 
 <div
 	class="space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:p-12"
 >
-	<div class="flex justify-between pb-2">
+	<div class="flex items-center justify-between pb-2">
 		<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Projects</h2>
 
-		<p class="leading-7">
-			<code>
-				Total: {projects.length}
-			</code>
-		</p>
+		<code class="text-sm">
+			Total: {projects.length}
+		</code>
 	</div>
 
 	<div class="grid w-full gap-6 md:grid-cols-2">

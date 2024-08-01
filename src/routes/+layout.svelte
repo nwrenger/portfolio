@@ -3,7 +3,7 @@
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
-	import { Sun, Moon, Mouse } from 'lucide-svelte';
+	import { Sun, Moon } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
 
 	import { spring } from 'svelte/motion';

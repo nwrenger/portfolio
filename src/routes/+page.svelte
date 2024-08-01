@@ -1,7 +1,3 @@
-<script>
-	import { ExternalLink } from 'lucide-svelte';
-</script>
-
 <svelte:head>
 	<title>portfolio</title>
 	<meta
