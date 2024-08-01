@@ -52,13 +52,13 @@
 	<ul class="list-inside list-disc leading-7">
 		<li>Rust</li>
 		<li>Svelte</li>
-		<li>JavaScript/TypeScript</li>
+		<li>Zig</li>
 		<li>Go</li>
-		<li>Python</li>
 		<li>Godot</li>
+		<li>Python</li>
+		<li>JavaScript/TypeScript</li>
 		<li>HTML & CSS</li>
 		<li>Git & GitHub</li>
-		<li>Zig</li>
 	</ul>
 </div>
 

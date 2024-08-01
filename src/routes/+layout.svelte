@@ -31,8 +31,6 @@
 		coords.set({ x: e.clientX, y: e.clientY });
 		const target = e.target as HTMLElement;
 
-		console.log(target.tagName);
-
 		if (e.buttons !== 1) {
 			if (
 				target.tagName === 'A' ||
@@ -91,7 +89,6 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<!-- class="h-full overflow-scroll" -->
 <div
 	on:mouseleave={!isTouchDevice ? handleMouseLeave : null}
 	on:mouseenter={!isTouchDevice ? handleMouseEnter : null}
@@ -138,7 +135,7 @@
 		</div>
 	</header>
 
-	<div class="container h-full max-w-7xl space-y-8 p-4">
+	<div class="container max-w-7xl space-y-8 p-4">
 		<slot />
 	</div>
 </div>

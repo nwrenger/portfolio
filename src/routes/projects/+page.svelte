@@ -24,16 +24,18 @@
 	</div>
 
 	<div class="grid w-full gap-6 md:grid-cols-2">
-		{#each projects as { title, summary, picture, description, link }, i}
+		{#each projects as { title, summary, picture, description, link }}
 			<Card.Root
 				class="flex h-full transform flex-col items-start justify-start overflow-hidden rounded-lg border-none transition-transform hover:scale-[102%] hover:shadow-lg"
 			>
-				<ImageLoader
-					src={'projects/' + picture}
-					alt={title}
-					height="h-52 md:h-64"
-					rounded="rounded-t-md"
-				/>
+				<a href={'projects/' + picture} target="_blank" class="w-full">
+					<ImageLoader
+						src={'projects/' + picture}
+						alt={title}
+						height="h-52 md:h-64"
+						rounded="rounded-t-md"
+					/>
+				</a>
 				<Card.Header class="w-full p-4">
 					<Card.Title class="text-2xl font-semibold">{title}</Card.Title>
 					<Card.Description class="mb-2 text-base leading-7 text-muted-foreground"
