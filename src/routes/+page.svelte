@@ -41,10 +41,12 @@
 	<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Skills</h2>
 	<p class="leading-7">
 		My focus is on UI development (websites, apps, and TUIs) and performance-driven projects like
-		algorithms and databases. Therefore, my proficiency lies in <code>Rust</code> and in
-		<code>Svelte</code>
-		(i.e., <code>JavaScript</code>/<code>TypeScript</code>). But in the past, I have tried out other
-		programming languages like <code>Go</code> and <code>Python</code>, or even a game engine like
+		algorithms and databases. Therefore, my proficiency lies in <code class="code">Rust</code> and
+		in
+		<code class="code">Svelte</code>
+		(i.e., <code class="code">JavaScript</code>/<code class="code">TypeScript</code>). But in the
+		past, I have tried out other programming languages like <code class="code">Go</code> and
+		<code class="code">Python</code>, or even a game engine like
 		<a
 			href="https://godotengine.org/"
 			class="text-primary underline underline-offset-4"

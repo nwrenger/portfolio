@@ -10,7 +10,7 @@
 	<div class="flex items-center justify-between pb-2">
 		<h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Projects</h2>
 
-		<code class="text-sm">
+		<code class="code">
 			Total: {projects.length}
 		</code>
 	</div>

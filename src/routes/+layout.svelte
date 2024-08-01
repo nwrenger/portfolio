@@ -95,7 +95,7 @@
 	>
 		<div class="container max-w-7xl pl-4 pr-4">
 			<div class="flex h-[70px] items-center justify-between gap-3">
-				<div class="flex items-center gap-1.5">
+				<div class="hidden items-center gap-1.5 sm:flex">
 					<Button href="/" variant="link" class="p-0">
 						<Avatar.Root>
 							<Avatar.Image src="favicon.png" alt="portfolio" />
