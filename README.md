@@ -1,3 +1,3 @@
 # portfolio
 
-My current portfolio made with Svelte and Skeleton. It can do a **a lot of stuff**.
+My current portfolio made with `Svelte` and `shadcn-svelte`. It can do a **a lot of stuff**.
