@@ -67,15 +67,18 @@
 <div
 	class="mt-10 space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:mt-12 lg:p-12"
 >
-	<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">
-		<a
-			href="https://github.com/sponsors/nwrenger"
-			class="text-primary underline underline-offset-4"
-			target="_blank">Sponsor Me</a
-		>
-	</h2>
+	<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Sponsor Me</h2>
 	<p class="leading-7">
 		You can also sponsor me on GitHub to support my work and to get some cool perks like early
 		access to!
 	</p>
+	<div class="mt-4">
+		<a
+			href="https://github.com/sponsors/nwrenger"
+			class="text-primary underline underline-offset-4"
+			target="_blank"
+		>
+			Sponsor me here
+		</a>
+	</div>
 </div>

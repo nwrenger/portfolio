@@ -8,7 +8,7 @@
 	class="space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:p-12"
 >
 	<div class="flex items-center justify-between pb-2">
-		<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Projects</h2>
+		<h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Projects</h2>
 
 		<code class="text-sm">
 			Total: {projects.length}
@@ -27,11 +27,13 @@
 					rounded="rounded-t-md"
 				/>
 				<Card.Header class="w-full p-4">
-					<Card.Title class="text-xl font-semibold">{title}</Card.Title>
-					<Card.Description class="mb-2 text-muted-foreground">{summary}</Card.Description>
-					<p class="text-primary-background text-sm">{@html description}</p>
+					<Card.Title class="text-2xl font-semibold">{title}</Card.Title>
+					<Card.Description class="mb-2 text-base leading-7 text-muted-foreground"
+						>{summary}</Card.Description
+					>
+					<p class="leading-7">{@html description}</p>
 					<div class="mt-4">
-						<a href={link} class="text-primary underline underline-offset-4" target="_blank">
+						<a href={link} class="underline underline-offset-4" target="_blank">
 							See the Project here
 						</a>
 					</div>
