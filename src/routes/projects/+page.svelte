@@ -29,7 +29,7 @@
 			<Card.Root
 				class="flex h-full transform flex-col items-start justify-start overflow-hidden rounded-lg border-none transition-transform hover:scale-[102%] hover:shadow-lg"
 			>
-				<a href={'projects/' + picture} target="_blank" class="w-full">
+				<a href={'projects/' + picture} target="_blank" class="link w-full">
 					<ImageLoader
 						src={'projects/' + picture}
 						alt={title}
@@ -49,7 +49,7 @@
 					>
 					<p class="leading-7">{@html description}</p>
 					<div class="mt-4">
-						<a href={link} class="underline underline-offset-4" target="_blank">
+						<a href={link} class="link" target="_blank">
 							See the {archived ? 'archived' : ''} Project here
 						</a>
 					</div>

@@ -14,20 +14,15 @@
 	<p class="leading-7">
 		I'm Nils, a high school student passionate about coding, particularly in <a
 			href="https://www.rust-lang.org/"
-			class="text-primary underline underline-offset-4"
+			class="link"
 			target="_blank">Rust</a
 		>
 		and in
-		<a href="https://svelte.dev/" class="text-primary underline underline-offset-4" target="_blank"
-			>Svelte</a
-		>. I have done a lot of things so far, so look for that under
-		<a href="/projects" class="text-primary underline underline-offset-4">Projects</a>. Feel free to
-		reach out for a chat about coding or anything else via my E-Mail
-		<a
-			href="mailto:nils@wrenger.net"
-			class="text-primary underline underline-offset-4"
-			target="_parent">nils@wrenger.net</a
-		>!
+		<a href="https://svelte.dev/" class="link" target="_blank">Svelte</a>. I have done a lot of
+		things so far, so look for that under
+		<a href="/projects" class="link">Projects</a>. Feel free to reach out for a chat about coding or
+		anything else via my E-Mail
+		<a href="mailto:nils@wrenger.net" class="link" target="_parent">nils@wrenger.net</a>!
 	</p>
 </div>
 
@@ -43,11 +38,8 @@
 		(i.e., <code class="code">JavaScript</code>/<code class="code">TypeScript</code>). But in the
 		past, I have tried out other programming languages like <code class="code">Go</code> and
 		<code class="code">Python</code>, or even a game engine like
-		<a
-			href="https://godotengine.org/"
-			class="text-primary underline underline-offset-4"
-			target="_blank">Godot</a
-		>, so keep your eyes peeled! Or just check out the list below:
+		<a href="https://godotengine.org/" class="link" target="_blank">Godot</a>, so keep your eyes
+		peeled! Or just check out the list below:
 	</p>
 	<ul class="list-inside list-disc leading-7">
 		<li>Rust</li>
@@ -71,11 +63,7 @@
 		access to!
 	</p>
 	<div class="mt-4">
-		<a
-			href="https://github.com/sponsors/nwrenger"
-			class="text-primary underline underline-offset-4"
-			target="_blank"
-		>
+		<a href="https://github.com/sponsors/nwrenger" class="link" target="_blank">
 			Sponsor me here
 		</a>
 	</div>
