@@ -19,11 +19,13 @@
 
 	let size = spring(0);
 
-	function handleMouseLeave() {
+	function handleMouseLeave(e: MouseEvent) {
+		coords.set({ x: e.clientX, y: e.clientY });
 		size.set(0);
 	}
 
-	function handleMouseEnter() {
+	function handleMouseEnter(e: MouseEvent) {
+		coords.set({ x: e.clientX, y: e.clientY });
 		size.set(10);
 	}
 
@@ -47,6 +49,7 @@
 	}
 
 	function handleMouseDown(e: MouseEvent) {
+		coords.set({ x: e.clientX, y: e.clientY });
 		const target = e.target as HTMLElement;
 
 		if (
@@ -63,6 +66,7 @@
 	}
 
 	function handleMouseUp(e: MouseEvent) {
+		coords.set({ x: e.clientX, y: e.clientY });
 		const target = e.target as HTMLElement;
 
 		if (
