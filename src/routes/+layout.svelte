@@ -8,6 +8,7 @@
 	import { spring } from 'svelte/motion';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	let coords = spring(
 		{ x: 50, y: 50 },
@@ -19,28 +20,22 @@
 
 	let size = spring(0);
 
-	function handleMouseLeave(e: MouseEvent) {
+	function handleLeave(e: PointerEvent) {
 		coords.set({ x: e.clientX, y: e.clientY });
 		size.set(0);
 	}
 
-	function handleMouseEnter(e: MouseEvent) {
+	function handleEnter(e: PointerEvent) {
 		coords.set({ x: e.clientX, y: e.clientY });
 		size.set(10);
 	}
 
-	function handleMouseMove(e: MouseEvent) {
+	function handleMove(e: PointerEvent) {
 		coords.set({ x: e.clientX, y: e.clientY });
 		const target = e.target as HTMLElement;
 
 		if (e.buttons !== 1) {
-			if (
-				target.tagName === 'A' ||
-				target.tagName === 'BUTTON' ||
-				target.tagName === 'IMG' ||
-				target.tagName === 'svg' ||
-				target.tagName === 'path'
-			) {
+			if (target.closest('a') || target.closest('button')) {
 				size.set(15);
 			} else {
 				size.set(10);
@@ -48,34 +43,22 @@
 		}
 	}
 
-	function handleMouseDown(e: MouseEvent) {
+	function handleDown(e: PointerEvent) {
 		coords.set({ x: e.clientX, y: e.clientY });
 		const target = e.target as HTMLElement;
 
-		if (
-			target.tagName === 'A' ||
-			target.tagName === 'BUTTON' ||
-			target.tagName === 'IMG' ||
-			target.tagName === 'svg' ||
-			target.tagName === 'path'
-		) {
+		if (target.closest('a') || target.closest('button')) {
 			size.set(10);
 		} else {
 			size.set(7);
 		}
 	}
 
-	function handleMouseUp(e: MouseEvent) {
+	function handleUp(e: PointerEvent) {
 		coords.set({ x: e.clientX, y: e.clientY });
 		const target = e.target as HTMLElement;
 
-		if (
-			target.tagName === 'A' ||
-			target.tagName === 'BUTTON' ||
-			target.tagName === 'IMG' ||
-			target.tagName === 'svg' ||
-			target.tagName === 'path'
-		) {
+		if (target.closest('a') || target.closest('button')) {
 			size.set(15);
 		} else {
 			size.set(10);
@@ -99,16 +82,14 @@
 
 <ModeWatcher disableTransitions={false} />
 
-<svelte:document on:visibilitychange={!isTouchDevice ? handleVisibilityChange : null} />
+<svelte:document on:visibilitychange={handleVisibilityChange} />
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <div
-	on:mouseleave={!isTouchDevice ? handleMouseLeave : null}
-	on:mouseenter={!isTouchDevice ? handleMouseEnter : null}
-	on:mousedown={!isTouchDevice ? handleMouseDown : null}
-	on:mouseup={!isTouchDevice ? handleMouseUp : null}
-	on:mousemove={!isTouchDevice ? handleMouseMove : null}
+	on:pointerleave={handleLeave}
+	on:pointerenter={handleEnter}
+	on:pointerdown={handleDown}
+	on:pointerup={handleUp}
+	on:pointermove={handleMove}
 >
 	<header
 		class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
@@ -154,9 +135,22 @@
 	</div>
 </div>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-{#if !isTouchDevice || $size > 0}
+{#if $size > 0 && $size <= 15}
 	<svg class="pointer-events-none fixed left-0 top-0 z-[1000] h-full w-full mix-blend-difference">
 		<circle cx={$coords.x} cy={$coords.y} r={$size} class="filter-[invert(i)] fill-white" />
 	</svg>
+{:else if !isTouchDevice}
+	<div
+		transition:fade
+		class="fixed left-0 top-0 z-[1000] flex h-full w-full items-center justify-center bg-background/30 text-lg backdrop-blur supports-[backdrop-filter]:bg-background/30"
+		on:pointerleave={handleLeave}
+		on:pointerenter={handleEnter}
+		on:pointerdown={handleDown}
+		on:pointerup={handleUp}
+		on:pointermove={handleMove}
+	>
+		<div class="animate-pulse text-center">
+			<p>Move, click, or interact with your cursor!</p>
+		</div>
+	</div>
 {/if}
