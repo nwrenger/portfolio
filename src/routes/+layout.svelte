@@ -151,7 +151,7 @@
 	>
 		{#if mounted}
 			<div in:fade class="animate-pulse text-center">
-				<p>Move, click, or interact with your cursor!</p>
+				<p>Move, click, or interact using your cursor!</p>
 			</div>
 		{/if}
 	</div>
