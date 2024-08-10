@@ -73,16 +73,20 @@
 		}
 	}
 
+	function handleScroll() {
+		if (isTouchDevice) size.set(0);
+	}
+
 	let mounted = false;
 	onMount(() => (mounted = true));
 
-	let isTouchDevice = false;
+	let isTouchDevice = true;
 	$: if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 </script>
 
 <ModeWatcher disableTransitions={false} />
 
-<svelte:document on:visibilitychange={handleVisibilityChange} />
+<svelte:document on:visibilitychange={handleVisibilityChange} on:scroll={handleScroll} />
 
 <div
 	on:pointerleave={handleLeave}
