@@ -73,27 +73,23 @@
 		}
 	}
 
-	function handleScroll() {
-		if (isTouchDevice) size.set(0);
-	}
-
 	let mounted = false;
 	onMount(() => (mounted = true));
 
-	let isTouchDevice = true;
+	let isTouchDevice = false;
 	$: if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 </script>
 
 <ModeWatcher disableTransitions={false} />
 
-<svelte:document on:visibilitychange={handleVisibilityChange} on:scroll={handleScroll} />
+<svelte:document on:visibilitychange={!isTouchDevice ? handleVisibilityChange : null} />
 
 <div
-	on:pointerleave={handleLeave}
-	on:pointerenter={handleEnter}
-	on:pointerdown={handleDown}
-	on:pointerup={handleUp}
-	on:pointermove={handleMove}
+	on:pointerleave={!isTouchDevice ? handleLeave : null}
+	on:pointerenter={!isTouchDevice ? handleEnter : null}
+	on:pointerdown={!isTouchDevice ? handleDown : null}
+	on:pointerup={!isTouchDevice ? handleUp : null}
+	on:pointermove={!isTouchDevice ? handleMove : null}
 >
 	<header
 		class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
@@ -147,14 +143,16 @@
 	<div
 		transition:fade
 		class="fixed left-0 top-0 z-[1000] flex h-full w-full items-center justify-center bg-background/30 text-lg backdrop-blur supports-[backdrop-filter]:bg-background/30"
-		on:pointerleave={handleLeave}
-		on:pointerenter={handleEnter}
-		on:pointerdown={handleDown}
-		on:pointerup={handleUp}
-		on:pointermove={handleMove}
+		on:pointerleave={!isTouchDevice ? handleLeave : null}
+		on:pointerenter={!isTouchDevice ? handleEnter : null}
+		on:pointerdown={!isTouchDevice ? handleDown : null}
+		on:pointerup={!isTouchDevice ? handleUp : null}
+		on:pointermove={!isTouchDevice ? handleMove : null}
 	>
-		<div class="animate-pulse text-center">
-			<p>Move, click, or interact with your cursor!</p>
-		</div>
+		{#if mounted}
+			<div in:fade class="animate-pulse text-center">
+				<p>Move, click, or interact with your cursor!</p>
+			</div>
+		{/if}
 	</div>
 {/if}
