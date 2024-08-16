@@ -67,7 +67,7 @@ export const projects = [
 		summary: 'A Rust wrapper for backends that eliminates redundant definitions',
 		picture: 'gluer.png',
 		description:
-			'As the summary suggests, this project aims to streamline development by eliminating redundant definitions in both the backend and frontend through static analysis of routers, functions, and structs. Utilizing the <code class="code">#[metadata]</code> procedural attribute macro and the <code class="code">extract!</code> procedural macro, the project extracts relevant information and generates the corresponding <code class="code">api</code> in a TypeScript file. Currently, the project supports the <code class="code">axum</code> framework, with plans to extend support to additional backends in the future.',
+			'As the summary suggests, this project aims to streamline development by eliminating redundant definitions in both the backend and frontend through static analysis of routes, functions, structs, enums and types. Utilizing the <code class="code">#[metadata]</code> procedural attribute macro and the <code class="code">generate!</code> procedural macro, the project extracts relevant information and generates the corresponding <code class="code">api</code> in a TypeScript file. Currently, the project supports the <code class="code">axum</code> framework, with plans to extend support to additional backends in the future.',
 		link: 'https://crates.io/crates/gluer',
 		archived: false
 	},
