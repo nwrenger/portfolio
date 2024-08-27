@@ -133,7 +133,7 @@
 		style="
 			width: 100%;
 			height: 100%;
-			transition: transform 0.02s ease-out, width 0.15s ease-out, height 0.15s ease-out;
+			transition: width 0.15s ease-out, height 0.15s ease-out;
 			transform: translate(calc({coords.x}px - 50%), calc({coords.y}px - 50%));
 			width: {size * 2}px;
 			height: {size * 2}px;
