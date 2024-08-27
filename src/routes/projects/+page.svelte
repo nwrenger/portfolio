@@ -15,9 +15,9 @@
 
 <div class="space-y-4">
 	<div class="flex items-center justify-between pb-2">
-		<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Projects</h2>
+		<h2>Projects</h2>
 
-		<code class="code">
+		<code>
 			Total: {projects.length}
 		</code>
 	</div>
@@ -45,7 +45,7 @@
 					<Card.Description class="mb-2 text-base leading-7 text-muted-foreground"
 						>{summary}</Card.Description
 					>
-					<p class="leading-7">{@html description}</p>
+					<p>{@html description}</p>
 					<div class="mt-4">
 						<a href={link} class="link" target="_blank">
 							See the {archived ? 'archived' : ''} Project here
