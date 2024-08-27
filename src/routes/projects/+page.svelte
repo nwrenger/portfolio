@@ -39,7 +39,7 @@
 					<div class="flex w-full items-center justify-between">
 						<Card.Title class="text-2xl font-semibold">{title}</Card.Title>
 						{#if archived}
-							<Badge variant="default">Archived</Badge>
+							<Badge variant="secondary">Archived</Badge>
 						{/if}
 					</div>
 					<Card.Description class="mb-2 text-base leading-7 text-muted-foreground"
