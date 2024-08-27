@@ -6,10 +6,8 @@
 	/>
 </svelte:head>
 
-<div
-	class="space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:p-12"
->
-	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Hi, there!</h1>
+<div class="space-y-4">
+	<h2 class="scroll-m-20 text-3xl !font-bold tracking-tight lg:text-4xl">Hi, there!</h2>
 
 	<p class="leading-7">
 		I'm Nils, a high school student passionate about coding, particularly in <a
@@ -26,10 +24,8 @@
 	</p>
 </div>
 
-<div
-	class="mt-10 space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:mt-12 lg:p-12"
->
-	<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Skills</h2>
+<div class="mt-10 space-y-3">
+	<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">Skills</h3>
 	<p class="leading-7">
 		My focus is on UI development (websites, apps, and TUIs) and performance-driven projects like
 		algorithms and databases. Therefore, my proficiency lies in <code class="code">Rust</code> and
@@ -54,10 +50,8 @@
 	</ul>
 </div>
 
-<div
-	class="mt-10 space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:mt-12 lg:p-12"
->
-	<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Sponsor Me</h2>
+<div class="mt-10 space-y-3">
+	<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">Sponsor Me</h3>
 	<p class="leading-7">
 		You can also sponsor me on GitHub to support my work and to get some cool perks like early
 		access to!

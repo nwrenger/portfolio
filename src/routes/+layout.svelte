@@ -5,63 +5,55 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Sun, Moon } from 'lucide-svelte';
 
-	import { spring } from 'svelte/motion';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	let coords = spring(
-		{ x: 50, y: 50 },
-		{
-			stiffness: 1,
-			damping: 1
-		}
-	);
-
-	let size = spring(0);
+	let coords = { x: 50, y: 50 };
+	let size = 0;
 
 	function handleLeave(e: PointerEvent) {
-		coords.set({ x: e.clientX, y: e.clientY });
-		size.set(0);
+		coords = { x: e.clientX, y: e.clientY };
+		size = 0;
 	}
 
 	function handleEnter(e: PointerEvent) {
-		coords.set({ x: e.clientX, y: e.clientY });
-		size.set(10);
+		coords = { x: e.clientX, y: e.clientY };
+		size = 10;
 	}
 
 	function handleMove(e: PointerEvent) {
-		coords.set({ x: e.clientX, y: e.clientY });
+		coords = { x: e.clientX, y: e.clientY };
 		const target = e.target as HTMLElement;
 
 		if (e.buttons !== 1) {
 			if (target.closest('a') || target.closest('button')) {
-				size.set(15);
+				size = 15;
 			} else {
-				size.set(10);
+				size = 10;
 			}
 		}
 	}
 
 	function handleDown(e: PointerEvent) {
-		coords.set({ x: e.clientX, y: e.clientY });
+		coords = { x: e.clientX, y: e.clientY };
 		const target = e.target as HTMLElement;
 
 		if (target.closest('a') || target.closest('button')) {
-			size.set(10);
+			size = 10;
 		} else {
-			size.set(7);
+			size = 7;
 		}
 	}
 
 	function handleUp(e: PointerEvent) {
-		coords.set({ x: e.clientX, y: e.clientY });
+		coords = { x: e.clientX, y: e.clientY };
 		const target = e.target as HTMLElement;
 
 		if (target.closest('a') || target.closest('button')) {
-			size.set(15);
+			size = 15;
 		} else {
-			size.set(10);
+			size = 10;
 		}
 	}
 
@@ -69,7 +61,7 @@
 		const target = e.target as Document;
 
 		if (target.visibilityState === 'visible') {
-			size.set(0);
+			size = 0;
 		}
 	}
 
@@ -130,29 +122,39 @@
 		</div>
 	</header>
 
-	<div class="container max-w-7xl space-y-8 p-4">
+	<div class="container max-w-6xl space-y-8 px-4 py-5">
 		<slot />
 	</div>
 </div>
 
-{#if $size > 0 && $size <= 15}
-	<svg class="pointer-events-none fixed left-0 top-0 z-[1000] h-full w-full mix-blend-difference">
-		<circle cx={$coords.x} cy={$coords.y} r={$size} class="filter-[invert(i)] fill-white" />
-	</svg>
-{:else if !isTouchDevice}
+{#if !isTouchDevice}
 	<div
-		transition:fade
-		class="fixed left-0 top-0 z-[1000] flex h-full w-full items-center justify-center bg-background/30 text-lg backdrop-blur supports-[backdrop-filter]:bg-background/30"
-		on:pointerleave={!isTouchDevice ? handleLeave : null}
-		on:pointerenter={!isTouchDevice ? handleEnter : null}
-		on:pointerdown={!isTouchDevice ? handleDown : null}
-		on:pointerup={!isTouchDevice ? handleUp : null}
-		on:pointermove={!isTouchDevice ? handleMove : null}
-	>
-		{#if mounted}
+		class="pointer-events-none fixed left-0 top-0 z-[1000]"
+		style="
+			width: 100%;
+			height: 100%;
+			transition: transform 0.02s ease-out, width 0.15s ease-out, height 0.15s ease-out;
+			transform: translate(calc({coords.x}px - 50%), calc({coords.y}px - 50%));
+			width: {size * 2}px;
+			height: {size * 2}px;
+			background-color: white;
+			border-radius: 50%;
+			mix-blend-mode: difference;
+		"
+	></div>
+	{#if mounted && size === 0}
+		<div
+			transition:fade
+			class="fixed left-0 top-0 z-[999] flex h-full w-full items-center justify-center bg-background/30 text-lg backdrop-blur supports-[backdrop-filter]:bg-background/30"
+			on:pointerleave={!isTouchDevice ? handleLeave : null}
+			on:pointerenter={!isTouchDevice ? handleEnter : null}
+			on:pointerdown={!isTouchDevice ? handleDown : null}
+			on:pointerup={!isTouchDevice ? handleUp : null}
+			on:pointermove={!isTouchDevice ? handleMove : null}
+		>
 			<div in:fade class="animate-pulse text-center">
 				<p>Move, click, or interact using your cursor!</p>
 			</div>
-		{/if}
-	</div>
+		</div>
+	{/if}
 {/if}

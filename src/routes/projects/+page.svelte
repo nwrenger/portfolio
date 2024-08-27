@@ -13,11 +13,9 @@
 	/>
 </svelte:head>
 
-<div
-	class="space-y-4 rounded-lg bg-background/95 p-6 backdrop-blur supports-[backdrop-filter]:bg-background/45 lg:p-12"
->
+<div class="space-y-4">
 	<div class="flex items-center justify-between pb-2">
-		<h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Projects</h2>
+		<h2 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl">Projects</h2>
 
 		<code class="code">
 			Total: {projects.length}

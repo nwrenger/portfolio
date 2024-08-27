@@ -4,77 +4,79 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 240 10% 3.9%;
+		--background: 240 5% 98%;
+		--foreground: 240 10% 5%;
 
-		--muted: 240 4.8% 95.9%;
-		--muted-foreground: 240 3.8% 46.1%;
+		--muted: 240 4% 92%;
+		--muted-foreground: 240 4% 40%;
 
-		--popover: 0 0% 100%;
-		--popover-foreground: 240 10% 3.9%;
+		--popover: 240 5% 96%;
+		--popover-foreground: 240 10% 5%;
 
-		--card: 0 0% 100%;
-		--card-foreground: 240 10% 3.9%;
+		--card: 240 5% 96%;
+		--card-foreground: 240 10% 5%;
 
-		--border: 240 5.9% 90%;
-		--input: 240 5.9% 90%;
+		--border: 240 4% 85%;
+		--input: 240 4% 85%;
 
-		--primary: 240 5.9% 10%;
+		--primary: 340 75% 70%;
 		--primary-foreground: 0 0% 98%;
 
-		--secondary: 240 4.8% 95.9%;
-		--secondary-foreground: 240 5.9% 10%;
+		--secondary: 30 30% 70%;
+		--secondary-foreground: 240 10% 5%;
 
-		--accent: 240 4.8% 95.9%;
-		--accent-foreground: 240 5.9% 10%;
+		--accent: 240 5% 94%;
+		--accent-foreground: 240 10% 5%;
 
-		--destructive: 0 72.2% 50.6%;
+		--destructive: 0 65% 45%;
 		--destructive-foreground: 0 0% 98%;
 
-		--ring: 240 10% 3.9%;
+		--ring: 340 75% 70%;
 
 		--radius: 0.5rem;
 	}
 
 	.dark {
-		--background: 240 10% 3.9%;
+		--background: 240 10% 15%;
 		--foreground: 0 0% 98%;
 
-		--muted: 240 3.7% 15.9%;
-		--muted-foreground: 240 5% 64.9%;
+		--muted: 240 5% 20%;
+		--muted-foreground: 240 5% 70%;
 
-		--popover: 240 10% 3.9%;
+		--popover: 240 10% 13%;
 		--popover-foreground: 0 0% 98%;
 
-		--card: 240 10% 3.9%;
+		--card: 240 10% 13%;
 		--card-foreground: 0 0% 98%;
 
-		--border: 240 3.7% 15.9%;
-		--input: 240 3.7% 15.9%;
+		--border: 240 5% 25%;
+		--input: 240 5% 25%;
 
-		--primary: 0 0% 98%;
-		--primary-foreground: 240 5.9% 10%;
+		--primary: 340 65% 85%;
+		--primary-foreground: 0 0% 98%;
 
-		--secondary: 240 3.7% 15.9%;
+		--secondary: 90 10% 35%;
 		--secondary-foreground: 0 0% 98%;
 
-		--accent: 240 3.7% 15.9%;
+		--accent: 240 10% 17%;
 		--accent-foreground: 0 0% 98%;
 
-		--destructive: 0 62.8% 30.6%;
+		--destructive: 0 60% 35%;
 		--destructive-foreground: 0 0% 98%;
 
-		--ring: 240 4.9% 83.9%;
+		--ring: 340 65% 85%;
 	}
 }
 
 @layer base {
-	html,
-	body {
-		@apply h-fit min-h-screen bg-background bg-gradient-conic from-red-800 via-background to-blue-800 bg-fixed text-foreground;
+	html {
+		@apply h-full;
 	}
 	* {
 		@apply border-border;
+	}
+	body {
+		@apply h-full bg-background text-foreground;
 	}
 	a:hover,
 	div:hover,
