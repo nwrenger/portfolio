@@ -59,6 +59,6 @@
 			target="_blank"
 		>
 			here on GitHub
-		</a> to support my work and to get some cool perks like early access to!
+		</a> to support my work and to get some cool perks like early access to certain projects!
 	</p>
 </div>
