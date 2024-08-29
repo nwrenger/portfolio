@@ -48,7 +48,7 @@
 					>
 					<p>{@html description}</p>
 					<div class="mt-4">
-						<a href={link} class="link flex items-center" target="_blank">
+						<a href={link} class="link flex w-fit items-center" target="_blank">
 							See the {archived ? 'archived' : ''} Project here <ExternalLink
 								class="size- pl-2 pt-[2px]"
 							/>
