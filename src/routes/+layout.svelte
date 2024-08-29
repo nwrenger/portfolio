@@ -74,83 +74,72 @@
 
 <ModeWatcher disableTransitions={false} />
 
-<svelte:document on:visibilitychange={!isTouchDevice ? handleVisibilityChange : null} />
-
-<div
+<svelte:body
 	on:pointerleave={!isTouchDevice ? handleLeave : null}
 	on:pointerenter={!isTouchDevice ? handleEnter : null}
 	on:pointerdown={!isTouchDevice ? handleDown : null}
 	on:pointerup={!isTouchDevice ? handleUp : null}
 	on:pointermove={!isTouchDevice ? handleMove : null}
->
-	<header
-		class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-	>
-		<div class="container max-w-7xl pl-4 pr-4">
-			<nav class="flex h-[70px] items-center justify-between gap-3" data-sveltekit-preload-data>
-				<div class="hidden items-center gap-1.5 sm:flex">
-					<Button href="/" variant="link" class="p-0">
-						<Avatar.Root>
-							<Avatar.Image src="favicon.png" alt="portfolio" class="rounded-md" />
-							<Avatar.Fallback>PF</Avatar.Fallback>
-						</Avatar.Root>
-					</Button>
-				</div>
-				<div class="flex items-center gap-1.5">
-					<Button href="/" variant="link" class={$page.url.pathname == '/' ? 'underline' : ''}
-						>Home</Button
-					>
-					<Button
-						href="/projects"
-						variant="link"
-						class={$page.url.pathname == '/projects' ? 'underline' : ''}>Projects</Button
-					>
-					<Button href="https://github.com/nwrenger" target="_blank" variant="link">Github</Button>
-				</div>
-				<div class="flex items-center justify-end gap-2.5">
-					<Button on:click={toggleMode} variant="outline" size="icon">
-						<Sun
-							class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-						/>
-						<Moon
-							class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-						/>
-						<span class="sr-only">Toggle theme</span>
-					</Button>
-				</div>
-			</nav>
-		</div>
-	</header>
+	on:visibilitychange={!isTouchDevice ? handleVisibilityChange : null}
+/>
 
-	<div class="container max-w-6xl space-y-8 px-4 py-5">
-		<slot />
+<header
+	class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+	<div class="container max-w-7xl pl-4 pr-4">
+		<nav class="flex h-[70px] items-center justify-between gap-3" data-sveltekit-preload-data>
+			<div class="hidden items-center gap-1.5 sm:flex">
+				<Button href="/" variant="link" class="p-0">
+					<Avatar.Root>
+						<Avatar.Image src="favicon.png" alt="portfolio" class="rounded-md" />
+						<Avatar.Fallback>PF</Avatar.Fallback>
+					</Avatar.Root>
+				</Button>
+			</div>
+			<div class="flex items-center gap-1.5">
+				<Button href="/" variant="link" class={$page.url.pathname == '/' ? 'underline' : ''}
+					>Home</Button
+				>
+				<Button
+					href="/projects"
+					variant="link"
+					class={$page.url.pathname == '/projects' ? 'underline' : ''}>Projects</Button
+				>
+				<Button href="https://github.com/nwrenger" target="_blank" variant="link">Github</Button>
+			</div>
+			<div class="flex items-center justify-end gap-2.5">
+				<Button on:click={toggleMode} variant="outline" size="icon">
+					<Sun
+						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+					/>
+					<Moon
+						class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+					/>
+					<span class="sr-only">Toggle theme</span>
+				</Button>
+			</div>
+		</nav>
 	</div>
+</header>
+
+<div class="container max-w-6xl space-y-8 px-4 py-5">
+	<slot />
 </div>
 
 {#if !isTouchDevice}
 	<div
-		class="pointer-events-none fixed left-0 top-0 z-[1000]"
+		class="pointer-events-none fixed left-0 top-0 z-[1000] rounded-[50%] bg-white mix-blend-difference"
 		style="
-			width: 100%;
-			height: 100%;
 			transition: width 0.15s ease-out, height 0.15s ease-out;
 			transform: translate(calc({coords.x}px - 50%), calc({coords.y}px - 50%));
 			width: {size * 2}px;
 			height: {size * 2}px;
-			background-color: white;
-			border-radius: 50%;
-			mix-blend-mode: difference;
 		"
 	></div>
 	{#if mounted && size === 0}
 		<div
 			transition:fade
 			class="fixed left-0 top-0 z-[999] flex h-full w-full items-center justify-center bg-background/30 text-lg backdrop-blur supports-[backdrop-filter]:bg-background/30"
-			on:pointerleave={!isTouchDevice ? handleLeave : null}
-			on:pointerenter={!isTouchDevice ? handleEnter : null}
-			on:pointerdown={!isTouchDevice ? handleDown : null}
-			on:pointerup={!isTouchDevice ? handleUp : null}
-			on:pointermove={!isTouchDevice ? handleMove : null}
 		>
 			<div in:fade class="animate-pulse text-center">
 				<p>Move, click, or interact using your cursor!</p>

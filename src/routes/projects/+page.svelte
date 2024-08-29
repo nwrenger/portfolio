@@ -2,6 +2,7 @@
 	import { projects } from '$lib';
 	import { Badge } from '$lib/components/ui/badge';
 	import * as Card from '$lib/components/ui/card';
+	import { ExternalLink } from 'lucide-svelte';
 	import ImageLoader from './../ImageLoader.svelte';
 </script>
 
@@ -47,8 +48,10 @@
 					>
 					<p>{@html description}</p>
 					<div class="mt-4">
-						<a href={link} class="link" target="_blank">
-							See the {archived ? 'archived' : ''} Project here
+						<a href={link} class="link flex items-center" target="_blank">
+							See the {archived ? 'archived' : ''} Project here <ExternalLink
+								class="size- pl-2 pt-[2px]"
+							/>
 						</a>
 					</div>
 				</Card.Header>
