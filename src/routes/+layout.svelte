@@ -9,7 +9,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	let coords = { x: 50, y: 50 };
+	let coords = { x: 0, y: 0 };
 	let size = 0;
 
 	function handleLeave(e: PointerEvent) {
