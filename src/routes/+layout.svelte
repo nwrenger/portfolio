@@ -11,13 +11,18 @@
 
 	let coords = { x: 0, y: 0 };
 	let size = 0;
+	let button_down = false;
 
 	function handleLeave(e: PointerEvent) {
+		button_down = false;
+
 		coords = { x: e.clientX, y: e.clientY };
 		size = 0;
 	}
 
 	function handleEnter(e: PointerEvent) {
+		button_down = false;
+
 		coords = { x: e.clientX, y: e.clientY };
 		size = 10;
 	}
@@ -26,7 +31,7 @@
 		coords = { x: e.clientX, y: e.clientY };
 		const target = e.target as HTMLElement;
 
-		if (e.buttons !== 1) {
+		if (!button_down) {
 			if (target.closest('a') || target.closest('button')) {
 				size = 15;
 			} else {
@@ -36,6 +41,8 @@
 	}
 
 	function handleDown(e: PointerEvent) {
+		button_down = true;
+
 		coords = { x: e.clientX, y: e.clientY };
 		const target = e.target as HTMLElement;
 
@@ -47,6 +54,8 @@
 	}
 
 	function handleUp(e: PointerEvent) {
+		button_down = false;
+
 		coords = { x: e.clientX, y: e.clientY };
 		const target = e.target as HTMLElement;
 
@@ -57,11 +66,15 @@
 		}
 	}
 
-	function handleVisibilityChange(e: Event) {
-		const target = e.target as Document;
+	function handleScroll() {
+		let target = document.elementFromPoint(coords.x, coords.y);
 
-		if (target.visibilityState === 'visible') {
-			size = 0;
+		if (target && !button_down) {
+			if (target.closest('a') || target.closest('button')) {
+				size = 15;
+			} else {
+				size = 10;
+			}
 		}
 	}
 
@@ -80,8 +93,9 @@
 	on:pointerdown={!isTouchDevice ? handleDown : null}
 	on:pointerup={!isTouchDevice ? handleUp : null}
 	on:pointermove={!isTouchDevice ? handleMove : null}
-	on:visibilitychange={!isTouchDevice ? handleVisibilityChange : null}
 />
+
+<svelte:window on:scroll={!isTouchDevice ? handleScroll : null} />
 
 <div class="min-h-screen">
 	<header
