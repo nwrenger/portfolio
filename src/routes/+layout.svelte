@@ -1,16 +1,21 @@
 <script lang="ts">
-	import '../app.pcss';
+	import '../app.css';
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
 	import { Sun, Moon } from 'lucide-svelte';
 
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
+	interface Props {
+		children?: Snippet;
+	}
 
-	let coords = { x: 0, y: 0 };
-	let size = 0;
+	let { children }: Props = $props();
+
+	let coords = $state({ x: 0, y: 0 });
+	let size = $state(0);
 	let button_down = false;
 
 	function handleLeave(e: PointerEvent) {
@@ -78,24 +83,26 @@
 		}
 	}
 
-	let mounted = false;
+	let mounted = $state(false);
 	onMount(() => (mounted = true));
 
-	let isTouchDevice = false;
-	$: if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+	let isTouchDevice = $state(false);
+	$effect(() => {
+		if (mounted) isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+	});
 </script>
 
 <ModeWatcher disableTransitions={false} />
 
 <svelte:body
-	on:pointerleave={!isTouchDevice ? handleLeave : null}
-	on:pointerenter={!isTouchDevice ? handleEnter : null}
-	on:pointerdown={!isTouchDevice ? handleDown : null}
-	on:pointerup={!isTouchDevice ? handleUp : null}
-	on:pointermove={!isTouchDevice ? handleMove : null}
+	onpointerleave={!isTouchDevice ? handleLeave : null}
+	onpointerenter={!isTouchDevice ? handleEnter : null}
+	onpointerdown={!isTouchDevice ? handleDown : null}
+	onpointerup={!isTouchDevice ? handleUp : null}
+	onpointermove={!isTouchDevice ? handleMove : null}
 />
 
-<svelte:window on:scroll={!isTouchDevice ? handleScroll : null} />
+<svelte:window onscroll={!isTouchDevice ? handleScroll : null} />
 
 <div class="min-h-screen">
 	<header
@@ -106,7 +113,7 @@
 				<div class="hidden items-center gap-1.5 sm:flex">
 					<Button href="/" variant="link" class="p-0">
 						<Avatar.Root>
-							<Avatar.Image src="favicon.png" alt="portfolio" class="rounded-md" />
+							<Avatar.Image src="favicon.png" alt="portfolio" />
 							<Avatar.Fallback>PF</Avatar.Fallback>
 						</Avatar.Root>
 					</Button>
@@ -123,12 +130,12 @@
 					<Button href="https://github.com/nwrenger" target="_blank" variant="link">Github</Button>
 				</div>
 				<div class="flex items-center justify-end gap-2.5">
-					<Button on:click={toggleMode} variant="outline" size="icon">
+					<Button onclick={toggleMode} variant="outline" size="icon">
 						<Sun
-							class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+							class="!size-5 h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
 						/>
 						<Moon
-							class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+							class="absolute !size-5 h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
 						/>
 						<span class="sr-only">Toggle theme</span>
 					</Button>
@@ -138,7 +145,7 @@
 	</header>
 
 	<div class="container max-w-6xl space-y-8 px-4 py-5">
-		<slot />
+		{@render children?.()}
 	</div>
 </div>
 

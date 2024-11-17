@@ -1,3 +1,8 @@
+<script>
+	import { skills } from '$lib';
+	import * as Card from '$lib/components/ui/card';
+</script>
+
 <svelte:head>
 	<title>portfolio</title>
 	<meta
@@ -29,17 +34,26 @@
 		<code>Python</code>, or even a game engine like
 		<code>Godot</code>, so keep your eyes peeled! Or just check out the list below:
 	</p>
-	<ul>
-		<li><code>Rust</code></li>
-		<li><code>Svelte</code></li>
-		<li><code>Zig</code></li>
-		<li><code>Go</code></li>
-		<li><code>Godot</code></li>
-		<li><code>Python</code></li>
-		<li><code>JavaScript</code> / <code>TypeScript</code></li>
-		<li><code>HTML</code> & <code>CSS</code></li>
-		<li><code>Git</code> & <code>GitHub</code></li>
-	</ul>
+	<div class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+		{#each skills as skill}
+			<a href={skill.url} target="_blank" rel="noopener noreferrer">
+				<Card.Root
+					class="group flex h-full transform-gpu flex-col items-start justify-start overflow-hidden rounded-lg border-none transition-all duration-300 ease-out hover:scale-[104%] hover:bg-primary hover:text-accent hover:shadow-lg hover:shadow-primary/30"
+				>
+					<Card.Header class="w-full p-4">
+						<div class="flex w-full items-center justify-between">
+							<Card.Title class="font-semibold">{skill.name}</Card.Title>
+							<span
+								class="text-3xl transition-transform duration-300 ease-out group-hover:rotate-3"
+							>
+								{skill.icon}
+							</span>
+						</div>
+					</Card.Header>
+				</Card.Root>
+			</a>
+		{/each}
+	</div>
 </div>
 
 <div class="mt-10 space-y-3">

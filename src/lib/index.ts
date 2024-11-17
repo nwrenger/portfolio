@@ -1,3 +1,20 @@
+export const skills = [
+	{ name: 'Rust', icon: '🦀', url: 'https://www.rust-lang.org/' },
+	{ name: 'Svelte', icon: '🧡', url: 'https://svelte.dev/' },
+	{ name: 'Zig', icon: '⚡️', url: 'https://ziglang.org/' },
+	{ name: 'Go', icon: '🐹', url: 'https://golang.org/' },
+	{ name: 'Godot', icon: '🎮', url: 'https://godotengine.org/' },
+	{ name: 'Python', icon: '🐍', url: 'https://www.python.org/' },
+	{
+		name: 'JavaScript',
+		icon: '📺',
+		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+	},
+	{ name: 'TypeScript', icon: '💻', url: 'https://www.typescriptlang.org/' },
+	{ name: 'HTML & CSS', icon: '🌐', url: 'https://developer.mozilla.org/en-US/docs/Learn/HTML' },
+	{ name: 'Git & GitHub', icon: '🔧', url: 'https://github.com/' }
+];
+
 export const projects = [
 	{
 		title: 'chadmaths',

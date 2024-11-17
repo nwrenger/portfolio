@@ -26,9 +26,9 @@
 	<div class="grid w-full gap-6 md:grid-cols-2">
 		{#each projects as { title, summary, picture, description, link, archived }}
 			<Card.Root
-				class="flex h-full transform flex-col items-start justify-start overflow-hidden rounded-lg border-none transition-transform hover:scale-[102%] hover:shadow-lg"
+				class="flex h-full transform-gpu flex-col items-start justify-start overflow-hidden rounded-lg border-none transition-all duration-300 ease-out hover:scale-[102%] hover:shadow-md"
 			>
-				<a href={'projects/' + picture} target="_blank" class="link w-full">
+				<a href={'projects/' + picture} target="_blank" class="w-full">
 					<ImageLoader
 						src={'projects/' + picture}
 						alt={title}
@@ -38,20 +38,21 @@
 				</a>
 				<Card.Header class="w-full p-4">
 					<div class="flex w-full items-center justify-between">
-						<Card.Title class="text-2xl font-semibold">{title}</Card.Title>
+						<Card.Title class="text-2xl font-semibold">
+							{title}
+						</Card.Title>
 						{#if archived}
 							<Badge variant="secondary">Archived</Badge>
 						{/if}
 					</div>
-					<Card.Description class="mb-2 text-base leading-7 text-muted-foreground"
-						>{summary}</Card.Description
-					>
+					<Card.Description class="mb-2 text-base leading-7">
+						{summary}
+					</Card.Description>
 					<p>{@html description}</p>
 					<div class="mt-4">
 						<a href={link} class="link flex w-fit items-center" target="_blank">
-							See the {archived ? 'archived' : ''} Project here <ExternalLink
-								class="size- pl-2 pt-[2px]"
-							/>
+							See the {archived ? 'archived' : ''} Project here
+							<ExternalLink class="size- pl-2 pt-[2px]" />
 						</a>
 					</div>
 				</Card.Header>

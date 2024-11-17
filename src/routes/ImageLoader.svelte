@@ -1,17 +1,28 @@
 <script lang="ts">
 	import Skeleton from '$lib/components/ui/skeleton/skeleton.svelte';
 	import { onMount } from 'svelte';
-	export let src: string;
-	export let alt = '';
 
-	export let width = 'w-full';
-	export let height = 'h-full';
-	export let ratio = 'aspect-auto';
-	export let rounded = 'rounded-lg';
+	interface Props {
+		src: string;
+		alt?: string;
+		width?: string;
+		height?: string;
+		ratio?: string;
+		rounded?: string;
+	}
+
+	let {
+		src,
+		alt = '',
+		width = 'w-full',
+		height = 'h-full',
+		ratio = 'aspect-auto',
+		rounded = 'rounded-lg'
+	}: Props = $props();
 	const base = `${width} ${height} ${ratio} ${rounded}`;
 
-	let loaded = false;
-	let mounted = false;
+	let loaded = $state(false);
+	let mounted = $state(false);
 
 	function handleLoad() {
 		loaded = true;
@@ -25,5 +36,5 @@
 {/if}
 
 {#if mounted}
-	<img {src} {alt} on:load={handleLoad} class="{base} object-cover {!loaded ? 'hidden' : ''}" />
+	<img {src} {alt} onload={handleLoad} class="{base} object-cover {!loaded ? 'hidden' : ''}" />
 {/if}
