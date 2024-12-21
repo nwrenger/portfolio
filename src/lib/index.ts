@@ -17,15 +17,6 @@ export const skills = [
 
 export const projects = [
 	{
-		title: 'chadmaths',
-		summary: 'Math Practicing for the real Chads!',
-		picture: 'chadmaths.png',
-		description:
-			'This project is the advanced successor to <code>QuickMaths</code>, designed for the real math <code>CHADS</code>. It extends the original capabilities beyond Mental Calculus to include Graphs, Analysis, and Geometry. Additionally, the user interface has been significantly improved, removing the life system and incorporating more intuitive and user-friendly elements.',
-		link: 'https://chadmaths.nwrenger.dev/',
-		archived: false
-	},
-	{
 		title: 'console-utils-rs',
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.png',
