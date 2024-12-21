@@ -159,5 +159,14 @@ export const projects = [
 			'Developed at the request of a friend who wanted a sound-sharing platform but never ended up uploading anything... So please, if you have content to share, go ahead and upload it. What gets uploaded won’t be deleted. Have fun! Note: Not everything will stay there indefinitely, so please don’t upload illegal material!',
 		link: 'https://shitboard.nwrenger.dev',
 		archived: false
+	},
+	{
+		title: 'songwriting',
+		summary: 'Songwriting Portfolio',
+		picture: 'songwriting.png',
+		description:
+			'I developed my Songwriting Portfolio for my music class. Please note that it is entirely written in <code>German</code>. I utilized the new <code>Skeleton Framework</code> and created some impressive components and animations. Enjoy exploring it!',
+		link: 'https://songwriting.nwrenger.dev',
+		archived: false
 	}
 ];

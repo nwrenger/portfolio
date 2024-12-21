@@ -1,11 +1,11 @@
 <script lang="ts">
 	import '../app.css';
-	import { ModeWatcher, toggleMode } from 'mode-watcher';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
+	import { ModeWatcher, toggleMode } from 'mode-watcher';
 	import { Sun, Moon } from 'lucide-svelte';
 
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { onMount, type Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
 	interface Props {
@@ -119,13 +119,13 @@
 					</Button>
 				</div>
 				<div class="flex items-center gap-1.5">
-					<Button href="/" variant="link" class={$page.url.pathname == '/' ? 'underline' : ''}
+					<Button href="/" variant="link" class={page.url.pathname == '/' ? 'underline' : ''}
 						>Home</Button
 					>
 					<Button
 						href="/projects"
 						variant="link"
-						class={$page.url.pathname == '/projects' ? 'underline' : ''}>Projects</Button
+						class={page.url.pathname == '/projects' ? 'underline' : ''}>Projects</Button
 					>
 					<Button href="https://github.com/nwrenger" target="_blank" variant="link">Github</Button>
 				</div>
