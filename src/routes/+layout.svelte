@@ -25,7 +25,7 @@
 				<div class="hidden items-center gap-1.5 sm:flex">
 					<Button href="/" variant="link" class="p-0">
 						<Avatar.Root>
-							<Avatar.Image src="favicon.png" alt="portfolio" />
+							<Avatar.Image src="favicon.webp" alt="portfolio" />
 							<Avatar.Fallback>PF</Avatar.Fallback>
 						</Avatar.Root>
 					</Button>
