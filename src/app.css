@@ -73,10 +73,7 @@
 		@apply h-full;
 	}
 	* {
-		@apply cursor-none border-border;
-	}
-	*:hover {
-		@apply cursor-none;
+		@apply border-border;
 	}
 	body {
 		@apply h-full bg-background text-foreground;

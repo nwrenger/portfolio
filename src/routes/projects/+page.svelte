@@ -33,7 +33,7 @@
 						src={'projects/' + picture}
 						alt={title}
 						height="h-52 md:h-64"
-						rounded="rounded-t-md"
+						rounded="rounded-t-md rounded-b-none"
 					/>
 				</a>
 				<Card.Header class="w-full p-4">
