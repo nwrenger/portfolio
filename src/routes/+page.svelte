@@ -37,7 +37,7 @@
 				<code>Godot</code>, so keep your eyes peeled! Or just check out the list below:
 			</p>
 
-			<div class="grid grid-cols-2 gap-6 p-3 md:grid-cols-3 lg:grid-cols-4">
+			<div class="grid grid-cols-1 gap-4 p-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 				{#each skills as skill}
 					<a href={skill.url} target="_blank" rel="noopener noreferrer">
 						<Card.Root
@@ -67,27 +67,26 @@
 		<Accordion.Trigger><h4>Where am I online?</h4></Accordion.Trigger>
 		<Accordion.Content>
 			<p>I am online on multiple platforms. Check out the list below:</p>
-			<div class="grid grid-cols-1 gap-4 p-3 md:grid-cols-2 lg:grid-cols-3">
+			<div class="grid grid-cols-1 gap-4 p-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 				{#each socials as social}
-					<Card.Root
-						class="group flex transform-gpu items-center space-x-3 overflow-hidden rounded-lg border-none bg-card p-4 shadow transition-all duration-300 ease-out hover:scale-[102%] hover:shadow-lg"
-					>
-						<a
-							href={social.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="flex flex-1 items-center space-x-3"
+					<a href={social.url} target="_blank" rel="noopener noreferrer">
+						<Card.Root
+							class="group flex transform-gpu items-center overflow-hidden rounded-lg border-none bg-card p-4 shadow transition-all duration-300 ease-out hover:scale-[102%] hover:shadow-lg"
 						>
-							<social.icon
-								class="h-6 w-6 text-foreground transition-colors duration-300 group-hover:text-primary"
-							/>
-							<span
-								class="text-lg font-medium text-foreground transition-colors duration-300 group-hover:text-primary"
+							<Card.Title
+								class="font-semibold text-foreground transition-colors duration-300 group-hover:text-primary"
 							>
-								{social.name}
-							</span>
-						</a>
-					</Card.Root>
+								<div class="flex items-center justify-start space-x-3">
+									<social.icon
+										class="h-6 w-6 text-foreground transition-colors duration-300 group-hover:text-primary"
+									/>
+									<span>
+										{social.name}
+									</span>
+								</div>
+							</Card.Title>
+						</Card.Root>
+					</a>
 				{/each}
 			</div>
 		</Accordion.Content>
