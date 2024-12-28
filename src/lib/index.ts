@@ -15,6 +15,19 @@ export const skills = [
 	{ name: 'Git & GitHub', icon: '🔧', url: 'https://github.com/' }
 ];
 
+import { Github, Mail } from 'lucide-svelte';
+import BlueSky from '$lib/components/icons/BlueSky.svelte';
+import Discord from '$lib/components/icons/Discord.svelte';
+import Instagram from '$lib/components/icons/Instagram.svelte';
+
+export const socials = [
+	{ name: 'GitHub', url: 'https://github.com/nwrenger', icon: Github },
+	{ name: 'BlueSky', url: 'https://bsky.app/profile/nilch.bsky.social', icon: BlueSky },
+	{ name: 'Discord', url: 'https://discordlookup.com/user/567331495484719134', icon: Discord },
+	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', icon: Instagram },
+	{ name: 'Mails', url: 'mailto:nils@wrenger.net', icon: Mail }
+];
+
 export const projects = [
 	{
 		title: 'console-utils-rs',

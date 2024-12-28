@@ -56,7 +56,7 @@
 		</div>
 	</header>
 
-	<div class="container max-w-6xl space-y-8 px-4 py-5">
+	<div class="container max-w-6xl space-y-4 px-4 py-5">
 		{@render children?.()}
 	</div>
 </div>
