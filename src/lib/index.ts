@@ -1,18 +1,70 @@
 export const skills = [
-	{ name: 'Rust', icon: '🦀', url: 'https://www.rust-lang.org/' },
-	{ name: 'Svelte', icon: '🧡', url: 'https://svelte.dev/' },
-	{ name: 'Zig', icon: '⚡️', url: 'https://ziglang.org/' },
-	{ name: 'Go', icon: '🐹', url: 'https://golang.org/' },
-	{ name: 'Godot', icon: '🎮', url: 'https://godotengine.org/' },
-	{ name: 'Python', icon: '🐍', url: 'https://www.python.org/' },
+	{
+		name: 'Rust',
+		icon: '🦀',
+		url: 'https://www.rust-lang.org/',
+		description: 'I have worked on almost all of my projects in Rust. I am very proficient in it!'
+	},
+	{
+		name: 'Svelte',
+		icon: '🧡',
+		url: 'https://svelte.dev/',
+		description:
+			"When I am doing frontend, then only using Svelte. It's a great framework and I am like with Rust also very proficient in it!"
+	},
+	{
+		name: 'Zig',
+		icon: '⚡️',
+		url: 'https://ziglang.org/',
+		description:
+			'Tried out once, had a blast using <code class="code">comptime</code> but I am simply to stupid to use it in real projects!'
+	},
+	{
+		name: 'Go',
+		icon: '🐹',
+		url: 'https://golang.org/',
+		description:
+			'Nice language with horrid syntax. I tried it out a few times but then booted back to Rust.'
+	},
+	{
+		name: 'Godot',
+		icon: '🎮',
+		url: 'https://godotengine.org/',
+		description: 'Best Game Engine out there. Used in my early days for a few crappy games.'
+	},
+	{
+		name: 'Python',
+		icon: '🐍',
+		url: 'https://www.python.org/',
+		description: "'Everyone can write Python, right?'"
+	},
 	{
 		name: 'JavaScript',
 		icon: '📺',
-		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+		description:
+			'If somebody smoked weed and programmed 3 languages at once, this one would come up with JavaScript. Dafuq is this language?'
 	},
-	{ name: 'TypeScript', icon: '💻', url: 'https://www.typescriptlang.org/' },
-	{ name: 'HTML & CSS', icon: '🌐', url: 'https://developer.mozilla.org/en-US/docs/Learn/HTML' },
-	{ name: 'Git & GitHub', icon: '🔧', url: 'https://github.com/' }
+	{
+		name: 'TypeScript',
+		icon: '💻',
+		url: 'https://www.typescriptlang.org/',
+		description:
+			'A great extension to JavaScript to make it usable again. Programming in Svelte only with TypeScript.'
+	},
+	{
+		name: 'HTML & CSS',
+		icon: '🌐',
+		url: 'https://developer.mozilla.org/en-US/docs/Learn/HTML',
+		description: 'Yeah, way better than JavaScript. Great Core Web Technologies!'
+	},
+	{
+		name: 'Git & GitHub',
+		icon: '🔧',
+		url: 'https://github.com/',
+		description:
+			'Writing every project in Git and uploading it to Github. Great Stuff from Microsoft!'
+	}
 ];
 
 import { Github, Mail } from 'lucide-svelte';

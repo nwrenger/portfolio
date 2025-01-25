@@ -1,6 +1,5 @@
 <script>
 	import { skills, socials } from '$lib';
-	import * as Card from '$lib/components/ui/card';
 	import * as Accordion from '$lib/components/ui/accordion';
 </script>
 
@@ -29,37 +28,27 @@
 		<Accordion.Content>
 			<p>
 				My focus is on UI development (websites, apps, and TUIs) and performance-driven projects
-				like algorithms and databases. Therefore, my proficiency lies in <code>Rust</code> and in
+				like algorithms and databases. Therefore, my proficiency lies in <code>Rust</code> and
 				<code>Svelte</code>
 				(i.e., <code>JavaScript</code> / <code>TypeScript</code>). But in the past, I have tried out
-				other programming languages like <code>Go</code> and
-				<code>Python</code>, or even a game engine like
+				other programming languages like <code>Go</code> and <code>Python</code>, or even a Game
+				Engine like
 				<code>Godot</code>, so keep your eyes peeled! Or just check out the list below:
 			</p>
 
-			<div class="grid grid-cols-1 gap-4 p-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+			<dl class="space-y-4 pt-3">
 				{#each skills as skill}
-					<a href={skill.url} target="_blank" rel="noopener noreferrer">
-						<Card.Root
-							class="group flex h-full transform-gpu flex-col items-start justify-start overflow-hidden rounded-lg border-none bg-card p-4 shadow transition-all duration-300 ease-out hover:scale-[102%] hover:shadow-lg"
-						>
-							<div class="flex w-full items-center justify-between">
-								<Card.Title
-									class="font-semibold text-foreground transition-colors duration-300 group-hover:text-primary"
-								>
-									{skill.name}
-								</Card.Title>
-
-								<span
-									class="text-3xl transition-all duration-300 ease-out group-hover:rotate-6 group-hover:text-primary"
-								>
-									{skill.icon}
-								</span>
-							</div>
-						</Card.Root>
-					</a>
+					<div>
+						<dt class="text-lg font-bold">
+							{skill.name}
+							{skill.icon}
+						</dt>
+						<dd class="text-base opacity-60">
+							{@html skill.description}
+						</dd>
+					</div>
 				{/each}
-			</div>
+			</dl>
 		</Accordion.Content>
 	</Accordion.Item>
 
@@ -67,28 +56,20 @@
 		<Accordion.Trigger><h4>Where am I online?</h4></Accordion.Trigger>
 		<Accordion.Content>
 			<p>I am online on multiple platforms. Check out the list below:</p>
-			<div class="grid grid-cols-1 gap-4 p-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+			<ul class="flex flex-wrap items-center justify-between pt-3">
 				{#each socials as social}
-					<a href={social.url} target="_blank" rel="noopener noreferrer">
-						<Card.Root
-							class="group flex transform-gpu items-center overflow-hidden rounded-lg border-none bg-card p-4 shadow transition-all duration-300 ease-out hover:scale-[102%] hover:shadow-lg"
-						>
-							<Card.Title
-								class="font-semibold text-foreground transition-colors duration-300 group-hover:text-primary"
-							>
-								<div class="flex items-center justify-start space-x-3">
-									<social.icon
-										class="h-6 w-6 text-foreground transition-colors duration-300 group-hover:text-primary"
-									/>
-									<span>
-										{social.name}
-									</span>
-								</div>
-							</Card.Title>
-						</Card.Root>
+					<a
+						href={social.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex items-center space-x-3 p-3 transition-colors duration-300 hover:text-primary"
+					>
+						<social.icon class="h-6 w-6" />
+						<span class="text-lg font-medium">{social.name}</span>
 					</a>
 				{/each}
-			</div>
+			</ul>
 		</Accordion.Content>
 	</Accordion.Item>
 
