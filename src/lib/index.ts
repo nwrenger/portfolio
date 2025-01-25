@@ -10,7 +10,7 @@ export const skills = [
 		icon: '🧡',
 		url: 'https://svelte.dev/',
 		description:
-			"When I am doing frontend, then only using Svelte. It's a great framework and I am like with Rust also very proficient in it!"
+			"When I am doing frontend, then only using Svelte. It's a great framework and I am, like with Rust, also very proficient in it!"
 	},
 	{
 		name: 'Zig',
@@ -43,7 +43,7 @@ export const skills = [
 		icon: '📺',
 		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 		description:
-			'If somebody smoked weed and programmed 3 languages at once, this one would come up with JavaScript. Dafuq is this language?'
+			"If someone were to smoke weed while programming in three languages simultaneously, that's how it feels writing JavaScript. Dafuq is this language?"
 	},
 	{
 		name: 'TypeScript',
@@ -63,7 +63,7 @@ export const skills = [
 		icon: '🔧',
 		url: 'https://github.com/',
 		description:
-			'Writing every project in Git and uploading it to Github. Great Stuff from Microsoft!'
+			'Writing every project in Git and uploading it to Github. Honestly, a great product from Microsoft!'
 	}
 ];
 
