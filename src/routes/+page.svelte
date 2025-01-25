@@ -7,7 +7,7 @@
 	<title>Portfolio</title>
 	<meta
 		name="description"
-		content="Hi, there! I'm Nils, a high school student passionate about coding, particularly in Rust and in Svelte."
+		content="Hi, there! I'm Nils, a high school student passionate about coding, particularly in Rust and in Svelte. This here is my portfolio, enjoy exploring it!"
 	/>
 </svelte:head>
 

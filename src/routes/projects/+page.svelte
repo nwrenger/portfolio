@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>portfolio - Projects</title>
+	<title>Projects - Portfolio</title>
 	<meta
 		name="description"
 		content="Here you can find all the projects I have worked on so far. They range from web development to game development and even to algorithms."
