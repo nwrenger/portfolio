@@ -23,6 +23,6 @@
 	 */
 </script>
 
-<Icon name="instagram" {...$$props} fill="currentColor" strokeWidth="0.5" {iconNode}>
+<Icon name="instagram" {...$$props} fill="currentColor" strokeWidth="0.2" {iconNode}>
 	<slot />
 </Icon>

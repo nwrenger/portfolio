@@ -1,17 +1,14 @@
 <script lang="ts">
 	import '../app.css';
 	import * as Avatar from '$lib/components/ui/avatar';
-	import { Button } from '$lib/components/ui/button';
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
 	import { Sun, Moon } from 'lucide-svelte';
-
 	import { page } from '$app/state';
-	import { type Snippet } from 'svelte';
-	interface Props {
-		children?: Snippet;
-	}
+	import { socials } from '$lib';
 
-	let { children }: Props = $props();
+	let { children } = $props();
 </script>
 
 <ModeWatcher disableTransitions={false} />
@@ -30,16 +27,42 @@
 						</Avatar.Root>
 					</Button>
 				</div>
-				<div class="flex items-center gap-1.5">
-					<Button href="/" variant="link" class={page.url.pathname == '/' ? 'underline' : ''}
-						>Home</Button
+				<div class="flex items-center md:gap-1.5">
+					<Button href="/" variant="link" class="pe-2 ps-0 sm:hidden">
+						<Avatar.Root>
+							<Avatar.Image src="favicon.webp" alt="portfolio" />
+							<Avatar.Fallback>PF</Avatar.Fallback>
+						</Avatar.Root>
+					</Button>
+					<Button
+						href="/"
+						variant="link"
+						class="{page.url.pathname == '/' ? 'underline' : ''} hidden sm:inline-flex">Home</Button
 					>
+
 					<Button
 						href="/projects"
 						variant="link"
-						class={page.url.pathname == '/projects' ? 'underline' : ''}>Projects</Button
+						class="{page.url.pathname == '/projects' ? 'underline' : ''} !px-2 sm:!px-4"
+						>Projects</Button
 					>
-					<Button href="https://github.com/nwrenger" target="_blank" variant="link">Github</Button>
+					<DropdownMenu.Root>
+						<DropdownMenu.Trigger class="{buttonVariants({ variant: 'link' })} !px-2 sm:!px-4"
+							>Contact</DropdownMenu.Trigger
+						>
+						<DropdownMenu.Content>
+							<DropdownMenu.Group>
+								{#each socials as social}
+									<a href={social.url} target="_blank" rel="noopener noreferrer">
+										<DropdownMenu.Item>
+											<social.icon class="mr-2 size-4" />
+											<span>{social.name}</span>
+										</DropdownMenu.Item>
+									</a>
+								{/each}
+							</DropdownMenu.Group>
+						</DropdownMenu.Content>
+					</DropdownMenu.Root>
 				</div>
 				<div class="flex items-center justify-end gap-2.5">
 					<Button onclick={toggleMode} variant="outline" size="icon">
@@ -56,7 +79,7 @@
 		</div>
 	</header>
 
-	<div class="container max-w-6xl space-y-4 px-4 py-5">
+	<div class="container max-w-6xl px-4 py-5">
 		{@render children?.()}
 	</div>
 </div>

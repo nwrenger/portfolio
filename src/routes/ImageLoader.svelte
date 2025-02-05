@@ -1,7 +1,4 @@
 <script lang="ts">
-	import Skeleton from '$lib/components/ui/skeleton/skeleton.svelte';
-	import { onMount } from 'svelte';
-
 	interface Props {
 		src: string;
 		alt?: string;
@@ -22,19 +19,18 @@
 	const base = `${width} ${height} ${ratio} ${rounded}`;
 
 	let loaded = $state(false);
-	let mounted = $state(false);
 
 	function handleLoad() {
 		loaded = true;
 	}
-
-	onMount(() => (mounted = true));
 </script>
 
-{#if !loaded}
-	<Skeleton class="{base} animate-pulse" />
-{/if}
-
-{#if mounted}
-	<img {src} {alt} onload={handleLoad} class="{base} object-cover {!loaded ? 'hidden' : ''}" />
-{/if}
+<div class={loaded ? '' : 'animate-pulse bg-muted'}>
+	<img
+		{src}
+		{alt}
+		onload={handleLoad}
+		class="{base} object-cover {loaded ? 'opacity-100' : ' opacity-0'}"
+		loading="lazy"
+	/>
+</div>
