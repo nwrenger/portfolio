@@ -52,11 +52,11 @@
 						>
 						<DropdownMenu.Content>
 							<DropdownMenu.Group>
-								{#each socials as social}
-									<a href={social.url} target="_blank" rel="noopener noreferrer">
+								{#each socials as { name, url, icon: Icon }}
+									<a href={url} target="_blank" rel="noopener noreferrer">
 										<DropdownMenu.Item>
-											<social.icon class="mr-2 size-4" />
-											<span>{social.name}</span>
+											<Icon class="mr-2 size-4" />
+											<span>{name}</span>
 										</DropdownMenu.Item>
 									</a>
 								{/each}

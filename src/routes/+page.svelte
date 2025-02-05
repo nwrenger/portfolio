@@ -33,8 +33,8 @@
 			algorithms and databases. Therefore, my proficiency lies in <code>Rust</code> and
 			<code>Svelte</code>
 			(i.e., <code>JavaScript</code> / <code>TypeScript</code>). But in the past, I have tried out
-			other programming languages like <code>Go</code> and <code>Python</code>, or even a Game
-			Engine like
+			other programming languages like <code>Go</code>, <code>Zig</code> and <code>Python</code>, or
+			even a Game Engine like
 			<code>Godot</code>, so keep your eyes peeled!
 		</p>
 	</div>
@@ -42,14 +42,14 @@
 	<div class="space-y-3">
 		<h3>Programming Takes</h3>
 		<dl class="space-y-2">
-			{#each takes as take}
+			{#each takes as { name, icon, description }}
 				<div>
 					<dt class="text-lg font-bold">
-						{take.name}
-						{take.icon}
+						{name}
+						{icon}
 					</dt>
 					<dd class="text-base opacity-60">
-						{@html take.description}
+						{@html description}
 					</dd>
 				</div>
 			{/each}

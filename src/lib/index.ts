@@ -1,7 +1,6 @@
 export interface Take {
 	name: string;
 	icon: string;
-	url: string;
 	description: string;
 }
 
@@ -9,74 +8,65 @@ export const takes: Take[] = [
 	{
 		name: 'Rust',
 		icon: '🦀',
-		url: 'https://www.rust-lang.org/',
 		description: 'I have worked on almost all of my projects in Rust. I am very proficient in it!'
 	},
 	{
 		name: 'Svelte',
 		icon: '🧡',
-		url: 'https://svelte.dev/',
 		description:
 			"When I am doing frontend, then only using Svelte. It's a great framework and I am, like with Rust, also very proficient in it!"
 	},
 	{
-		name: 'Visual Studio Code && Zed',
+		name: 'Visual Studio Code & Zed',
 		icon: '📝',
-		url: 'https://code.visualstudio.com/',
 		description:
 			'Yeah, I am using Visual Studio Code... But waiting for Zed to get got enough and then will be switching to it!'
 	},
 	{
 		name: 'Zig',
 		icon: '⚡️',
-		url: 'https://ziglang.org/',
 		description:
 			'Tried out once, had a blast using <code class="code">comptime</code> but I am simply to stupid to use it in real projects!'
 	},
 	{
 		name: 'Go',
 		icon: '🐹',
-		url: 'https://golang.org/',
 		description:
 			'Nice language with horrid syntax. I tried it out a few times but then booted back to Rust.'
 	},
 	{
 		name: 'Godot',
 		icon: '🎮',
-		url: 'https://godotengine.org/',
 		description: 'Best Game Engine out there. Used in my early days for a few crappy games.'
 	},
 	{
 		name: 'Python',
 		icon: '🐍',
-		url: 'https://www.python.org/',
-		description: "'Everyone can write Python, right?'"
+		description:
+			"'Everyone can write Python, right?' and that's also the issue with it: No types and indentation with whitespaces!"
 	},
 	{
 		name: 'JavaScript',
 		icon: '📺',
-		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 		description:
 			"If someone were to smoke weed while programming in three languages simultaneously, that's how it feels writing JavaScript. Dafuq is this language?"
 	},
 	{
 		name: 'TypeScript',
 		icon: '💻',
-		url: 'https://www.typescriptlang.org/',
 		description:
 			'A great extension to JavaScript to make it usable again. Programming in Svelte only with TypeScript.'
 	},
 	{
 		name: 'HTML & CSS',
 		icon: '🌐',
-		url: 'https://developer.mozilla.org/en-US/docs/Learn/HTML',
 		description: 'Yeah, way better than JavaScript. Great Core Web Technologies!'
 	},
 	{
 		name: 'Git & GitHub',
 		icon: '🔧',
-		url: 'https://github.com/',
-		description: 'Writing every project in Git and uploading it to Github.'
+		description:
+			'Writing every project in Git and uploading it to Github. What would I do without Github? Use Gitlab!'
 	}
 ];
 
@@ -236,7 +226,7 @@ export const projects: Project[] = [
 		The game is designed for large-scale participation, with my server currently capable of handling up to 18,000 concurrent
 		WebSocket connections. It features intricate scaling with polling and, in the future, will include Cookie Clicker-style 
 		elements!`,
-		link: 'https://github.com/nwrenger/one-googol',
+		link: 'https://one-googol.nwrenger.dev/',
 		archived: false
 	},
 	{
@@ -244,7 +234,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-01-24'),
 		summary: 'The official Plebis Online Website',
 		picture: 'plebis-online-website.webp',
-		description: `A few of my friends are working since 2021 during <code>COVID-19</code> on a fast-paced shooter named Plebis Online.
+		description: `A few of my friends are working since <code>2021</code> / <code>COVID-19</code> on a fast-paced shooter named "Plebis Online".
 		As I also began to develop stuff, they asked me to create a cool website which I did (hopefully). Additionally, I joined the team
 		and am helping them with other stuff, beyond just the Website. When the game is done, I will link it here.`,
 		link: 'https://peritia-studios.github.io/',
