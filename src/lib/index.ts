@@ -141,8 +141,8 @@ export const projects: Project[] = [
 		summary: 'A procedural generated textadventure',
 		picture: 'efts.webp',
 		description: `This project marks my first attempt at writing in Rust, and the original version is available under the "old" branch.
-		After gaining more experience and developing my own CLI crate <code>console-utils</code>, I expanded the project into a procedurally
-		generated text adventure with a total of 16 different endings. Have fun exploring them!`,
+		After gaining more experience and developing my own CLI crate <a class="link" href="/projects#console-utils-rs">console-utils</a>,
+  		I expanded the project into a procedurally generated text adventure with a total of 16 different endings. Have fun exploring them!`,
 		link: 'https://github.com/nwrenger/Escaping-from-the-Supernova',
 		archived: false
 	},
