@@ -290,7 +290,7 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'schulen-im-chaos',
-		date: DateTime.fromISO('2023-08-01'),
+		date: DateTime.fromISO('2023-08-09'),
 		summary: 'Homework-Sharing Platform',
 		picture: 'sic.webp',
 		description: `The "Schulen im Chaos" (Schools in Chaos) project, which I was invited to develop the infrastructure and website for,
