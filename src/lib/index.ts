@@ -316,7 +316,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-01-27'),
 		summary: 'A simple fantasy game emulator',
 		picture: 'simple-fantasy-game.webp',
-		description: `This small game emulator was built using <a class="link" href="/projects#console-utils-rs">console-utils-rs</a> during my Informatics lesson.
+		description: `This small game emulator was built using my self-developed <a class="link" href="/projects#console-utils-rs">console-utils</a> crate during my Informatics lesson.
 		Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP, and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short.
 		I’m currently waiting for my teacher’s feedback, but I think she’ll like it!`,
 		link: 'https://github.com/nwrenger/simple-fantasy-game',
