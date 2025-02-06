@@ -32,7 +32,7 @@
 			My focus is on UI development (websites, apps, and TUIs) and performance-driven projects like
 			algorithms and databases. Therefore, my proficiency lies in <code>Rust</code> and
 			<code>Svelte</code>
-			(i.e., <code>JavaScript</code> / <code>TypeScript</code>).But in the past,
+			(i.e., <code>JavaScript</code> / <code>TypeScript</code>). But in the past,
 			I've experimented with programming languages like <code>Go</code>, <code>Zig</code>,
 			and <code>Python</code>, and even delved into game development with <code>Godot</code>
 			—proving that I bring a diverse, adaptable skill set to every project!
