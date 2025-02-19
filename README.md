@@ -1,3 +1,3 @@
 # portfolio
 
-My current portfolio made with `Svelte` and `Skeleton Next`. It can do a **a lot of stuff**.
+My current portfolio made with `Svelte` and `next.skeleton`. It can do a **a lot of stuff**.
