@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { projects, type Project } from '$lib';
-	import { Badge } from '$lib/components/ui/badge';
-	import * as Card from '$lib/components/ui/card';
-	import { ExternalLink, Hash } from 'lucide-svelte';
-	import ImageLoader from './../ImageLoader.svelte';
+	import ImageLoader from '$lib/components/ui/ImageLoader.svelte';
+	import { ArrowLeft, ExternalLink } from 'lucide-svelte';
 
 	const sortedProjects = projects
 		.sort((a, b) => b.date.toMillis() - a.date.toMillis())
@@ -23,7 +21,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects - Portfolio</title>
+	<title>Projects - Portfolio | Nils</title>
 	<meta
 		name="description"
 		content="Here you can find all the projects I have worked on so far. They range from web development to game development and even to algorithms."
@@ -31,50 +29,54 @@
 </svelte:head>
 
 <div class="space-y-4">
-	<div class="flex items-center justify-between pb-2">
-		<h2>Projects</h2>
-		<code>
-			Total: {projects.length}
-		</code>
+	<a href="/" class="btn preset-tonal">
+		<ArrowLeft size={18} />
+		<span>Return</span>
+	</a>
+
+	<div class="flex items-center justify-between">
+		<h2 class="h2">Projects</h2>
+		<button type="button" class="chip preset-filled-surface-500">Total: 20</button>
 	</div>
 
 	{#each years as year}
 		{@const yearStr = year.toString()}
-		<h3 class="mt-6 border-b pb-2 text-2xl font-bold" id={yearStr}>{year}</h3>
+		<div>
+			<h3 class="h3" id={yearStr}>{year}</h3>
+			<hr class="hr" />
+		</div>
 		<div class="grid w-full gap-6 md:grid-cols-2">
 			{#each sortedProjects[year] as { title, date, summary, picture, description, link, archived }}
-				<Card.Root
+				<div
 					id={title}
-					class="flex h-full transform-gpu flex-col items-start justify-start overflow-hidden rounded-lg border-none shadow transition-[transform,box-shadow] duration-300 ease-out hover:scale-[102%] hover:shadow-lg"
+					class="card card-hover flex h-full flex-col justify-between divide-y overflow-hidden border-[1px] border-surface-200-800 divide-surface-200-800 preset-filled-surface-100-900"
 				>
-					<a href={'projects/' + picture} target="_blank" class="w-full">
-						<ImageLoader
-							src={'projects/' + picture}
-							alt={title}
-							height="h-52 md:h-64"
-							rounded="rounded-t-md rounded-b-none"
-						/>
-					</a>
-					<Card.Header class="w-full p-4">
-						<div class="flex w-full items-center justify-between">
-							<Card.Title class="text-2xl font-semibold">
-								{title}
-							</Card.Title>
-							<Badge class="text-center" variant="secondary">{date.toFormat('MMMM dd, yyyy')}</Badge
-							>
-						</div>
-						<Card.Description class="mb-2 text-base leading-7">
-							{summary}
-						</Card.Description>
-						<p>{@html description}</p>
-						<div class="mt-4">
-							<a href={link} class="link flex w-fit items-center" target="_blank">
+					<div class="divide-y divide-surface-200-800">
+						<header>
+							<a href={'projects/' + picture} target="_blank" class="w-full">
+								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-[21/9]" />
+							</a>
+						</header>
+						<article class="space-y-2 p-4">
+							<div>
+								<h2 class="h6">{summary}</h2>
+								<h3 class="h3">{title}</h3>
+							</div>
+							<p class="opacity-60">
+								{@html description}
+							</p>
+						</article>
+					</div>
+					<footer class="flex items-center justify-between gap-4 p-4">
+						<p class="text-base opacity-60">
+							<a href={link} class="anchor flex w-fit items-center" target="_blank">
 								See the {archived ? 'archived' : ''} Project here
 								<ExternalLink class="pl-2 pt-[2px]" />
 							</a>
-						</div>
-					</Card.Header>
-				</Card.Root>
+						</p>
+						<p class="text-base opacity-60">On {date.toFormat('MMMM dd, yyyy')}</p>
+					</footer>
+				</div>
 			{/each}
 		</div>
 	{/each}
