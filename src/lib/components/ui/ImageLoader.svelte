@@ -14,7 +14,7 @@
 		width = 'w-full',
 		height = 'h-full',
 		ratio = 'aspect-auto',
-		rounded = 'rounded-lg'
+		rounded = ''
 	}: Props = $props();
 	const base = `${width} ${height} ${ratio} ${rounded}`;
 
@@ -25,7 +25,7 @@
 	}
 </script>
 
-<div class={loaded ? '' : 'animate-pulse bg-muted'}>
+<div class={loaded ? '' : 'placeholder animate-pulse rounded-none'}>
 	<img
 		{src}
 		{alt}

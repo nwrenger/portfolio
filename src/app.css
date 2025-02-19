@@ -1,102 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-	:root {
-		--background: 240 5% 98%;
-		--foreground: 240 10% 5%;
-
-		--muted: 240 4% 92%;
-		--muted-foreground: 240 4% 40%;
-
-		--popover: 240 5% 96%;
-		--popover-foreground: 240 10% 5%;
-
-		--card: 240 5% 96%;
-		--card-foreground: 240 10% 5%;
-
-		--border: 240 4% 85%;
-		--input: 240 4% 85%;
-
-		--primary: 340 75% 70%;
-		--primary-foreground: 0 0% 98%;
-
-		--secondary: 30 30% 70%;
-		--secondary-foreground: 240 10% 5%;
-
-		--accent: 240 5% 94%;
-		--accent-foreground: 240 10% 5%;
-
-		--destructive: 0 65% 45%;
-		--destructive-foreground: 0 0% 98%;
-
-		--ring: 340 75% 70%;
-
-		--radius: 0.35rem;
-	}
-
-	.dark {
-		--background: 240 10% 15%;
-		--foreground: 0 0% 98%;
-
-		--muted: 240 5% 20%;
-		--muted-foreground: 240 5% 70%;
-
-		--popover: 240 10% 13%;
-		--popover-foreground: 0 0% 98%;
-
-		--card: 240 10% 13%;
-		--card-foreground: 0 0% 98%;
-
-		--border: 240 5% 25%;
-		--input: 240 5% 25%;
-
-		--primary: 340 65% 85%;
-		--primary-foreground: 0 0% 98%;
-
-		--secondary: 90 10% 35%;
-		--secondary-foreground: 0 0% 98%;
-
-		--accent: 240 10% 17%;
-		--accent-foreground: 0 0% 98%;
-
-		--destructive: 0 60% 35%;
-		--destructive-foreground: 0 0% 98%;
-
-		--ring: 340 65% 85%;
-	}
-}
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @layer base {
 	html {
 		@apply h-full;
 	}
-	* {
-		@apply border-border;
-	}
 	body {
-		@apply h-full bg-background text-foreground;
+		background-image:
+			radial-gradient(at 20% 10%, rgba(var(--color-secondary-500) / 0.075) 0px, transparent 40%),
+			radial-gradient(at 75% 10%, rgba(var(--color-primary-500) / 0.075) 0px, transparent 50%);
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow-x: hidden;
 	}
-	.link {
-		@apply rounded-[1px] text-primary underline underline-offset-4 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+	p,
+	li,
+	code {
+		@apply sm:text-lg;
 	}
 	code {
-		@apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
-	}
-	h2 {
-		@apply scroll-m-20 text-3xl !font-bold tracking-tight lg:text-4xl;
-	}
-	h3 {
-		@apply scroll-m-20 text-2xl font-semibold tracking-tight;
-	}
-	h4 {
-		@apply scroll-m-20 text-xl font-semibold tracking-tight;
-	}
-	p {
-		@apply text-base leading-7;
-	}
-	ul {
-		@apply list-inside list-disc leading-7;
+		@apply code;
 	}
 }
