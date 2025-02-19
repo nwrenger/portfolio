@@ -12,7 +12,7 @@
 	/>
 </svelte:head>
 
-<section class="flex min-h-screen items-center justify-center">
+<section class="flex min-h-[100svh] items-center justify-center">
 	<div class="mx-auto max-w-3xl space-y-4 px-4 py-16 text-center">
 		<h1 class="h1">Hi, there!</h1>
 		<p>
