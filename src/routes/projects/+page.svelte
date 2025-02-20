@@ -62,19 +62,19 @@
 								<h2 class="h6">{summary}</h2>
 								<h3 class="h3">{title}</h3>
 							</div>
-							<p class="opacity-60">
+							<p class="opacity-80">
 								{@html description}
 							</p>
 						</article>
 					</div>
 					<footer class="flex items-center justify-between gap-4 p-4">
-						<p class="text-base opacity-60">
+						<p class="text-base opacity-80">
 							<a href={link} class="anchor flex w-fit items-center" target="_blank">
 								See the {archived ? 'archived' : ''} Project here
 								<ExternalLink class="pl-2 pt-[2px]" />
 							</a>
 						</p>
-						<p class="text-base opacity-60">On {date.toFormat('MMMM dd, yyyy')}</p>
+						<p class="text-base opacity-80">On {date.toFormat('MMMM dd, yyyy')}</p>
 					</footer>
 				</div>
 			{/each}

@@ -329,6 +329,18 @@ export const projects: Project[] = [
 		archived: false
 	},
 	{
+		title: 'Smart-O-Mat',
+		date: DateTime.fromISO('2025-02-17'),
+		summary: 'Improved rework of the so called "Wahl-O-Mat"',
+		picture: 'smart-o-mat.webp',
+		description: `The <code>German</code> elections have something called the "Wahl-O-Mat", where you can answer 38 theses and then get an election recommendation based on how other parties answered these theses.
+		It's incredible how shitty the source of the "Wahl-O-Mat" looks. They have some kind of custom templating engine with horrid datapoint definitions. Furthermore, a lack of features
+		like sharing your progress, automatically saving your progress locally, getting to compare your result to current polling results and so on increased the urge to develop something myself. So I created the "Smart-O-Mat",
+		a smarter and far better version. For every German fellow: Go voting and use this as advice for your election choice!`,
+		link: 'https://wahl.nwrenger.dev/',
+		archived: false
+	},
+	{
 		title: 'songwriting',
 		date: DateTime.fromISO('2024-12-16'),
 		summary: 'Songwriting Portfolio',

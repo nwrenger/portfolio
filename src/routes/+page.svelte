@@ -77,7 +77,7 @@
 						<div>
 							<h6 class="h6">{name} {icon}</h6>
 						</div>
-						<p class="opacity-60">
+						<p class="opacity-80">
 							{@html description}
 						</p>
 					</article>
