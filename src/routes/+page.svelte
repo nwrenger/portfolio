@@ -39,13 +39,15 @@
 		</div>
 	</div>
 
-	<button
-		onclick={() => bottom_content?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-		class="mb-6 flex animate-bounce flex-col items-center"
-	>
-		<p>More About Me</p>
-		<ChevronDown size={32} />
-	</button>
+	<div class="mb-6 flex justify-center">
+		<button
+			onclick={() => bottom_content?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+			class="flex w-fit animate-bounce flex-col items-center"
+		>
+			<p>More About Me</p>
+			<ChevronDown size={32} />
+		</button>
+	</div>
 </section>
 
 <div class="mx-auto max-w-3xl space-y-6 pt-8" bind:this={bottom_content}>
