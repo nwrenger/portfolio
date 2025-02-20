@@ -36,7 +36,9 @@
 
 	<div class="flex items-center justify-between">
 		<h2 class="h2">Projects</h2>
-		<button type="button" class="chip preset-filled-surface-500">Total: 20</button>
+		<button type="button" class="chip chip-input preset-filled-surface-500 md:text-base">
+			Total: {projects.length}
+		</button>
 	</div>
 
 	{#each years as year}
