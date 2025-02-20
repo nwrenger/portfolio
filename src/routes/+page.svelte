@@ -18,9 +18,9 @@
 	<div class="mx-auto max-w-3xl space-y-4 py-16 text-center sm:px-4">
 		<h1 class="h1">Hi, there!</h1>
 		<p>
-			I'm Nils, a high-school <code>Rust</code> enthusiast who loves building anything from fast
-			backends to sleek UIs in <code>Svelte</code>. Check out my projects below or consider
-			sponsoring me. Feel free to reach out for a chat or anything else!
+			I'm Nils Wrenger, a high-school <code>Rust</code> enthusiast who loves building anything from
+			fast backends and CLIs to sleek UIs in <code>Svelte</code>. Check out my projects below or
+			consider sponsoring me. Feel free to reach out for a chat or anything else!
 		</p>
 		<div
 			class="flex h-full flex-col items-center justify-center space-y-4 pt-4 md:flex-row md:space-x-4 md:space-y-0"
