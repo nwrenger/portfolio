@@ -50,7 +50,7 @@
 	</div>
 </section>
 
-<div class="mx-auto max-w-3xl space-y-6 pt-8" bind:this={bottom_content}>
+<div class="mx-auto max-w-3xl space-y-6 pt-4" bind:this={bottom_content}>
 	<section class="space-y-4">
 		<h3 class="h3">Skills</h3>
 		<p>
