@@ -14,32 +14,34 @@
 	/>
 </svelte:head>
 
-<section class="flex min-h-[100svh] items-center justify-center">
-	<div class="mx-auto max-w-3xl space-y-4 py-16 text-center sm:px-4">
-		<h1 class="h1">Hi, there!</h1>
-		<p>
-			I'm Nils Wrenger, a high-school <code>Rust</code> enthusiast who loves building anything from
-			fast backends and CLIs to sleek UIs in <code>Svelte</code>. Check out my projects below or
-			consider sponsoring me. Feel free to reach out for a chat or anything else!
-		</p>
-		<div
-			class="flex h-full flex-col items-center justify-center space-y-4 pt-4 md:flex-row md:space-x-4 md:space-y-0"
-		>
-			<a href="/projects" class="btn preset-tonal">My Projects</a>
-			<a
-				href="https://github.com/sponsors/nwrenger"
-				target="_blank"
-				class="btn preset-filled-primary-500"
+<section class="flex min-h-[100svh] flex-col">
+	<div class="flex flex-1 items-center justify-center">
+		<div class="mx-auto max-w-3xl space-y-4 py-16 text-center sm:px-4">
+			<h1 class="h1">Hi, there!</h1>
+			<p>
+				I'm Nils Wrenger, a high-school <code>Rust</code> enthusiast who loves building anything
+				from fast backends and CLIs to sleek UIs in <code>Svelte</code>. Check out my projects below
+				or consider sponsoring me. Feel free to reach out for a chat or anything else!
+			</p>
+			<div
+				class="flex flex-col items-center justify-center space-y-4 pt-4 md:flex-row md:space-x-4 md:space-y-0"
 			>
-				Sponsor Me
-			</a>
-			<ContactsSelect />
+				<a href="/projects" class="btn preset-tonal">My Projects</a>
+				<a
+					href="https://github.com/sponsors/nwrenger"
+					target="_blank"
+					class="btn preset-filled-primary-500"
+				>
+					Sponsor Me
+				</a>
+				<ContactsSelect />
+			</div>
 		</div>
 	</div>
 
 	<button
 		onclick={() => bottom_content?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-		class="absolute bottom-4 flex animate-bounce flex-col items-center"
+		class="mb-6 flex animate-bounce flex-col items-center"
 	>
 		<p>More About Me</p>
 		<ChevronDown size={32} />
