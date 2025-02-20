@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
 	import { takes } from '$lib';
 	import ContactsSelect from '$lib/components/ui/ContactsSelect.svelte';
-	import { ChevronDown, ChevronsDown } from 'lucide-svelte';
+	import { ChevronDown } from 'lucide-svelte';
+
+	let bottom_content: HTMLDivElement;
 </script>
 
 <svelte:head>
@@ -13,12 +15,12 @@
 </svelte:head>
 
 <section class="flex min-h-[100svh] items-center justify-center">
-	<div class="mx-auto max-w-3xl space-y-4 px-4 py-16 text-center">
+	<div class="mx-auto max-w-3xl space-y-4 py-16 text-center sm:px-4">
 		<h1 class="h1">Hi, there!</h1>
 		<p>
 			I'm Nils, a high-school <code>Rust</code> enthusiast who loves building anything from fast
 			backends to sleek UIs in <code>Svelte</code>. Check out my projects below or consider
-			sponsoring me. Feel free to reach out for a chat or something else!
+			sponsoring me. Feel free to reach out for a chat or anything else!
 		</p>
 		<div
 			class="flex h-full flex-col items-center justify-center space-y-4 pt-4 md:flex-row md:space-x-4 md:space-y-0"
@@ -35,22 +37,28 @@
 		</div>
 	</div>
 
-	<ChevronDown class="absolute bottom-4 animate-bounce" size={32} />
+	<button
+		onclick={() => bottom_content?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+		class="absolute bottom-4 flex animate-bounce flex-col items-center"
+	>
+		<p>More About Me</p>
+		<ChevronDown size={32} />
+	</button>
 </section>
 
-<div class="mx-auto max-w-3xl space-y-6 pt-8">
+<div class="mx-auto max-w-3xl space-y-6 pt-8" bind:this={bottom_content}>
 	<section class="space-y-4">
 		<h3 class="h3">Skills</h3>
 		<p>
-			My focus is on UI development—websites, apps, and TUIs—and performance-driven projects like
-			algorithms and databases. I’m most proficient in
-			<code>Rust</code> and
+			My focus is on UI development (websites, apps and TUIs) and performance-driven projects like
+			algorithms and databases. Therefore, my proficiency lies in <code>Rust</code> and in
 			<code>Svelte</code>
-			(<code>TypeScript</code> /
-			<code>JavaScript</code>), but I’ve also dabbled in <code>Go</code>,
-			<code>Zig</code>, and
-			<code>Python</code>, along with game development in <code>Godot</code>. It’s safe to say I
-			bring a diverse, adaptable skill set to every project!
+			(i.e.
+			<code>Javascript</code> / <code>Typescript</code>). But in the past, I've experimented with
+			programming languages like <code>Go</code>,
+			<code>Zig</code>, and <code>Python</code>, and even delved into game development with
+			<code>Godot</code>
+			— proving that I bring a diverse, adaptable skill set to every project!
 		</p>
 	</section>
 
