@@ -23,6 +23,12 @@ export const takes: Take[] = [
 			'Yeah, I am using Visual Studio Code... But waiting for Zed to get got enough and then will be switching to it!'
 	},
 	{
+		name: 'C',
+		icon: '👼',
+		description:
+			"The mother (or father) of every modern programming language. C is great but I've never used it in any projects."
+	},
+	{
 		name: 'Zig',
 		icon: '⚡️',
 		description:
