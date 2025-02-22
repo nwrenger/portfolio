@@ -14,9 +14,9 @@
 	/>
 </svelte:head>
 
-<section class="min-h-svh-y-5 flex flex-col space-y-16">
+<div class="min-h-svh-y-5 flex flex-col space-y-16">
 	<div class="flex flex-1 items-center justify-center">
-		<div class="mx-auto max-w-3xl space-y-4 text-center sm:px-4">
+		<section class="mx-auto max-w-3xl space-y-4 text-center sm:px-4">
 			<h1 class="h1">Hi, there!</h1>
 			<p>
 				I'm Nils Wrenger, a high-school <code>Rust</code> enthusiast who loves building anything
@@ -36,7 +36,7 @@
 				</a>
 				<ContactsSelect />
 			</div>
-		</div>
+		</section>
 	</div>
 
 	<div class="flex justify-center">
@@ -48,7 +48,7 @@
 			<ChevronDown size={32} />
 		</button>
 	</div>
-</section>
+</div>
 
 <div class="min-h-svh-y-5 mx-auto max-w-3xl space-y-6 pt-4" bind:this={bottom_content}>
 	<section class="space-y-4">
