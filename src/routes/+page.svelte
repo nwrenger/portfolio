@@ -14,9 +14,9 @@
 	/>
 </svelte:head>
 
-<section class="flex min-h-[100svh] flex-col">
+<section class="min-h-svh-y-5 flex flex-col space-y-16">
 	<div class="flex flex-1 items-center justify-center">
-		<div class="mx-auto max-w-3xl space-y-4 py-16 text-center sm:px-4">
+		<div class="mx-auto max-w-3xl space-y-4 text-center sm:px-4">
 			<h1 class="h1">Hi, there!</h1>
 			<p>
 				I'm Nils Wrenger, a high-school <code>Rust</code> enthusiast who loves building anything
@@ -39,7 +39,7 @@
 		</div>
 	</div>
 
-	<div class="mb-6 flex justify-center">
+	<div class="flex justify-center">
 		<button
 			onclick={() => bottom_content?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
 			class="flex w-fit animate-bounce flex-col items-center"
@@ -50,7 +50,7 @@
 	</div>
 </section>
 
-<div class="mx-auto max-w-3xl space-y-6 pt-4" bind:this={bottom_content}>
+<div class="min-h-svh-y-5 mx-auto max-w-3xl space-y-6 pt-4" bind:this={bottom_content}>
 	<section class="space-y-4">
 		<h3 class="h3">Skills</h3>
 		<p>
