@@ -14,7 +14,7 @@
 	/>
 </svelte:head>
 
-<div class="min-h-svh-y-5 flex flex-col space-y-16">
+<div class="min-h-svh-y-5 flex flex-col space-y-5 *:pt-4">
 	<div class="flex flex-1 items-center justify-center">
 		<section class="mx-auto max-w-3xl space-y-4 text-center sm:px-4">
 			<h1 class="h1">Hi, there!</h1>
