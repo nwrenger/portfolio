@@ -76,7 +76,7 @@
 								<ExternalLink class="pt-[2px] pl-2" />
 							</a>
 						</p>
-						<p class="text-base opacity-80">On {date.toFormat('MMMM dd, yyyy')}</p>
+						<p class="text-base opacity-80">{date.toFormat('MMMM dd, yyyy')}</p>
 					</footer>
 				</div>
 			{/each}
