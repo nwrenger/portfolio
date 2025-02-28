@@ -23,7 +23,7 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@types/luxon": "^3.4.2",
 		"autoprefixer": "^10.4.20",
-		"lucide-svelte": "^0.476.0",
+		"lucide-svelte": "^0.477.0",
 		"luxon": "^3.5.0",
 		"prettier": "^3.5.2",
 		"prettier-plugin-svelte": "^3.3.3",
