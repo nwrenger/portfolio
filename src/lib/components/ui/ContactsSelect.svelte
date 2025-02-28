@@ -10,7 +10,8 @@
 </script>
 
 <Popover
-	bind:open={openState}
+	open={openState}
+	onOpenChange={(e) => (openState = e.open)}
 	positioning={{ placement: 'bottom' }}
 	triggerBase="btn preset-filled-tertiary-500"
 	contentBase="card bg-surface-200-800 p-4 space-y-4 max-w-[260px]"
