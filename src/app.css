@@ -12,6 +12,7 @@
 	html {
 		@apply h-full;
 	}
+
 	body {
 		background-attachment: fixed;
 		background-image:
@@ -30,11 +31,13 @@
 		background-size: cover;
 		overflow-x: hidden;
 	}
+
 	p,
 	li,
 	code {
 		@apply sm:text-lg;
 	}
+
 	code {
 		@apply code;
 	}
