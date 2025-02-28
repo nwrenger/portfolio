@@ -21,7 +21,7 @@
 			{#each socials as { name, url, icon: Icon }}
 				<a
 					href={url}
-					class="btn !w-full justify-start preset-tonal"
+					class="btn preset-tonal w-full! justify-start"
 					target="_blank"
 					onclick={popoverClose}
 				>

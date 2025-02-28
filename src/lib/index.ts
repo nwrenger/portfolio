@@ -14,7 +14,7 @@ export const takes: Take[] = [
 		name: 'Svelte',
 		icon: '🧡',
 		description:
-			"When I am doing frontend, then only using Svelte. It's a great framework and I am, like with Rust, also very proficient in it!"
+			"When I am doing frontend, then only using Svelte. It's a great framework and I am, like with Rust, also very versed in it!"
 	},
 	{
 		name: 'Visual Studio Code & Zed',

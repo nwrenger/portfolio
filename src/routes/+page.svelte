@@ -24,7 +24,7 @@
 				or consider sponsoring me. Feel free to reach out for a chat or anything else!
 			</p>
 			<div
-				class="flex flex-col items-center justify-center space-y-4 pt-4 md:flex-row md:space-x-4 md:space-y-0"
+				class="flex flex-col items-center justify-center space-y-4 pt-4 md:flex-row md:space-y-0 md:space-x-4"
 			>
 				<a href="/projects" class="btn preset-tonal">My Projects</a>
 				<a
@@ -71,7 +71,7 @@
 		<div class="grid gap-4 md:grid-cols-2">
 			{#each takes as { name, icon, description }}
 				<div
-					class="card card-hover flex h-full flex-col justify-between overflow-hidden border-[1px] border-surface-200-800 preset-filled-surface-100-900"
+					class="card card-hover border-surface-200-800 preset-filled-surface-100-900 flex h-full flex-col justify-between overflow-hidden border-[1px]"
 				>
 					<article class="space-y-2 p-4">
 						<div>

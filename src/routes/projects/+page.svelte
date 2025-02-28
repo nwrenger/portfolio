@@ -36,7 +36,7 @@
 
 	<div class="flex items-center justify-between">
 		<h2 class="h2">Projects</h2>
-		<button type="button" class="chip chip-input preset-filled-surface-500 md:text-base">
+		<button type="button" class="chip preset-filled-surface-500 md:text-base">
 			Total: {projects.length}
 		</button>
 	</div>
@@ -51,12 +51,12 @@
 			{#each sortedProjects[year] as { title, date, summary, picture, description, link, archived }}
 				<div
 					id={title}
-					class="card card-hover flex h-full flex-col justify-between divide-y overflow-hidden border-[1px] border-surface-200-800 divide-surface-200-800 preset-filled-surface-100-900"
+					class="card card-hover preset-filled-surface-100-900 border-surface-200-800 divide-surface-200-800 flex h-full w-full flex-col justify-between divide-y overflow-hidden border-[1px]"
 				>
-					<div class="divide-y divide-surface-200-800">
+					<div class="divide-surface-200-800 h-full divide-y">
 						<header>
 							<a href={'projects/' + picture} target="_blank" class="w-full">
-								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-[21/9]" />
+								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-21/9" />
 							</a>
 						</header>
 						<article class="space-y-2 p-4">
@@ -73,7 +73,7 @@
 						<p class="text-base opacity-80">
 							<a href={link} class="anchor flex w-fit items-center" target="_blank">
 								See the {archived ? 'archived' : ''} Project here
-								<ExternalLink class="pl-2 pt-[2px]" />
+								<ExternalLink class="pt-[2px] pl-2" />
 							</a>
 						</p>
 						<p class="text-base opacity-80">On {date.toFormat('MMMM dd, yyyy')}</p>
