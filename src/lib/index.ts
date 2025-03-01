@@ -119,6 +119,18 @@ export const projects: Project[] = [
 		archived: false
 	},
 	{
+		title: 'crastination',
+		date: DateTime.fromISO('2022-10-24'),
+		summary: 'My first big Project and my last Game',
+		picture: 'crastination.webp',
+		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple platformer where I aimed to create an immersive and intriguing story.
+			However, I didn't enjoy the development process, and the update to <code>Godot 4</code> was the last straw—leading me to stop developing games altogether.
+			The idea itself was interesting: <em>A game about procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em>
+			But in the end, I tried to reach for the stars, only to realize I didn’t yet have the skills nor the desire to to reach them.`,
+		link: 'https://nilch.itch.io/crastination',
+		archived: false
+	},
+	{
 		title: 'dashboard',
 		date: DateTime.fromISO('2024-03-22'),
 		summary: 'A dashboard of all my websites',
@@ -248,13 +260,13 @@ export const projects: Project[] = [
 	},
 	{
 		title: 'portfolio',
-		date: DateTime.fromISO('2023-07-03'),
+		date: DateTime.fromISO('2023-03-29'),
 		summary: 'My personal Portfolio',
 		picture: 'portfolio.webp',
 		description: `You are aCtuAlLy currently viewing my portfolio. Feel free to explore the project source code to understand
 		how I built this website and provide feedback on areas for improvement. This portfolio style emphasizes simplicity with a
-		touch of design and fun. My portfolio/personal website has evolved significantly over time, so don’t hesitate to revisit
-		and see what has changed!`,
+		touch of design and fun. My portfolio/personal website has evolved significantly over time, even going back to a <a class="anchor" target="_blank" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
+		so don’t hesitate to revisit and see what has changed!`,
 		link: 'https://github.com/nwrenger/portfolio',
 		archived: false
 	},
