@@ -147,7 +147,7 @@ export const projects: Project[] = [
 		summary: 'A procedural generated textadventure',
 		picture: 'efts.webp',
 		description: `This project marks my first attempt at writing in Rust, and the original version is available under the "old" branch.
-		After gaining more experience and developing my own CLI crate <a class="link" href="/projects#console-utils-rs">console-utils</a>,
+		After gaining more experience and developing my own CLI crate <a class="anchor" href="/projects#console-utils-rs">console-utils</a>,
   		I expanded the project into a procedurally generated text adventure with a total of 16 different endings. Have fun exploring them!`,
 		link: 'https://github.com/nwrenger/Escaping-from-the-Supernova',
 		archived: false
@@ -216,7 +216,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-03-25'),
 		summary: 'A performant terminal-based project editor',
 		picture: 'omega.webp',
-		description: `This project was created after I created <a class="link" href="/projects#eta">eta</a>
+		description: `This project was created after I created <a class="anchor" href="/projects#eta">eta</a>
 		from which I learned a lot. It's a terminal-based project editor with syntax highlighting, great performance and very useful and powerful shortcuts.
 		So please give it a try!`,
 		link: 'https://crates.io/crates/omega',
@@ -322,7 +322,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-01-27'),
 		summary: 'A simple fantasy game emulator',
 		picture: 'simple-fantasy-game.webp',
-		description: `This small game emulator was built using my self-developed <a class="link" href="/projects#console-utils-rs">console-utils</a> crate during my Informatics lesson.
+		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects#console-utils-rs">console-utils</a> crate during my Informatics lesson.
 		Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP, and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short.
 		I’m currently waiting for my teacher’s feedback, but I think she’ll like it!`,
 		link: 'https://github.com/nwrenger/simple-fantasy-game',
