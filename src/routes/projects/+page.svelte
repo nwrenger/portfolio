@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { projects, type Project } from '$lib';
 	import ImageLoader from '$lib/components/ui/ImageLoader.svelte';
-	import { ArrowLeft, ExternalLink } from 'lucide-svelte';
+	import { ArrowLeft, ExternalLink, Link } from 'lucide-svelte';
 
 	const sortedProjects = projects
 		.sort((a, b) => b.date.toMillis() - a.date.toMillis())
@@ -62,7 +62,15 @@
 						<article class="space-y-2 p-4">
 							<div>
 								<h2 class="h6">{summary}</h2>
-								<h3 class="h3">{title}</h3>
+								<div class="group flex justify-between space-x-2">
+									<h3 class="h3">{title}</h3>
+									<a
+										href="#{title}"
+										class="flex items-center opacity-0 transition-opacity group-hover:opacity-100"
+									>
+										<Link class="stroke-secondary-900-100 size-5 md:size-6" />
+									</a>
+								</div>
 							</div>
 							<p class="opacity-80">
 								{@html description}
