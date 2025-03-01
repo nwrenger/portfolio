@@ -66,7 +66,7 @@
 									<h3 class="h3">{title}</h3>
 									<a
 										href="#{title}"
-										class="flex items-center opacity-0 transition-opacity group-hover:opacity-100"
+										class="touch:opacity-100 flex items-center opacity-0 transition-opacity group-hover:opacity-100"
 									>
 										<Link class="stroke-secondary-900-100 size-5 md:size-6" />
 									</a>

@@ -46,3 +46,9 @@
 @utility min-h-svh-y-5 {
 	min-height: calc(100svh - 20px);
 }
+
+@custom-variant touch {
+	@media (hover: none) {
+		@slot;
+	}
+}
