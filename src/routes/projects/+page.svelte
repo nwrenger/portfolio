@@ -55,7 +55,7 @@
 				>
 					<div class="divide-surface-200-800 h-full divide-y">
 						<header>
-							<a href={'projects/' + picture} target="_blank" class="w-full">
+							<a href={link} target="_blank" class="w-full">
 								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-21/9" />
 							</a>
 						</header>
@@ -79,7 +79,7 @@
 					</div>
 					<footer class="flex items-center justify-between gap-4 p-4">
 						<p class="text-base opacity-80">
-							<a href={link} class="anchor flex w-fit items-center" target="_blank">
+							<a href={link} target="_blank" class="anchor flex w-fit items-center">
 								See the {archived ? 'archived' : ''} Project here
 								<ExternalLink class="pt-[2px] pl-2" />
 							</a>
