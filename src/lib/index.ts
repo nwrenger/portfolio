@@ -242,7 +242,7 @@ export const projects: Project[] = [
 		description: `This is a collaborative project where participants work together to reach a number with 100 zeros,
 		known as a Googol. The backend was initially built in Go, but after a night of challenges, I switched back to Rust.
 		The game is designed for large-scale participation, with my server currently capable of handling up to 18,000 concurrent
-		WebSocket connections. It features intricate scaling with polling and, in the future, will include Cookie Clicker-style 
+		WebSocket connections. It features intricate scaling with polling and, in the future, will include Cookie Clicker-style
 		elements!`,
 		link: 'https://one-googol.nwrenger.dev/',
 		archived: false
@@ -255,7 +255,7 @@ export const projects: Project[] = [
 		description: `A few of my friends are working since <code>2021</code> / <code>COVID-19</code> on a fast-paced shooter named "Plebis Online".
 		As I also began to develop stuff, they asked me to create a cool website which I did (hopefully). Additionally, I joined the team
 		and am helping them with other stuff, beyond just the Website. When the game is done, I will link it here.`,
-		link: 'https://peritia-studios.github.io/',
+		link: 'https://plebis.online',
 		archived: false
 	},
 	{
@@ -288,7 +288,7 @@ export const projects: Project[] = [
 		picture: 'schiller-db.webp',
 		description: `Developed for a project week (a school-wide activity for a week, in my case we were our own state),
 		this project unfortunately didn't meet expectations, but that's a tale for another time! Here, authorities could access
-		an overview of all citizens, including the unemployed, as well as a record of crimes committed by citizens. 
+		an overview of all citizens, including the unemployed, as well as a record of crimes committed by citizens.
 		The aim was to assist authorities in state management by eliminating the need for extensive paperwork, which is typically
 		essential in bureaucratic processes.`,
 		link: 'https://github.com/nwrenger/schiller-db',
