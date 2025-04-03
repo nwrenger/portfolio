@@ -32,5 +32,6 @@
 		onload={handleLoad}
 		class="{base} object-cover {loaded ? 'opacity-100' : ' opacity-0'}"
 		loading="lazy"
+		decoding="sync"
 	/>
 </div>
