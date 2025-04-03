@@ -59,7 +59,7 @@
 								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-21/9" />
 							</a>
 						</header>
-						<article class="space-y-2 p-4">
+						<article class="space-y-4 p-4">
 							<div>
 								<h2 class="h6">{summary}</h2>
 								<div class="group flex justify-between space-x-2">
