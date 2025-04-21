@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { projects, type Project } from '$lib';
 	import ImageLoader from '$lib/components/ui/ImageLoader.svelte';
 	import { ArrowLeft, ExternalLink, Link } from 'lucide-svelte';
@@ -18,6 +19,19 @@
 	const years = Object.keys(sortedProjects)
 		.map(Number)
 		.sort((a, b) => b - a);
+
+	const flatProjects = years.flatMap((y) => sortedProjects[y]) as Project[];
+
+	let selectedYear: number | 'all' = $state('all');
+
+	let filteredProjects = $derived(
+		selectedYear === 'all' ? flatProjects : sortedProjects[selectedYear] || []
+	);
+
+	// Reset the selected year if a project references another
+	$effect(() => {
+		if (page.url.hash) selectedYear = 'all';
+	});
 </script>
 
 <svelte:head>
@@ -29,65 +43,72 @@
 </svelte:head>
 
 <div class="space-y-4">
-	<a href="/" class="btn preset-tonal">
-		<ArrowLeft size={18} />
-		<span>Return</span>
-	</a>
+	<div class="grid grid-cols-2 pb-2 sm:grid-cols-3">
+		<div class="flex items-center">
+			<a href="/" class="btn preset-tonal">
+				<ArrowLeft size={18} />
+				<span>Return</span>
+			</a>
+		</div>
 
-	<div class="flex items-center justify-between">
-		<h2 class="h2">Projects</h2>
-		<span class="badge preset-filled-surface-500 rounded-full md:text-base">
-			Total: {projects.length}
-		</span>
+		<div class="hidden h-full justify-center sm:flex">
+			<h1 class="h2">Projects</h1>
+		</div>
+
+		<div class="flex items-center justify-end space-x-2">
+			<select bind:value={selectedYear} class="select h-fit max-w-30">
+				<option value="all">All years</option>
+				{#each years as year}
+					<option value={year}>{year}</option>
+				{/each}
+			</select>
+
+			<span class="badge preset-filled-surface-500 text-base">
+				{filteredProjects.length}
+			</span>
+		</div>
 	</div>
 
-	{#each years as year}
-		{@const yearStr = year.toString()}
-		<div>
-			<h3 class="h3" id={yearStr}>{year}</h3>
-			<hr class="hr" />
-		</div>
-		<div class="grid w-full gap-6 md:grid-cols-2">
-			{#each sortedProjects[year] as { title, date, summary, picture, description, link, archived }}
-				<div
-					id={title}
-					class="card card-hover preset-filled-surface-100-900 border-surface-200-800 divide-surface-200-800 flex h-full w-full flex-col justify-between divide-y overflow-hidden border-[1px]"
-				>
-					<div class="divide-surface-200-800 h-full divide-y">
-						<header>
-							<a href={link} target="_blank" class="w-full">
-								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-21/9" />
-							</a>
-						</header>
-						<article class="space-y-4 p-4">
-							<div>
-								<h2 class="h6">{summary}</h2>
-								<div class="group flex justify-between space-x-2">
-									<h3 class="h3">{title}</h3>
-									<a
-										href="#{title}"
-										class="touch:opacity-100 flex items-center opacity-0 transition-opacity group-hover:opacity-100"
-									>
-										<Link class="stroke-secondary-900-100 size-5 md:size-6" />
-									</a>
-								</div>
+	<div class="grid w-full gap-6 md:grid-cols-2">
+		{#each filteredProjects as { title, date, summary, picture, description, link, archived }}
+			<div
+				id={title}
+				class="card card-hover preset-filled-surface-100-900 border-surface-200-800 divide-surface-200-800 flex h-full w-full flex-col justify-between divide-y overflow-hidden border-[1px]"
+			>
+				<div class="divide-surface-200-800 h-full divide-y">
+					<header>
+						<a href={link} target="_blank" class="w-full">
+							<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-21/9" />
+						</a>
+					</header>
+					<article class="space-y-4 p-4">
+						<div>
+							<h2 class="h6">{summary}</h2>
+							<div class="group flex justify-between space-x-2">
+								<h3 class="h3">{title}</h3>
+								<a
+									href="#{title}"
+									class="touch:opacity-100 flex items-center opacity-0 transition-opacity group-hover:opacity-100"
+								>
+									<Link class="stroke-secondary-900-100 size-5 md:size-6" />
+								</a>
 							</div>
-							<p class="opacity-80">
-								{@html description}
-							</p>
-						</article>
-					</div>
-					<footer class="flex items-center justify-between gap-4 p-4">
-						<p class="text-base opacity-80">
-							<a href={link} target="_blank" class="anchor flex w-fit items-center">
-								See the {archived ? 'archived' : ''} Project here
-								<ExternalLink class="pt-[2px] pl-2" />
-							</a>
+						</div>
+						<p class="opacity-80">
+							{@html description}
 						</p>
-						<p class="text-base opacity-80">{date.toFormat('MMMM dd, yyyy')}</p>
-					</footer>
+					</article>
 				</div>
-			{/each}
-		</div>
-	{/each}
+				<footer class="flex items-center justify-between gap-4 p-4">
+					<p class="text-base opacity-80">
+						<a href={link} target="_blank" class="anchor flex w-fit items-center">
+							See the {archived ? 'archived' : ''} Project here
+							<ExternalLink class="pt-[2px] pl-2" />
+						</a>
+					</p>
+					<p class="text-base opacity-80">{date.toFormat('MMMM dd, yyyy')}</p>
+				</footer>
+			</div>
+		{/each}
+	</div>
 </div>

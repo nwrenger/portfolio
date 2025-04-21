@@ -16,7 +16,8 @@
 		ratio = 'aspect-auto',
 		rounded = ''
 	}: Props = $props();
-	const base = `${width} ${height} ${ratio} ${rounded}`;
+	const baseSize = `${width} ${height}`;
+	const base = `${baseSize} ${ratio} ${rounded}`;
 
 	let loaded = $state(false);
 
@@ -25,7 +26,7 @@
 	}
 </script>
 
-<div class={loaded ? '' : 'placeholder animate-pulse rounded-none'}>
+<div class="{loaded ? '' : 'placeholder animate-pulse rounded-none'} {baseSize}">
 	<img
 		{src}
 		{alt}
