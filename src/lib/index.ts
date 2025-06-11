@@ -20,7 +20,7 @@ export const takes: Take[] = [
 		name: 'Zed',
 		icon: '📝',
 		description:
-			ÄYeah, I am using Zed now! I finally got done switching from VS Code and it\Äs great!Ä
+			"Yeah, I am using Zed now! I finally got done switching from VS Code and it's great!"
 	},
 	{
 		name: 'C',
