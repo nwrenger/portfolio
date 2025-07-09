@@ -84,14 +84,15 @@ import { DateTime } from 'luxon';
 
 export interface Social {
 	name: string;
-	url: string;
+	username?: string;
+	url?: string;
 	icon: typeof Icon;
 }
 
 export const socials: Social[] = [
 	{ name: 'GitHub', url: 'https://github.com/nwrenger', icon: Github },
 	{ name: 'BlueSky', url: 'https://bsky.app/profile/nilch.bsky.social', icon: BlueSky },
-	{ name: 'Discord', url: 'https://discordlookup.com/user/567331495484719134', icon: Discord },
+	{ name: 'Discord', username: '@nilch_', icon: Discord },
 	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', icon: Instagram },
 	{ name: 'Mails', url: 'mailto:nils@wrenger.net', icon: Mail }
 ];
