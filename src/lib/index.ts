@@ -109,14 +109,27 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		title: 'clash',
+		date: DateTime.fromISO('2025-08-22'),
+		summary: 'Cards (Ludicrous ones) Against Humanity',
+		picture: 'clash.webp',
+		description: `As the name suggest, is this an online clone of the popular card game Cards Against Humanity. I've wrote
+		it to develop a deeper understand of WebSockets and Games. It's written in my typical stack consisting of <code>Svelte</code>
+		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects#one-googol">one-googol</a>
+		which is a very similiar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
+		just hosts the api. This marks my 3rd "Game" I've wrote and I have to say this is by far the best one! `,
+		link: 'https://clash.nwrenger.dev/',
+		archived: false
+	},
+	{
 		title: 'console-utils-rs',
 		date: DateTime.fromISO('2023-11-28'),
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.webp',
 		description: `This project was initiated by writing Python during my Computer Science lessons. The thing is that Rust itself (the std library) does'nt have a very “nice” way of retrieving user input.
-			In comparison, python has the super simple <code >input</code> function which can do that very easily!
-			Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!`,
-		link: 'https://crates.io/crates/console-utils',
+		In comparison, python has the super simple <code >input</code> function which can do that very easily!
+		Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!`,
+		link: 'https://crates.io/crates/console-utils/',
 		archived: false
 	},
 	{
@@ -125,10 +138,10 @@ export const projects: Project[] = [
 		summary: 'My first big Project and my last Game',
 		picture: 'crastination.webp',
 		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple platformer where I aimed to create an immersive and intriguing story.
-			However, I didn't enjoy the development process, and the update to <code>Godot 4</code> was the last straw—leading me to stop developing games altogether.
-			The idea itself was interesting: <em>A game about procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em>
-			But in the end, I tried to reach for the stars, only to realize I didn’t yet have the skills nor the desire to to reach them.`,
-		link: 'https://nilch.itch.io/crastination',
+		However, I didn't enjoy the development process, and the update to <code>Godot 4</code> was the last straw—leading me to stop developing games altogether.
+		The idea itself was interesting: <em>A game about procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em>
+		But in the end, I tried to reach for the stars, only to realize I didn’t yet have the skills nor the desire to to reach them.`,
+		link: 'https://nilch.itch.io/crastination/',
 		archived: false
 	},
 	{
@@ -139,7 +152,7 @@ export const projects: Project[] = [
 		description: `The summary basically is enough to explain this project: A dashboard of all my websites.
 		I am here going to explain further how it came to this project. I bought some time ago the domain <code>nwrenger.dev</code> and wanted to host under that domain some websites,
 		which btw was harder than I thought because of DNS, the provider and GH-Pages. Nevertheless, the idea of an overview of all my websites began to grow, and now here we are!`,
-		link: 'https://github.com/nwrenger/dashboard',
+		link: 'https://github.com/nwrenger/dashboard/',
 		archived: true
 	},
 	{
@@ -151,7 +164,7 @@ export const projects: Project[] = [
 		nothing more, nothing less! So, this bot was created for a discord server which I am also a part of. It can track birthdays (second message seen in the picture),
 		copy messages from a channel (first message seen in the picture), give users automatically roles on certain conditions, ...
 		This was created as a drop-in replacement of Mee6, which did some very shady stuff lately.`,
-		link: 'https://github.com/nwrenger/doenermann-bot',
+		link: 'https://github.com/nwrenger/doenermann-bot/',
 		archived: false
 	},
 	{
@@ -162,7 +175,7 @@ export const projects: Project[] = [
 		description: `This project marks my first attempt at writing in Rust, and the original version is available under the "old" branch.
 		After gaining more experience and developing my own CLI crate <a class="anchor" href="/projects#console-utils-rs">console-utils</a>,
   		I expanded the project into a procedurally generated text adventure with a total of 16 different endings. Have fun exploring them!`,
-		link: 'https://github.com/nwrenger/Escaping-from-the-Supernova',
+		link: 'https://github.com/nwrenger/Escaping-from-the-Supernova/',
 		archived: false
 	},
 	{
@@ -173,7 +186,7 @@ export const projects: Project[] = [
 		description: `As explained in the summary, this is a code editor made in <code>egui</code> which focuses on efficiency.
 		Furthermore, this was created due to the lack of performance seen in VSC, the most used code editor, and my curiosity of
 		how a project editor app works and how hard is it to create one, which I now know it is <code>VERY HARD</code>.`,
-		link: 'https://github.com/nwrenger/eta',
+		link: 'https://github.com/nwrenger/eta/',
 		archived: false
 	},
 	{
@@ -185,7 +198,7 @@ export const projects: Project[] = [
 		 capabilities. The idea itself came from building a Flipperzero App myself and seeing how unnecessary, difficult that was.
 		 Nevertheless, the workflow when using this is to create a UI using the website and then use a Rust crate which converts
 		 the UI data and your own custom functions into a flipperzero compatible binary.`,
-		link: 'https://github.com/flip-ui',
+		link: 'https://github.com/flip-ui/',
 		archived: false
 	},
 	{
@@ -198,7 +211,7 @@ export const projects: Project[] = [
 		<code>#[metadata]</code> procedural attribute macro and the <code>generate!</code> procedural macro, the project extracts
 		relevant information and generates the corresponding <code>api</code> in a TypeScript file. Currently, the project supports
 		the <code>axum</code> framework, with plans to extend support to additional backends in the future.`,
-		link: 'https://crates.io/crates/gluer',
+		link: 'https://crates.io/crates/gluer/',
 		archived: false
 	},
 	{
@@ -209,7 +222,7 @@ export const projects: Project[] = [
 		description: `This is a very simple Battlesnake agent, a bot designed to play competitive snake against other bots.
 		Its sole mission is to seek food and avoid killing itself when it gets too long. The results of this strategy are displayed
 		in the picture above!`,
-		link: 'https://github.com/nwrenger/hadar',
+		link: 'https://github.com/nwrenger/hadar/',
 		archived: false
 	},
 	{
@@ -221,7 +234,7 @@ export const projects: Project[] = [
 		the <code>Table</code> type, and the macro system for generating data types, interactions, and data operations. It features
 		efficient <code>search</code> and <code>join!</code> functions for seamless data management and rust's beautiful type system
 		for creating the database table. Give it a try and experience the simplicity and performance of this innovative database solution!`,
-		link: 'https://crates.io/crates/light-magic',
+		link: 'https://crates.io/crates/light-magic/',
 		archived: false
 	},
 	{
@@ -232,7 +245,7 @@ export const projects: Project[] = [
 		description: `This project was created after I created <a class="anchor" href="/projects#eta">eta</a>
 		from which I learned a lot. It's a terminal-based project editor with syntax highlighting, great performance and very useful and powerful shortcuts.
 		So please give it a try!`,
-		link: 'https://crates.io/crates/omega',
+		link: 'https://crates.io/crates/omega/',
 		archived: false
 	},
 	{
@@ -245,8 +258,8 @@ export const projects: Project[] = [
 		The game is designed for large-scale participation, with my server currently capable of handling up to 18,000 concurrent
 		WebSocket connections. It features intricate scaling with polling and, in the future, will include Cookie Clicker-style
 		elements!`,
-		link: 'https://one-googol.nwrenger.dev/',
-		archived: false
+		link: 'https://github.com/nwrenger/one-googol/',
+		archived: true
 	},
 	{
 		title: 'plebis-online-website',
@@ -256,7 +269,19 @@ export const projects: Project[] = [
 		description: `A few of my friends are working since <code>2021</code> / <code>COVID-19</code> on a fast-paced shooter named "Plebis Online".
 		As I also began to develop stuff, they asked me to create a cool website which I did (hopefully). Additionally, I joined the team
 		and am helping them with other stuff, beyond just the Website. When the game is done, I will link it here.`,
-		link: 'https://plebis.online',
+		link: 'https://plebis.online/',
+		archived: false
+	},
+	{
+		title: 'pointy',
+		date: DateTime.fromISO('2025-04-10'),
+		summary: 'The clipboard extension everybody needs',
+		picture: 'pointy.webp',
+		description: `A small clipboard extension which opens a wheel of actions interacting with your current clipboard on a configurable shortcut. It's designed
+	 	to support extensions from anybody via a 2nd <code>pointy-extensions</code> GitHub repository. I have developed some cool ones myself, but also
+		you can easily design some yourself. I even provide a rust api, look for that under the <code>crate/extensions</code> and <code>crate/pointy_api</code>
+		in the main repository. Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
+		link: 'https://github.com/nwrenger/pointy/',
 		archived: false
 	},
 	{
@@ -266,9 +291,22 @@ export const projects: Project[] = [
 		picture: 'portfolio.webp',
 		description: `You are aCtuAlLy currently viewing my portfolio. Feel free to explore the project source code to understand
 		how I built this website and provide feedback on areas for improvement. This portfolio style emphasizes simplicity with a
-		touch of design and fun. My portfolio/personal website has evolved significantly over time, even going back to a <a class="anchor" target="_blank" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
+		touch of design and fun. My portfolio/personal website has evolved significantly over time, even going back to a
+		<a class="anchor" target="_blank" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
 		so don’t hesitate to revisit and see what has changed!`,
-		link: 'https://github.com/nwrenger/portfolio',
+		link: 'https://github.com/nwrenger/portfolio/',
+		archived: false
+	},
+	{
+		title: 'PHV Misburg Website',
+		date: DateTime.fromISO('2023-07-18'),
+		summary: 'Website of a Dogsports Club',
+		picture: 'phvmisburg.webp',
+		description: `As a family member of mine is in a Dogsports Club and they had nobody managing their website, I got to being
+		their webmaster. Nevertheless, I also redesigned the Website because the old one was designed years ago and looked horrid
+		for modern standards. On that note, I have to say that Wordpress was an experience of itself and am proud to say, that after
+		enough sleepless hours, it works and looks great!`,
+		link: 'https://phvmisburg.de/',
 		archived: false
 	},
 	{
@@ -279,7 +317,7 @@ export const projects: Project[] = [
 		description: `Indeed, this summary hints at something math-related, and that's essentially accurate.
 		Developed during my school lessons, this website focuses on learning math calculations and uniquely features local co-op!
 		Surprising, right? Grab a friend, try it out below, and see who excels at calculations!`,
-		link: 'https://quickmaths.nwrenger.dev',
+		link: 'https://quickmaths.nwrenger.dev/',
 		archived: false
 	},
 	{
@@ -292,7 +330,7 @@ export const projects: Project[] = [
 		an overview of all citizens, including the unemployed, as well as a record of crimes committed by citizens.
 		The aim was to assist authorities in state management by eliminating the need for extensive paperwork, which is typically
 		essential in bureaucratic processes.`,
-		link: 'https://github.com/nwrenger/schiller-db',
+		link: 'https://github.com/nwrenger/schiller-db/',
 		archived: false
 	},
 	{
@@ -304,7 +342,7 @@ export const projects: Project[] = [
 		My brother and I developed this piece of software to address this need. Originally, the library's software was a Windows application,
 		but now it has been transformed into a comprehensive website plus server with OAuth for authentication.
 		This update was made to eliminate the need for Windows/PC and to simplify the user interface for younger students.`,
-		link: 'https://github.com/wrenger/schiller-lib',
+		link: 'https://github.com/wrenger/schiller-lib/',
 		archived: false
 	},
 	{
@@ -316,7 +354,7 @@ export const projects: Project[] = [
 		focuses—as the summary suggests—on sharing notes on various school subjects, such as Mathematics, Physics, Computer Science,
 		etc. It's important to note that the current scope of this project is limited to German schools only,
 		due to the significant differences in school systems worldwide.`,
-		link: 'https://schulenimchaos.de',
+		link: 'https://schulenimchaos.de/',
 		archived: false
 	},
 	{
@@ -327,7 +365,7 @@ export const projects: Project[] = [
 		description: `Developed at the request of a friend who wanted a sound-sharing platform but never ended up uploading anything...
 		So please, if you have content to share, go ahead and upload it. What gets uploaded won’t be deleted.
 		Have fun! Note: Not everything will stay there indefinitely, so please don’t upload illegal material!`,
-		link: 'https://shitboard.nwrenger.dev',
+		link: 'https://shitboard.nwrenger.dev/',
 		archived: false
 	},
 	{
@@ -338,7 +376,7 @@ export const projects: Project[] = [
 		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects#console-utils-rs">console-utils</a> crate during my Informatics lesson.
 		Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP, and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short.
 		I’m currently waiting for my teacher’s feedback, but I think she’ll like it!`,
-		link: 'https://github.com/nwrenger/simple-fantasy-game',
+		link: 'https://github.com/nwrenger/simple-fantasy-game/',
 		archived: false
 	},
 	{
@@ -360,7 +398,7 @@ export const projects: Project[] = [
 		picture: 'songwriting.webp',
 		description: `I developed my Songwriting Portfolio for my music class. Please note that it is entirely written in <code>German</code>.
 		I utilized the new <code>Skeleton</code> Framework and created some impressive components and animations. Enjoy exploring it!`,
-		link: 'https://songwriting.nwrenger.dev',
+		link: 'https://songwriting.nwrenger.dev/',
 		archived: false
 	}
 ];
