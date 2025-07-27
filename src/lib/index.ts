@@ -72,7 +72,7 @@ export const takes: Take[] = [
 		name: 'Git & GitHub',
 		icon: '🔧',
 		description:
-			'Writing every project in Git and uploading it to Github. What would I do without Github? Use Gitlab!'
+			'Writing every project in Git and uploading it to GitHub. What would I do without GitHub? Use Gitlab!'
 	}
 ];
 
