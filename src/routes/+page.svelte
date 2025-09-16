@@ -12,6 +12,12 @@
 		name="description"
 		content="Hi, I'm Nils – a high school coder passionate about Rust and Svelte. Explore my portfolio, projects, and skills!"
 	/>
+	<!-- Open Graph -->
+	<meta property="og:title" content="Portfolio | Nils" />
+	<meta
+		property="og:description"
+		content="Hi, I'm Nils – a high school coder passionate about Rust and Svelte. Explore my portfolio, projects, and skills!"
+	/>
 </svelte:head>
 
 <div class="min-h-svh-y-5 flex flex-col space-y-5 *:pt-4">

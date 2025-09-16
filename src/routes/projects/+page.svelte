@@ -40,6 +40,12 @@
 		name="description"
 		content="Here you can find all the projects I have worked on so far. They range from web development to game development and even to algorithms."
 	/>
+	<!-- Open Graph -->
+	<meta property="og:title" content="Projects - Portfolio | Nils" />
+	<meta
+		property="og:description"
+		content="Here you can find all the projects I have worked on so far. They range from web development to game development and even to algorithms."
+	/>
 </svelte:head>
 
 <div class="space-y-4">
