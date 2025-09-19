@@ -67,8 +67,7 @@
 			<code>Javascript</code> / <code>Typescript</code>). But in the past, I've experimented with
 			programming languages like <code>Go</code>,
 			<code>Zig</code>, and <code>Python</code>, and even delved into game development with
-			<code>Godot</code>
-			— proving that I bring a diverse, adaptable skill set to every project!
+			<code>Godot</code>.
 		</p>
 	</section>
 
