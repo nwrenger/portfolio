@@ -2,6 +2,20 @@
 	import { ArrowLeft } from 'lucide-svelte';
 </script>
 
+<svelte:head>
+	<title>Privacy Policy</title>
+	<meta
+		name="description"
+		content="Read the privacy policy for my websites to learn how personal data is handled, local/session storage is used, and how the site is hosted on GitHub Pages."
+	/>
+	<!-- Open Graph -->
+	<meta property="og:title" content="Privacy Policy" />
+	<meta
+		property="og:description"
+		content="Read the privacy policy for my websites to learn how personal data is handled, local/session storage is used, and how the site is hosted on GitHub Pages."
+	/>
+</svelte:head>
+
 <div class="flex flex-col space-y-6">
 	<div class="flex items-center">
 		<button onclick={() => window?.history.back()} class="btn preset-tonal">
