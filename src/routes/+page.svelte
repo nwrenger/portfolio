@@ -56,7 +56,7 @@
 	</div>
 </div>
 
-<div class="min-h-svh-y-5 mx-auto max-w-3xl space-y-6 pt-4" bind:this={bottom_content}>
+<div class="min-h-svh-y-100 mx-auto max-w-3xl space-y-6 pt-4" bind:this={bottom_content}>
 	<section class="space-y-4">
 		<h3 class="h3">Skills</h3>
 		<p>
