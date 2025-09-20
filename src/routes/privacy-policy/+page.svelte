@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { ArrowLeft, Languages } from 'lucide-svelte';
 </script>
 
@@ -22,10 +23,10 @@
 			<ArrowLeft size={18} />
 			<span>Return</span>
 		</button>
-		<a href="/datenschutz" class="btn preset-tonal">
+		<button onclick={() => goto('/datenschutz', { replaceState: true })} class="btn preset-tonal">
 			<Languages size={18} />
 			<span>German Version</span>
-		</a>
+		</button>
 	</div>
 
 	<div class="space-y-2">
