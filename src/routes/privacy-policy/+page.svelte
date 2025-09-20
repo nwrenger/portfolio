@@ -1,5 +1,5 @@
 <script>
-	import { ArrowLeft } from 'lucide-svelte';
+	import { ArrowLeft, Languages } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -17,11 +17,15 @@
 </svelte:head>
 
 <div class="flex flex-col space-y-6">
-	<div class="flex items-center">
+	<div class="flex items-center justify-between">
 		<button onclick={() => window?.history.back()} class="btn preset-tonal">
 			<ArrowLeft size={18} />
 			<span>Return</span>
 		</button>
+		<a href="/datenschutz" class="btn preset-tonal">
+			<Languages size={18} />
+			<span>German Version</span>
+		</a>
 	</div>
 
 	<div class="space-y-2">

@@ -4,13 +4,15 @@
 
 	let { children } = $props();
 	const year = new Date().getFullYear();
+	let not_en = page.url.pathname != '/privacy-policy';
+	let not_de = page.url.pathname != '/datenschutz';
 </script>
 
 <div class="mx-auto flex h-full max-w-7xl flex-col px-4 py-6">
 	{@render children()}
 </div>
 
-{#if page.url.pathname != '/privacy-policy'}
+{#if not_en && not_de}
 	<footer class="border-surface-200-800 border-t">
 		<div
 			class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-3 px-4 py-6 text-sm"
