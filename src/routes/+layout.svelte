@@ -4,8 +4,8 @@
 
 	let { children } = $props();
 	const year = new Date().getFullYear();
-	let not_en = page.url.pathname != '/privacy-policy';
-	let not_de = page.url.pathname != '/datenschutz';
+	let not_en = $derived(page.url.pathname != '/privacy-policy');
+	let not_de = $derived(page.url.pathname != '/datenschutz');
 </script>
 
 <div class="mx-auto flex h-full max-w-7xl flex-col px-4 py-6">
