@@ -20,7 +20,7 @@
 	<div class="flex items-center justify-between">
 		<button onclick={() => window?.history.back()} class="btn preset-tonal">
 			<ArrowLeft size={18} />
-			<span>Return</span>
+			<span>Zurück</span>
 		</button>
 		<a href="/privacy-policy" class="btn preset-tonal">
 			<Languages size={18} />
