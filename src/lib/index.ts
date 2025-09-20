@@ -1,3 +1,5 @@
+export const year = new Date().getFullYear();
+
 export interface Take {
 	name: string;
 	icon: string;
