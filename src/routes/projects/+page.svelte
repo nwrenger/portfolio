@@ -80,12 +80,17 @@
 			{#each filteredProjects as { title, date, summary, picture, description, link, archived }}
 				<div
 					id={title}
-					class="card card-hover preset-filled-surface-100-900 border-surface-200-800 divide-surface-200-800 flex h-full w-full flex-col justify-between divide-y overflow-hidden border-[1px]"
+					class="card card-hover preset-filled-surface-100-900 border-surface-200-800 divide-surface-200-800 relative flex h-full w-full flex-col justify-between divide-y overflow-hidden border-[1px]"
 				>
 					<div class="divide-surface-200-800 h-full divide-y">
-						<header>
+						<header class="relative">
 							<a href={link} target="_blank" class="w-full">
 								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-21/9" />
+								{#if archived}
+									<div class="absolute inset-0 flex items-center justify-center bg-black/40">
+										<span class="text-lg font-bold tracking-widest text-white">ARCHIVED</span>
+									</div>
+								{/if}
 							</a>
 						</header>
 						<article class="space-y-4 p-4">
