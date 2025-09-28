@@ -115,11 +115,11 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-08-22'),
 		summary: 'Cards (Ludicrous ones) Against Humanity',
 		picture: 'clash.webp',
-		description: `As the name suggest, this is an online clone of the popular card game Cards Against Humanity. I've wrote
+		description: `As the name suggests, this is an online clone of the popular card game Cards Against Humanity. I've written
 		it to develop a deeper understanding of WebSockets and Games. It's written in my typical stack consisting of <code>Svelte</code>
 		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects#one-googol">one-googol</a>,
-		which is a very similiar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
-		just hosts the api. This marks my 3rd "Game" I've wrote and I have to say it's by far the best one! `,
+		which is a very similar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
+		just hosts the api. This marks my 3rd "Game" I've written and I have to say it's by far the best one! `,
 		link: 'https://clash.nwrenger.dev/',
 		archived: false
 	},
