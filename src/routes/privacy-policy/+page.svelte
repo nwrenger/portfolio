@@ -67,8 +67,9 @@
 			<h4 class="h4">3. Hosting</h4>
 			<p>
 				The websites are provided via
-				<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>. When
-				accessing the pages, GitHub processes technically required data such as your
+				<a href="https://pages.github.com/" class="anchor" target="_blank" rel="noopener"
+					>GitHub Pages</a
+				>. When accessing the pages, GitHub processes technically required data such as your
 				<strong>IP address</strong> in order to deliver the content and ensure secure operation. I
 				have no influence on this processing. For more information, please refer to the
 				<a

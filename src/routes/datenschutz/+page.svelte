@@ -70,8 +70,10 @@
 			<h4 class="h4">3. Hosting</h4>
 			<p>
 				Die Bereitstellung der Websites erfolgt über
-				<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>. Beim
-				Aufruf der Seiten verarbeitet GitHub technisch erforderliche Daten wie insbesondere Ihre
+				<a href="https://pages.github.com/" class="anchor" target="_blank" rel="noopener"
+					>GitHub Pages</a
+				>. Beim Aufruf der Seiten verarbeitet GitHub technisch erforderliche Daten wie insbesondere
+				Ihre
 				<strong>IP-Adresse</strong>, um die Auslieferung der Inhalte und den sicheren Betrieb zu
 				gewährleisten. Auf diese Verarbeitung habe ich keinen Einfluss. Weitere Informationen finden
 				Sie in der
