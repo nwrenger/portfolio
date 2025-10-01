@@ -40,7 +40,7 @@ export const takes: Take[] = [
 		name: 'Go',
 		icon: '🐹',
 		description:
-			'Nice language with horrid syntax. I tried it out a few times but then booted back to Rust.'
+			'Nice language with horrid syntax. I tried it out a few times but then always booted back to Rust.'
 	},
 	{
 		name: 'Godot',
@@ -51,13 +51,13 @@ export const takes: Take[] = [
 		name: 'Python',
 		icon: '🐍',
 		description:
-			"'Everyone can write Python, right?' and that's also the issue with it: No types and indentation with whitespaces!"
+			"'Everyone can write Python, right?' and that's also the issue with it: No types and whitespace-based scoping!"
 	},
 	{
 		name: 'JavaScript',
 		icon: '📺',
 		description:
-			"If someone were to smoke weed while programming in three languages simultaneously, that's how it feels writing JavaScript. Dafuq is this language?"
+			"If someone were to smoke weed while programming in three languages simultaneously, that's how it feels writing JavaScript. Wtf is this language?"
 	},
 	{
 		name: 'TypeScript',
