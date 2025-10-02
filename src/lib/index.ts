@@ -4,19 +4,23 @@ export interface Take {
 	name: string;
 	icon: string;
 	description: string;
+	color?: string;
 }
 
 export const takes: Take[] = [
 	{
 		name: 'Rust',
 		icon: '🦀',
-		description: 'I have worked on almost all of my projects in Rust. I am very proficient in it!'
+		description: 'I have worked on almost all of my projects in Rust. I am very proficient in it!',
+		color:
+			'border-orange-500/30 bg-orange-500/10 hover:bg-orange-500/20 dark:hover:bg-orange-500/15'
 	},
 	{
 		name: 'Svelte',
 		icon: '🧡',
 		description:
-			"When I am doing frontend, then only using Svelte. It's a great framework and I am, like with Rust, also very versed in it!"
+			"When I am doing frontend, then only using Svelte. It's a great framework and I am, like with Rust, also very versed in it!",
+		color: 'border-red-400/30 bg-red-400/10 hover:bg-red-400/20 dark:hover:bg-red-400/15'
 	},
 	{
 		name: 'Zed',
@@ -28,19 +32,23 @@ export const takes: Take[] = [
 		name: 'C',
 		icon: '👼',
 		description:
-			"The mother (or father) of every modern programming language. C is great but I've never used it in any projects."
+			"The mother (or father) of every modern programming language. C is great but I've never used it in any projects.",
+		color: 'border-gray-400/30 bg-gray-400/10 hover:bg-gray-400/20 dark:hover:bg-gray-400/15'
 	},
 	{
 		name: 'Zig',
 		icon: '⚡️',
 		description:
-			'Tried out once, had a blast using <code class="code">comptime</code> but I am simply to stupid to use it in real projects!'
+			'Tried out once, had a blast using <code class="code">comptime</code> but I am simply to stupid to use it in real projects!',
+		color:
+			'border-yellow-400/30 bg-yellow-400/10 hover:bg-yellow-400/20 dark:hover:bg-yellow-400/15'
 	},
 	{
 		name: 'Go',
 		icon: '🐹',
 		description:
-			'Nice language with horrid syntax. I tried it out a few times but then always booted back to Rust.'
+			'Nice language with horrid syntax. I tried it out a few times but then always booted back to Rust.',
+		color: 'border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 dark:hover:bg-cyan-500/15'
 	},
 	{
 		name: 'Godot',
@@ -51,24 +59,29 @@ export const takes: Take[] = [
 		name: 'Python',
 		icon: '🐍',
 		description:
-			"'Everyone can write Python, right?' and that's also the issue with it: No types and whitespace-based scoping!"
+			"'Everyone can write Python, right?' and that's also the issue with it: No types and whitespace-based scoping!",
+		color: 'border-green-500/30 bg-green-500/10 hover:bg-green-500/20 dark:hover:bg-green-500/15'
 	},
 	{
 		name: 'JavaScript',
 		icon: '📺',
 		description:
-			"If someone were to smoke weed while programming in three languages simultaneously, that's how it feels writing JavaScript. Wtf is this language?"
+			"If someone were to smoke weed while programming in three languages simultaneously, that's how it feels writing JavaScript. Wtf is this language?",
+		color:
+			'border-yellow-500/30 bg-yellow-500/10 hover:bg-yellow-500/20 dark:hover:bg-yellow-500/15'
 	},
 	{
 		name: 'TypeScript',
 		icon: '💻',
 		description:
-			'A great extension to JavaScript to make it usable again. Programming in Svelte only with TypeScript.'
+			'A great extension to JavaScript to make it usable again. Programming in Svelte only with TypeScript.',
+		color: 'border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 dark:hover:bg-blue-500/15'
 	},
 	{
 		name: 'HTML & CSS',
 		icon: '🌐',
-		description: 'Yeah, way better than JavaScript. Great Core Web Technologies!'
+		description: 'Yeah, way better than JavaScript. Great Core Web Technologies!',
+		color: 'border-pink-400/30 bg-pink-400/10 hover:bg-pink-400/20 dark:hover:bg-pink-400/15'
 	},
 	{
 		name: 'Git & GitHub',
@@ -78,7 +91,7 @@ export const takes: Take[] = [
 	}
 ];
 
-import { Coffee, Github, Mail } from 'lucide-svelte';
+import { Github, Mail } from 'lucide-svelte';
 import BlueSky from '$lib/components/icons/BlueSky.svelte';
 import Discord from '$lib/components/icons/Discord.svelte';
 import Instagram from '$lib/components/icons/Instagram.svelte';
