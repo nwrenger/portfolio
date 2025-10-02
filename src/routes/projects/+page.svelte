@@ -70,7 +70,10 @@
 					{/each}
 				</select>
 
-				<span class="badge preset-filled-surface-500 text-base">
+				<span
+					class="badge preset-filled-surface-500 text-base"
+					title="Count: {filteredProjects.length}"
+				>
 					{filteredProjects.length}
 				</span>
 			</div>
