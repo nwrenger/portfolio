@@ -12,10 +12,9 @@
 
 	/**
 	 * @component @name Bluesky
-	 * @description Lucide SVG icon component, renders SVG Element with children.
+	 * @description Own SVG icon component, renders SVG Element with children.
 	 *
 	 * @preview ![img](data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTY4IDUwMC4xMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIzLjEyMSAzMy42NjRDMTg4LjI0MSA4Mi41NTMgMjU4LjI4MSAxODEuNjggMjg0IDIzNC44NzNjMjUuNzE5LTUzLjE5MiA5NS43NTktMTUyLjMyIDE2MC44NzktMjAxLjIxQzQ5MS44NjYtMS42MTEgNTY4LTI4LjkwNiA1NjggNTcuOTQ3YzAgMTcuMzQ2LTkuOTQ1IDE0NS43MTMtMTUuNzc4IDE2Ni41NTUtMjAuMjc1IDcyLjQ1My05NC4xNTUgOTAuOTMzLTE1OS44NzUgNzkuNzQ4IDExNC44NzUgMTkuNTUgMTQ0LjA5NyA4NC4zMSA4MC45ODYgMTQ5LjA3OS0xMTkuODYgMTIyLjk5Mi0xNzIuMjcyLTMwLjg1OS0xODUuNzAyLTcwLjI4MS0zLjYxNC0xMC42MDgtMy42MzEtNy43MzMtMy42MzEgNy43MzMtMTMuNDMgMzkuNDIyLTY1Ljg0MiAxOTMuMjczLTE4NS43MDIgNzAuMjgxLTYzLjExMS02NC43Ni0zMy44OS0xMjkuNTIgODAuOTg2LTE0OS4wNzEtNjUuNzIgMTEuMTg1LTEzOS42LTcuMjk1LTE1OS44NzUtNzkuNzQ4QzkuOTQ1IDIwMy42NTkgMCA3NS4yOTEgMCA1Ny45NDYgMC0yOC45MDYgNzYuMTM1LTEuNjEyIDEyMy4xMjEgMzMuNjY0WiIgLz48L3N2Zz4=) - https://lucide.dev/icons/bluesky
-	 * @see https://lucide.dev/guide/packages/lucide-svelte - Documentation
 	 *
 	 * @param {Object} props - Lucide icons props and any valid SVG attribute
 	 * @returns {FunctionalComponent} Svelte component

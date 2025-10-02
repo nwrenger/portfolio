@@ -78,20 +78,20 @@ export const takes: Take[] = [
 	}
 ];
 
-import { Github, Icon, Mail } from 'lucide-svelte';
+import { Coffee, Github, Mail } from 'lucide-svelte';
 import BlueSky from '$lib/components/icons/BlueSky.svelte';
 import Discord from '$lib/components/icons/Discord.svelte';
 import Instagram from '$lib/components/icons/Instagram.svelte';
 import { DateTime } from 'luxon';
+import type { Link } from './components/ui/LinksSelect.svelte';
+import Kofi from './components/icons/Kofi.svelte';
 
-export interface Social {
-	name: string;
-	username?: string;
-	url?: string;
-	icon: typeof Icon;
-}
+export const sponsors: Link[] = [
+	{ name: 'GitHub', url: 'https://github.com/nwrenger', icon: Github },
+	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', icon: Kofi }
+];
 
-export const socials: Social[] = [
+export const socials: Link[] = [
 	{ name: 'GitHub', url: 'https://github.com/nwrenger', icon: Github },
 	{ name: 'BlueSky', url: 'https://bsky.app/profile/nilch.bsky.social', icon: BlueSky },
 	{ name: 'Discord', username: '@nilch_', icon: Discord },

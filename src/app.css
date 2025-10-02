@@ -18,12 +18,22 @@
 		background-image:
 			radial-gradient(
 				at 0% 25%,
-				color-mix(in oklab, var(--color-primary-500) 10%, transparent) 0px,
+				color-mix(
+						in oklab,
+						light-dark(var(--color-primary-900), var(--color-primary-500)) 10%,
+						transparent
+					)
+					0px,
 				transparent 30%
 			),
 			radial-gradient(
 				at 15% 6%,
-				color-mix(in oklab, var(--color-success-500) 5%, transparent) 0px,
+				color-mix(
+						in oklab,
+						light-dark(var(--color-success-900), var(--color-success-500)) 5%,
+						transparent
+					)
+					0px,
 				transparent 30%
 			);
 		background-position: center;

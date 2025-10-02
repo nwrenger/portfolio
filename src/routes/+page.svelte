@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { takes, year } from '$lib';
-	import ContactsSelect from '$lib/components/ui/ContactsSelect.svelte';
+	import { socials, sponsors, takes, year } from '$lib';
+	import LinksSelect from '$lib/components/ui/LinksSelect.svelte';
 	import { ChevronDown } from 'lucide-svelte';
 
 	let bottom_content: HTMLDivElement;
@@ -34,14 +34,20 @@
 					class="flex flex-col items-center justify-center space-y-4 pt-4 md:flex-row md:space-y-0 md:space-x-4"
 				>
 					<a href="/projects" class="btn preset-tonal">My Projects</a>
-					<a
-						href="https://github.com/sponsors/nwrenger"
-						target="_blank"
-						class="btn preset-filled-primary-500"
-					>
-						Sponsor Me
-					</a>
-					<ContactsSelect />
+					<!-- Sponsor Me Button && Popup -->
+					<LinksSelect
+						label="Sponsor Me"
+						bg="preset-filled-primary-500"
+						contrast="preset-tonal-primary"
+						links={sponsors}
+					/>
+					<!-- Contacts Button && Popup -->
+					<LinksSelect
+						label="Contacts"
+						bg="preset-filled-tertiary-500"
+						contrast="preset-tonal-tertiary"
+						links={socials}
+					/>
 				</div>
 			</section>
 		</div>
