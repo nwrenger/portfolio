@@ -253,6 +253,18 @@ export const projects: Project[] = [
 		archived: false
 	},
 	{
+		title: 'notenprojekt',
+		date: DateTime.fromISO('2025-06-17'),
+		summary: 'German grade management App',
+		picture: 'notenprojekt.webp',
+		description: `A simple app for managing your grades based on the german grades system in lower saxony. This was built in my Computer
+		Science lessons as a project to fortify and apply our theoretical knowledge of databases like <code class="code">sqlite</code>.
+		Originally, there was a section planned with more analytics over all your quarters and some graphs, but as always our teacher didn't
+		give us enough time, so this will remain a 'when there's time for personal projects again' kind of thing.`,
+		link: 'https://github.com/nwrenger/notenprojekt',
+		archived: false
+	},
+	{
 		title: 'omega',
 		date: DateTime.fromISO('2024-03-25'),
 		summary: 'A performant terminal-based project editor',
