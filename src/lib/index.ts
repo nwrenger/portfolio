@@ -100,7 +100,7 @@ import type { Link } from './components/ui/LinksSelect.svelte';
 import Kofi from './components/icons/Kofi.svelte';
 
 export const sponsors: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/nwrenger', icon: Github },
+	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', icon: Github },
 	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', icon: Kofi }
 ];
 
