@@ -98,16 +98,13 @@
 						</header>
 						<article class="space-y-4 p-4">
 							<div>
-								<h2 class="h6">{summary}</h2>
-								<div class="group flex justify-between space-x-2">
+								<div class="flex justify-between space-x-2">
 									<h3 class="h3">{title}</h3>
-									<a
-										href="#{title}"
-										class="touch:opacity-100 flex items-center opacity-0 transition-opacity group-hover:opacity-100"
-									>
+									<a href="#{title}" class="flex items-center">
 										<Link class="stroke-secondary-900-100 size-5 md:size-6" />
 									</a>
 								</div>
+								<h2 class="h6">{summary}</h2>
 							</div>
 							<p class="opacity-80">
 								{@html description}
