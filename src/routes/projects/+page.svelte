@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/state';
+	import { page } from '$app/stores';
 	import { projects, year, type Project } from '$lib';
 	import ImageLoader from '$lib/components/ui/ImageLoader.svelte';
 	import { ArrowLeft, ExternalLink, Link } from 'lucide-svelte';
@@ -29,8 +29,9 @@
 	);
 
 	// Reset the selected year if a project references another
-	$effect(() => {
-		if (page.url.hash) selectedYear = 'all';
+	page.subscribe((page) => {
+		let hashTitle = page.url.hash.replace('#', '');
+		if (!filteredProjects.find((p) => p.title == hashTitle)) selectedYear = 'all';
 	});
 </script>
 
