@@ -305,9 +305,10 @@ export const projects: Project[] = [
 		summary: 'The clipboard extension everybody needs',
 		picture: 'pointy.webp',
 		description: `A small clipboard extension which opens a wheel of actions interacting with your current clipboard on a configurable shortcut. It's designed
-	 	to support extensions from anybody via a 2nd <code>pointy-extensions</code> GitHub repository. I have developed some cool ones myself, but also
-		you can easily design some yourself. I even provide a rust api, look for that under the <code>crate/extensions</code> and <code>crate/pointy_api</code>
-		in the main repository. Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
+	 	to support extensions from anybody via a 2nd <a class="anchor" href="https://github.com/nwrenger/pointy-extensions" target="_blank">pointy-extensions</a> GitHub repository. I have developed some cool ones myself, but also
+		you can easily design some yourself. I even provide a rust api, look for that under the <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/extensions" target="_blank">crate/extensions</a>
+		and <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/pointy_api" target="_blank">crate/pointy_api</a> in the main repository.
+		Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
 		link: 'https://github.com/nwrenger/pointy/',
 		archived: false
 	},
