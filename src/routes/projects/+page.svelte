@@ -104,7 +104,7 @@
 										<Link class="stroke-secondary-900-100 size-5 md:size-6" />
 									</a>
 								</div>
-								<h2 class="h6">{summary}</h2>
+								<h6 class="h6">{summary}</h6>
 							</div>
 							<p class="opacity-80">
 								{@html description}
