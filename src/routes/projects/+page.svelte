@@ -102,7 +102,7 @@
 								<div class="flex justify-between space-x-2">
 									<h3 class="h3">{title}</h3>
 									<a href="#{title}" class="flex items-center">
-										<Link class="stroke-secondary-900-100 size-5 md:size-6" />
+										<Link class="stroke-secondary-900-100" />
 									</a>
 								</div>
 								<h4 class="h6">{summary}</h4>
@@ -116,7 +116,7 @@
 						<p class="text-base opacity-80">
 							<a href={link} target="_blank" class="anchor flex w-fit items-center">
 								See the {archived ? 'archived' : ''} Project here
-								<ExternalLink class="pt-[2px] pl-2" />
+								<ExternalLink class="pl-2 opacity-60" />
 							</a>
 						</p>
 						<p class="text-base opacity-80">{date.toFormat('MMMM dd, yyyy')}</p>
