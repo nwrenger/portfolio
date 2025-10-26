@@ -132,7 +132,7 @@ export const projects: Project[] = [
 		it to develop a deeper understanding of WebSockets and Games. It's written in my typical stack consisting of <code>Svelte</code>
 		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects#one-googol">one-googol</a>,
 		which is a very similar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
-		just hosts the api. This marks my 3rd "Game" I've written and I have to say it's by far the best one! `,
+		just hosts the api. This marks my 3rd "Game" I've written and I have to say it's by far the best one!`,
 		link: 'https://clash.nwrenger.dev/',
 		archived: false
 	},
@@ -171,12 +171,26 @@ export const projects: Project[] = [
 		archived: true
 	},
 	{
+		title: 'Disable Dimensions',
+		date: DateTime.fromISO('2025-10-20'),
+		summary: 'Disable vanilla Dimensions like The Nether and/or The End',
+		picture: 'disable-dimensions.webp',
+		description: `This marks my first time coding any modifications for any game. This is a <code class="code">Data Pack</code> for Minecraft, a very popular game.
+		In Minecraft there a different dimension you'll need to explore to progress the 'story' of the game, which finishes in <code class="code">The End</code> dimension by
+		killing the <code class="code">Ender Dragon</code>. It is very common in multiplayer that the server staff want to restrict entering those dimension because of (1) slowing down story progression or
+		(2) not being designed to have enterable dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code> which restricts players
+		access to the other dimensions by teleporting them immediatly back after they tried to enter the dimension. It's also has mod support and is currently the only working
+		<code class="code">Data Pack</code> based solution out there!`,
+		link: 'https://modrinth.com/datapack/disable-dimensions.',
+		archived: false
+	},
+	{
 		title: 'doenermann-bot',
 		date: DateTime.fromISO('2023-01-06'),
 		summary: 'The Discord Bot',
 		picture: 'doenermann-bot.webp',
 		description: `Before I am explaining the origins/need of this bot, please note that the black bars in the picture are there to protect personal information,
-		nothing more, nothing less! So, this bot was created for a discord server which I am also a part of. It can track birthdays (second message seen in the picture),
+		nothing more, nothing less!So, this bot was created for a discord server which I am also a part of. It can track birthdays (second message seen in the picture),
 		copy messages from a channel (first message seen in the picture), give users automatically roles on certain conditions, ...
 		This was created as a drop-in replacement of Mee6, which did some very shady stuff lately.`,
 		link: 'https://github.com/nwrenger/doenermann-bot/',
