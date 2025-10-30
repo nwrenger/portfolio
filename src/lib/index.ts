@@ -181,7 +181,7 @@ export const projects: Project[] = [
 		(2) not being designed to have enterable dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code> which restricts players
 		access to the other dimensions by teleporting them immediatly back after they tried to enter the dimension. It's also has mod support and is currently the only working
 		<code class="code">Data Pack</code> based solution out there!`,
-		link: 'https://modrinth.com/datapack/disable-dimensions.',
+		link: 'https://modrinth.com/datapack/disable-dimensions/',
 		archived: false
 	},
 	{
