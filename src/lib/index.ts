@@ -175,11 +175,11 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-10-20'),
 		summary: 'Disable vanilla Dimensions like The Nether and/or The End',
 		picture: 'disable-dimensions.webp',
-		description: `This marks my first time coding any modifications for any game. In Minecraft there are different dimensions you'll need to explore to progress the 'story' of the game,
-		which finishes in The End dimension by killing the Ender Dragon. It is very common in multiplayer that the server staff want to restrict entering those dimension because of (1)
-		slowing down story progression or (2) not being designed to have enterable dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code>
-		which restricts players access to the other dimensions by teleporting them immediatly back after they tried to enter the dimension. It's also has mod support and is currently the
-		only working <code class="code">Data Pack</code> based solution out there!`,
+		description: `In Minecraft there are different dimensions you'll need to explore to progress the 'story' of the game, which finishes in The End dimension by killing the Ender Dragon.
+		It is very common in multiplayer that the server staff want to restrict entering those dimensions because of (1) slowing down story progression or (2) not being designed to have enterable
+		dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code> which restricts players' access to the other dimensions by teleporting them immediately back after they try
+		to enter the dimension. It also has mod support and is currently the only working <code class="code">Data Pack</code> based solution out there! Coding this was my first dive into making modifications for a game,
+		which made the process both challenging and really exciting.`,
 		link: 'https://modrinth.com/datapack/disable-dimensions/',
 		archived: false
 	},
