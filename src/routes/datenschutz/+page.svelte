@@ -1,5 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
 	import { ArrowLeft, Languages } from 'lucide-svelte';
 </script>
 
@@ -20,17 +19,23 @@
 <div class="mx-auto h-full max-w-3xl px-4 py-6">
 	<div class="flex flex-col space-y-6">
 		<div class="flex items-center justify-between">
-			<button onclick={() => window?.history.back()} class="btn preset-tonal">
+			<button
+				onclick={() => {
+					if (window?.history.length > 1) {
+						window?.history.back();
+					} else {
+						window.close();
+					}
+				}}
+				class="btn preset-tonal"
+			>
 				<ArrowLeft size={18} />
 				<span>Zurück</span>
 			</button>
-			<button
-				onclick={() => goto('/privacy-policy', { replaceState: true })}
-				class="btn preset-tonal"
-			>
+			<a data-sveltekit-replacestate href="/privacy-policy" class="btn preset-tonal">
 				<Languages size={18} />
 				<span>Englische Version</span>
-			</button>
+			</a>
 		</div>
 
 		<div class="space-y-2">
