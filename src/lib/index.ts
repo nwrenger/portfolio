@@ -196,6 +196,18 @@ export const projects: Project[] = [
 		archived: false
 	},
 	{
+		title: 'Elytra Speed Cap',
+		date: DateTime.fromISO('2025-11-22'),
+		summary: 'Cap the speed of elytra flight',
+		picture: 'elytra-speed-cap.webp',
+		description: `My streak for Minecraft related projects goes on. This time, I wrote a full on mod with a mod loader, <code class="code">Fabric</code>. This mod limits how fast a player is able to fly
+		with an Elytra. The max speed can be configured inside a configuration file. There are two sides my mod changes behavior: On the server-side, it caps the player's velocity.
+		On the client-side, it changes the prediction logic of elytra speed based on the max speed of the server. When not changing the client-side predictions,
+		the player may experience rubberbanding. A lightweight mod which will be used for my own minecraft server with a few friends!`,
+		link: 'https://modrinth.com/mod/elytra-speed-cap/',
+		archived: false
+	},
+	{
 		title: 'Escaping-from-the-Supernova',
 		date: DateTime.fromISO('2023-03-19'),
 		summary: 'A procedural generated textadventure',
