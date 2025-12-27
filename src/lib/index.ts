@@ -267,6 +267,20 @@ export const projects: Project[] = [
 		archived: false
 	},
 	{
+		title: 'Improved Happy Ghast',
+		date: DateTime.fromISO('2025-12-26'),
+		summary: 'Adds improvments to the Happy Ghast via items',
+		picture: 'improved-happy-ghast.webp',
+		description: `In the Minecraft version <code class="code">1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
+		and carry up to four players, making it great for large builds and hanging out with friends. However, the Happy Ghast itself is
+		very slow and tends to wander when no one is riding it. It’s also quite large, which can get in the way.
+		To make the Happy Ghast usable again while keeping it balanced with the rest of the game, I coded this <code class="code">Data Pack</code>.
+		It can disable wandering, make the Happy Ghast <code class="code">3x</code> faster, and shrink it to half of its original size.
+		Each of these improvements is configurable via items in survival, feel free to try it out!`,
+		link: 'https://modrinth.com/datapack/improved-happy-ghast/',
+		archived: false
+	},
+	{
 		title: 'light-magic',
 		date: DateTime.fromISO('2024-05-27'),
 		summary: 'A persistent in-memory database',
