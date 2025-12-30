@@ -16,8 +16,8 @@
 		ratio = 'aspect-auto',
 		rounded = ''
 	}: Props = $props();
-	const baseSize = `${width} ${height}`;
-	const base = `${baseSize} ${ratio} ${rounded}`;
+	let baseSize = $derived(`${width} ${height}`);
+	let base = $derived(`${baseSize} ${ratio} ${rounded}`);
 
 	let loaded = $state(false);
 

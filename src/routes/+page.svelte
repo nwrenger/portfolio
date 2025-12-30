@@ -81,17 +81,15 @@
 		<section class="space-y-4">
 			<h3 class="h3">Programming Takes</h3>
 			<div class="grid gap-4 md:grid-cols-2">
-				{#each takes as { name, icon, description, color }}
+				{#each takes as { name, icon, description }}
 					<div
-						class="card card-hover {color
-							? color
-							: 'border-surface-200-800 preset-filled-surface-100-900'} flex h-full flex-col justify-between overflow-hidden border-[1px]"
+						class="card preset-tonal border-surface-200-800 flex h-full flex-col justify-between overflow-hidden border"
 					>
 						<article class="space-y-2 p-4">
 							<div>
 								<h6 class="h6">{name} {icon}</h6>
 							</div>
-							<p class="opacity-80">
+							<p>
 								{@html description}
 							</p>
 						</article>

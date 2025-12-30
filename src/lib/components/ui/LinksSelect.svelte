@@ -36,7 +36,7 @@
 	<Portal>
 		<Popover.Positioner>
 			<Popover.Content
-				class="card {bg} max-w-[260px] min-w-[170px] space-y-4 p-4 opacity-0 transition transition-discrete data-[state=open]:opacity-100 starting:data-[state=open]:opacity-0"
+				class="card {bg} max-w-65 min-w-42.5 space-y-4 p-4 opacity-0 transition transition-discrete data-[state=open]:opacity-100 starting:data-[state=open]:opacity-0"
 			>
 				<div class="flex flex-col items-center justify-start space-y-2">
 					{#each links as { name, url, username, icon: Icon }}

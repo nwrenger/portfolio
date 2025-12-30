@@ -84,7 +84,7 @@
 			{#each filteredProjects as { title, date, summary, picture, description, link, archived }}
 				<div
 					id={title}
-					class="card card-hover preset-filled-surface-100-900 border-surface-200-800 divide-surface-200-800 relative flex h-full w-full flex-col justify-between divide-y overflow-hidden border-[1px]"
+					class="card preset-tonal divide-surface-200-800 border-surface-200-800 relative flex h-full w-full flex-col justify-between divide-y overflow-hidden border"
 				>
 					<div class="divide-surface-200-800 h-full divide-y">
 						<header class="relative">
@@ -107,19 +107,19 @@
 								</div>
 								<h4 class="h6">{summary}</h4>
 							</div>
-							<p class="opacity-80">
+							<p>
 								{@html description}
 							</p>
 						</article>
 					</div>
 					<footer class="flex items-center justify-between gap-4 p-4">
-						<p class="text-base opacity-80">
+						<p class="text-base">
 							<a href={link} target="_blank" class="anchor flex w-fit items-center">
 								See the {archived ? 'archived' : ''} Project here
 								<ExternalLink class="pl-2 opacity-60" />
 							</a>
 						</p>
-						<p class="text-base opacity-80">{date.toFormat('MMMM dd, yyyy')}</p>
+						<p class="text-base">{date.toFormat('MMMM dd, yyyy')}</p>
 					</footer>
 				</div>
 			{/each}
