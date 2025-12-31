@@ -10,31 +10,32 @@ export const takes: Take[] = [
 	{
 		name: 'Rust',
 		icon: '🦀',
-		description: 'I have worked on almost all of my projects in Rust. I am very proficient in it!'
+		description:
+			'I have worked on almost all of my projects in Rust. I learned it very early on in my programming career and am, maybe because of that, very proficient in it!'
 	},
 	{
 		name: 'Svelte',
 		icon: '🧡',
 		description:
-			"When I am doing frontend, then only using Svelte. It's a great framework and I am, like with Rust, also very versed in it!"
+			'When I am doing frontend, I only use Svelte (or React, if it has to be). It’s a great framework and I am, like with Rust, also very versed in it!'
 	},
 	{
 		name: 'Zed',
 		icon: '📝',
 		description:
-			"Yeah, I am using Zed now! I finally got done switching from VS Code and it's great!"
+			'I recently switched from VS (or BS) Code to Zed. I have to say, Zed is great and keeps getting better!'
 	},
 	{
 		name: 'C',
 		icon: '👼',
 		description:
-			"The mother (or father) of every modern programming language. C is great but I've never used it in any projects."
+			'The mother (or father) of every modern programming language. C is great, but I’ve never used it in any projects.'
 	},
 	{
 		name: 'Zig',
 		icon: '⚡️',
 		description:
-			'Tried out once, had a blast using <code class="code">comptime</code> but I am simply to stupid to use it in real projects!'
+			'Tried it once, had a blast using <code class="code">comptime</code>, but I am simply too stupid to use it in real projects!'
 	},
 	{
 		name: 'Go',
@@ -45,36 +46,37 @@ export const takes: Take[] = [
 	{
 		name: 'Godot',
 		icon: '🎮',
-		description: 'Best Game Engine out there. Used in my early days for a few crappy games.'
+		description: 'Best game engine out there. Used in my early days for a few crappy games.'
 	},
 	{
 		name: 'Python',
 		icon: '🐍',
 		description:
-			"'Everyone can write Python, right?' and that's also the issue with it: No types and whitespace-based scoping!"
+			'"Everyone can write Python, right?" And that’s also the issue with it: No real types and whitespace-based scoping!'
 	},
 	{
 		name: 'JavaScript',
 		icon: '📺',
 		description:
-			"If someone were to smoke weed while programming in three languages simultaneously, that's how it feels writing JavaScript. Wtf is this language?"
+			'If someone were to smoke weed while programming in three languages simultaneously, that’s how it feels writing JavaScript. What is this language?'
 	},
 	{
 		name: 'TypeScript',
 		icon: '💻',
 		description:
-			'A great extension to JavaScript to make it usable again. Programming in Svelte only with TypeScript.'
+			'Removes the weed-smoking feeling when coding with it in comparison to JavaScript. Therefore, a great extension to JavaScript to make it usable again.'
 	},
 	{
 		name: 'HTML & CSS',
 		icon: '🌐',
-		description: 'Yeah, way better than JavaScript. Great Core Web Technologies!'
+		description:
+			'Yeah, way better than JavaScript. The great part of the three core web technologies.'
 	},
 	{
 		name: 'Git & GitHub',
 		icon: '🔧',
 		description:
-			'Writing every project in Git and uploading it to GitHub. What would I do without GitHub? Use Gitlab!'
+			'Writing every project in Git and uploading it to GitHub. What would I do without GitHub? Use GitLab!'
 	}
 ];
 
