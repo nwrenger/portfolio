@@ -11,72 +11,64 @@ export const takes: Take[] = [
 		name: 'Rust',
 		icon: '🦀',
 		description:
-			'I have worked on almost all of my projects in Rust. I learned it very early on in my programming career and am, maybe because of that, very proficient in it!'
+			'Most of my projects are written in Rust. Learned it early, stuck with it, and feel very at home using it.'
 	},
 	{
 		name: 'Svelte',
 		icon: '🧡',
-		description:
-			'When I am doing frontend, I only use Svelte (or React, if it has to be). It’s a great framework and I am, like with Rust, also very versed in it!'
+		description: `My go-to frontend framework. If it's not Svelte, it's React, BUT only if I really have to.`
 	},
 	{
 		name: 'Zed',
 		icon: '📝',
-		description:
-			'I recently switched from VS (or BS) Code to Zed. I have to say, Zed is great and keeps getting better!'
+		description: `Recently switched from VS (or BS) Code to Zed. It's fast, clean, and keeps improving.`
 	},
 	{
 		name: 'C',
 		icon: '👼',
-		description:
-			'The mother (or father) of every modern programming language. C is great, but I’ve never used it in any projects.'
+		description: `The parent of basically every modern language. Great to know, but I've never used it seriously.`
 	},
 	{
 		name: 'Zig',
 		icon: '⚡️',
-		description:
-			'Tried it once, had a blast using <code class="code">comptime</code>, but I am simply too stupid to use it in real projects!'
+		description: `Tried it once and loved <code class="code">comptime</code>. Unfortunately, I'm too stupid to use it in real projects.`
 	},
 	{
 		name: 'Go',
 		icon: '🐹',
-		description:
-			'Nice language with horrid syntax. I tried it out a few times but then always booted back to Rust.'
+		description: 'Nice language ruined by horrid syntax. Every time I try it, I crawl back to Rust.'
 	},
 	{
 		name: 'Godot',
 		icon: '🎮',
-		description: 'Best game engine out there. Used in my early days for a few crappy games.'
+		description: 'Best game engine out there. Used it early on for a couple of very crappy games.'
 	},
 	{
 		name: 'Python',
 		icon: '🐍',
-		description:
-			'"Everyone can write Python, right?" And that’s also the issue with it: No real types and whitespace-based scoping!'
+		description: `"Everyone can write Python", and that's the problem. No real types and cursed whitespace scoping.`
 	},
 	{
 		name: 'JavaScript',
 		icon: '📺',
 		description:
-			'If someone were to smoke weed while programming in three languages simultaneously, that’s how it feels writing JavaScript. What is this language?'
+			'Feels like coding while high in three languages at once. What even is this language?'
 	},
 	{
 		name: 'TypeScript',
 		icon: '💻',
-		description:
-			'Removes the weed-smoking feeling when coding with it in comparison to JavaScript. Therefore, a great extension to JavaScript to make it usable again.'
+		description: 'Removes the weed-smoking feeling from JavaScript. Makes it usable again.'
 	},
 	{
 		name: 'HTML & CSS',
 		icon: '🌐',
-		description:
-			'Yeah, way better than JavaScript. The great part of the three core web technologies.'
+		description: 'Unironically better than JavaScript. The best part of the core web stack.'
 	},
 	{
 		name: 'Git & GitHub',
 		icon: '🔧',
 		description:
-			'Writing every project in Git and uploading it to GitHub. What would I do without GitHub? Use GitLab!'
+			'Every project lives in Git and ends up on GitHub. What would I do without Github? Use GitLab!'
 	}
 ];
 
@@ -144,7 +136,7 @@ export const projects: Project[] = [
 		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple platformer where I aimed to create an immersive and intriguing story.
 		However, I didn't enjoy the development process, and the update to <code>Godot 4</code> was the last straw—leading me to stop developing games altogether.
 		The idea itself was interesting: <em>A game about procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em>
-		But in the end, I tried to reach for the stars, only to realize I didn’t yet have the skills nor the desire to to reach them.`,
+		But in the end, I tried to reach for the stars, only to realize I didn't yet have the skills nor the desire to to reach them.`,
 		link: 'https://nilch.itch.io/crastination/',
 		archived: false
 	},
@@ -262,7 +254,7 @@ export const projects: Project[] = [
 		picture: 'improved-happy-ghast.webp',
 		description: `In the Minecraft version <code class="code">1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
 		and carry up to four players, making it great for large builds and hanging out with friends. However, the Happy Ghast itself is
-		very slow and tends to wander when no one is riding it. It’s also quite large, which can get in the way.
+		very slow and tends to wander when no one is riding it. It's also quite large, which can get in the way.
 		To make the Happy Ghast usable again while keeping it balanced with the rest of the game, I coded this <code class="code">Data Pack</code>.
 		It can disable wandering, make the Happy Ghast <code class="code">3x</code> faster, and shrink it to half of its original size.
 		Each of these improvements is configurable via items in survival, feel free to try it out!`,
@@ -350,7 +342,7 @@ export const projects: Project[] = [
 		how I built this website and provide feedback on areas for improvement. This portfolio style emphasizes simplicity with a
 		touch of design and fun. My portfolio/personal website has evolved significantly over time, even going back to a
 		<a class="anchor" target="_blank" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
-		so don’t hesitate to revisit and see what has changed!`,
+		so don't hesitate to revisit and see what has changed!`,
 		link: 'https://github.com/nwrenger/portfolio/',
 		archived: false
 	},
@@ -420,8 +412,8 @@ export const projects: Project[] = [
 		summary: 'Online Soundboard App',
 		picture: 'shitboard.webp',
 		description: `Developed at the request of a friend who wanted a sound-sharing platform but never ended up uploading anything...
-		So please, if you have content to share, go ahead and upload it. What gets uploaded won’t be deleted.
-		Have fun! Note: Not everything will stay there indefinitely, so please don’t upload illegal material!`,
+		So please, if you have content to share, go ahead and upload it. What gets uploaded won't be deleted.
+		Have fun! Note: Not everything will stay there indefinitely, so please don't upload illegal material!`,
 		link: 'https://shitboard.nwrenger.dev/',
 		archived: false
 	},
@@ -432,7 +424,7 @@ export const projects: Project[] = [
 		picture: 'simple-fantasy-game.webp',
 		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects#console-utils-rs">console-utils</a> crate during my Informatics lesson.
 		Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP, and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short.
-		I’m currently waiting for my teacher’s feedback, but I think she’ll like it!`,
+		I'm currently waiting for my teacher's feedback, but I think she'll like it!`,
 		link: 'https://github.com/nwrenger/simple-fantasy-game/',
 		archived: false
 	},
