@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { projects, year, type Project } from '$lib';
 	import ImageLoader from '$lib/components/ui/ImageLoader.svelte';
 	import { ArrowLeft, ExternalLink, Link } from 'lucide-svelte';
+	import { untrack } from 'svelte';
 
 	const sortedProjects = projects
 		.sort((a, b) => b.date.toMillis() - a.date.toMillis())
@@ -28,10 +29,15 @@
 		selectedYear === 'all' ? flatProjects : sortedProjects[selectedYear] || []
 	);
 
-	// Reset the selected year if a project references another
-	page.subscribe((page) => {
+	// Reset the selected year if a project references
+	// another and is not inside the current filter
+	$effect(() => {
 		let hashTitle = page.url.hash.replace('#', '');
-		if (!filteredProjects.find((p) => p.title == hashTitle)) selectedYear = 'all';
+
+		// Make sure to not track `filteredProjects` and `selectedYear`
+		untrack(() => {
+			if (!filteredProjects.find((p) => p.title == hashTitle)) selectedYear = 'all';
+		});
 	});
 </script>
 
