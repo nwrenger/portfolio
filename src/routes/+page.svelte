@@ -21,7 +21,7 @@
 </svelte:head>
 
 <div class="h-fit">
-	<main class="mx-auto h-full max-w-3xl px-4 py-6">
+	<main class="mx-auto max-w-3xl px-4 py-6">
 		<div class="min-h-svh-6 flex flex-col space-y-5 *:pt-4">
 			<div class="flex flex-1 items-center justify-center">
 				<section class="space-y-4 text-center sm:px-4">
