@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { projects, year, type Project } from '$lib';
+	import { selectedYear } from '$lib/state';
+	import { projects, year, type Project } from '$lib/content';
 	import ImageLoader from '$lib/components/ui/ImageLoader.svelte';
 	import { ArrowLeft, ExternalLink, Link } from 'lucide-svelte';
 	import { untrack } from 'svelte';
@@ -23,10 +24,8 @@
 
 	const flatProjects = years.flatMap((y) => sortedProjects[y]) as Project[];
 
-	let selectedYear: number | 'all' = $state('all');
-
 	let filteredProjects = $derived(
-		selectedYear === 'all' ? flatProjects : sortedProjects[selectedYear] || []
+		selectedYear.current === 'all' ? flatProjects : sortedProjects[selectedYear.current] || []
 	);
 
 	// Reset the selected year if a project references
@@ -36,7 +35,8 @@
 
 		// Make sure to not track `filteredProjects` and `selectedYear`
 		untrack(() => {
-			if (!filteredProjects.find((p) => p.title == hashTitle)) selectedYear = 'all';
+			if (hashTitle && !filteredProjects.find((p) => p.title == hashTitle))
+				selectedYear.current = 'all';
 		});
 	});
 </script>
@@ -70,7 +70,7 @@
 			</div>
 
 			<div class="flex items-center justify-end space-x-2">
-				<select bind:value={selectedYear} class="select h-fit max-w-30">
+				<select bind:value={selectedYear.current} class="select h-fit max-w-30">
 					<option value="all">All years</option>
 					{#each years as year}
 						<option value={year}>{year}</option>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { socials, sponsors, takes, year } from '$lib';
+	import { socials, sponsors, takes, year } from '$lib/content';
 	import LinksSelect from '$lib/components/ui/LinksSelect.svelte';
 	import { ChevronDown } from 'lucide-svelte';
 
