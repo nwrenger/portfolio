@@ -55,7 +55,7 @@
 	/>
 </svelte:head>
 
-<div class="min-h-svh-20 mx-auto h-full max-w-3xl px-4 py-6">
+<div class="min-h-svh-18 mx-auto h-full max-w-3xl px-4 py-6">
 	<div class="space-y-4">
 		<div class="grid grid-cols-2 pb-2 sm:grid-cols-3">
 			<div class="flex items-center">

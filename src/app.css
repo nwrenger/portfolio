@@ -46,16 +46,10 @@
 	min-height: calc(100svh - (var(--spacing) * 5));
 }
 
-@utility min-h-svh-20 {
+@utility min-h-svh-18 {
 	min-height: calc(100svh - (var(--spacing) * 18.35));
 }
 
 @utility min-h-svh-24 {
 	min-height: calc(100svh - (var(--spacing) * 24));
-}
-
-@custom-variant touch {
-	@media (hover: none) {
-		@slot;
-	}
 }
