@@ -13,6 +13,7 @@
 	}
 
 	body {
+		height: 100%;
 		background-attachment: fixed;
 		background-image:
 			radial-gradient(
@@ -42,12 +43,8 @@
 	}
 }
 
-@utility min-h-svh-5 {
-	min-height: calc(100svh - (var(--spacing) * 5));
-}
-
-@utility min-h-svh-18 {
-	min-height: calc(100svh - (var(--spacing) * 18.35));
+@utility min-h-svh-6 {
+	min-height: calc(100svh - (var(--spacing) * 6));
 }
 
 @utility min-h-svh-24 {

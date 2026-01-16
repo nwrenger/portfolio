@@ -55,92 +55,98 @@
 	/>
 </svelte:head>
 
-<div class="min-h-svh-18 mx-auto h-full max-w-3xl px-4 py-6">
-	<div class="space-y-4">
-		<div class="grid grid-cols-2 pb-2 sm:grid-cols-3">
-			<div class="flex items-center">
-				<a href="/" class="btn preset-tonal">
-					<ArrowLeft size={18} />
-					<span>Return</span>
-				</a>
-			</div>
-
-			<div class="hidden h-full justify-center sm:flex">
-				<h1 class="h2">Projects</h1>
-			</div>
-
-			<div class="flex items-center justify-end space-x-2">
-				<select bind:value={selectedYear.current} class="select h-fit max-w-30">
-					<option value="all">All years</option>
-					{#each years as year}
-						<option value={year}>{year}</option>
-					{/each}
-				</select>
-
-				<span
-					class="badge preset-filled-surface-500 text-base"
-					title="Count: {filteredProjects.length}"
-				>
-					{filteredProjects.length}
-				</span>
-			</div>
-		</div>
-
-		<div class="grid w-full gap-6">
-			{#each filteredProjects as { title, date, summary, picture, description, link, archived }}
-				<div
-					id={title}
-					class="card preset-tonal divide-surface-200-800 border-surface-200-800 relative flex h-full w-full flex-col justify-between divide-y overflow-hidden border"
-				>
-					<div class="divide-surface-200-800 h-full divide-y">
-						<header class="relative">
-							<a href={link} target="_blank" class="w-full">
-								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-16/9" />
-								{#if archived}
-									<div class="absolute inset-0 flex items-center justify-center bg-black/40">
-										<span class="text-lg font-bold tracking-widest text-white">ARCHIVED</span>
-									</div>
-								{/if}
-							</a>
-						</header>
-						<article class="space-y-4 p-4">
-							<div>
-								<div class="flex justify-between space-x-2">
-									<h3 class="h3">{title}</h3>
-									<a href="#{title}" class="flex items-center">
-										<Link class="stroke-secondary-900-100" />
-									</a>
-								</div>
-								<h4 class="h6">{summary}</h4>
-							</div>
-							<p>
-								{@html description}
-							</p>
-						</article>
+<div class="flex min-h-full flex-col">
+	<main class="flex-1">
+		<div class="mx-auto h-full max-w-3xl px-4 py-6">
+			<div class="space-y-4">
+				<div class="grid grid-cols-2 pb-2 sm:grid-cols-3">
+					<div class="flex items-center">
+						<a href="/" class="btn preset-tonal">
+							<ArrowLeft size={18} />
+							<span>Return</span>
+						</a>
 					</div>
-					<footer class="flex items-center justify-between gap-4 p-4">
-						<p class="text-base">
-							<a href={link} target="_blank" class="anchor flex w-fit items-center">
-								See the {archived ? 'archived' : ''} Project here
-								<ExternalLink class="pl-2 opacity-60" />
-							</a>
-						</p>
-						<p class="text-base">{date.toFormat('MMMM dd, yyyy')}</p>
-					</footer>
+
+					<div class="hidden h-full justify-center sm:flex">
+						<h1 class="h2">Projects</h1>
+					</div>
+
+					<div class="flex items-center justify-end space-x-2">
+						<select bind:value={selectedYear.current} class="select h-fit max-w-30">
+							<option value="all">All years</option>
+							{#each years as year}
+								<option value={year}>{year}</option>
+							{/each}
+						</select>
+
+						<span
+							class="badge preset-filled-surface-500 text-base"
+							title="Count: {filteredProjects.length}"
+						>
+							{filteredProjects.length}
+						</span>
+					</div>
 				</div>
-			{/each}
+
+				<div class="grid w-full gap-6">
+					{#each filteredProjects as { title, date, summary, picture, description, link, archived }}
+						<div
+							id={title}
+							class="card preset-tonal divide-surface-200-800 border-surface-200-800 relative flex h-full w-full flex-col justify-between divide-y overflow-hidden border"
+						>
+							<div class="divide-surface-200-800 h-full divide-y">
+								<header class="relative">
+									<a href={link} target="_blank" class="w-full">
+										<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-16/9" />
+										{#if archived}
+											<div class="absolute inset-0 flex items-center justify-center bg-black/40">
+												<span class="text-lg font-bold tracking-widest text-white">ARCHIVED</span>
+											</div>
+										{/if}
+									</a>
+								</header>
+								<article class="space-y-4 p-4">
+									<div>
+										<div class="flex justify-between space-x-2">
+											<h3 class="h3">{title}</h3>
+											<a href="#{title}" class="flex items-center">
+												<Link class="stroke-secondary-900-100" />
+											</a>
+										</div>
+										<h4 class="h6">{summary}</h4>
+									</div>
+									<p>
+										{@html description}
+									</p>
+								</article>
+							</div>
+							<footer class="flex items-center justify-between gap-4 p-4">
+								<p class="text-base">
+									<a href={link} target="_blank" class="anchor flex w-fit items-center">
+										See the {archived ? 'archived' : ''} Project here
+										<ExternalLink class="pl-2 opacity-60" />
+									</a>
+								</p>
+								<p class="text-base">{date.toFormat('MMMM dd, yyyy')}</p>
+							</footer>
+						</div>
+					{/each}
+				</div>
+			</div>
 		</div>
-	</div>
+	</main>
+
+	<footer class="border-surface-200-800 border-t">
+		<div
+			class="mx-auto flex max-w-3xl flex-row items-center justify-between gap-3 px-4 py-6 text-sm"
+		>
+			<p class="text-surface-600 text-center text-xs sm:text-sm">
+				<span class="opacity-80">© {year}</span> · <span class="font-medium">Nils Wrenger</span>
+			</p>
+
+			<div class="flex flex-wrap items-center gap-4">
+				<a href="/privacy-policy" class="anchor text-center">Privacy Policy</a>
+			</div>
+		</div>
+	</footer>
 </div>
-
-<footer class="border-surface-200-800 border-t">
-	<div class="mx-auto flex max-w-3xl flex-row items-center justify-between gap-3 px-4 py-6 text-sm">
-		<p class="text-surface-600 text-center text-xs sm:text-sm">
-			<span class="opacity-80">© {year}</span> · <span class="font-medium">Nils Wrenger</span>
-		</p>
-
-		<div class="flex flex-wrap items-center gap-4">
-			<a href="/privacy-policy" class="anchor text-center">Privacy Policy</a>
-		</div>
-	</div>
-</footer>
