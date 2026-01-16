@@ -55,7 +55,7 @@
 	/>
 </svelte:head>
 
-<div class="mx-auto h-full max-w-7xl px-4 py-6">
+<div class="min-h-svh-20 mx-auto h-full max-w-3xl px-4 py-6">
 	<div class="space-y-4">
 		<div class="grid grid-cols-2 pb-2 sm:grid-cols-3">
 			<div class="flex items-center">
@@ -86,7 +86,7 @@
 			</div>
 		</div>
 
-		<div class="grid w-full gap-6 md:grid-cols-2">
+		<div class="grid w-full gap-6">
 			{#each filteredProjects as { title, date, summary, picture, description, link, archived }}
 				<div
 					id={title}
@@ -95,7 +95,7 @@
 					<div class="divide-surface-200-800 h-full divide-y">
 						<header class="relative">
 							<a href={link} target="_blank" class="w-full">
-								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-21/9" />
+								<ImageLoader src={'projects/' + picture} alt={title} ratio="aspect-16/9" />
 								{#if archived}
 									<div class="absolute inset-0 flex items-center justify-center bg-black/40">
 										<span class="text-lg font-bold tracking-widest text-white">ARCHIVED</span>
@@ -134,7 +134,7 @@
 </div>
 
 <footer class="border-surface-200-800 border-t">
-	<div class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-3 px-4 py-6 text-sm">
+	<div class="mx-auto flex max-w-3xl flex-row items-center justify-between gap-3 px-4 py-6 text-sm">
 		<p class="text-surface-600 text-center text-xs sm:text-sm">
 			<span class="opacity-80">© {year}</span> · <span class="font-medium">Nils Wrenger</span>
 		</p>

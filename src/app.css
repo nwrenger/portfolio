@@ -9,7 +9,7 @@
 
 @layer base {
 	html {
-		@apply h-full;
+		height: 100%;
 	}
 
 	body {
@@ -42,12 +42,16 @@
 	}
 }
 
-@utility min-h-svh-y-5 {
-	min-height: calc(100svh - 20px);
+@utility min-h-svh-5 {
+	min-height: calc(100svh - (var(--spacing) * 5));
 }
 
-@utility min-h-svh-y-100 {
-	min-height: calc(100svh - 92px);
+@utility min-h-svh-20 {
+	min-height: calc(100svh - (var(--spacing) * 18.35));
+}
+
+@utility min-h-svh-24 {
+	min-height: calc(100svh - (var(--spacing) * 24));
 }
 
 @custom-variant touch {

@@ -21,7 +21,7 @@
 </svelte:head>
 
 <div class="mx-auto h-full max-w-3xl px-4 py-6">
-	<div class="min-h-svh-y-5 flex flex-col space-y-5 *:pt-4">
+	<div class="min-h-svh-5 flex flex-col space-y-5 *:pt-4">
 		<div class="flex flex-1 items-center justify-center">
 			<section class="space-y-4 text-center sm:px-4">
 				<h1 class="h1">Hi, there!</h1>
@@ -63,7 +63,7 @@
 		</div>
 	</div>
 
-	<div class="min-h-svh-y-100 space-y-6 pt-4" bind:this={bottom_content}>
+	<div class="min-h-svh-24 space-y-6 pt-4" bind:this={bottom_content}>
 		<section class="space-y-4">
 			<h3 class="h3">Skills</h3>
 			<p>
@@ -80,7 +80,7 @@
 
 		<section class="space-y-4">
 			<h3 class="h3">Programming Takes</h3>
-			<div class="grid gap-4 md:grid-cols-2">
+			<div class="grid gap-4 sm:grid-cols-2">
 				{#each takes as { name, icon, description }}
 					<div
 						class="card preset-tonal border-surface-200-800 flex h-full flex-col justify-between overflow-hidden border"
