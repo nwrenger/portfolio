@@ -36,9 +36,9 @@
 					<div
 						class="flex flex-col items-center justify-center space-y-4 pt-4 sm:flex-row sm:space-y-0 sm:space-x-4"
 					>
-						<a href="#projects" class="btn preset-tonal"> My Projects </a>
-						<a href="#contacts" class="btn preset-filled-primary-500"> Contacts </a>
-						<a href="#sponsors" class="btn preset-filled-tertiary-500"> Sponsor Me </a>
+						<a href="#projects" class="btn preset-tonal-primary"> My Projects </a>
+						<a href="#contacts" class="btn preset-tonal-secondary"> Contacts </a>
+						<a href="#sponsors" class="btn preset-tonal-tertiary"> Sponsor Me </a>
 					</div>
 					<div class="pt-4 text-sm">
 						<a onclick={() => goto('/')} href="/privacy-policy" class="anchor">Privacy Policy</a>
@@ -48,11 +48,11 @@
 		</div>
 
 		<div id="projects" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="My Projects" bg="preset-tonal" links={projectTypes} />
+			<LinksSelect label="My Projects" bg="preset-tonal-primary" links={projectTypes} />
 		</div>
 
 		<div id="contacts" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="Contacts" bg="preset-tonal-primary" links={socials} />
+			<LinksSelect label="Contacts" bg="preset-tonal-secondary" links={socials} />
 		</div>
 
 		<div id="sponsors" class="flex h-full snap-center items-center justify-center p-4">
