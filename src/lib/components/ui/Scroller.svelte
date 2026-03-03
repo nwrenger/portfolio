@@ -61,7 +61,11 @@
 
 	{#if return_link}
 		<div class="absolute top-4 left-4 z-20">
-			<a class="btn-icon preset-tonal" title="Return" href={return_link}><ArrowLeft size={18} /></a>
+			<a
+				class="btn-icon preset-tonal backdrop-blur-2xl hover:backdrop-blur-none"
+				title="Return"
+				href={return_link}><ArrowLeft size={18} /></a
+			>
 		</div>
 	{/if}
 
