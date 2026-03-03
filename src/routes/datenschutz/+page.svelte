@@ -16,28 +16,8 @@
 	/>
 </svelte:head>
 
-<div class="mx-auto h-full max-w-3xl px-4 py-6">
-	<div class="flex flex-col space-y-6">
-		<div class="flex items-center justify-between">
-			<button
-				onclick={() => {
-					if (window?.history.length > 1) {
-						window?.history.back();
-					} else {
-						window.close();
-					}
-				}}
-				class="btn preset-tonal"
-			>
-				<ArrowLeft size={18} />
-				<span>Zurück</span>
-			</button>
-			<a data-sveltekit-replacestate href="/privacy-policy" class="btn preset-tonal">
-				<Languages size={18} />
-				<span>Englische Version</span>
-			</a>
-		</div>
-
+<div class="relative h-full p-4">
+	<div class="mx-auto flex max-w-2xl flex-col space-y-6 pt-10 pb-4">
 		<div class="space-y-2">
 			<h3 class="h3">Datenschutzerklärung</h3>
 
@@ -92,5 +72,30 @@
 		</div>
 
 		<p><small>Stand: 20.09.2025</small></p>
+	</div>
+
+	<!-- Back button -->
+	<div class="absolute top-4 left-4 z-20">
+		<button
+			onclick={() => {
+				if (window?.history.length > 1) {
+					window?.history.back();
+				} else {
+					window.close();
+				}
+			}}
+			title="Zurück"
+			class="btn-icon preset-tonal"
+		>
+			<ArrowLeft size={18} />
+		</button>
+	</div>
+
+	<!-- Language Change -->
+	<div class="absolute top-4 right-4 z-20">
+		<a data-sveltekit-replacestate href="/privacy-policy" class="btn preset-tonal">
+			<Languages size={18} />
+			<span>Englische Version</span>
+		</a>
 	</div>
 </div>

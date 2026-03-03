@@ -5,7 +5,9 @@
 		width?: string;
 		height?: string;
 		ratio?: string;
-		rounded?: string;
+		opacity?: string;
+		classes?: string;
+		aria_hidden?: 'true' | 'false';
 	}
 
 	let {
@@ -14,10 +16,12 @@
 		width = 'w-full',
 		height = 'h-full',
 		ratio = 'aspect-auto',
-		rounded = ''
+		opacity = 'opacity-100',
+		classes = '',
+		aria_hidden = 'false'
 	}: Props = $props();
-	let baseSize = $derived(`${width} ${height}`);
-	let base = $derived(`${baseSize} ${ratio} ${rounded}`);
+	let base = $derived(`${width} ${height} ${classes}`);
+	let img = $derived(`${base} ${ratio}`);
 
 	let loaded = $state(false);
 
@@ -26,13 +30,14 @@
 	}
 </script>
 
-<div class="{loaded ? '' : 'placeholder animate-pulse rounded-none'} {baseSize}">
+<div class="{loaded ? '' : `placeholder animate-pulse rounded-none ${opacity}`} {base}">
 	<img
 		{src}
 		{alt}
 		onload={handleLoad}
-		class="{base} object-cover {loaded ? 'opacity-100' : ' opacity-0'}"
+		class="{img} object-cover {loaded ? opacity : ' opacity-0'}"
 		loading="lazy"
 		decoding="sync"
+		aria-hidden={aria_hidden}
 	/>
 </div>

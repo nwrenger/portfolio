@@ -1,78 +1,24 @@
-export const year = new Date().getFullYear();
+export const categoryNames: Record<Category, string> = {
+	web: 'Websites',
+	app: 'Applications',
+	cli: 'CLIs',
+	lib: 'Libraries',
+	mod: 'Modifications',
+	game: 'Games',
+	bot: 'Bots'
+};
 
-export interface Take {
-	name: string;
-	icon: string;
-	description: string;
-}
-
-export const takes: Take[] = [
-	{
-		name: 'Rust',
-		icon: '🦀',
-		description:
-			'Most of my projects are written in Rust. Learned it early, stuck with it, and feel very at home using it.'
-	},
-	{
-		name: 'Svelte',
-		icon: '🧡',
-		description: `My go-to frontend framework. If it's not Svelte, it's React, BUT only if I really have to.`
-	},
-	{
-		name: 'Zed',
-		icon: '📝',
-		description: `Recently switched from VS (or BS) Code to Zed. It's fast, clean, and keeps improving.`
-	},
-	{
-		name: 'C',
-		icon: '👼',
-		description: `The parent of basically every modern language. Great to know, but I've never used it seriously.`
-	},
-	{
-		name: 'Zig',
-		icon: '⚡️',
-		description: `Tried it once and loved <code class="code">comptime</code>. Unfortunately, I'm too stupid to use it in real projects.`
-	},
-	{
-		name: 'Go',
-		icon: '🐹',
-		description: 'Nice language ruined by horrid syntax. Every time I try it, I crawl back to Rust.'
-	},
-	{
-		name: 'Godot',
-		icon: '🎮',
-		description: 'Best game engine out there. Used it early on for a couple of very crappy games.'
-	},
-	{
-		name: 'Python',
-		icon: '🐍',
-		description: `"Everyone can write Python", and that's the problem. No real types and cursed whitespace scoping.`
-	},
-	{
-		name: 'JavaScript',
-		icon: '📺',
-		description:
-			'Feels like coding while high in three languages at once. What even is this language?'
-	},
-	{
-		name: 'TypeScript',
-		icon: '💻',
-		description: 'Removes the weed-smoking feeling from JavaScript. Makes it usable again.'
-	},
-	{
-		name: 'HTML & CSS',
-		icon: '🌐',
-		description: 'Unironically better than JavaScript. The best part of the core web stack.'
-	},
-	{
-		name: 'Git & GitHub',
-		icon: '🔧',
-		description:
-			'Every project lives in Git and ends up on GitHub. What would I do without Github? Use GitLab!'
-	}
-];
-
-import { Github, Mail } from 'lucide-svelte';
+import {
+	AppWindow,
+	Bot,
+	Gamepad,
+	Github,
+	Globe,
+	Mail,
+	Package,
+	PencilRuler,
+	SquareTerminal
+} from 'lucide-svelte';
 import BlueSky from '$lib/components/icons/BlueSky.svelte';
 import Discord from '$lib/components/icons/Discord.svelte';
 import Instagram from '$lib/components/icons/Instagram.svelte';
@@ -80,18 +26,35 @@ import { DateTime } from 'luxon';
 import type { Link } from './components/ui/LinksSelect.svelte';
 import Kofi from './components/icons/Kofi.svelte';
 
+export const projectTypes: Link[] = [
+	{ name: categoryNames['web'], url: '/projects/web', icon: Globe },
+	{ name: categoryNames['app'], url: '/projects/app', icon: AppWindow },
+	{ name: categoryNames['cli'], url: '/projects/cli', icon: SquareTerminal },
+	{ name: categoryNames['lib'], url: '/projects/lib', icon: Package },
+	{ name: categoryNames['mod'], url: '/projects/mod', icon: PencilRuler },
+	{ name: categoryNames['game'], url: '/projects/game', icon: Gamepad },
+	{ name: categoryNames['bot'], url: '/projects/bot', icon: Bot }
+];
+
 export const sponsors: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', icon: Github },
-	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', icon: Kofi }
+	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', new_tab: true, icon: Github },
+	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', new_tab: true, icon: Kofi }
 ];
 
 export const socials: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/nwrenger', icon: Github },
-	{ name: 'BlueSky', url: 'https://bsky.app/profile/nilch.bsky.social', icon: BlueSky },
+	{ name: 'GitHub', url: 'https://github.com/nwrenger', new_tab: true, icon: Github },
+	{
+		name: 'BlueSky',
+		url: 'https://bsky.app/profile/nilch.bsky.social',
+		new_tab: true,
+		icon: BlueSky
+	},
 	{ name: 'Discord', username: '@nilch_', icon: Discord },
-	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', icon: Instagram },
-	{ name: 'Mails', url: 'mailto:nils@wrenger.net', icon: Mail }
+	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', new_tab: true, icon: Instagram },
+	{ name: 'Mails', url: 'mailto:nils@wrenger.net', new_tab: true, icon: Mail }
 ];
+
+export type Category = 'web' | 'app' | 'cli' | 'lib' | 'mod' | 'game' | 'bot';
 
 export interface Project {
 	title: string;
@@ -101,6 +64,7 @@ export interface Project {
 	description: string;
 	link: string;
 	archived: boolean;
+	categories: Category[];
 }
 
 export const projects: Project[] = [
@@ -111,11 +75,12 @@ export const projects: Project[] = [
 		picture: 'clash.webp',
 		description: `As the name suggests, this is an online clone of the popular card game Cards Against Humanity. I've written
 		it to develop a deeper understanding of WebSockets and Games. It's written in my typical stack consisting of <code>Svelte</code>
-		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects#one-googol">one-googol</a>,
+		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects/game#one-googol">one-googol</a>,
 		which is a very similar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
 		just hosts the api. This marks my 3rd "Game" I've written and I have to say it's by far the best one!`,
 		link: 'https://clash.nwrenger.dev/',
-		archived: false
+		archived: false,
+		categories: ['web', 'game']
 	},
 	{
 		title: 'console-utils-rs',
@@ -126,19 +91,21 @@ export const projects: Project[] = [
 		In comparison, python has the super simple <code >input</code> function which can do that very easily!
 		Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!`,
 		link: 'https://crates.io/crates/console-utils/',
-		archived: false
+		archived: false,
+		categories: ['cli', 'lib']
 	},
 	{
 		title: 'crastination',
 		date: DateTime.fromISO('2022-10-24'),
-		summary: 'My first big Project and my last Game',
+		summary: 'My first big Project',
 		picture: 'crastination.webp',
 		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple platformer where I aimed to create an immersive and intriguing story.
 		However, I didn't enjoy the development process, and the update to <code>Godot 4</code> was the last straw—leading me to stop developing games altogether.
 		The idea itself was interesting: <em>A game about procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em>
 		But in the end, I tried to reach for the stars, only to realize I didn't yet have the skills nor the desire to to reach them.`,
 		link: 'https://nilch.itch.io/crastination/',
-		archived: false
+		archived: false,
+		categories: ['game']
 	},
 	{
 		title: 'dashboard',
@@ -149,20 +116,22 @@ export const projects: Project[] = [
 		I am here going to explain further how it came to this project. I bought some time ago the domain <code>nwrenger.dev</code> and wanted to host under that domain some websites,
 		which btw was harder than I thought because of DNS, the provider and GH-Pages. Nevertheless, the idea of an overview of all my websites began to grow, and now here we are!`,
 		link: 'https://github.com/nwrenger/dashboard/',
-		archived: true
+		archived: true,
+		categories: ['web']
 	},
 	{
 		title: 'Disable Dimensions',
 		date: DateTime.fromISO('2025-10-20'),
-		summary: 'Disable vanilla Dimensions like The Nether and/or The End',
+		summary: 'Restrict access to vanilla and custom dimensions',
 		picture: 'disable-dimensions.webp',
-		description: `In Minecraft there are different dimensions you'll need to explore to progress the 'story' of the game, which finishes in The End dimension by killing the Ender Dragon.
+		description: `In Minecraft there are different dimensions you'll need to explore to progress the 'story' of the game.
 		It is very common in multiplayer that the server staff want to restrict entering those dimensions because of (1) slowing down story progression or (2) not being designed to have enterable
 		dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code> which restricts players' access to the other dimensions by teleporting them immediately back after they try
-		to enter the dimension. It also has mod support and is currently the only working <code class="code">Data Pack</code> based solution out there! Coding this was my first dive into making modifications for a game,
+		to enter the dimension. It also supports custom dimensions! Coding this was my first dive into making modifications for a game,
 		which made the process both challenging and really exciting.`,
 		link: 'https://modrinth.com/datapack/disable-dimensions/',
-		archived: false
+		archived: false,
+		categories: ['mod']
 	},
 	{
 		title: 'doenermann-bot',
@@ -174,7 +143,8 @@ export const projects: Project[] = [
 		copy messages from a channel (first message seen in the picture), give users automatically roles on certain conditions, ...
 		This was created as a drop-in replacement of Mee6, which did some very shady stuff lately.`,
 		link: 'https://github.com/nwrenger/doenermann-bot/',
-		archived: false
+		archived: false,
+		categories: ['bot']
 	},
 	{
 		title: 'Elytra Speed Cap',
@@ -187,7 +157,8 @@ export const projects: Project[] = [
 		server. When not changing the client-side predictions, the player may experience rubberbanding. It enables multiplayer servers to nerf the elytra and
 		reduce chunk-loading lag. A lightweight mod that will also be used for my own Minecraft server!`,
 		link: 'https://modrinth.com/mod/elytra-speed-cap/',
-		archived: false
+		archived: false,
+		categories: ['mod']
 	},
 	{
 		title: 'Escaping-from-the-Supernova',
@@ -195,10 +166,11 @@ export const projects: Project[] = [
 		summary: 'A procedural generated textadventure',
 		picture: 'efts.webp',
 		description: `This project marks my first attempt at writing in Rust, and the original version is available under the "old" branch.
-		After gaining more experience and developing my own CLI crate <a class="anchor" href="/projects#console-utils-rs">console-utils</a>,
+		After gaining more experience and developing my own CLI crate <a class="anchor" href="/projects/cli#console-utils-rs">console-utils</a>,
   		I expanded the project into a procedurally generated text adventure with a total of 16 different endings. Have fun exploring them!`,
 		link: 'https://github.com/nwrenger/Escaping-from-the-Supernova/',
-		archived: false
+		archived: false,
+		categories: ['game', 'cli']
 	},
 	{
 		title: 'eta',
@@ -209,7 +181,8 @@ export const projects: Project[] = [
 		Furthermore, this was created due to the lack of performance seen in VSC, the most used code editor, and my curiosity of
 		how a project editor app works and how hard is it to create one, which I now know it is <code>VERY HARD</code>.`,
 		link: 'https://github.com/nwrenger/eta/',
-		archived: false
+		archived: false,
+		categories: ['app']
 	},
 	{
 		title: 'flip-ui',
@@ -221,7 +194,8 @@ export const projects: Project[] = [
 		 Nevertheless, the workflow when using this is to create a UI using the website and then use a Rust crate which converts
 		 the UI data and your own custom functions into a flipperzero compatible binary.`,
 		link: 'https://github.com/flip-ui/',
-		archived: false
+		archived: false,
+		categories: ['web', 'lib']
 	},
 	{
 		title: 'gluer',
@@ -234,7 +208,8 @@ export const projects: Project[] = [
 		relevant information and generates the corresponding <code>api</code> in a TypeScript file. Currently, the project supports
 		the <code>axum</code> framework, with plans to extend support to additional backends in the future.`,
 		link: 'https://crates.io/crates/gluer/',
-		archived: false
+		archived: false,
+		categories: ['lib']
 	},
 	{
 		title: 'hadar',
@@ -245,21 +220,23 @@ export const projects: Project[] = [
 		Its sole mission is to seek food and avoid killing itself when it gets too long. The results of this strategy are displayed
 		in the picture above!`,
 		link: 'https://github.com/nwrenger/hadar/',
-		archived: false
+		archived: false,
+		categories: ['bot']
 	},
 	{
 		title: 'Improved Happy Ghast',
 		date: DateTime.fromISO('2025-12-26'),
-		summary: 'Adds improvments to the Happy Ghast via items',
+		summary: 'Adds improvments to the Happy Ghast',
 		picture: 'improved-happy-ghast.webp',
 		description: `In the Minecraft version <code class="code">1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
 		and carry up to four players, making it great for large builds and hanging out with friends. However, the Happy Ghast itself is
 		very slow and tends to wander when no one is riding it. It's also quite large, which can get in the way.
 		To make the Happy Ghast usable again while keeping it balanced with the rest of the game, I coded this <code class="code">Data Pack</code>.
-		It can disable wandering, make the Happy Ghast <code class="code">3x</code> faster, and shrink it to half of its original size.
+		It can disable wandering, make the Happy Ghast <code class="code">3x</code> faster, shrink it to half of its original size, and even summon it using a <span class="italic">Bound Horn</span>.
 		Each of these improvements is configurable via items in survival, feel free to try it out!`,
 		link: 'https://modrinth.com/datapack/improved-happy-ghast/',
-		archived: false
+		archived: false,
+		categories: ['mod']
 	},
 	{
 		title: 'light-magic',
@@ -271,7 +248,8 @@ export const projects: Project[] = [
 		efficient <code>search</code> and <code>join!</code> functions for seamless data management and rust's beautiful type system
 		for creating the database table. Give it a try and experience the simplicity and performance of this innovative database solution!`,
 		link: 'https://crates.io/crates/light-magic/',
-		archived: false
+		archived: false,
+		categories: ['lib']
 	},
 	{
 		title: 'notenprojekt',
@@ -283,18 +261,20 @@ export const projects: Project[] = [
 		Originally, there was a section planned with more analytics over all your quarters and some graphs, but as always our teacher didn't
 		give us enough time, so this will remain a 'when there's time for personal projects again' kind of thing.`,
 		link: 'https://github.com/nwrenger/notenprojekt',
-		archived: false
+		archived: false,
+		categories: ['app']
 	},
 	{
 		title: 'omega',
 		date: DateTime.fromISO('2024-03-25'),
 		summary: 'A performant terminal-based project editor',
 		picture: 'omega.webp',
-		description: `This project was created after I created <a class="anchor" href="/projects#eta">eta</a>
+		description: `This project was created after I created <a class="anchor" href="/projects/app#eta">eta</a>
 		from which I learned a lot. It's a terminal-based project editor with syntax highlighting, great performance and very useful and powerful shortcuts.
 		So please give it a try!`,
 		link: 'https://crates.io/crates/omega/',
-		archived: false
+		archived: false,
+		categories: ['cli']
 	},
 	{
 		title: 'one-googol',
@@ -307,7 +287,8 @@ export const projects: Project[] = [
 		WebSocket connections. It features intricate scaling with polling and, in the future, will include Cookie Clicker-style
 		elements!`,
 		link: 'https://github.com/nwrenger/one-googol/',
-		archived: true
+		archived: true,
+		categories: ['web', 'game']
 	},
 	{
 		title: 'plebis-online-website',
@@ -318,7 +299,8 @@ export const projects: Project[] = [
 		As I also began to develop stuff, they asked me to create a cool website which I did (hopefully). Additionally, I joined the team
 		and am helping them with other stuff, beyond just the Website. When the game is done, I will link it here.`,
 		link: 'https://plebis.online/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'pointy',
@@ -331,7 +313,8 @@ export const projects: Project[] = [
 		and <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/pointy_api" target="_blank">crate/pointy_api</a> in the main repository.
 		Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
 		link: 'https://github.com/nwrenger/pointy/',
-		archived: false
+		archived: false,
+		categories: ['app']
 	},
 	{
 		title: 'portfolio',
@@ -344,7 +327,8 @@ export const projects: Project[] = [
 		<a class="anchor" target="_blank" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
 		so don't hesitate to revisit and see what has changed!`,
 		link: 'https://github.com/nwrenger/portfolio/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'PHV Misburg Website',
@@ -356,7 +340,8 @@ export const projects: Project[] = [
 		for modern standards. On that note, I have to say that Wordpress was an experience of itself and am proud to say, that after
 		enough sleepless hours, it works and looks great!`,
 		link: 'https://phvmisburg.de/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'quickmaths',
@@ -367,7 +352,8 @@ export const projects: Project[] = [
 		Developed during my school lessons, this website focuses on learning math calculations and uniquely features local co-op!
 		Surprising, right? Grab a friend, try it out below, and see who excels at calculations!`,
 		link: 'https://quickmaths.nwrenger.dev/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'schiller-db',
@@ -380,7 +366,8 @@ export const projects: Project[] = [
 		The aim was to assist authorities in state management by eliminating the need for extensive paperwork, which is typically
 		essential in bureaucratic processes.`,
 		link: 'https://github.com/nwrenger/schiller-db/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'schiller-lib',
@@ -392,7 +379,8 @@ export const projects: Project[] = [
 		but now it has been transformed into a comprehensive website plus server with OAuth for authentication.
 		This update was made to eliminate the need for Windows/PC and to simplify the user interface for younger students.`,
 		link: 'https://github.com/wrenger/schiller-lib/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'schulen-im-chaos',
@@ -404,7 +392,8 @@ export const projects: Project[] = [
 		etc. It's important to note that the current scope of this project is limited to German schools only,
 		due to the significant differences in school systems worldwide.`,
 		link: 'https://schulenimchaos.de/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'shitboard',
@@ -415,18 +404,20 @@ export const projects: Project[] = [
 		So please, if you have content to share, go ahead and upload it. What gets uploaded won't be deleted.
 		Have fun! Note: Not everything will stay there indefinitely, so please don't upload illegal material!`,
 		link: 'https://shitboard.nwrenger.dev/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'simple-fantasy-game',
 		date: DateTime.fromISO('2025-01-27'),
 		summary: 'A simple fantasy game emulator',
 		picture: 'simple-fantasy-game.webp',
-		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects#console-utils-rs">console-utils</a> crate during my Informatics lesson.
+		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects/cli#console-utils-rs">console-utils</a> crate during my Informatics lesson.
 		Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP, and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short.
 		I'm currently waiting for my teacher's feedback, but I think she'll like it!`,
 		link: 'https://github.com/nwrenger/simple-fantasy-game/',
-		archived: false
+		archived: false,
+		categories: ['game', 'cli']
 	},
 	{
 		title: 'Smart-O-Mat',
@@ -438,7 +429,8 @@ export const projects: Project[] = [
 		like sharing your progress, automatically saving your progress locally, getting to compare your result to current polling results and so on increased the urge to develop something myself. So I created the "Smart-O-Mat",
 		a smarter and far better version. For every German fellow: Go voting and use this as advice for your election choice!`,
 		link: 'https://wahl.nwrenger.dev/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	},
 	{
 		title: 'songwriting',
@@ -448,6 +440,7 @@ export const projects: Project[] = [
 		description: `I developed my Songwriting Portfolio for my music class. Please note that it is entirely written in <code>German</code>.
 		I utilized the new <code>Skeleton</code> Framework and created some impressive components and animations. Enjoy exploring it!`,
 		link: 'https://songwriting.nwrenger.dev/',
-		archived: false
+		archived: false,
+		categories: ['web']
 	}
 ];

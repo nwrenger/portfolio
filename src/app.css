@@ -1,10 +1,10 @@
 @import 'tailwindcss';
+
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 
-@import '@skeletonlabs/skeleton-svelte';
-
 @import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
 @import '@skeletonlabs/skeleton/themes/rose';
 
 @layer base {
@@ -35,7 +35,7 @@
 	p,
 	li,
 	code {
-		@apply sm:text-lg;
+		@apply text-base md:text-lg;
 	}
 
 	code {
@@ -43,10 +43,8 @@
 	}
 }
 
-@utility min-h-svh-6 {
-	min-height: calc(100svh - (var(--spacing) * 6));
-}
-
-@utility min-h-svh-24 {
-	min-height: calc(100svh - (var(--spacing) * 24));
+@utility preset-glass-neutral {
+	background: color-mix(in oklab, var(--color-surface-50-950) 60%, transparent);
+	box-shadow: 0 0px 30px color-mix(in oklab, var(--color-surface-50-950) 95%, transparent) inset;
+	backdrop-filter: blur(16px);
 }
