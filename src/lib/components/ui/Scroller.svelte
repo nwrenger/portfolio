@@ -62,7 +62,7 @@
 
 <div
 	class="h-full snap-y snap-mandatory snap-always overflow-y-scroll scroll-smooth"
-	style="scrollbar-width: none; overscroll-behavior: contain;"
+	style="scrollbar-width: none;"
 	bind:this={el}
 	onscroll={onScroll}
 >
