@@ -2,6 +2,9 @@
 	import { projectTypes, socials, sponsors } from '$lib/content';
 	import LinksSelect from '$lib/components/ui/LinksSelect.svelte';
 	import Scroller from '$lib/components/ui/Scroller.svelte';
+	import { page } from '$app/state';
+	import { tick, untrack } from 'svelte';
+	import { goto } from '$app/navigation';
 </script>
 
 <svelte:head>
@@ -38,7 +41,7 @@
 						<a href="#contacts" class="btn preset-filled-tertiary-500"> Contacts </a>
 					</div>
 					<div class="pt-4 text-sm">
-						<a href="/privacy-policy" class="anchor">Privacy Policy</a>
+						<a onclick={() => goto('/')} href="/privacy-policy" class="anchor">Privacy Policy</a>
 					</div>
 				</section>
 			</div>
