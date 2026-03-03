@@ -31,14 +31,14 @@
 						I'm Nils Wrenger, a high-school <code>Rust</code> enthusiast who loves building
 						everything from fast backends and CLIs to sleek UIs in <code>Svelte</code>, and even the
 						occasional
-						<code>Minecraft</code> mod. Check out my projects below or feel free to reach out!
+						<code>Minecraft</code> mod. Feel free to check out my projects, reach out, or sponsor me!
 					</p>
 					<div
 						class="flex flex-col items-center justify-center space-y-4 pt-4 sm:flex-row sm:space-y-0 sm:space-x-4"
 					>
 						<a href="#projects" class="btn preset-tonal"> My Projects </a>
-						<a href="#sponsors" class="btn preset-filled-primary-500"> Sponsor Me </a>
-						<a href="#contacts" class="btn preset-filled-tertiary-500"> Contacts </a>
+						<a href="#contacts" class="btn preset-filled-primary-500"> Contacts </a>
+						<a href="#sponsors" class="btn preset-filled-tertiary-500"> Sponsor Me </a>
 					</div>
 					<div class="pt-4 text-sm">
 						<a onclick={() => goto('/')} href="/privacy-policy" class="anchor">Privacy Policy</a>
@@ -51,12 +51,12 @@
 			<LinksSelect label="My Projects" bg="preset-tonal" links={projectTypes} />
 		</div>
 
-		<div id="sponsors" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="Sponsor Me" bg="preset-tonal-primary" links={sponsors} />
+		<div id="contacts" class="flex h-full snap-center items-center justify-center p-4">
+			<LinksSelect label="Contacts" bg="preset-tonal-primary" links={socials} />
 		</div>
 
-		<div id="contacts" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="Contacts" bg="preset-tonal-tertiary" links={socials} />
+		<div id="sponsors" class="flex h-full snap-center items-center justify-center p-4">
+			<LinksSelect label="Sponsor Me" bg="preset-tonal-tertiary" links={sponsors} />
 		</div>
 	{/snippet}
 </Scroller>

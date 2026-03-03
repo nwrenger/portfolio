@@ -12,6 +12,22 @@
 
 	let { contents, return_link }: Props = $props();
 
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+			e.preventDefault();
+			if (e.key === 'ArrowDown') scrollToNext();
+			else scrollToPrev();
+		}
+	}
+
+	function scrollToNext() {
+		if (el) el.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+	}
+
+	function scrollToPrev() {
+		if (el) el.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+	}
+
 	const KEY = `scroll:${page.url.pathname}`;
 
 	beforeNavigate(() => {
@@ -42,6 +58,8 @@
 	}
 </script>
 
+<svelte:window onkeydown={handleKeydown} />
+
 <div
 	class="h-full snap-y snap-mandatory snap-always overflow-y-scroll scroll-smooth"
 	style="scrollbar-width: none; overscroll-behavior: contain;"
@@ -51,12 +69,13 @@
 	{@render contents()}
 
 	{#if !atStart}
-		<div
+		<button
 			transition:fade={{ delay: 0 }}
+			onclick={scrollToPrev}
 			class="absolute top-0 left-[calc(50%-14px)] z-20 opacity-75"
 		>
 			<ChevronUp size={28} />
-		</div>
+		</button>
 	{/if}
 
 	{#if return_link}
@@ -70,11 +89,12 @@
 	{/if}
 
 	{#if !atEnd}
-		<div
+		<button
 			transition:fade={{ delay: 0 }}
+			onclick={scrollToNext}
 			class="absolute bottom-0 left-[calc(50%-14px)] z-20 opacity-75"
 		>
 			<ChevronDown size={28} />
-		</div>
+		</button>
 	{/if}
 </div>

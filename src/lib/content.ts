@@ -1,13 +1,3 @@
-export const categoryNames: Record<Category, string> = {
-	web: 'Websites',
-	app: 'Applications',
-	cli: 'CLIs',
-	lib: 'Libraries',
-	mod: 'Modifications',
-	game: 'Games',
-	bot: 'Bots'
-};
-
 import {
 	AppWindow,
 	Bot,
@@ -25,36 +15,6 @@ import Instagram from '$lib/components/icons/Instagram.svelte';
 import { DateTime } from 'luxon';
 import type { Link } from './components/ui/LinksSelect.svelte';
 import Kofi from './components/icons/Kofi.svelte';
-
-export const projectTypes: Link[] = [
-	{ name: categoryNames['web'], url: '/projects/web', icon: Globe },
-	{ name: categoryNames['app'], url: '/projects/app', icon: AppWindow },
-	{ name: categoryNames['cli'], url: '/projects/cli', icon: SquareTerminal },
-	{ name: categoryNames['lib'], url: '/projects/lib', icon: Package },
-	{ name: categoryNames['mod'], url: '/projects/mod', icon: PencilRuler },
-	{ name: categoryNames['game'], url: '/projects/game', icon: Gamepad },
-	{ name: categoryNames['bot'], url: '/projects/bot', icon: Bot }
-];
-
-export const sponsors: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', new_tab: true, icon: Github },
-	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', new_tab: true, icon: Kofi }
-];
-
-export const socials: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/nwrenger', new_tab: true, icon: Github },
-	{
-		name: 'BlueSky',
-		url: 'https://bsky.app/profile/nilch.bsky.social',
-		new_tab: true,
-		icon: BlueSky
-	},
-	{ name: 'Discord', username: '@nilch_', icon: Discord },
-	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', new_tab: true, icon: Instagram },
-	{ name: 'Mails', url: 'mailto:nils@wrenger.net', new_tab: true, icon: Mail }
-];
-
-export type Category = 'web' | 'app' | 'cli' | 'lib' | 'mod' | 'game' | 'bot';
 
 export interface Project {
 	title: string;
@@ -443,4 +403,50 @@ export const projects: Project[] = [
 		archived: false,
 		categories: ['web']
 	}
+];
+
+export type Category = 'web' | 'app' | 'cli' | 'lib' | 'mod' | 'game' | 'bot';
+
+export const categoryNames: Record<Category, string> = {
+	web: 'Websites',
+	app: 'Applications',
+	cli: 'CLIs',
+	lib: 'Libraries',
+	mod: 'Minecraft Mods',
+	game: 'Games',
+	bot: 'Bots'
+};
+
+const categoryIcons: Record<Category, typeof Globe> = {
+	web: Globe,
+	app: AppWindow,
+	cli: SquareTerminal,
+	lib: Package,
+	mod: PencilRuler,
+	game: Gamepad,
+	bot: Bot
+};
+
+export const projectTypes: Link[] = (Object.keys(categoryNames) as Category[]).map((cat) => ({
+	name: `${projects.filter((p) => p.categories.includes(cat)).length} ${categoryNames[cat]}`,
+	url: `/projects/${cat}`,
+	icon: categoryIcons[cat]
+}));
+
+export const sponsors: Link[] = [
+	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', new_tab: true, icon: Github },
+	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', new_tab: true, icon: Kofi }
+];
+
+export const socials: Link[] = [
+	{ name: 'GitHub', url: 'https://github.com/nwrenger', new_tab: true, icon: Github },
+	{
+		name: 'BlueSky',
+		url: 'https://bsky.app/profile/nilch.bsky.social',
+		new_tab: true,
+		icon: BlueSky
+	},
+	{ name: 'Discord', username: '@nilch_', icon: Discord },
+	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', new_tab: true, icon: Instagram },
+	{ name: 'Mails', url: 'mailto:nils@wrenger.net', new_tab: true, icon: Mail }
 ];
