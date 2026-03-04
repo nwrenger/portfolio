@@ -144,7 +144,7 @@
 			class="pointer-events-none absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-1.5"
 		>
 			<div
-				class="flex items-center gap-1 rounded-full bg-black/40 px-4 py-2 text-sm text-white/80 backdrop-blur-sm"
+				class="preset-tonal card flex items-center gap-1 rounded-full px-4 py-2 text-sm backdrop-blur-2xl"
 			>
 				<span>Scroll, tap on </span>
 				<ChevronsUpDown size={15} class="shrink-0" />

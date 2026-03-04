@@ -24,27 +24,29 @@
 <Scroller>
 	{#snippet contents()}
 		<div class="flex h-full snap-center items-center justify-center p-4">
-			<div class="flex max-h-full w-full max-w-2xl">
-				<section class="space-y-4 text-center">
-					<h1 class="h1">Hi, there!</h1>
+			<section class="flex w-full max-w-xl flex-col items-center gap-6 text-center">
+				<div class="flex flex-col items-center gap-2">
+					<h1 class="h1 font-bold tracking-tight">
+						Hey, I'm <span class="text-primary">Nils</span> 👋
+					</h1>
 					<p>
-						I'm Nils Wrenger, a high-school <code>Rust</code> enthusiast who loves building
-						everything from fast backends and CLIs to sleek UIs in <code>Svelte</code>, and even the
-						occasional
-						<code>Minecraft</code> mod. Feel free to check out my projects, reach out, or sponsor me!
+						High-school developer building fast backends and CLIs in <code
+							class="text-primary bg-primary/10 rounded px-1">Rust</code
+						>, sleek UIs with
+						<code class="text-secondary bg-secondary/10 rounded px-1">Svelte</code>, and the
+						occasional <code class="text-tertiary bg-tertiary/10 rounded px-1">Minecraft</code> mod.
 					</p>
-					<div
-						class="flex flex-col items-center justify-center space-y-4 pt-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-					>
-						<a href="#projects" class="btn preset-tonal-primary"> My Projects </a>
-						<a href="#contacts" class="btn preset-tonal-secondary"> Contacts </a>
-						<a href="#sponsors" class="btn preset-tonal-tertiary"> Sponsor Me </a>
-					</div>
-					<div class="pt-4 text-sm">
-						<a onclick={() => goto('/')} href="/privacy-policy" class="anchor">Privacy Policy</a>
-					</div>
-				</section>
-			</div>
+				</div>
+
+				<div class="flex flex-wrap items-center justify-center gap-3">
+					<a href="#projects" class="btn preset-tonal-primary"> My Projects </a>
+					<a href="#contacts" class="btn preset-tonal-secondary"> Get in Touch </a>
+					<a href="#sponsors" class="btn preset-tonal-tertiary"> Sponsor Me </a>
+				</div>
+
+				<a onclick={() => goto('/')} href="/privacy-policy" class="anchor text-xs">Privacy Policy</a
+				>
+			</section>
 		</div>
 
 		<div id="projects" class="flex h-full snap-center items-center justify-center p-4">
@@ -52,7 +54,7 @@
 		</div>
 
 		<div id="contacts" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="Contacts" bg="preset-tonal-secondary" links={socials} />
+			<LinksSelect label="Get in Touch" bg="preset-tonal-secondary" links={socials} />
 		</div>
 
 		<div id="sponsors" class="flex h-full snap-center items-center justify-center p-4">

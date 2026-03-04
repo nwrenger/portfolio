@@ -62,7 +62,7 @@
 						<article class="flex min-h-0 shrink flex-col space-y-4 px-4 pt-4">
 							<div class="flex-none">
 								<div class="flex justify-between space-x-2">
-									<h3 class="h3">{title}</h3>
+									<h3 class="h3 font-semibold tracking-tight">{title}</h3>
 									<a href="#{title}" class="flex items-center">
 										<Link class="stroke-secondary-900-100" />
 									</a>

@@ -21,7 +21,7 @@
 	let { label, bg, links }: Props = $props();
 </script>
 
-<div class="flex max-h-full w-full max-w-sm flex-col justify-center space-y-5 text-center">
+<div class="flex max-h-full w-full max-w-md flex-col justify-center space-y-5 text-center">
 	<!-- Label -->
 	<div class="flex flex-col items-center gap-2">
 		<h3 class="h3 font-semibold tracking-tight">{label}</h3>
@@ -43,7 +43,7 @@
 					>
 						<Icon class="size-4" />
 					</span>
-					<span class="text-sm font-medium">{name}</span>
+					<span class="text-sm">{name}</span>
 					{#if new_tab}
 						<ExternalLink
 							class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55"
@@ -66,7 +66,7 @@
 								<Icon class="size-4" />
 							{/if}
 						</span>
-						<span class="text-sm font-medium transition-colors {copied ? 'text-success-400' : ''}">
+						<span class="text-sm transition-colors {copied ? 'text-success-400' : ''}">
 							{copied ? 'Copied!' : name}
 						</span>
 						{#if !copied}
