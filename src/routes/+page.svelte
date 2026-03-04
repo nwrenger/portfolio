@@ -2,8 +2,6 @@
 	import { projectTypes, socials, sponsors } from '$lib/content';
 	import LinksSelect from '$lib/components/ui/LinksSelect.svelte';
 	import Scroller from '$lib/components/ui/Scroller.svelte';
-	import { page } from '$app/state';
-	import { tick, untrack } from 'svelte';
 	import { goto } from '$app/navigation';
 </script>
 
