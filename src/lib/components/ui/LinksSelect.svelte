@@ -29,7 +29,7 @@
 	</div>
 
 	<!-- Links -->
-	<div class="grid gap-2.5">
+	<div class="xs:grid-cols-2 grid gap-2.5">
 		{#each links as { name, url, username, new_tab, icon: Icon }}
 			{#if url}
 				<a

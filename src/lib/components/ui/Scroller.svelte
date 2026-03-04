@@ -20,12 +20,24 @@
 		}
 	}
 
+	function getSnapChildren(el: HTMLDivElement) {
+		return Array.from(el.children) as HTMLElement[];
+	}
+
 	function scrollToNext() {
-		if (el) el.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+		if (el) {
+			const children = getSnapChildren(el);
+			const current = Math.round(el.scrollTop / el.clientHeight);
+			children[current + 1]?.scrollIntoView({ behavior: 'smooth' });
+		}
 	}
 
 	function scrollToPrev() {
-		if (el) el.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+		if (el) {
+			const children = getSnapChildren(el);
+			const current = Math.round(el.scrollTop / el.clientHeight);
+			children[current - 1]?.scrollIntoView({ behavior: 'smooth' });
+		}
 	}
 
 	const KEY = `scroll:${page.url.pathname}`;

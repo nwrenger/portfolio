@@ -48,7 +48,7 @@
 						class="divide-surface-200-800 card border-surface-200-800 preset-glass-neutral relative z-10 flex
              max-h-full min-h-0 w-full flex-col divide-y overflow-hidden border shadow-2xl"
 					>
-						<header class="preset-tonal relative min-h-0 flex-1 overflow-hidden">
+						<header class="preset-tonal relative shrink overflow-hidden">
 							<a href={link} target="_blank" class="block w-full">
 								<ImageLoader src={'/../projects/' + picture} alt={title} ratio="aspect-16/9" />
 								{#if archived}
@@ -59,8 +59,8 @@
 							</a>
 						</header>
 
-						<article class="space-y-4 p-4">
-							<div>
+						<article class="flex min-h-0 shrink flex-col space-y-4 p-4">
+							<div class="flex-none">
 								<div class="flex justify-between space-x-2">
 									<h3 class="h3">{title}</h3>
 									<a href="#{title}" class="flex items-center">
@@ -69,7 +69,7 @@
 								</div>
 								<h4 class="h6">{summary}</h4>
 							</div>
-							<p>{@html description}</p>
+							<p class="overflow-y-auto">{@html description}</p>
 						</article>
 
 						<footer class="flex flex-none items-center justify-between gap-4 p-4">

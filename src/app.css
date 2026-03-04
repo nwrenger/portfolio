@@ -7,6 +7,10 @@
 @import '@skeletonlabs/skeleton-svelte';
 @import '@skeletonlabs/skeleton/themes/rose';
 
+@theme {
+	--breakpoint-xs: 25.5rem; /* 408px */
+}
+
 @layer base {
 	html {
 		height: 100%;
