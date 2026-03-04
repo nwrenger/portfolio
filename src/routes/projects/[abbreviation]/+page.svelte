@@ -59,7 +59,7 @@
 							</a>
 						</header>
 
-						<article class="flex min-h-0 shrink flex-col space-y-4 p-4">
+						<article class="flex min-h-0 shrink flex-col space-y-4 px-4 pt-4">
 							<div class="flex-none">
 								<div class="flex justify-between space-x-2">
 									<h3 class="h3">{title}</h3>
@@ -69,7 +69,7 @@
 								</div>
 								<h4 class="h6">{summary}</h4>
 							</div>
-							<p class="overflow-y-auto">{@html description}</p>
+							<p class="overflow-y-auto pb-4">{@html description}</p>
 						</article>
 
 						<footer class="flex flex-none items-center justify-between gap-4 p-4">
