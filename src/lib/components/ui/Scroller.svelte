@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { ArrowLeft, ChevronDown, ChevronUp } from 'lucide-svelte';
+	import { ArrowLeft, ChevronDown, ChevronUp, ChevronsUpDown } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
 	import { onMount, type Snippet } from 'svelte';
 	import { page } from '$app/state';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import { shared } from '../../../routes/shared.svelte';
 
 	interface Props {
 		contents: Snippet;
@@ -54,6 +55,29 @@
 	let el = $state<HTMLDivElement>();
 	let atStart = $state(true);
 	let atEnd = $state(false);
+	let showHint = $state(false);
+	let scrollCount = $state(0);
+
+	function showScrollHint() {
+		if (!shared.scrolled) {
+			setTimeout(() => {
+				// Only show if there's actually more than one snap section
+				if (el && el.scrollHeight > el.clientHeight * 1.5) {
+					showHint = true;
+				}
+			}, 800);
+		}
+	}
+
+	function dismissHint() {
+		if (showHint) {
+			scrollCount += 1;
+			if (scrollCount == 2) {
+				showHint = false;
+				shared.scrolled = true;
+			}
+		}
+	}
 
 	function checkScroll() {
 		if (!el) return;
@@ -62,11 +86,15 @@
 		atEnd = el.scrollTop + el.clientHeight >= el.scrollHeight - threshold;
 	}
 
-	onMount(() => checkScroll());
+	onMount(() => {
+		checkScroll();
+		showScrollHint();
+	});
 
 	function onScroll(e: Event) {
 		el = e.target as HTMLDivElement;
 		checkScroll();
+		dismissHint();
 	}
 </script>
 
@@ -108,5 +136,20 @@
 		>
 			<ChevronDown size={28} />
 		</button>
+	{/if}
+
+	{#if showHint}
+		<div
+			transition:fade={{ duration: 600 }}
+			class="pointer-events-none absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-1.5"
+		>
+			<div
+				class="flex items-center gap-1 rounded-full bg-black/40 px-4 py-2 text-sm text-white/80 backdrop-blur-sm"
+			>
+				<span>Scroll, tap on </span>
+				<ChevronsUpDown size={15} class="shrink-0" />
+				<span> or use arrow keys</span>
+			</div>
+		</div>
 	{/if}
 </div>
