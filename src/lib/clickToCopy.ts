@@ -11,7 +11,7 @@ interface Attributes {
 
 /**
  * Copies the specified text to the clipboard when the element is clicked and dispatches
- * 'copy-done' or 'copy-error' custom events based on the outcome.
+ * 'copyDone' or 'copyError' custom events based on the outcome.
  */
 export function clickToCopy(
 	node: HTMLElement,
@@ -19,7 +19,7 @@ export function clickToCopy(
 ): ActionReturn<Parameter, Attributes> {
 	/**
 	 * Handles the click event by attempting to copy the specified text to the clipboard.
-	 * Dispatches 'copy-done' on success or 'copy-error' on failure.
+	 * Dispatches 'copyDone' on success or 'copyError' on failure.
 	 */
 	async function handleClick() {
 		const textToCopy = typeof text === 'function' ? text() : text;
