@@ -57,10 +57,11 @@
 	let atEnd = $state(false);
 	let showHint = $state(false);
 	let scrollCount = $state(0);
+	let timer: number | undefined = $state();
 
 	function showScrollHint() {
 		if (!shared.scrolled) {
-			setTimeout(() => {
+			timer = setTimeout(() => {
 				// Only show if there's actually more than one snap section
 				if (el && el.scrollHeight > el.clientHeight * 1.5) {
 					showHint = true;
@@ -75,6 +76,7 @@
 			if (scrollCount == 2) {
 				showHint = false;
 				shared.scrolled = true;
+				clearTimeout(timer);
 			}
 		}
 	}
@@ -141,10 +143,10 @@
 	{#if showHint}
 		<div
 			transition:fade={{ duration: 600 }}
-			class="pointer-events-none absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-1.5"
+			class="pointer-events-none absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5"
 		>
 			<div
-				class="preset-tonal card flex items-center gap-1 rounded-full px-4 py-2 text-sm backdrop-blur-2xl"
+				class="preset-tonal card flex items-center gap-1 rounded-full px-4 py-2 text-sm text-nowrap backdrop-blur-2xl"
 			>
 				<span>Scroll, tap on </span>
 				<ChevronsUpDown size={15} class="shrink-0" />
