@@ -28,11 +28,10 @@
 						Hey, I'm <span class="text-primary">Nils</span> 👋
 					</h1>
 					<p>
-						High-school developer building fast backends and CLIs in <code
-							class="text-primary bg-primary/10 rounded px-1">Rust</code
-						>, sleek UIs with
-						<code class="text-secondary bg-secondary/10 rounded px-1">Svelte</code>, and the
-						occasional <code class="text-tertiary bg-tertiary/10 rounded px-1">Minecraft</code> mod.
+						High-school developer building fast backends and CLIs in <code>Rust</code>, sleek UIs
+						with
+						<code>Svelte</code>, and the occasional
+						<code>Minecraft</code> mod.
 					</p>
 				</div>
 
