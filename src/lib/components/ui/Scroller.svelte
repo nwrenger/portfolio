@@ -71,7 +71,7 @@
 	}
 
 	function dismissHint() {
-		if (showHint) {
+		if (!shared.scrolled) {
 			scrollCount += 1;
 			if (scrollCount == 2) {
 				showHint = false;
