@@ -9,13 +9,13 @@
 	<title>Portfolio | Nils</title>
 	<meta
 		name="description"
-		content="Hi, I'm Nils, a high school coder passionate about Rust and Svelte. Explore my portfolio and projects!"
+		content="Hi, I'm Nils, a high school coder passionate about Rust, Svelte and Minecraft modding. Explore my portfolio and projects!"
 	/>
 	<!-- Open Graph -->
 	<meta property="og:title" content="Portfolio | Nils" />
 	<meta
 		property="og:description"
-		content="Hi, I'm Nils, a high school coder passionate about Rust and Svelte. Explore my portfolio and projects!"
+		content="Hi, I'm Nils, a high school coder passionate about Rust, Svelte and Minecraft modding. Explore my portfolio and projects!"
 	/>
 </svelte:head>
 
