@@ -114,6 +114,7 @@
 		<button
 			transition:fade={{ delay: 0 }}
 			onclick={scrollToPrev}
+			title="Previous"
 			class="absolute top-0 left-[calc(50%-14px)] z-20 opacity-75"
 		>
 			<ChevronUp size={28} />
@@ -134,6 +135,7 @@
 		<button
 			transition:fade={{ delay: 0 }}
 			onclick={scrollToNext}
+			title="Next"
 			class="absolute bottom-0 left-[calc(50%-14px)] z-20 opacity-75"
 		>
 			<ChevronDown size={28} />
