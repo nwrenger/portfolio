@@ -25,7 +25,7 @@
 	<!-- Label -->
 	<div class="flex flex-col items-center gap-2">
 		<h3 class="h3 font-semibold tracking-tight">{label}</h3>
-		<div class="bg-surface-400 h-px w-12 rounded-full opacity-50"></div>
+		<hr class="hr w-12" />
 	</div>
 
 	<!-- Links -->

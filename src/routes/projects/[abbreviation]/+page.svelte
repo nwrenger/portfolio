@@ -27,7 +27,8 @@
 </svelte:head>
 
 <Scroller return_link="/">
-	{#snippet contents()}{#each data.projects as { title, date, summary, picture, description, link, archived }}
+	{#snippet contents()}
+		{#each data.projects as { title, date, summary, picture, description, link, archived }}
 			<div class="relative flex h-full snap-center items-center justify-center p-4">
 				<div
 					class="pointer-events-none absolute inset-0 overflow-hidden select-none"

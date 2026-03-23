@@ -35,7 +35,7 @@
 		{src}
 		{alt}
 		onload={handleLoad}
-		class="{img} object-cover {loaded ? opacity : ' opacity-0'}"
+		class="{img} object-cover {loaded ? opacity : ' opacity-0'} transition-opacity duration-300"
 		loading="lazy"
 		decoding="sync"
 		aria-hidden={aria_hidden}

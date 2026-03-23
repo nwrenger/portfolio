@@ -25,7 +25,7 @@
 			<section class="flex w-full max-w-xl flex-col items-center gap-6 text-center">
 				<div class="flex flex-col items-center gap-2">
 					<h1 class="h1 font-bold tracking-tight">
-						Hey, I'm <span class="text-primary">Nils</span> 👋
+						Hey, I'm <span class="text-primary-500">Nils</span> 👋
 					</h1>
 					<p>
 						High-school developer building fast backends and CLIs in <code>Rust</code>, sleek UIs
