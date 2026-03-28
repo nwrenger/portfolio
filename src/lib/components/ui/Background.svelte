@@ -83,7 +83,7 @@
 <canvas
 	use:onMount
 	style:opacity={loaded ? opacity : 0}
-	style="filter: blur(56px) saturate(180%);"
+	style="filter: blur(28px) saturate(180%);"
 	class="absolute inset-0 h-full w-full transition-opacity duration-300 select-none"
 	aria-hidden="true"
 ></canvas>
