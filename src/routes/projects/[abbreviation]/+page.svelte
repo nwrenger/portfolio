@@ -4,6 +4,7 @@
 	import type { PageData } from '../../projects/[abbreviation]/$types';
 	import { categoryNames } from '$lib/content';
 	import Scroller from '$lib/components/ui/Scroller.svelte';
+	import Background from '$lib/components/ui/Background.svelte';
 
 	interface Props {
 		data: PageData;
@@ -34,14 +35,7 @@
 					class="pointer-events-none absolute inset-0 overflow-hidden select-none"
 					aria-hidden="true"
 				>
-					<ImageLoader
-						src={'/../projects/' + picture}
-						alt=""
-						aria_hidden="true"
-						ratio="aspect-16/9"
-						opacity="opacity-35"
-						classes="absolute h-full w-full translate-z-0 scale-110 object-cover blur-[28px] saturate-140 will-change-transform"
-					/>
+					<Background src={'/../projects/' + picture} opacity={0.35} />
 				</div>
 
 				<div id={title} class="flex max-h-full w-full max-w-2xl">
