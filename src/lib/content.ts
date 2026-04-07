@@ -2,7 +2,6 @@ import {
 	AppWindow,
 	Bot,
 	Gamepad,
-	Github,
 	Globe,
 	Mail,
 	Package,
@@ -15,6 +14,7 @@ import Instagram from '$lib/components/icons/Instagram.svelte';
 import { DateTime } from 'luxon';
 import type { Link } from './components/ui/LinksSelect.svelte';
 import Kofi from './components/icons/Kofi.svelte';
+import GitHub from './components/icons/GitHub.svelte';
 
 export interface Project {
 	title: string;
@@ -434,12 +434,12 @@ export const projectTypes: Link[] = (Object.keys(categoryNames) as Category[]).m
 }));
 
 export const sponsors: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', new_tab: true, icon: Github },
+	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', new_tab: true, icon: GitHub },
 	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', new_tab: true, icon: Kofi }
 ];
 
 export const socials: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/nwrenger', new_tab: true, icon: Github },
+	{ name: 'GitHub', url: 'https://github.com/nwrenger', new_tab: true, icon: GitHub },
 	{
 		name: 'BlueSky',
 		url: 'https://bsky.app/profile/nilch.bsky.social',
