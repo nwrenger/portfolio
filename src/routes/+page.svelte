@@ -17,6 +17,7 @@
 		property="og:description"
 		content="Hi, I'm Nils, a high school coder passionate about Rust, Svelte and Minecraft modding. Explore my portfolio and projects!"
 	/>
+	<link rel="canonical" href="https://nwrenger.dev/" />
 </svelte:head>
 
 <Scroller>

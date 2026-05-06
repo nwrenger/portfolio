@@ -34,8 +34,8 @@
 			{#if url}
 				<a
 					href={url}
-					target={new_tab ? '_blank' : ''}
-					rel={new_tab ? 'noopener noreferrer' : ''}
+					target={new_tab ? '_blank' : undefined}
+					rel={new_tab ? 'noopener noreferrer' : undefined}
 					class="group btn {bg} flex items-center justify-start gap-3 p-3.5"
 				>
 					<span
@@ -46,7 +46,8 @@
 					<span class="text-sm">{name}</span>
 					{#if new_tab}
 						<ExternalLink
-							class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55"
+							aria-hidden="true"
+							class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55 group-focus-visible:opacity-55"
 							size={16}
 						/>
 					{/if}
@@ -71,7 +72,8 @@
 						</span>
 						{#if !copied}
 							<ClipboardCopy
-								class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55"
+								aria-hidden="true"
+								class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55 group-focus-visible:opacity-55"
 								size={16}
 							/>
 						{/if}

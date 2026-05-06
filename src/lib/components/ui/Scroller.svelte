@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ArrowLeft, ChevronDown, ChevronUp, ChevronsUpDown } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
-	import { onMount, type Snippet } from 'svelte';
+	import { onDestroy, onMount, type Snippet } from 'svelte';
 	import { page } from '$app/state';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { shared } from '../../../routes/shared.svelte';
@@ -14,6 +14,8 @@
 	let { contents, return_link }: Props = $props();
 
 	function handleKeydown(e: KeyboardEvent) {
+		if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
 		if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
 			e.preventDefault();
 			if (e.key === 'ArrowDown') scrollToNext();
@@ -93,6 +95,10 @@
 		showScrollHint();
 	});
 
+	onDestroy(() => {
+		clearTimeout(timer);
+	});
+
 	function onScroll(e: Event) {
 		el = e.target as HTMLDivElement;
 		checkScroll();
@@ -112,9 +118,11 @@
 
 	{#if !atStart}
 		<button
+			type="button"
 			transition:fade={{ delay: 0 }}
 			onclick={scrollToPrev}
 			title="Previous"
+			aria-label="Previous"
 			class="absolute top-0 left-[calc(50%-14px)] z-20 opacity-75"
 		>
 			<ChevronUp size={28} />
@@ -126,6 +134,7 @@
 			<a
 				class="btn-icon preset-tonal backdrop-blur-2xl hover:backdrop-blur-none"
 				title="Return"
+				aria-label="Return"
 				href={return_link}><ArrowLeft size={18} /></a
 			>
 		</div>
@@ -133,9 +142,11 @@
 
 	{#if !atEnd}
 		<button
+			type="button"
 			transition:fade={{ delay: 0 }}
 			onclick={scrollToNext}
 			title="Next"
+			aria-label="Next"
 			class="absolute bottom-0 left-[calc(50%-14px)] z-20 opacity-75"
 		>
 			<ChevronDown size={28} />

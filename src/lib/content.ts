@@ -37,7 +37,7 @@ export const projects: Project[] = [
 		it to develop a deeper understanding of WebSockets and Games. It's written in my typical stack consisting of <code>Svelte</code>
 		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects/game#one-googol">one-googol</a>,
 		which is a very similar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
-		just hosts the api. This marks my 3rd "Game" I've written and I have to say it's by far the best one!`,
+		just hosts the API. This marks my 3rd "Game" I've written and I have to say it's by far the best one!`,
 		link: 'https://clash.nwrenger.dev/',
 		archived: false,
 		categories: ['web', 'game']
@@ -47,9 +47,9 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2023-11-28'),
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.webp',
-		description: `This project was initiated by writing Python during my Computer Science lessons. The thing is that Rust itself (the std library) does'nt have a very “nice” way of retrieving user input.
-		In comparison, python has the super simple <code >input</code> function which can do that very easily!
-		Therefore, I decided to develop this crate which main point is to be very developer friendly with providing high functionality!`,
+		description: `This project was initiated by writing Python during my Computer Science lessons. Rust itself (the standard library) doesn't have a very “nice” way of retrieving user input.
+		In comparison, Python has the simple <code>input</code> function.
+		Therefore, I decided to develop this crate with a focus on developer-friendly, highly capable input handling.`,
 		link: 'https://crates.io/crates/console-utils/',
 		archived: false,
 		categories: ['cli', 'lib']
@@ -62,7 +62,7 @@ export const projects: Project[] = [
 		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple platformer where I aimed to create an immersive and intriguing story.
 		However, I didn't enjoy the development process, and the update to <code>Godot 4</code> was the last straw—leading me to stop developing games altogether.
 		The idea itself was interesting: <em>A game about procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em>
-		But in the end, I tried to reach for the stars, only to realize I didn't yet have the skills nor the desire to to reach them.`,
+		But in the end, I tried to reach for the stars, only to realize I didn't yet have the skills nor the desire to reach them.`,
 		link: 'https://nilch.itch.io/crastination/',
 		archived: false,
 		categories: ['game']
@@ -73,8 +73,8 @@ export const projects: Project[] = [
 		summary: 'A dashboard of all my websites',
 		picture: 'dashboard.webp',
 		description: `The summary basically is enough to explain this project: A dashboard of all my websites.
-		I am here going to explain further how it came to this project. I bought some time ago the domain <code>nwrenger.dev</code> and wanted to host under that domain some websites,
-		which btw was harder than I thought because of DNS, the provider and GH-Pages. Nevertheless, the idea of an overview of all my websites began to grow, and now here we are!`,
+		I bought the domain <code>nwrenger.dev</code> some time ago and wanted to host several websites under it,
+		which was harder than expected because of DNS, the provider, and GitHub Pages. From there, the idea of an overview for all my websites began to grow, and now here we are!`,
 		link: 'https://github.com/nwrenger/dashboard/',
 		archived: true,
 		categories: ['web']
@@ -99,7 +99,7 @@ export const projects: Project[] = [
 		summary: 'The Discord Bot',
 		picture: 'doenermann-bot.webp',
 		description: `Before I am explaining the origins/need of this bot, please note that the black bars in the picture are there to protect personal information,
-		nothing more, nothing less!So, this bot was created for a discord server which I am also a part of. It can track birthdays (second message seen in the picture),
+		nothing more, nothing less! So, this bot was created for a Discord server which I am also a part of. It can track birthdays (second message seen in the picture),
 		copy messages from a channel (first message seen in the picture), give users automatically roles on certain conditions, ...
 		This was created as a drop-in replacement of Mee6, which did some very shady stuff lately.`,
 		link: 'https://github.com/nwrenger/doenermann-bot/',
@@ -111,10 +111,10 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-11-22'),
 		summary: 'Cap the speed of elytra flight',
 		picture: 'elytra-speed-cap.webp',
-		description: `My streak for Minecraft related projects goes on. This time, I wrote a full-on mod with a mod loader, <code class="code">fabric</code>. This mod limits
+		description: `My streak for Minecraft-related projects goes on. This time, I wrote a full-on mod with a mod loader, <code class="code">Fabric</code>. This mod limits
 		how fast a player is able to fly with an elytra. The max speed can be configured inside a configuration file. There are two sides where my mod changes behavior: On the
 		server-side, it caps the player's velocity. On the client-side, it changes the prediction logic of elytra flight based on the max speed of the
-		server. When not changing the client-side predictions, the player may experience rubberbanding. It enables multiplayer servers to nerf the elytra and
+		server. Without changing the client-side predictions, the player may experience rubberbanding. It enables multiplayer servers to nerf the elytra and
 		reduce chunk-loading lag. A lightweight mod that will also be used for my own Minecraft server!`,
 		link: 'https://modrinth.com/mod/elytra-speed-cap/',
 		archived: false,
@@ -138,8 +138,8 @@ export const projects: Project[] = [
 		summary: 'A Code Editor made in egui',
 		picture: 'eta.webp',
 		description: `As explained in the summary, this is a code editor made in <code>egui</code> which focuses on efficiency.
-		Furthermore, this was created due to the lack of performance seen in VSC, the most used code editor, and my curiosity of
-		how a project editor app works and how hard is it to create one, which I now know it is <code>VERY HARD</code>.`,
+		Furthermore, this was created due to the lack of performance I saw in VS Code and my curiosity about
+		how project editor apps work and how hard they are to create, which I now know is <code>VERY HARD</code>.`,
 		link: 'https://github.com/nwrenger/eta/',
 		archived: false,
 		categories: ['app']
@@ -149,10 +149,10 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-01-02'),
 		summary: 'The UI Builder for the Flipper Zero',
 		picture: 'flip-ui.webp',
-		description: `This is a UI build for the flipperzero, a small IoT device which was mainly hyped due to it's hacking
+		description: `This is a UI builder for the Flipper Zero, a small IoT device which was mainly hyped due to its hacking
 		 capabilities. The idea itself came from building a Flipperzero App myself and seeing how unnecessary, difficult that was.
 		 Nevertheless, the workflow when using this is to create a UI using the website and then use a Rust crate which converts
-		 the UI data and your own custom functions into a flipperzero compatible binary.`,
+		 the UI data and your own custom functions into a Flipper Zero-compatible binary.`,
 		link: 'https://github.com/flip-ui/',
 		archived: false,
 		categories: ['web', 'lib']
@@ -165,7 +165,7 @@ export const projects: Project[] = [
 		description: `As the summary suggests, this project aims to streamline development by eliminating redundant definitions
 		in both the backend and frontend through static analysis of routes, functions, structs, enums and types. Utilizing the
 		<code>#[metadata]</code> procedural attribute macro and the <code>generate!</code> procedural macro, the project extracts
-		relevant information and generates the corresponding <code>api</code> in a TypeScript file. Currently, the project supports
+		relevant information and generates the corresponding <code>API</code> in a TypeScript file. Currently, the project supports
 		the <code>axum</code> framework, with plans to extend support to additional backends in the future.`,
 		link: 'https://crates.io/crates/gluer/',
 		archived: false,
@@ -186,7 +186,7 @@ export const projects: Project[] = [
 	{
 		title: 'Improved Happy Ghast',
 		date: DateTime.fromISO('2025-12-26'),
-		summary: 'Adds improvments to the Happy Ghast',
+		summary: 'Adds improvements to the Happy Ghast',
 		picture: 'improved-happy-ghast.webp',
 		description: `In the Minecraft version <code class="code">1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
 		and carry up to four players, making it great for large builds and hanging out with friends. However, the Happy Ghast itself is
@@ -205,7 +205,7 @@ export const projects: Project[] = [
 		picture: 'light-magic.webp',
 		description: `A powerful and user-friendly in-memory database crate that extends Rust's standard data types, such as as
 		the <code>Table</code> type, and the macro system for generating data types, interactions, and data operations. It features
-		efficient <code>search</code> and <code>join!</code> functions for seamless data management and rust's beautiful type system
+		efficient <code>search</code> and <code>join!</code> functions for seamless data management and Rust's beautiful type system
 		for creating the database table. Give it a try and experience the simplicity and performance of this innovative database solution!`,
 		link: 'https://crates.io/crates/light-magic/',
 		archived: false,
@@ -216,8 +216,8 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-06-17'),
 		summary: 'German grade management App',
 		picture: 'notenprojekt.webp',
-		description: `A simple app for managing your grades based on the german grades system in lower saxony. This was built in my Computer
-		Science lessons as a project to fortify and apply our theoretical knowledge of databases like <code class="code">sqlite</code>.
+		description: `A simple app for managing your grades based on the German grading system in Lower Saxony. This was built in my Computer
+		Science lessons as a project to fortify and apply our theoretical knowledge of databases like <code class="code">SQLite</code>.
 		Originally, there was a section planned with more analytics over all your quarters and some graphs, but as always our teacher didn't
 		give us enough time, so this will remain a 'when there's time for personal projects again' kind of thing.`,
 		link: 'https://github.com/nwrenger/notenprojekt',
@@ -268,9 +268,9 @@ export const projects: Project[] = [
 		summary: 'The clipboard extension everybody needs',
 		picture: 'pointy.webp',
 		description: `A small clipboard extension which opens a wheel of actions interacting with your current clipboard on a configurable shortcut. It's designed
-	 	to support extensions from anybody via a 2nd <a class="anchor" href="https://github.com/nwrenger/pointy-extensions" target="_blank">pointy-extensions</a> GitHub repository. I have developed some cool ones myself, but also
-		you can easily design some yourself. I even provide a rust api, look for that under the <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/extensions" target="_blank">crate/extensions</a>
-		and <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/pointy_api" target="_blank">crate/pointy_api</a> in the main repository.
+	 	to support extensions from anybody via a 2nd <a class="anchor" href="https://github.com/nwrenger/pointy-extensions" target="_blank" rel="noopener noreferrer">pointy-extensions</a> GitHub repository. I have developed some cool ones myself, but also
+		you can easily design some yourself. I even provide a Rust API; look for that under the <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/extensions" target="_blank" rel="noopener noreferrer">crate/extensions</a>
+		and <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/pointy_api" target="_blank" rel="noopener noreferrer">crate/pointy_api</a> in the main repository.
 		Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
 		link: 'https://github.com/nwrenger/pointy/',
 		archived: false,
@@ -281,10 +281,10 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2023-03-29'),
 		summary: 'My personal Portfolio',
 		picture: 'portfolio.webp',
-		description: `You are aCtuAlLy currently viewing my portfolio. Feel free to explore the project source code to understand
+		description: `You are aCtUaLlY currently viewing my portfolio. Feel free to explore the project source code to understand
 		how I built this website and provide feedback on areas for improvement. This portfolio style emphasizes simplicity with a
 		touch of design and fun. My portfolio/personal website has evolved significantly over time, even going back to a
-		<a class="anchor" target="_blank" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
+		<a class="anchor" target="_blank" rel="noopener noreferrer" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
 		so don't hesitate to revisit and see what has changed!`,
 		link: 'https://github.com/nwrenger/portfolio/',
 		archived: false,
@@ -448,5 +448,5 @@ export const socials: Link[] = [
 	},
 	{ name: 'Discord', username: '@nilch_', icon: Discord },
 	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', new_tab: true, icon: Instagram },
-	{ name: 'Mails', url: 'mailto:nils@wrenger.net', new_tab: true, icon: Mail }
+	{ name: 'Email', url: 'mailto:nils@wrenger.net', new_tab: true, icon: Mail }
 ];

@@ -1,14 +1,14 @@
 <script lang="ts">
 	interface Props {
-		src: string;
+		image?: HTMLImageElement;
 		opacity: number;
 	}
 
-	let { src, opacity }: Props = $props();
+	let { image, opacity }: Props = $props();
 
 	let canvas: HTMLCanvasElement;
 	let loaded = $state(false);
-	let img: HTMLImageElement | null = null;
+	let activeImage = $state<HTMLImageElement>();
 
 	function drawCovered(imgEl: HTMLImageElement) {
 		if (!canvas) return;
@@ -20,6 +20,8 @@
 		const H = canvas.height;
 		const iw = imgEl.naturalWidth;
 		const ih = imgEl.naturalHeight;
+
+		if (!iw || !ih) return;
 
 		ctx.clearRect(0, 0, W, H);
 
@@ -48,34 +50,34 @@
 			canvas.height = height;
 		}
 
-		if (img) drawCovered(img);
+		if (activeImage) drawCovered(activeImage);
 	}
 
-	function loadImage() {
+	function setImage(imgEl: HTMLImageElement) {
 		loaded = false;
+		activeImage = imgEl;
+		resizeAndRedraw();
 
-		const next = new Image();
-		next.crossOrigin = 'anonymous';
-		next.onload = () => {
-			img = next;
-			resizeAndRedraw();
-
-			requestAnimationFrame(() =>
-				requestAnimationFrame(() => {
-					loaded = true;
-				})
-			);
-		};
-		next.src = src;
+		requestAnimationFrame(() =>
+			requestAnimationFrame(() => {
+				loaded = true;
+			})
+		);
 	}
 
 	function onMount(node: HTMLCanvasElement) {
 		canvas = node;
-
-		requestAnimationFrame(() => {
-			loadImage();
-		});
+		if (activeImage) setImage(activeImage);
 	}
+
+	$effect(() => {
+		if (!image?.complete || !image.naturalWidth) {
+			loaded = false;
+			return;
+		}
+
+		setImage(image);
+	});
 </script>
 
 <svelte:window on:resize={resizeAndRedraw} />

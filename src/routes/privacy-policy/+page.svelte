@@ -14,6 +14,7 @@
 		property="og:description"
 		content="Read the privacy policy for my websites to learn how personal data is handled, local/session storage is used, and how the site is hosted on GitHub Pages."
 	/>
+	<link rel="canonical" href="https://nwrenger.dev/privacy-policy" />
 </svelte:head>
 
 <div class="p-4">
@@ -21,6 +22,7 @@
 		<div class="flex items-center justify-between">
 			<!-- Back button -->
 			<button
+				type="button"
 				onclick={() => {
 					if (window?.history.length > 1) {
 						window?.history.back();
@@ -29,6 +31,7 @@
 					}
 				}}
 				title="Return"
+				aria-label="Return"
 				class="btn-icon preset-tonal"
 			>
 				<ArrowLeft />
