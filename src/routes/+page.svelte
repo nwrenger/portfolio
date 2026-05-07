@@ -1,10 +1,3 @@
-<script lang="ts">
-	import { projectTypes, socials, sponsors } from '$lib/content';
-	import LinksSelect from '$lib/components/ui/LinksSelect.svelte';
-	import Scroller from '$lib/components/ui/Scroller.svelte';
-	import { goto } from '$app/navigation';
-</script>
-
 <svelte:head>
 	<title>Portfolio | Nils</title>
 	<meta
@@ -20,43 +13,25 @@
 	<link rel="canonical" href="https://nwrenger.dev/" />
 </svelte:head>
 
-<Scroller>
-	{#snippet contents()}
-		<div class="flex h-full snap-center items-center justify-center p-4">
-			<section class="flex w-full max-w-xl flex-col items-center gap-6 text-center">
-				<div class="flex flex-col items-center gap-2">
-					<h1 class="h1 font-bold tracking-tight">
-						Hey, I'm <span class="text-primary-500">Nils</span> 👋
-					</h1>
-					<p>
-						High-school developer building fast backends and CLIs in <code>Rust</code>, sleek UIs
-						with
-						<code>Svelte</code>, and the occasional
-						<code>Minecraft</code> mod.
-					</p>
-				</div>
-
-				<div class="flex flex-wrap items-center justify-center gap-3">
-					<a href="#projects" class="btn preset-tonal-primary"> My Projects </a>
-					<a href="#contacts" class="btn preset-tonal-secondary"> Get in Touch </a>
-					<a href="#sponsors" class="btn preset-tonal-tertiary"> Sponsor Me </a>
-				</div>
-
-				<a onclick={() => goto('/')} href="/privacy-policy" class="anchor text-xs">Privacy Policy</a
-				>
-			</section>
+<div class="flex h-full items-center justify-center p-4">
+	<section class="flex w-full max-w-xl flex-col items-center gap-6 text-center">
+		<div class="flex flex-col items-center gap-2">
+			<h1 class="h1 font-bold tracking-tight">
+				Hey, I'm <span class="text-primary-500">Nils</span> 👋
+			</h1>
+			<p>
+				High-school developer building fast backends and CLIs in <code>Rust</code>, sleek UIs with
+				<code>Svelte</code>, and the occasional
+				<code>Minecraft</code> mod.
+			</p>
 		</div>
 
-		<div id="projects" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="My Projects" bg="preset-tonal-primary" links={projectTypes} />
+		<div class="flex flex-wrap items-center justify-center gap-3">
+			<a href="/projects" class="btn preset-tonal-primary">My Projects</a>
+			<a href="/contacts" class="btn preset-tonal-secondary">Get in Touch</a>
+			<a href="/sponsors" class="btn preset-tonal-tertiary">Sponsor Me</a>
 		</div>
 
-		<div id="contacts" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="Get in Touch" bg="preset-tonal-secondary" links={socials} />
-		</div>
-
-		<div id="sponsors" class="flex h-full snap-center items-center justify-center p-4">
-			<LinksSelect label="Sponsor Me" bg="preset-tonal-tertiary" links={sponsors} />
-		</div>
-	{/snippet}
-</Scroller>
+		<a href="/privacy-policy" class="anchor text-xs">Privacy Policy</a>
+	</section>
+</div>

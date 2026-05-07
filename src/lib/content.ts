@@ -35,7 +35,7 @@ export const projects: Project[] = [
 		picture: 'clash.webp',
 		description: `As the name suggests, this is an online clone of the popular card game Cards Against Humanity. I've written
 		it to develop a deeper understanding of WebSockets and Games. It's written in my typical stack consisting of <code>Svelte</code>
-		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects/game#one-googol">one-googol</a>,
+		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects/one-googol">one-googol</a>,
 		which is a very similar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
 		just hosts the API. This marks my 3rd "Game" I've written and I have to say it's by far the best one!`,
 		link: 'https://clash.nwrenger.dev/',
@@ -126,7 +126,7 @@ export const projects: Project[] = [
 		summary: 'A procedural generated textadventure',
 		picture: 'efts.webp',
 		description: `This project marks my first attempt at writing in Rust, and the original version is available under the "old" branch.
-		After gaining more experience and developing my own CLI crate <a class="anchor" href="/projects/cli#console-utils-rs">console-utils</a>,
+		After gaining more experience and developing my own CLI crate <a class="anchor" href="/projects/console-utils-rs">console-utils</a>,
   		I expanded the project into a procedurally generated text adventure with a total of 16 different endings. Have fun exploring them!`,
 		link: 'https://github.com/nwrenger/Escaping-from-the-Supernova/',
 		archived: false,
@@ -229,7 +229,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-03-25'),
 		summary: 'A performant terminal-based project editor',
 		picture: 'omega.webp',
-		description: `This project was created after I created <a class="anchor" href="/projects/app#eta">eta</a>
+		description: `This project was created after I created <a class="anchor" href="/projects/eta">eta</a>
 		from which I learned a lot. It's a terminal-based project editor with syntax highlighting, great performance and very useful and powerful shortcuts.
 		So please give it a try!`,
 		link: 'https://crates.io/crates/omega/',
@@ -372,7 +372,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-01-27'),
 		summary: 'A simple fantasy game emulator',
 		picture: 'simple-fantasy-game.webp',
-		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects/cli#console-utils-rs">console-utils</a> crate during my Informatics lesson.
+		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects/console-utils-rs">console-utils</a> crate during my Informatics lesson.
 		Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP, and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short.
 		I'm currently waiting for my teacher's feedback, but I think she'll like it!`,
 		link: 'https://github.com/nwrenger/simple-fantasy-game/',
@@ -417,7 +417,15 @@ export const categoryNames: Record<Category, string> = {
 	bot: 'Bots'
 };
 
-const categoryIcons: Record<Category, typeof Globe> = {
+export function getProjectSlug(title: string) {
+	return title
+		.toLowerCase()
+		.trim()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '');
+}
+
+export const categoryIcons: Record<Category, typeof Globe> = {
 	web: Globe,
 	app: AppWindow,
 	cli: SquareTerminal,
@@ -426,12 +434,6 @@ const categoryIcons: Record<Category, typeof Globe> = {
 	game: Gamepad,
 	bot: Bot
 };
-
-export const projectTypes: Link[] = (Object.keys(categoryNames) as Category[]).map((cat) => ({
-	name: `${projects.filter((p) => p.categories.includes(cat)).length} ${categoryNames[cat]}`,
-	url: `/projects/${cat}`,
-	icon: categoryIcons[cat]
-}));
 
 export const sponsors: Link[] = [
 	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', new_tab: true, icon: GitHub },
