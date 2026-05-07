@@ -7,7 +7,7 @@
 		type Category
 	} from '$lib/content';
 	import { page } from '$app/state';
-	import { ArrowLeft, ArrowRight, CalendarDays, Layers3 } from 'lucide-svelte';
+	import { ArrowLeft, ArrowRight, CalendarDays } from 'lucide-svelte';
 
 	const categories = Object.keys(categoryNames) as Category[];
 	const sortedProjects = [...projects].sort((a, b) => b.date.toMillis() - a.date.toMillis());

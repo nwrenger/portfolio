@@ -8,13 +8,13 @@
 	<title>Sponsors - Portfolio | Nils</title>
 	<meta
 		name="description"
-		content="Sponsor me to help me keeping everything open source and actively maintained without any paywalls. Find links to sponsoring methods here."
+		content="Sponsor me to help me keep everything open source and actively maintained without any paywalls. Find links to sponsoring methods here."
 	/>
 	<!-- Open Graph -->
 	<meta property="og:title" content="Sponsors - Portfolio | Nils" />
 	<meta
 		property="og:description"
-		content="Sponsor me to help me keeping everything open source and actively maintained without any paywalls. Find links to sponsoring methods here."
+		content="Sponsor me to help me keep everything open source and actively maintained without any paywalls. Find links to sponsoring methods here."
 	/>
 	<link rel="canonical" href="https://nwrenger.dev/sponsors/" />
 </svelte:head>
@@ -32,7 +32,7 @@
 			<h2 class="h2 font-semibold tracking-tight">Sponsors</h2>
 
 			<p>
-				Sponsor me to help me keeping everything open source and actively maintained without any
+				Sponsor me to help me keep everything open source and actively maintained without any
 				paywalls. You can find links to sponsoring methods below.
 			</p>
 		</header>
