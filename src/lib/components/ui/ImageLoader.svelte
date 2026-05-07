@@ -8,7 +8,6 @@
 		opacity?: string;
 		classes?: string;
 		aria_hidden?: 'true' | 'false';
-		onLoad?: (image: HTMLImageElement) => void;
 	}
 
 	let {
@@ -19,17 +18,15 @@
 		ratio = 'aspect-auto',
 		opacity = 'opacity-100',
 		classes = '',
-		aria_hidden = 'false',
-		onLoad
+		aria_hidden = 'false'
 	}: Props = $props();
 	let base = $derived(`${width} ${height} ${classes}`);
 	let img = $derived(`${base} ${ratio}`);
 
 	let loaded = $state(false);
 
-	function handleLoad(event: Event) {
+	function handleLoad() {
 		loaded = true;
-		onLoad?.(event.currentTarget as HTMLImageElement);
 	}
 </script>
 

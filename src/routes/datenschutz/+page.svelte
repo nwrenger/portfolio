@@ -46,7 +46,7 @@
 
 		<div class="space-y-6">
 			<div class="space-y-2">
-				<h3 class="h3 font-semibold tracking-tight">Datenschutzerklärung</h3>
+				<h2 class="h2 font-semibold tracking-tight">Datenschutzerklärung</h2>
 
 				<p>
 					Diese Datenschutzerklärung gilt für meine öffentlich zugänglichen Websites unter <strong
@@ -59,7 +59,7 @@
 			</div>
 
 			<div class="space-y-2">
-				<h4 class="h4 font-semibold tracking-tight">1. Personenbezogene Daten</h4>
+				<h3 class="h3 font-semibold tracking-tight">1. Personenbezogene Daten</h3>
 				<p>
 					Von mir werden auf den genannten Websites <strong>keine personenbezogenen Daten</strong>
 					erhoben, gespeichert oder verarbeitet.
@@ -67,7 +67,7 @@
 			</div>
 
 			<div class="space-y-2">
-				<h4 class="h4 font-semibold tracking-tight">2. Lokale Speicher im Browser</h4>
+				<h3 class="h3 font-semibold tracking-tight">2. Lokale Speicher im Browser</h3>
 				<p>
 					Es kann sein, dass diese Websites <strong>Local Storage</strong> und/oder
 					<strong>Session Storage</strong> Ihres Browsers nutzen. Dabei werden ausschließlich
@@ -81,7 +81,7 @@
 			</div>
 
 			<div class="space-y-2">
-				<h4 class="h4 font-semibold tracking-tight">3. Hosting</h4>
+				<h3 class="h3 font-semibold tracking-tight">3. Hosting</h3>
 				<p>
 					Die Bereitstellung der Websites erfolgt über
 					<a href="https://pages.github.com/" class="anchor" target="_blank" rel="noopener"

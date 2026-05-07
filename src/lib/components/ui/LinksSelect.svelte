@@ -13,73 +13,62 @@
 	import { ClipboardCheck, ClipboardCopy, ExternalLink, Icon } from 'lucide-svelte';
 
 	interface Props {
-		label: string;
-		bg: string;
 		links: Link[];
 	}
 
-	let { label, bg, links }: Props = $props();
+	let { links }: Props = $props();
 </script>
 
-<div class="flex max-h-full w-full max-w-md flex-col justify-center space-y-5 text-center">
-	<!-- Label -->
-	<div class="flex flex-col items-center gap-2">
-		<h3 class="h3 font-semibold tracking-tight">{label}</h3>
-		<hr class="hr w-12" />
-	</div>
-
-	<!-- Links -->
-	<div class="xs:grid-cols-2 grid gap-2.5">
-		{#each links as { name, url, username, new_tab, icon: Icon }}
-			{#if url}
-				<a
-					href={url}
-					target={new_tab ? '_blank' : undefined}
-					rel={new_tab ? 'noopener noreferrer' : undefined}
-					class="group btn {bg} flex items-center justify-start gap-3 p-3.5"
+<section class="xs:grid-cols-2 grid gap-4">
+	{#each links as { name, url, username, new_tab, icon: Icon }}
+		{#if url}
+			<a
+				href={url}
+				target={new_tab ? '_blank' : undefined}
+				rel={new_tab ? 'noopener noreferrer' : undefined}
+				class="group card card-hover preset-tonal-surface border-surface-200-800 flex items-center justify-start gap-3 border p-3.5"
+			>
+				<span
+					class="bg-surface-500/25 flex size-8 shrink-0 items-center justify-center rounded-md transition-colors"
 				>
+					<Icon class="size-4" />
+				</span>
+				<span class="text-sm">{name}</span>
+				{#if new_tab}
+					<ExternalLink
+						aria-hidden="true"
+						class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55 group-focus-visible:opacity-55"
+						size={16}
+					/>
+				{/if}
+			</a>
+		{:else if username}
+			<CopyButton
+				text={username}
+				class="group card card-hover preset-tonal-surface border-surface-200-800 flex w-full items-center justify-start gap-3 border p-3.5"
+			>
+				{#snippet child({ copied })}
 					<span
 						class="bg-surface-500/25 flex size-8 shrink-0 items-center justify-center rounded-md transition-colors"
 					>
-						<Icon class="size-4" />
+						{#if copied}
+							<ClipboardCheck class="text-success-400 size-4" />
+						{:else}
+							<Icon class="size-4" />
+						{/if}
 					</span>
-					<span class="text-sm">{name}</span>
-					{#if new_tab}
-						<ExternalLink
+					<span class="text-sm transition-colors {copied ? 'text-success-400' : ''}">
+						{copied ? 'Copied!' : name}
+					</span>
+					{#if !copied}
+						<ClipboardCopy
 							aria-hidden="true"
 							class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55 group-focus-visible:opacity-55"
 							size={16}
 						/>
 					{/if}
-				</a>
-			{:else if username}
-				<CopyButton
-					text={username}
-					class="group btn {bg} flex w-full items-center justify-start gap-3 p-3.5"
-				>
-					{#snippet child({ copied })}
-						<span
-							class="bg-surface-500/25 flex size-8 shrink-0 items-center justify-center rounded-md transition-colors"
-						>
-							{#if copied}
-								<ClipboardCheck class="text-success-400 size-4" />
-							{:else}
-								<Icon class="size-4" />
-							{/if}
-						</span>
-						<span class="text-sm transition-colors {copied ? 'text-success-400' : ''}">
-							{copied ? 'Copied!' : name}
-						</span>
-						{#if !copied}
-							<ClipboardCopy
-								aria-hidden="true"
-								class="anchor ml-auto shrink-0 opacity-0 transition-all duration-150 group-hover:opacity-55 group-focus-visible:opacity-55"
-								size={16}
-							/>
-						{/if}
-					{/snippet}
-				</CopyButton>
-			{/if}
-		{/each}
-	</div>
-</div>
+				{/snippet}
+			</CopyButton>
+		{/if}
+	{/each}
+</section>

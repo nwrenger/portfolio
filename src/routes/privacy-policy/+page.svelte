@@ -46,7 +46,7 @@
 
 		<div class="space-y-6">
 			<div class="space-y-2">
-				<h3 class="h3 font-semibold tracking-tight">Privacy Policy</h3>
+				<h2 class="h2 font-semibold tracking-tight">Privacy Policy</h2>
 
 				<p>
 					This privacy policy applies to my publicly accessible websites under <strong
@@ -59,7 +59,7 @@
 			</div>
 
 			<div class="space-y-2">
-				<h4 class="h4 font-semibold tracking-tight">1. Personal Data</h4>
+				<h3 class="h3 font-semibold tracking-tight">1. Personal Data</h3>
 				<p>
 					On the mentioned websites, <strong>no personal data</strong> is collected, stored, or processed
 					by me.
@@ -67,7 +67,7 @@
 			</div>
 
 			<div class="space-y-2">
-				<h4 class="h4 font-semibold tracking-tight">2. Local Storage in the Browser</h4>
+				<h3 class="h3 font-semibold tracking-tight">2. Local Storage in the Browser</h3>
 				<p>
 					These websites may use your browser’s <strong>Local Storage</strong> and/or
 					<strong>Session Storage</strong>. Only interface-related settings (e.g. view or state
@@ -79,7 +79,7 @@
 			</div>
 
 			<div class="space-y-2">
-				<h4 class="h4 font-semibold tracking-tight">3. Hosting</h4>
+				<h3 class="h3 font-semibold tracking-tight">3. Hosting</h3>
 				<p>
 					The websites are provided via
 					<a href="https://pages.github.com/" class="anchor" target="_blank" rel="noopener"
