@@ -70,7 +70,7 @@
 					href="/projects?category={category}"
 					class="btn btn-sm {activeCategory === category ? 'preset-filled' : 'preset-tonal'}"
 				>
-					{categoryNames[category]}
+					{categoryNames[category][1]}
 					<span class="opacity-70">
 						{sortedProjects.filter((project) => project.categories.includes(category)).length}
 					</span>
@@ -105,7 +105,7 @@
 							{@const Icon = categoryIcons[category]}
 							<span class="flex items-center gap-1.5">
 								<Icon size={16} />
-								<span>{categoryNames[category]}</span>
+								<span>{categoryNames[category][0]}</span>
 							</span>
 						{/each}
 					</div>

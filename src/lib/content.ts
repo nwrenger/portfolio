@@ -407,14 +407,14 @@ export const projects: Project[] = [
 
 export type Category = 'web' | 'app' | 'cli' | 'lib' | 'mod' | 'game' | 'bot';
 
-export const categoryNames: Record<Category, string> = {
-	web: 'Websites',
-	app: 'Applications',
-	cli: 'CLIs',
-	lib: 'Libraries',
-	mod: 'Minecraft Mods',
-	game: 'Games',
-	bot: 'Bots'
+export const categoryNames: Record<Category, string[]> = {
+	web: ['Website', 'Websites'],
+	app: ['Application', 'Applications'],
+	cli: ['CLI', 'CLIs'],
+	lib: ['Library', 'Libraries'],
+	mod: ['Minecraft Mod', 'Minecraft Mods'],
+	game: ['Game', 'Games'],
+	bot: ['Bot', 'Bots']
 };
 
 export function getProjectSlug(title: string) {
