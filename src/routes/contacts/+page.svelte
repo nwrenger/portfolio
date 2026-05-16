@@ -8,13 +8,13 @@
 	<title>Get in Touch - Portfolio | Nils</title>
 	<meta
 		name="description"
-		content="Contact me for collaborations, inquiries, or just to say hi. Find links to social media and email here."
+		content="Feel free to reach out for collaborations, inquiries, or just to say hi. Find links to social media and email here."
 	/>
 	<!-- Open Graph -->
 	<meta property="og:title" content="Get in Touch - Portfolio | Nils" />
 	<meta
 		property="og:description"
-		content="Contact me for collaborations, inquiries, or just to say hi. Find links to social media and email here."
+		content="Feel free to reach out for collaborations, inquiries, or just to say hi. Find links to social media and email here."
 	/>
 	<link rel="canonical" href="https://nwrenger.dev/contacts/" />
 </svelte:head>
