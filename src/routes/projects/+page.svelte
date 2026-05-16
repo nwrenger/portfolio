@@ -28,13 +28,13 @@
 </script>
 
 <svelte:head>
-	<title>Projects - Portfolio | Nils</title>
+	<title>My Projects - Portfolio | Nils</title>
 	<meta
 		name="description"
 		content="Explore all projects by Nils, sorted by latest first with summaries and categories."
 	/>
 	<!-- Open Graph -->
-	<meta property="og:title" content="Projects - Portfolio | Nils" />
+	<meta property="og:title" content="My Projects - Portfolio | Nils" />
 	<meta
 		property="og:description"
 		content="Explore all projects by Nils, sorted by latest first with summaries and categories."
@@ -52,7 +52,7 @@
 		</div>
 
 		<header class="space-y-2">
-			<h2 class="h2 font-semibold tracking-tight">Projects</h2>
+			<h2 class="h2 font-semibold tracking-tight">My Projects</h2>
 
 			<p>
 				A complete overview of what I have built so far. Filter by category or open a project to see

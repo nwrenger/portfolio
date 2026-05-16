@@ -5,16 +5,16 @@
 </script>
 
 <svelte:head>
-	<title>Sponsors - Portfolio | Nils</title>
+	<title>Sponsor Me - Portfolio | Nils</title>
 	<meta
 		name="description"
-		content="Sponsor me to help me keep everything open source and actively maintained without any paywalls. Find links to sponsoring methods here."
+		content="Your support helps keep my projects open source, actively maintained, and available without paywalls. Find links to sponsoring methods here."
 	/>
 	<!-- Open Graph -->
-	<meta property="og:title" content="Sponsors - Portfolio | Nils" />
+	<meta property="og:title" content="Sponsor Me - Portfolio | Nils" />
 	<meta
 		property="og:description"
-		content="Sponsor me to help me keep everything open source and actively maintained without any paywalls. Find links to sponsoring methods here."
+		content="Your support helps keep my projects open source, actively maintained, and available without paywalls. Find links to sponsoring methods here."
 	/>
 	<link rel="canonical" href="https://nwrenger.dev/sponsors/" />
 </svelte:head>
@@ -29,11 +29,11 @@
 		</div>
 
 		<header class="space-y-2">
-			<h2 class="h2 font-semibold tracking-tight">Sponsors</h2>
+			<h2 class="h2 font-semibold tracking-tight">Sponsor Me</h2>
 
 			<p>
-				Sponsor me to help me keep everything open source and actively maintained without any
-				paywalls. You can find links to sponsoring methods below.
+				Your support helps keep my projects open source, actively maintained, and available without
+				paywalls. You can find sponsoring options below.
 			</p>
 		</header>
 

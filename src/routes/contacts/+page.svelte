@@ -5,13 +5,13 @@
 </script>
 
 <svelte:head>
-	<title>Contacts - Portfolio | Nils</title>
+	<title>Get in Touch - Portfolio | Nils</title>
 	<meta
 		name="description"
 		content="Contact me for collaborations, inquiries, or just to say hi. Find links to social media and email here."
 	/>
 	<!-- Open Graph -->
-	<meta property="og:title" content="Contacts - Portfolio | Nils" />
+	<meta property="og:title" content="Get in Touch - Portfolio | Nils" />
 	<meta
 		property="og:description"
 		content="Contact me for collaborations, inquiries, or just to say hi. Find links to social media and email here."
@@ -29,7 +29,7 @@
 		</div>
 
 		<header class="space-y-2">
-			<h2 class="h2 font-semibold tracking-tight">Contacts</h2>
+			<h2 class="h2 font-semibold tracking-tight">Get in Touch</h2>
 
 			<p>
 				Feel free to reach out for collaborations, inquiries, or just to say hi. You can find links
