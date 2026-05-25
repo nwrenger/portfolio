@@ -30,7 +30,7 @@
 	}
 </script>
 
-<div class="{loaded ? '' : `placeholder animate-pulse rounded-none ${opacity}`} {base}">
+<div class="relative overflow-hidden {base}">
 	<img
 		{src}
 		{alt}
@@ -40,4 +40,8 @@
 		decoding="sync"
 		aria-hidden={aria_hidden}
 	/>
+
+	{#if !loaded}
+		<div class="placeholder absolute inset-0 animate-pulse rounded-none {opacity}"></div>
+	{/if}
 </div>

@@ -47,8 +47,8 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2023-11-28'),
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.webp',
-		description: `This project was initiated by writing Python during my Computer Science lessons. Rust itself (the standard library) doesn't have a very “nice” way of retrieving user input.
-		In comparison, Python has the simple <code>input</code> function.
+		description: `This project was initiated by writing Python during my Computer Science lessons. Rust itself (the standard library) doesn't have a very
+		“nice” way of retrieving user input. In comparison, Python has the simple <code>input</code> function.
 		Therefore, I decided to develop this crate with a focus on developer-friendly, highly capable input handling.`,
 		link: 'https://crates.io/crates/console-utils/',
 		archived: false,
@@ -59,10 +59,11 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2022-10-24'),
 		summary: 'My first big Project',
 		picture: 'crastination.webp',
-		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple platformer where I aimed to create an immersive and intriguing story.
-		However, I didn't enjoy the development process, and the update to <code>Godot 4</code> was the last straw—leading me to stop developing games altogether.
-		The idea itself was interesting: <em>A game about procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em>
-		But in the end, I tried to reach for the stars, only to realize I didn't yet have the skills nor the desire to reach them.`,
+		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple
+		platformer where I aimed to create an immersive and intriguing story. However, I didn't enjoy the development process, and the update to
+		<code>Godot 4</code> was the last straw—leading me to stop developing games altogether. The idea itself was interesting: <em>A game about
+		procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em> But in the end, I
+		tried to reach for the stars, only to realize I didn't yet have the skills nor the desire to reach them.`,
 		link: 'https://nilch.itch.io/crastination/',
 		archived: false,
 		categories: ['game']
@@ -74,7 +75,8 @@ export const projects: Project[] = [
 		picture: 'dashboard.webp',
 		description: `The summary basically is enough to explain this project: A dashboard of all my websites.
 		I bought the domain <code>nwrenger.dev</code> some time ago and wanted to host several websites under it,
-		which was harder than expected because of DNS, the provider, and GitHub Pages. From there, the idea of an overview for all my websites began to grow, and now here we are!`,
+		which was harder than expected because of DNS, the provider, and GitHub Pages. From there, the idea of an overview for all my websites began to grow,
+		and now here we are!`,
 		link: 'https://github.com/nwrenger/dashboard/',
 		archived: true,
 		categories: ['web']
@@ -85,10 +87,10 @@ export const projects: Project[] = [
 		summary: 'Restrict access to vanilla and custom dimensions',
 		picture: 'disable-dimensions.webp',
 		description: `In Minecraft there are different dimensions you'll need to explore to progress the 'story' of the game.
-		It is very common in multiplayer that the server staff want to restrict entering those dimensions because of (1) slowing down story progression or (2) not being designed to have enterable
-		dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code> which restricts players' access to the other dimensions by teleporting them immediately back after they try
-		to enter the dimension. It also supports custom dimensions! Coding this was my first dive into making modifications for a game,
-		which made the process both challenging and really exciting.`,
+		It is very common in multiplayer that the server staff want to restrict entering those dimensions because of (1) slowing down story progression or (2)
+		not being designed to have enterable dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code> which
+		restricts players' access to the other dimensions by teleporting them immediately back after they try to enter the dimension. It also supports custom
+		dimensions! Coding this was my first dive into making modifications for a game, which made the process both challenging and really exciting.`,
 		link: 'https://modrinth.com/datapack/disable-dimensions/',
 		archived: false,
 		categories: ['mod']
@@ -186,14 +188,15 @@ export const projects: Project[] = [
 	{
 		title: 'Improved Happy Ghast',
 		date: DateTime.fromISO('2025-12-26'),
-		summary: 'Adds improvements to the Happy Ghast',
+		summary: 'Allows players to improve the Happy Ghast',
 		picture: 'improved-happy-ghast.webp',
 		description: `In the Minecraft version <code class="code">1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
 		and carry up to four players, making it great for large builds and hanging out with friends. However, the Happy Ghast itself is
 		very slow and tends to wander when no one is riding it. It's also quite large, which can get in the way.
 		To make the Happy Ghast usable again while keeping it balanced with the rest of the game, I coded this <code class="code">Data Pack</code>.
-		It can disable wandering, make the Happy Ghast <code class="code">3x</code> faster, shrink it to half of its original size, and even summon it using a <span class="italic">Bound Horn</span>.
-		Each of these improvements is configurable via items in survival, feel free to try it out!`,
+		It can disable wandering, make the Happy Ghast <code class="code">3x</code> faster, shrink it to half of its original size, silence it,
+		get damage alerts, and even summon it using a <span class="italic">Bound Horn</span>. Each of these improvements is configurable via items
+		in survival, feel free to try it out!`,
 		link: 'https://modrinth.com/datapack/improved-happy-ghast/',
 		archived: false,
 		categories: ['mod']
@@ -210,6 +213,24 @@ export const projects: Project[] = [
 		link: 'https://crates.io/crates/light-magic/',
 		archived: false,
 		categories: ['lib']
+	},
+	{
+		title: 'More Heads',
+		date: DateTime.fromISO('2026-05-11'),
+		summary: 'Adds intentional mob and player head drops',
+		picture: 'more-heads.webp',
+		description: `Minecraft has a few ways of obtaining mob heads for a small amount of mobs, like the Skeleton, Wither Skeleton,
+		Zombie, Creeper, Piglin, and Ender Dragon. However, there are around <strong>81</strong> different mobs in total, which don't
+		have any way of obtaining their head. This <code class="code">Data Pack</code> addresses that issue by adding mob and player
+		head drops for all mobs and their variants in-game, <strong>3,481</strong> in total excluding custom player heads. But
+		differently from other <code class="code">Data Packs</code>, it adds a guaranteed head drop of mobs when they are killed
+		by a hoe. This keeps farms and grinders from filling up with unwanted head drops and makes obtaining them much easier.
+		Player heads drop when one got killed by another player, acting as some kind of trophy. Furthermore, vanilla progression
+		stays intact by excluding the Wither Skeleton and Ender Dragon from the hoe-based drop mechanic. All in all, a well-designed
+		solution. Give it a try!`,
+		link: 'https://modrinth.com/datapack/more-heads',
+		archived: false,
+		categories: ['mod']
 	},
 	{
 		title: 'notenprojekt',
@@ -268,10 +289,11 @@ export const projects: Project[] = [
 		summary: 'The clipboard extension everybody needs',
 		picture: 'pointy.webp',
 		description: `A small clipboard extension which opens a wheel of actions interacting with your current clipboard on a configurable shortcut. It's designed
-	 	to support extensions from anybody via a 2nd <a class="anchor" href="https://github.com/nwrenger/pointy-extensions" target="_blank" rel="noopener noreferrer">pointy-extensions</a> GitHub repository. I have developed some cool ones myself, but also
-		you can easily design some yourself. I even provide a Rust API; look for that under the <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/extensions" target="_blank" rel="noopener noreferrer">crate/extensions</a>
-		and <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/pointy_api" target="_blank" rel="noopener noreferrer">crate/pointy_api</a> in the main repository.
-		Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
+	 	to support extensions from anybody via a 2nd <a class="anchor" href="https://github.com/nwrenger/pointy-extensions" target="_blank" rel="noopener noreferrer">
+		pointy-extensions</a> GitHub repository. I have developed some cool ones myself, but also you can easily design some yourself. I even provide a Rust API; look
+		for that under the <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/extensions" target="_blank" rel="noopener noreferrer">crate/extensions</a>
+		and <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/pointy_api" target="_blank" rel="noopener noreferrer">crate/pointy_api</a>
+		in the main repository. Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
 		link: 'https://github.com/nwrenger/pointy/',
 		archived: false,
 		categories: ['app']
@@ -372,9 +394,10 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-01-27'),
 		summary: 'A simple fantasy game emulator',
 		picture: 'simple-fantasy-game.webp',
-		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects/console-utils-rs">console-utils</a> crate during my Informatics lesson.
-		Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP, and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short.
-		I'm currently waiting for my teacher's feedback, but I think she'll like it!`,
+		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects/console-utils-rs">console-utils</a>
+		crate during my Informatics lesson. Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP,
+		and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short. I'm
+		currently waiting for my teacher's feedback, but I think she'll like it!`,
 		link: 'https://github.com/nwrenger/simple-fantasy-game/',
 		archived: false,
 		categories: ['game', 'cli']
@@ -384,10 +407,12 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-02-17'),
 		summary: 'Improved rework of the so called "Wahl-O-Mat"',
 		picture: 'smart-o-mat.webp',
-		description: `The <code>German</code> elections have something called the "Wahl-O-Mat", where you can answer 38 theses and then get an election recommendation based on how other parties answered these theses.
-		It's incredible how shitty the source of the "Wahl-O-Mat" looks. They have some kind of custom templating engine with horrid datapoint definitions. Furthermore, a lack of features
-		like sharing your progress, automatically saving your progress locally, getting to compare your result to current polling results and so on increased the urge to develop something myself. So I created the "Smart-O-Mat",
-		a smarter and far better version. For every German fellow: Go voting and use this as advice for your election choice!`,
+		description: `The <code>German</code> elections have something called the "Wahl-O-Mat", where you can answer 38 theses and then get an
+		election recommendation based on how other parties answered these theses. It's incredible how shitty the source of the "Wahl-O-Mat" looks.
+		They have some kind of custom templating engine with horrid datapoint definitions. Furthermore, a lack of features like sharing your
+		progress, automatically saving your progress locally, getting to compare your result to current polling results and so on increased
+		the urge to develop something myself. So I created the "Smart-O-Mat", a smarter and far better version. For every German fellow:
+		Go voting and use this as advice for your election choice!`,
 		link: 'https://wahl.nwrenger.dev/',
 		archived: false,
 		categories: ['web']
