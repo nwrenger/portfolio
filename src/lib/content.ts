@@ -427,6 +427,22 @@ export const projects: Project[] = [
 		link: 'https://songwriting.nwrenger.dev/',
 		archived: false,
 		categories: ['web']
+	},
+	{
+		title: 'Tab Info',
+		date: DateTime.fromISO('2026-06-04'),
+		summary: 'Shows player stats in the player list',
+		picture: 'tab-info.webp',
+		description: `It seems that I really can't stop developing Minecraft-related projects... Back on the main topic, Tab Info is a
+		<code class="code">Data Pack</code> that displays useful and configurable player stats, like deaths, kills, playtime, position, and current dimension,
+		directly in the player list. Originally, I created this for my own Minecraft Servers, but I decided to share it with the community as well. It is quite
+		interesting how limiting customization of the player list in Minecraft vanilla can be. I basically can only set the <code class="code">list</code>
+		scoreboard value to any scoreboard objective, which enables me to display custom text components for each player. This allows me, with some function magic,
+		to display the stats mentioned above in a visually appealing way. Despite the technical limitations, I am quite happy with the result
+		and hope you will be too!`,
+		link: 'https://modrinth.com/datapack/tab-info/',
+		archived: false,
+		categories: ['mod']
 	}
 ];
 
