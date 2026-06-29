@@ -31,13 +31,13 @@
 	<title>My Projects - Portfolio | Nils</title>
 	<meta
 		name="description"
-		content="Explore all projects by Nils, sorted by latest first with summaries and categories."
+		content="Explore all of my projects, sorted by latest first with summaries and categories."
 	/>
 	<!-- Open Graph -->
 	<meta property="og:title" content="My Projects - Portfolio | Nils" />
 	<meta
 		property="og:description"
-		content="Explore all projects by Nils, sorted by latest first with summaries and categories."
+		content="Explore all of my projects, sorted by latest first with summaries and categories."
 	/>
 	<link rel="canonical" href="https://nwrenger.dev/projects/" />
 </svelte:head>

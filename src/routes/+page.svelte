@@ -28,8 +28,8 @@
 
 		<div class="flex flex-wrap items-center justify-center gap-3">
 			<a href="/projects" class="btn preset-tonal-primary">My Projects</a>
-			<a href="/contacts" class="btn preset-tonal-secondary">Get in Touch</a>
-			<a href="/sponsors" class="btn preset-tonal-tertiary">Sponsor Me</a>
+			<a href="/resume" class="btn preset-tonal-secondary">View Resume</a>
+			<a href="/contacts" class="btn preset-tonal-tertiary">Get in Touch</a>
 		</div>
 
 		<a href="/privacy-policy" class="anchor text-xs">Privacy Policy</a>
