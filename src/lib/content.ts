@@ -299,6 +299,19 @@ export const projects: Project[] = [
 		categories: ['app']
 	},
 	{
+		title: 'Pong',
+		date: DateTime.fromISO('2026-06-26'),
+		summary: 'Self-hosted network monitoring panel',
+		picture: 'pong.webp',
+		description: `This serves as the monitoring software on my local Raspberry Pi at home. It can display network statistics like latency and packet loss over
+		the last month. Furthermore, it also shows the host system metrics like load, memory usage and temperature. It is written in <code>Rust</code> and <code>Svelte</code>
+		and uses <code>axum</code> as the backend framework. The idea came from <a class="anchor" href="https://github.com/wrenger/ping-log" target="_blank" rel="noopener noreferrer">this project</a>.
+		But I didn't like parts of the backend and the frontend. Therefore, I decided to create my own solution. Have fun trying it out inside your own network!`,
+		link: 'https://github.com/nwrenger/pong/',
+		archived: false,
+		categories: ['web']
+	},
+	{
 		title: 'portfolio',
 		date: DateTime.fromISO('2023-03-29'),
 		summary: 'My personal Portfolio',
