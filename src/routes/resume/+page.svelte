@@ -25,14 +25,9 @@
 				<ArrowLeft size={18} />
 			</a>
 
-			<a
-				href="/resume.pdf"
-				download
-				title="Download as PDF"
-				aria-label="Download as PDF"
-				class="btn-icon preset-tonal"
-			>
+			<a href="/resume.pdf" download class="btn preset-tonal">
 				<Download size={18} />
+				<span>Download PDF</span>
 			</a>
 		</div>
 
