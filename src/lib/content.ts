@@ -88,7 +88,7 @@ export const projects: Project[] = [
 		picture: 'disable-dimensions.webp',
 		description: `In Minecraft there are different dimensions you'll need to explore to progress the 'story' of the game.
 		It is very common in multiplayer that the server staff want to restrict entering those dimensions because of (1) slowing down story progression or (2)
-		not being designed to have enterable dimensions, a custom build server for example. For that, I coded this <code class="code">Data Pack</code> which
+		not being designed to have enterable dimensions, a custom build server for example. For that, I coded this <code>Data Pack</code> which
 		restricts players' access to the other dimensions by teleporting them immediately back after they try to enter the dimension. It also supports custom
 		dimensions! Coding this was my first dive into making modifications for a game, which made the process both challenging and really exciting.`,
 		link: 'https://modrinth.com/datapack/disable-dimensions/',
@@ -109,11 +109,27 @@ export const projects: Project[] = [
 		categories: ['bot']
 	},
 	{
+		title: 'Dynamic Performance',
+		date: DateTime.fromISO('2026-07-07'),
+		summary: 'Scale performance-dependent settings based on the load of the server',
+		picture: 'dynamic-performance.webp',
+		description: `Minecraft has plenty of performance mods, and they're great. But in my experience, they don't always keep the server performing perfectly.
+		For example, consider a player who explores aggressively and forces the server to load many chunks. In that scenario, no typical vanilla-friendly performance optimization keeps it
+		from lagging. So I created this mod (similar standalone mods do exist, but none quite do it the way I wanted). It scales performance-dependent settings like view distance, simulation
+		distance and mob cap based on the average milliseconds per tick (<code>MSPT</code>). When <code>MSPT</code> passes a configured <code>lag threshold</code> (near the ideal
+		<strong>50ms</strong> max per tick), settings scale down, and they scale back up once it drops below a <code>recovery threshold</code>. The settings are scaled according to configured
+		<code>performance levels</code>. You can specify which gets changed first, how much, and so on. The check <code>interval</code> is also configurable; its default is <strong>15s</strong>.
+		This keeps the performance impact of this mod minimal. All of this will certainly improve the playing experience on a weaker server. Have fun trying it out!`,
+		link: 'https://modrinth.com/mod/dynamic-performance/',
+		archived: false,
+		categories: ['mod']
+	},
+	{
 		title: 'Elytra Speed Cap',
 		date: DateTime.fromISO('2025-11-22'),
 		summary: 'Cap the speed of elytra flight',
 		picture: 'elytra-speed-cap.webp',
-		description: `My streak for Minecraft-related projects goes on. This time, I wrote a full-on mod with a mod loader, <code class="code">Fabric</code>. This mod limits
+		description: `My streak for Minecraft-related projects goes on. This time, I wrote a full-on mod with a mod loader, <code>Fabric</code>. This mod limits
 		how fast a player is able to fly with an elytra. The max speed can be configured inside a configuration file. There are two sides where my mod changes behavior: On the
 		server-side, it caps the player's velocity. On the client-side, it changes the prediction logic of elytra flight based on the max speed of the
 		server. Without changing the client-side predictions, the player may experience rubberbanding. It enables multiplayer servers to nerf the elytra and
@@ -190,11 +206,11 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-12-26'),
 		summary: 'Allows players to improve the Happy Ghast',
 		picture: 'improved-happy-ghast.webp',
-		description: `In the Minecraft version <code class="code">1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
+		description: `In the Minecraft version <code>1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
 		and carry up to four players, making it great for large builds and hanging out with friends. However, the Happy Ghast itself is
 		very slow and tends to wander when no one is riding it. It's also quite large, which can get in the way.
-		To make the Happy Ghast usable again while keeping it balanced with the rest of the game, I coded this <code class="code">Data Pack</code>.
-		It can disable wandering, make the Happy Ghast <code class="code">3x</code> faster, shrink it to half of its original size, silence it,
+		To make the Happy Ghast usable again while keeping it balanced with the rest of the game, I coded this <code>Data Pack</code>.
+		It can disable wandering, make the Happy Ghast <code>3x</code> faster, shrink it to half of its original size, silence it,
 		get damage alerts, and even summon it using a <span class="italic">Bound Horn</span>. Each of these improvements is configurable via items
 		in survival, feel free to try it out!`,
 		link: 'https://modrinth.com/datapack/improved-happy-ghast/',
@@ -221,9 +237,9 @@ export const projects: Project[] = [
 		picture: 'more-heads.webp',
 		description: `Minecraft has a few ways of obtaining mob heads for a small amount of mobs, like the Skeleton, Wither Skeleton,
 		Zombie, Creeper, Piglin, and Ender Dragon. However, there are around <strong>81</strong> different mobs in total, which don't
-		have any way of obtaining their head. This <code class="code">Data Pack</code> addresses that issue by adding mob and player
+		have any way of obtaining their head. This <code>Data Pack</code> addresses that issue by adding mob and player
 		head drops for all mobs and their variants in-game, <strong>3,481</strong> in total excluding custom player heads. But
-		differently from other <code class="code">Data Packs</code>, it adds a guaranteed head drop of mobs when they are killed
+		differently from other <code>Data Packs</code>, it adds a guaranteed head drop of mobs when they are killed
 		by a hoe. This keeps farms and grinders from filling up with unwanted head drops and makes obtaining them much easier.
 		Player heads drop when one got killed by another player, acting as some kind of trophy. Furthermore, vanilla progression
 		stays intact by excluding the Wither Skeleton and Ender Dragon from the hoe-based drop mechanic. All in all, a well-designed
@@ -238,7 +254,7 @@ export const projects: Project[] = [
 		summary: 'German grade management App',
 		picture: 'notenprojekt.webp',
 		description: `A simple app for managing your grades based on the German grading system in Lower Saxony. This was built in my Computer
-		Science lessons as a project to fortify and apply our theoretical knowledge of databases like <code class="code">SQLite</code>.
+		Science lessons as a project to fortify and apply our theoretical knowledge of databases like <code>SQLite</code>.
 		Originally, there was a section planned with more analytics over all your quarters and some graphs, but as always our teacher didn't
 		give us enough time, so this will remain a 'when there's time for personal projects again' kind of thing.`,
 		link: 'https://github.com/nwrenger/notenprojekt',
@@ -447,9 +463,9 @@ export const projects: Project[] = [
 		summary: 'Shows player stats in the player list',
 		picture: 'tab-info.webp',
 		description: `It seems that I really can't stop developing Minecraft-related projects... Back on the main topic, Tab Info is a
-		<code class="code">Data Pack</code> that displays useful and configurable player stats, like deaths, kills, playtime, position, and current dimension,
+		<code>Data Pack</code> that displays useful and configurable player stats, like deaths, kills, playtime, position, and current dimension,
 		directly in the player list. Originally, I created this for my own Minecraft Servers, but I decided to share it with the community as well. It is quite
-		interesting how limiting customization of the player list in Minecraft vanilla can be. I basically can only set the <code class="code">list</code>
+		interesting how limiting customization of the player list in Minecraft vanilla can be. I basically can only set the <code>list</code>
 		scoreboard value to any scoreboard objective, which enables me to display custom text components for each player. This allows me, with some function magic,
 		to display the stats mentioned above in a visually appealing way. Despite the technical limitations, I am quite happy with the result
 		and hope you will be too!`,
