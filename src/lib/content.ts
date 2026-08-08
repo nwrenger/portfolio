@@ -93,7 +93,7 @@ export const projects: Project[] = [
 		dimensions! Coding this was my first dive into making modifications for a game, which made the process both challenging and really exciting.`,
 		link: 'https://modrinth.com/datapack/disable-dimensions/',
 		archived: false,
-		categories: ['mod']
+		categories: ['mc']
 	},
 	{
 		title: 'doenermann-bot',
@@ -122,7 +122,7 @@ export const projects: Project[] = [
 		This keeps the performance impact of this mod minimal. All of this will certainly improve the playing experience on a weaker server. Have fun trying it out!`,
 		link: 'https://modrinth.com/mod/dynamic-performance/',
 		archived: false,
-		categories: ['mod']
+		categories: ['mc']
 	},
 	{
 		title: 'Elytra Speed Cap',
@@ -136,7 +136,7 @@ export const projects: Project[] = [
 		reduce chunk-loading lag. A lightweight mod that will also be used for my own Minecraft server!`,
 		link: 'https://modrinth.com/mod/elytra-speed-cap/',
 		archived: false,
-		categories: ['mod']
+		categories: ['mc']
 	},
 	{
 		title: 'Escaping-from-the-Supernova',
@@ -215,7 +215,7 @@ export const projects: Project[] = [
 		in survival, feel free to try it out!`,
 		link: 'https://modrinth.com/datapack/improved-happy-ghast/',
 		archived: false,
-		categories: ['mod']
+		categories: ['mc']
 	},
 	{
 		title: 'light-magic',
@@ -246,7 +246,7 @@ export const projects: Project[] = [
 		solution. Give it a try!`,
 		link: 'https://modrinth.com/datapack/more-heads',
 		archived: false,
-		categories: ['mod']
+		categories: ['mc']
 	},
 	{
 		title: 'notenprojekt',
@@ -471,18 +471,18 @@ export const projects: Project[] = [
 		and hope you will be too!`,
 		link: 'https://modrinth.com/datapack/tab-info/',
 		archived: false,
-		categories: ['mod']
+		categories: ['mc']
 	}
 ];
 
-export type Category = 'web' | 'app' | 'cli' | 'lib' | 'mod' | 'game' | 'bot';
+export type Category = 'web' | 'app' | 'cli' | 'lib' | 'mc' | 'game' | 'bot';
 
 export const categoryNames: Record<Category, string[]> = {
 	web: ['Website', 'Websites'],
 	app: ['Application', 'Applications'],
 	cli: ['CLI', 'CLIs'],
 	lib: ['Library', 'Libraries'],
-	mod: ['Minecraft Mod', 'Minecraft Mods'],
+	mc: ['Minecraft Mod', 'Minecraft Mods'],
 	game: ['Game', 'Games'],
 	bot: ['Bot', 'Bots']
 };
@@ -500,7 +500,7 @@ export const categoryIcons: Record<Category, typeof Globe> = {
 	app: AppWindow,
 	cli: SquareTerminal,
 	lib: Package,
-	mod: PencilRuler,
+	mc: PencilRuler,
 	game: Gamepad,
 	bot: Bot
 };
