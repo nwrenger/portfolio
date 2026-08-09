@@ -57,8 +57,7 @@ export const projects: Project[] = [
 		Therefore, I decided to develop this crate with a focus on developer-friendly, highly capable input handling.`,
 		link: 'https://crates.io/crates/console-utils/',
 		archived: false,
-		categories: ['cli', 'lib'],
-		featured: true
+		categories: ['cli', 'lib']
 	},
 	{
 		title: 'crastination',
@@ -217,18 +216,18 @@ export const projects: Project[] = [
 	{
 		title: 'gluer',
 		date: DateTime.fromISO('2024-07-28'),
-		summary: 'A Rust wrapper for backends that eliminates redundant definitions',
+		summary: 'A Rust wrapper for backends that eliminates redundant definitions in the frontend',
 		picture: 'gluer.webp',
 		description: `As the summary suggests, this project aims to streamline development by eliminating redundant definitions
-		in both the backend and frontend through static analysis of routes, functions, structs, enums and types.<br />
-		Utilizing the
-		<code>#[metadata]</code> procedural attribute macro and the <code>generate!</code> procedural macro, the project extracts
-		relevant information and generates the corresponding <code>API</code> in a TypeScript file.<br />
-		Currently, the project supports
-		the <code>axum</code> framework, with plans to extend support to additional backends in the future.`,
+		in the frontend through static analysis of the backend's routes, functions, structs, enums and types.<br />
+		Using the <code>#[metadata]</code> attribute macro and <code>generate!</code> procedural macro, it extracts the
+		relevant metadata and generates a corresponding JavaScript or TypeScript API, depending on the output file extension.<br />
+		It currently supports <code>axum</code> and <code>Actix Web</code>. Its modular architecture makes support for
+		additional, syntactically similar frameworks straightforward.`,
 		link: 'https://crates.io/crates/gluer/',
 		archived: false,
-		categories: ['lib']
+		categories: ['lib'],
+		featured: true
 	},
 	{
 		title: 'hadar',
@@ -384,7 +383,8 @@ export const projects: Project[] = [
 		But I didn't like parts of the backend and the frontend. Therefore, I decided to create my own solution. Have fun trying it out inside your own network!`,
 		link: 'https://github.com/nwrenger/pong/',
 		archived: false,
-		categories: ['web']
+		categories: ['web'],
+		featured: true
 	},
 	{
 		title: 'portfolio',
@@ -415,8 +415,7 @@ export const projects: Project[] = [
 		enough sleepless hours, it works and looks great!`,
 		link: 'https://phvmisburg.de/',
 		archived: false,
-		categories: ['web'],
-		featured: true
+		categories: ['web']
 	},
 	{
 		title: 'quickmaths',
