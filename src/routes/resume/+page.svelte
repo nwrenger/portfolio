@@ -35,8 +35,8 @@
 			<h2 class="h2 font-semibold tracking-tight">View Resume</h2>
 
 			<p>
-				Read my resume for an overview of my experience and skills. Some details are anonymized for
-				privacy; full references can be shared in a professional setting.
+				Read my resume for an overview of my experience and skills. Some details are anonymized in
+				the public version for privacy.
 			</p>
 		</header>
 

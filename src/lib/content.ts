@@ -3,6 +3,7 @@ import {
 	Bot,
 	Gamepad,
 	Globe,
+	Icon,
 	Mail,
 	Package,
 	PencilRuler,
@@ -12,7 +13,6 @@ import BlueSky from '$lib/components/icons/BlueSky.svelte';
 import Discord from '$lib/components/icons/Discord.svelte';
 import Instagram from '$lib/components/icons/Instagram.svelte';
 import { DateTime } from 'luxon';
-import type { Link } from './components/ui/LinksSelect.svelte';
 import Kofi from './components/icons/Kofi.svelte';
 import GitHub from './components/icons/GitHub.svelte';
 
@@ -25,6 +25,7 @@ export interface Project {
 	link: string;
 	archived: boolean;
 	categories: Category[];
+	featured?: boolean;
 }
 
 export const projects: Project[] = [
@@ -34,13 +35,16 @@ export const projects: Project[] = [
 		summary: 'Cards (Ludicrous ones) Against Humanity',
 		picture: 'clash.webp',
 		description: `As the name suggests, this is an online clone of the popular card game Cards Against Humanity. I've written
-		it to develop a deeper understanding of WebSockets and Games. It's written in my typical stack consisting of <code>Svelte</code>
+		it to develop a deeper understanding of WebSockets and Games.<br />
+		It's written in my typical stack consisting of <code>Svelte</code>
 		on the frontend and <code>Rust</code> on the backend. But in comparison to <a class="anchor" href="/projects/one-googol">one-googol</a>,
 		which is a very similar project, it is way more complex and this time the frontend is hosted by GitHub and not by the backend, which
-		just hosts the API. This marks my 3rd "Game" I've written and I have to say it's by far the best one!`,
+		just hosts the API.<br />
+		This marks my 3rd "Game" I've written and I have to say it's by far the best one!`,
 		link: 'https://clash.nwrenger.dev/',
 		archived: false,
-		categories: ['web', 'game']
+		categories: ['web', 'game'],
+		featured: true
 	},
 	{
 		title: 'console-utils-rs',
@@ -48,11 +52,13 @@ export const projects: Project[] = [
 		summary: 'CLI Input Library for Rust',
 		picture: 'console-utils.webp',
 		description: `This project was initiated by writing Python during my Computer Science lessons. Rust itself (the standard library) doesn't have a very
-		“nice” way of retrieving user input. In comparison, Python has the simple <code>input</code> function.
+		“nice” way of retrieving user input.<br />
+		In comparison, Python has the simple <code>input</code> function.
 		Therefore, I decided to develop this crate with a focus on developer-friendly, highly capable input handling.`,
 		link: 'https://crates.io/crates/console-utils/',
 		archived: false,
-		categories: ['cli', 'lib']
+		categories: ['cli', 'lib'],
+		featured: true
 	},
 	{
 		title: 'crastination',
@@ -60,8 +66,10 @@ export const projects: Project[] = [
 		summary: 'My first big Project',
 		picture: 'crastination.webp',
 		description: `This was the first big project I worked on, marking the start of my programming journey! <code>Crastination</code> is a simple
-		platformer where I aimed to create an immersive and intriguing story. However, I didn't enjoy the development process, and the update to
-		<code>Godot 4</code> was the last straw—leading me to stop developing games altogether. The idea itself was interesting: <em>A game about
+		platformer where I aimed to create an immersive and intriguing story.<br />
+		However, I didn't enjoy the development process, and the update to
+		<code>Godot 4</code> was the last straw—leading me to stop developing games altogether.<br />
+		The idea itself was interesting: <em>A game about
 		procrastination. Why is it so hard for people to tackle difficult or ambiguous tasks? How can you overcome that?</em> But in the end, I
 		tried to reach for the stars, only to realize I didn't yet have the skills nor the desire to reach them.`,
 		link: 'https://nilch.itch.io/crastination/',
@@ -73,9 +81,10 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-03-22'),
 		summary: 'A dashboard of all my websites',
 		picture: 'dashboard.webp',
-		description: `The summary basically is enough to explain this project: A dashboard of all my websites.
+		description: `The summary basically is enough to explain this project: A dashboard of all my websites.<br />
 		I bought the domain <code>nwrenger.dev</code> some time ago and wanted to host several websites under it,
-		which was harder than expected because of DNS, the provider, and GitHub Pages. From there, the idea of an overview for all my websites began to grow,
+		which was harder than expected because of DNS, the provider, and GitHub Pages.<br />
+		From there, the idea of an overview for all my websites began to grow,
 		and now here we are!`,
 		link: 'https://github.com/nwrenger/dashboard/',
 		archived: true,
@@ -87,23 +96,26 @@ export const projects: Project[] = [
 		summary: 'Restrict access to vanilla and custom dimensions',
 		picture: 'disable-dimensions.webp',
 		description: `In Minecraft there are different dimensions you'll need to explore to progress the 'story' of the game.
-		It is very common in multiplayer that the server staff want to restrict entering those dimensions because of (1) slowing down story progression or (2)
-		not being designed to have enterable dimensions, a custom build server for example. For that, I coded this <code>Data Pack</code> which
+		It is very common in multiplayer that the server staff want to restrict entering those dimensions because of slowing down story progression or
+		not being designed to have enterable dimensions, a custom build server for example.<br />
+		For that, I coded this <code>Data Pack</code> which
 		restricts players' access to the other dimensions by teleporting them immediately back after they try to enter the dimension. It also supports custom
-		dimensions! Coding this was my first dive into making modifications for a game, which made the process both challenging and really exciting.`,
+		dimensions and conditions!<br />Coding this was my first dive into making modifications for a game, which made the process both challenging and really exciting.`,
 		link: 'https://modrinth.com/datapack/disable-dimensions/',
 		archived: false,
-		categories: ['mc']
+		categories: ['mc'],
+		featured: true
 	},
 	{
 		title: 'doenermann-bot',
 		date: DateTime.fromISO('2023-01-06'),
 		summary: 'The Discord Bot',
 		picture: 'doenermann-bot.webp',
-		description: `Before I am explaining the origins/need of this bot, please note that the black bars in the picture are there to protect personal information,
-		nothing more, nothing less! So, this bot was created for a Discord server which I am also a part of. It can track birthdays (second message seen in the picture),
-		copy messages from a channel (first message seen in the picture), give users automatically roles on certain conditions, ...
-		This was created as a drop-in replacement of Mee6, which did some very shady stuff lately.`,
+		description: `Before I explain the origins/need of this bot, please note that the black bars in the picture are there to protect personal information,
+		nothing more, nothing less!<br />
+		So, this bot was created for a Discord server which I am also a part of. It can track birthdays (second message seen in the picture),
+		copy messages from a channel (first message seen in the picture), automatically give users roles on certain conditions, ...
+		<br />This was created as a drop-in replacement of Mee6, which did some very shady stuff lately.`,
 		link: 'https://github.com/nwrenger/doenermann-bot/',
 		archived: false,
 		categories: ['bot']
@@ -115,25 +127,35 @@ export const projects: Project[] = [
 		picture: 'dynamic-performance.webp',
 		description: `Minecraft has plenty of performance mods, and they're great. But in my experience, they don't always keep the server performing perfectly.
 		For example, consider a player who explores aggressively and forces the server to load many chunks. In that scenario, no typical vanilla-friendly performance optimization keeps it
-		from lagging. So I created this mod (similar standalone mods do exist, but none quite do it the way I wanted). It scales performance-dependent settings like view distance, simulation
+		from lagging.<br />
+		So I created this mod (similar standalone mods do exist, but none quite do it the way I wanted). It scales performance-dependent settings like view distance, simulation
 		distance and mob cap based on the average milliseconds per tick (<code>MSPT</code>). When <code>MSPT</code> passes a configured <code>lag threshold</code> (near the ideal
 		<strong>50ms</strong> max per tick), settings scale down, and they scale back up once it drops below a <code>recovery threshold</code>. The settings are scaled according to configured
 		<code>performance levels</code>. You can specify which gets changed first, how much, and so on. The check <code>interval</code> is also configurable; its default is <strong>15s</strong>.
-		This keeps the performance impact of this mod minimal. All of this will certainly improve the playing experience on a weaker server. Have fun trying it out!`,
+		<br />This keeps the performance impact of this mod minimal. All of this will certainly improve the playing experience on a weaker server. Have fun trying it out!`,
 		link: 'https://modrinth.com/mod/dynamic-performance/',
 		archived: false,
-		categories: ['mc']
+		categories: ['mc'],
+		featured: true
 	},
 	{
-		title: 'Elytra Speed Cap',
+		title: 'Elytra Tuning',
 		date: DateTime.fromISO('2025-11-22'),
-		summary: 'Cap the speed of elytra flight',
-		picture: 'elytra-speed-cap.webp',
-		description: `My streak for Minecraft-related projects goes on. This time, I wrote a full-on mod with a mod loader, <code>Fabric</code>. This mod limits
-		how fast a player is able to fly with an elytra. The max speed can be configured inside a configuration file. There are two sides where my mod changes behavior: On the
-		server-side, it caps the player's velocity. On the client-side, it changes the prediction logic of elytra flight based on the max speed of the
-		server. Without changing the client-side predictions, the player may experience rubberbanding. It enables multiplayer servers to nerf the elytra and
-		reduce chunk-loading lag. A lightweight mod that will also be used for my own Minecraft server!`,
+		summary: 'Limit elytra flight speed and change firework boost strength and duration',
+		picture: 'elytra-tuning.webp',
+		description: `My streak for Minecraft-related projects goes on. This time, I wrote a full-on mod with multi mod loader support.<br />
+		This mod adds options to <code>limit</code> the Elytra speed as well as changing firework boost <code>strength</code> and
+		<code>duration</code>. The flight speed <code>limit</code> can be set to be <code>absolute</code>, restrict all axes, or
+		<code>horizontal</code>, x and z axes only, for letting servers choose between a strict clamp or one that leaves vertical gliding
+		untouched.<br />
+		All this can be configured inside a configuration file. There are two sides where my mod changes behavior: On the
+		server-side, it limits the player's velocity and changes the rocket's velocity. Technical Note: <em>The player attaches to the
+		rocket's entity when boosting. Therefore, to change the player's velocity, I have to change the speed of the rocket's entity.</em>
+		<br />On the client-side, it changes the prediction logic of elytra flight based on the server's configuration. Without changing the
+		client-side predictions, the player may experience visual stutter or lag back.<br />
+		It enables multiplayer servers to nerf the Elytra
+		and reduce chunk-loading lag. It also has options for the rocket boost to make the flight even faster and lengthier.
+		A lightweight and configurable mod that also runs on my own server!`,
 		link: 'https://modrinth.com/mod/elytra-speed-cap/',
 		archived: false,
 		categories: ['mc']
@@ -141,9 +163,9 @@ export const projects: Project[] = [
 	{
 		title: 'Escaping-from-the-Supernova',
 		date: DateTime.fromISO('2023-03-19'),
-		summary: 'A procedural generated textadventure',
+		summary: 'procedurally generated text adventure',
 		picture: 'efts.webp',
-		description: `This project marks my first attempt at writing in Rust, and the original version is available under the "old" branch.
+		description: `This project marks my first attempt at writing in Rust, and the original version is available under the "old" branch.<br />
 		After gaining more experience and developing my own CLI crate <a class="anchor" href="/projects/console-utils-rs">console-utils</a>,
   		I expanded the project into a procedurally generated text adventure with a total of 16 different endings. Have fun exploring them!`,
 		link: 'https://github.com/nwrenger/Escaping-from-the-Supernova/',
@@ -155,7 +177,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-02-15'),
 		summary: 'A Code Editor made in egui',
 		picture: 'eta.webp',
-		description: `As explained in the summary, this is a code editor made in <code>egui</code> which focuses on efficiency.
+		description: `As explained in the summary, this is a code editor made in <code>egui</code> which focuses on efficiency.<br />
 		Furthermore, this was created due to the lack of performance I saw in VS Code and my curiosity about
 		how project editor apps work and how hard they are to create, which I now know is <code>VERY HARD</code>.`,
 		link: 'https://github.com/nwrenger/eta/',
@@ -167,13 +189,30 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-01-02'),
 		summary: 'The UI Builder for the Flipper Zero',
 		picture: 'flip-ui.webp',
-		description: `This is a UI builder for the Flipper Zero, a small IoT device which was mainly hyped due to its hacking
-		 capabilities. The idea itself came from building a Flipperzero App myself and seeing how unnecessary, difficult that was.
-		 Nevertheless, the workflow when using this is to create a UI using the website and then use a Rust crate which converts
+		description: `This is a UI builder for the Flipper Zero, a small IoT device which was mainly hyped due to its hacking capabilities.<br />
+		The idea itself came from building a Flipperzero App myself and seeing how unnecessary, difficult that was.
+		 <br />Nevertheless, the workflow when using this is to create a UI using the website and then use a Rust crate which converts
 		 the UI data and your own custom functions into a Flipper Zero-compatible binary.`,
 		link: 'https://github.com/flip-ui/',
 		archived: false,
 		categories: ['web', 'lib']
+	},
+	{
+		title: 'Gamba',
+		date: DateTime.fromISO('2026-07-31'),
+		summary: '50/50 - Either you win or lose, easy right?',
+		picture: 'gamba.webp',
+		description: `I thought a lot about what I could gift one of my friends for his birthday. It should be equally funny and useful.
+		Therefore, I created this small gambling browser game which has a vault with his real gift. <br />
+		The game itself is quite simple: You have 4 symbols and three reels, each always showing one of them. Then you set your bet and
+		spin. If all symbols match, you get the jackpot. If two symbols match, you get twice your bet back, and if no symbols match,
+		you lose your bet. <br />
+		You also have ways to scale via the shop and upgrades, so use your winnings wisely. <br />
+		Be aware that this is a small, fun project (beatable in ~9 minutes) written in German and full of inside jokes. But I won't spoil
+		more. Take a look for yourself and try it out!`,
+		link: 'https://gamba.nwrenger.dev/',
+		archived: false,
+		categories: ['game', 'web']
 	},
 	{
 		title: 'gluer',
@@ -181,9 +220,11 @@ export const projects: Project[] = [
 		summary: 'A Rust wrapper for backends that eliminates redundant definitions',
 		picture: 'gluer.webp',
 		description: `As the summary suggests, this project aims to streamline development by eliminating redundant definitions
-		in both the backend and frontend through static analysis of routes, functions, structs, enums and types. Utilizing the
+		in both the backend and frontend through static analysis of routes, functions, structs, enums and types.<br />
+		Utilizing the
 		<code>#[metadata]</code> procedural attribute macro and the <code>generate!</code> procedural macro, the project extracts
-		relevant information and generates the corresponding <code>API</code> in a TypeScript file. Currently, the project supports
+		relevant information and generates the corresponding <code>API</code> in a TypeScript file.<br />
+		Currently, the project supports
 		the <code>axum</code> framework, with plans to extend support to additional backends in the future.`,
 		link: 'https://crates.io/crates/gluer/',
 		archived: false,
@@ -194,7 +235,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-01-27'),
 		summary: "Codebase of a 'simple' Battlesnake agent",
 		picture: 'hadar.webp',
-		description: `This is a very simple Battlesnake agent, a bot designed to play competitive snake against other bots.
+		description: `This is a very simple Battlesnake agent, a bot designed to play competitive snake against other bots.<br />
 		Its sole mission is to seek food and avoid killing itself when it gets too long. The results of this strategy are displayed
 		in the picture above!`,
 		link: 'https://github.com/nwrenger/hadar/',
@@ -207,12 +248,14 @@ export const projects: Project[] = [
 		summary: 'Allows players to improve the Happy Ghast',
 		picture: 'improved-happy-ghast.webp',
 		description: `In the Minecraft version <code>1.21.6</code>, Mojang added the Happy Ghast, a mob that can fly slowly
-		and carry up to four players, making it great for large builds and hanging out with friends. However, the Happy Ghast itself is
-		very slow and tends to wander when no one is riding it. It's also quite large, which can get in the way.
+		and carry up to four players, making it great for large builds and hanging out with friends.<br />
+		However, the Happy Ghast itself is
+		very slow and tends to wander when no one is riding it. It's also quite large, which can get in the way.<br />
 		To make the Happy Ghast usable again while keeping it balanced with the rest of the game, I coded this <code>Data Pack</code>.
 		It can disable wandering, make the Happy Ghast <code>3x</code> faster, shrink it to half of its original size, silence it,
-		get damage alerts, and even summon it using a <span class="italic">Bound Horn</span>. Each of these improvements is configurable via items
-		in survival, feel free to try it out!`,
+		get damage alerts, and even summon it using a <span class="italic">Bound Horn</span>.<br />
+		Each of these improvements is configurable via items
+		in survival. Feel free to try it out!`,
 		link: 'https://modrinth.com/datapack/improved-happy-ghast/',
 		archived: false,
 		categories: ['mc']
@@ -222,10 +265,12 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-05-27'),
 		summary: 'A persistent in-memory database',
 		picture: 'light-magic.webp',
-		description: `A powerful and user-friendly in-memory database crate that extends Rust's standard data types, such as as
-		the <code>Table</code> type, and the macro system for generating data types, interactions, and data operations. It features
+		description: `A powerful and user-friendly in-memory database crate that extends Rust's standard data types, such as
+		the <code>Table</code> type, and the macro system for generating data types, interactions, and data operations.<br />
+		It features
 		efficient <code>search</code> and <code>join!</code> functions for seamless data management and Rust's beautiful type system
-		for creating the database table. Give it a try and experience the simplicity and performance of this innovative database solution!`,
+		for creating the database table.<br />
+		Give it a try and experience the simplicity and performance of this innovative database solution!`,
 		link: 'https://crates.io/crates/light-magic/',
 		archived: false,
 		categories: ['lib']
@@ -236,13 +281,17 @@ export const projects: Project[] = [
 		summary: 'Adds intentional mob and player head drops',
 		picture: 'more-heads.webp',
 		description: `Minecraft has a few ways of obtaining mob heads for a small amount of mobs, like the Skeleton, Wither Skeleton,
-		Zombie, Creeper, Piglin, and Ender Dragon. However, there are around <strong>81</strong> different mobs in total, which don't
-		have any way of obtaining their head. This <code>Data Pack</code> addresses that issue by adding mob and player
+		Zombie, Creeper, Piglin, and Ender Dragon.<br />
+		However, there are around <strong>81</strong> different mobs in total, which don't
+		have any way of obtaining their head.<br />
+		This <code>Data Pack</code> addresses that issue by adding mob and player
 		head drops for all mobs and their variants in-game, <strong>3,481</strong> in total excluding custom player heads. But
 		differently from other <code>Data Packs</code>, it adds a guaranteed head drop of mobs when they are killed
-		by a hoe. This keeps farms and grinders from filling up with unwanted head drops and makes obtaining them much easier.
-		Player heads drop when one got killed by another player, acting as some kind of trophy. Furthermore, vanilla progression
-		stays intact by excluding the Wither Skeleton and Ender Dragon from the hoe-based drop mechanic. All in all, a well-designed
+		by a hoe.<br />
+		This keeps farms and grinders from filling up with unwanted head drops and makes obtaining them much easier.
+		Player heads drop when killed by another player, acting as some kind of trophy. Furthermore, vanilla progression
+		stays intact by excluding the Wither Skeleton and Ender Dragon from the hoe-based drop mechanic.<br />
+		All in all, a well-designed
 		solution. Give it a try!`,
 		link: 'https://modrinth.com/datapack/more-heads',
 		archived: false,
@@ -253,7 +302,8 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-06-17'),
 		summary: 'German grade management App',
 		picture: 'notenprojekt.webp',
-		description: `A simple app for managing your grades based on the German grading system in Lower Saxony. This was built in my Computer
+		description: `A simple app for managing your grades based on the German grading system in Lower Saxony.<br />
+		This was built in my Computer
 		Science lessons as a project to fortify and apply our theoretical knowledge of databases like <code>SQLite</code>.
 		Originally, there was a section planned with more analytics over all your quarters and some graphs, but as always our teacher didn't
 		give us enough time, so this will remain a 'when there's time for personal projects again' kind of thing.`,
@@ -267,7 +317,8 @@ export const projects: Project[] = [
 		summary: 'A performant terminal-based project editor',
 		picture: 'omega.webp',
 		description: `This project was created after I created <a class="anchor" href="/projects/eta">eta</a>
-		from which I learned a lot. It's a terminal-based project editor with syntax highlighting, great performance and very useful and powerful shortcuts.
+		from which I learned a lot.<br />
+		It's a terminal-based project editor with syntax highlighting, great performance and very useful and powerful shortcuts.
 		So please give it a try!`,
 		link: 'https://crates.io/crates/omega/',
 		archived: false,
@@ -279,9 +330,11 @@ export const projects: Project[] = [
 		summary: 'One Googol collaborative project',
 		picture: 'one-googol.webp',
 		description: `This is a collaborative project where participants work together to reach a number with 100 zeros,
-		known as a Googol. The backend was initially built in Go, but after a night of challenges, I switched back to Rust.
+		known as a Googol.<br />
+		The backend was initially built in Go, but after a night of challenges, I switched back to Rust.
 		The game is designed for large-scale participation, with my server currently capable of handling up to 18,000 concurrent
-		WebSocket connections. It features intricate scaling with polling and, in the future, will include Cookie Clicker-style
+		WebSocket connections.<br />
+		It features intricate scaling with polling and, in the future, will include Cookie Clicker-style
 		elements!`,
 		link: 'https://github.com/nwrenger/one-googol/',
 		archived: true,
@@ -292,8 +345,9 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-01-24'),
 		summary: 'The official Plebis Online Website',
 		picture: 'plebis-online-website.webp',
-		description: `A few of my friends are working since <code>2021</code> / <code>COVID-19</code> on a fast-paced shooter named "Plebis Online".
-		As I also began to develop stuff, they asked me to create a cool website which I did (hopefully). Additionally, I joined the team
+		description: `A few of my friends have been working since <code>2021</code> / <code>COVID-19</code> on a fast-paced shooter named "Plebis Online".<br />
+		As I also began to develop stuff, they asked me to create a cool website which I did (hopefully).<br />
+		Additionally, I joined the team
 		and am helping them with other stuff, beyond just the Website. When the game is done, I will link it here.`,
 		link: 'https://plebis.online/',
 		archived: false,
@@ -304,12 +358,15 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-04-10'),
 		summary: 'The clipboard extension everybody needs',
 		picture: 'pointy.webp',
-		description: `A small clipboard extension which opens a wheel of actions interacting with your current clipboard on a configurable shortcut. It's designed
+		description: `A small clipboard extension which opens a wheel of actions interacting with your current clipboard on a configurable shortcut.<br />
+	 	It's designed
 	 	to support extensions from anybody via a 2nd <a class="anchor" href="https://github.com/nwrenger/pointy-extensions" target="_blank" rel="noopener noreferrer">
-		pointy-extensions</a> GitHub repository. I have developed some cool ones myself, but also you can easily design some yourself. I even provide a Rust API; look
+		pointy-extensions</a> GitHub repository.<br />
+		I have developed some cool ones myself, but also you can easily design some yourself. I even provide a Rust API; look
 		for that under the <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/extensions" target="_blank" rel="noopener noreferrer">crate/extensions</a>
 		and <a class="anchor" href="https://github.com/nwrenger/pointy/tree/main/crates/pointy_api" target="_blank" rel="noopener noreferrer">crate/pointy_api</a>
-		in the main repository. Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
+		in the main repository.<br />
+		Sadly, the interest from my side is currently on a halt, but if you find the idea interesting, mind trying it out!`,
 		link: 'https://github.com/nwrenger/pointy/',
 		archived: false,
 		categories: ['app']
@@ -320,8 +377,10 @@ export const projects: Project[] = [
 		summary: 'Self-hosted network monitoring panel',
 		picture: 'pong.webp',
 		description: `This serves as the monitoring software on my local Raspberry Pi at home. It can display network statistics like latency and packet loss over
-		the last month. Furthermore, it also shows the host system metrics like load, memory usage and temperature. It is written in <code>Rust</code> and <code>Svelte</code>
-		and uses <code>axum</code> as the backend framework. The idea came from <a class="anchor" href="https://github.com/wrenger/ping-log" target="_blank" rel="noopener noreferrer">this project</a>.
+		the last month.<br />
+		Furthermore, it also shows the host system metrics like load, memory usage and temperature. It is written in <code>Rust</code> and <code>Svelte</code>
+		and uses <code>axum</code> as the backend framework.<br />
+		The idea came from <a class="anchor" href="https://github.com/wrenger/ping-log" target="_blank" rel="noopener noreferrer">this project</a>.
 		But I didn't like parts of the backend and the frontend. Therefore, I decided to create my own solution. Have fun trying it out inside your own network!`,
 		link: 'https://github.com/nwrenger/pong/',
 		archived: false,
@@ -333,8 +392,10 @@ export const projects: Project[] = [
 		summary: 'My personal Portfolio',
 		picture: 'portfolio.webp',
 		description: `You are aCtUaLlY currently viewing my portfolio. Feel free to explore the project source code to understand
-		how I built this website and provide feedback on areas for improvement. This portfolio style emphasizes simplicity with a
-		touch of design and fun. My portfolio/personal website has evolved significantly over time, even going back to a
+		how I built this website and provide feedback on areas for improvement.<br />
+		This portfolio style emphasizes simplicity with a
+		touch of design and fun.<br />
+		My portfolio/personal website has evolved significantly over time, even going back to a
 		<a class="anchor" target="_blank" rel="noopener noreferrer" href="https://github.com/nwrenger/rust-website"><code>Rust</code> / <code>Handlebars</code> version </a>,
 		so don't hesitate to revisit and see what has changed!`,
 		link: 'https://github.com/nwrenger/portfolio/',
@@ -346,13 +407,16 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2023-07-18'),
 		summary: 'Website of a Dogsports Club',
 		picture: 'phvmisburg.webp',
-		description: `As a family member of mine is in a Dogsports Club and they had nobody managing their website, I got to being
-		their webmaster. Nevertheless, I also redesigned the Website because the old one was designed years ago and looked horrid
-		for modern standards. On that note, I have to say that Wordpress was an experience of itself and am proud to say, that after
+		description: `As a family member of mine is in a Dogsports Club and they had nobody managing their website,
+		I got to be their webmaster.<br />
+		Nevertheless, I also redesigned the Website because the old one was designed years ago and looked horrid
+		for modern standards.<br />
+		On that note, I have to say that Wordpress was an experience in itself and am proud to say, that after
 		enough sleepless hours, it works and looks great!`,
 		link: 'https://phvmisburg.de/',
 		archived: false,
-		categories: ['web']
+		categories: ['web'],
+		featured: true
 	},
 	{
 		title: 'quickmaths',
@@ -360,7 +424,7 @@ export const projects: Project[] = [
 		summary: 'A school project...QUICKMATHS!!!',
 		picture: 'quickmaths.webp',
 		description: `Indeed, this summary hints at something math-related, and that's essentially accurate.
-		Developed during my school lessons, this website focuses on learning math calculations and uniquely features local co-op!
+		Developed during my school lessons, this website focuses on learning math calculations and uniquely features local co-op!<br />
 		Surprising, right? Grab a friend, try it out below, and see who excels at calculations!`,
 		link: 'https://quickmaths.nwrenger.dev/',
 		archived: false,
@@ -372,8 +436,9 @@ export const projects: Project[] = [
 		summary: "Schillernova's Database Software",
 		picture: 'schiller-db.webp',
 		description: `Developed for a project week (a school-wide activity for a week, in my case we were our own state),
-		this project unfortunately didn't meet expectations, but that's a tale for another time! Here, authorities could access
-		an overview of all citizens, including the unemployed, as well as a record of crimes committed by citizens.
+		this project unfortunately didn't meet expectations, but that's a tale for another time!<br />
+		Here, authorities could access
+		an overview of all citizens, including the unemployed, as well as a record of crimes committed by citizens.<br />
 		The aim was to assist authorities in state management by eliminating the need for extensive paperwork, which is typically
 		essential in bureaucratic processes.`,
 		link: 'https://github.com/nwrenger/schiller-db/',
@@ -386,7 +451,8 @@ export const projects: Project[] = [
 		summary: 'The Schiller School Library App',
 		picture: 'schiller-lib.webp',
 		description: `Like many schools, mine also has a library where students can read and borrow books.
-		My brother and I developed this piece of software to address this need. Originally, the library's software was a Windows application,
+		My brother and I developed this piece of software to address this need.<br />
+		Originally, the library's software was a Windows application,
 		but now it has been transformed into a comprehensive website plus server with OAuth for authentication.
 		This update was made to eliminate the need for Windows/PC and to simplify the user interface for younger students.`,
 		link: 'https://github.com/wrenger/schiller-lib/',
@@ -400,7 +466,8 @@ export const projects: Project[] = [
 		picture: 'sic.webp',
 		description: `The "Schulen im Chaos" (Schools in Chaos) project, which I was invited to develop the infrastructure and website for,
 		focuses—as the summary suggests—on sharing notes on various school subjects, such as Mathematics, Physics, Computer Science,
-		etc. It's important to note that the current scope of this project is limited to German schools only,
+		etc.<br />
+		It's important to note that the current scope of this project is limited to German schools only,
 		due to the significant differences in school systems worldwide.`,
 		link: 'https://schulenimchaos.de/',
 		archived: false,
@@ -412,7 +479,7 @@ export const projects: Project[] = [
 		summary: 'Online Soundboard App',
 		picture: 'shitboard.webp',
 		description: `Developed at the request of a friend who wanted a sound-sharing platform but never ended up uploading anything...
-		So please, if you have content to share, go ahead and upload it. What gets uploaded won't be deleted.
+		So please, if you have content to share, go ahead and upload it. What gets uploaded won't be deleted.<br />
 		Have fun! Note: Not everything will stay there indefinitely, so please don't upload illegal material!`,
 		link: 'https://shitboard.nwrenger.dev/',
 		archived: false,
@@ -424,7 +491,8 @@ export const projects: Project[] = [
 		summary: 'A simple fantasy game emulator',
 		picture: 'simple-fantasy-game.webp',
 		description: `This small game emulator was built using my self-developed <a class="anchor" href="/projects/console-utils-rs">console-utils</a>
-		crate during my Informatics lesson. Please note that it is written in <code>German</code>. In these lessons, we are currently covering OOP,
+		crate during my Informatics lesson. Please note that it is written in <code>German</code>.<br />
+		In these lessons, we are currently covering OOP,
 		and I wanted to explore how <code>Rust</code> implements object-oriented programming—both where it succeeds and where it falls short. I'm
 		currently waiting for my teacher's feedback, but I think she'll like it!`,
 		link: 'https://github.com/nwrenger/simple-fantasy-game/',
@@ -437,11 +505,14 @@ export const projects: Project[] = [
 		summary: 'Improved rework of the so called "Wahl-O-Mat"',
 		picture: 'smart-o-mat.webp',
 		description: `The <code>German</code> elections have something called the "Wahl-O-Mat", where you can answer 38 theses and then get an
-		election recommendation based on how other parties answered these theses. It's incredible how shitty the source of the "Wahl-O-Mat" looks.
-		They have some kind of custom templating engine with horrid datapoint definitions. Furthermore, a lack of features like sharing your
+		election recommendation based on how other parties answered these theses.<br />
+		It's incredible how shitty the source of the "Wahl-O-Mat" looks.
+		They have some kind of custom templating engine with horrid datapoint definitions.<br />
+		Furthermore, a lack of features like sharing your
 		progress, automatically saving your progress locally, getting to compare your result to current polling results and so on increased
-		the urge to develop something myself. So I created the "Smart-O-Mat", a smarter and far better version. For every German fellow:
-		Go voting and use this as advice for your election choice!`,
+		the urge to develop something myself.<br />
+		So I created the "Smart-O-Mat", a smarter and far better version. For every German fellow:
+		Go vote and use this as advice for your election choice!`,
 		link: 'https://wahl.nwrenger.dev/',
 		archived: false,
 		categories: ['web']
@@ -451,7 +522,7 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2024-12-16'),
 		summary: 'Songwriting Portfolio',
 		picture: 'songwriting.webp',
-		description: `I developed my Songwriting Portfolio for my music class. Please note that it is entirely written in <code>German</code>.
+		description: `I developed my Songwriting Portfolio for my music class. Please note that it is entirely written in <code>German</code>.<br />
 		I utilized the new <code>Skeleton</code> Framework and created some impressive components and animations. Enjoy exploring it!`,
 		link: 'https://songwriting.nwrenger.dev/',
 		archived: false,
@@ -464,10 +535,13 @@ export const projects: Project[] = [
 		picture: 'tab-info.webp',
 		description: `It seems that I really can't stop developing Minecraft-related projects... Back on the main topic, Tab Info is a
 		<code>Data Pack</code> that displays useful and configurable player stats, like deaths, kills, playtime, position, and current dimension,
-		directly in the player list. Originally, I created this for my own Minecraft Servers, but I decided to share it with the community as well. It is quite
+		directly in the player list.<br />
+		Originally, I created this for my own Minecraft Servers, but I decided to share it with the community as well.<br />
+		It is quite
 		interesting how limiting customization of the player list in Minecraft vanilla can be. I basically can only set the <code>list</code>
 		scoreboard value to any scoreboard objective, which enables me to display custom text components for each player. This allows me, with some function magic,
-		to display the stats mentioned above in a visually appealing way. Despite the technical limitations, I am quite happy with the result
+		to display the stats mentioned above in a visually appealing way.<br />
+		Despite the technical limitations, I am quite happy with the result
 		and hope you will be too!`,
 		link: 'https://modrinth.com/datapack/tab-info/',
 		archived: false,
@@ -505,20 +579,23 @@ export const categoryIcons: Record<Category, typeof Globe> = {
 	bot: Bot
 };
 
-export const sponsors: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/sponsors/nwrenger', new_tab: true, icon: GitHub },
-	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', new_tab: true, icon: Kofi }
-];
+export interface Social {
+	name: string;
+	username?: string;
+	url?: string;
+	icon: typeof Icon;
+}
 
-export const socials: Link[] = [
-	{ name: 'GitHub', url: 'https://github.com/nwrenger', new_tab: true, icon: GitHub },
+export const socials: Social[] = [
+	{ name: 'GitHub', url: 'https://github.com/nwrenger', icon: GitHub },
 	{
 		name: 'BlueSky',
 		url: 'https://bsky.app/profile/nilch.bsky.social',
-		new_tab: true,
+
 		icon: BlueSky
 	},
 	{ name: 'Discord', username: '@nilch_', icon: Discord },
-	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', new_tab: true, icon: Instagram },
-	{ name: 'Email', url: 'mailto:nils@wrenger.net', new_tab: true, icon: Mail }
+	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', icon: Instagram },
+	{ name: 'Email', url: 'mailto:nils@wrenger.net', icon: Mail },
+	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', icon: Kofi }
 ];

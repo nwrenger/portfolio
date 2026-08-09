@@ -37,12 +37,11 @@
 	}
 
 	p,
-	li,
-	code {
+	li {
 		@apply text-base md:text-lg;
 	}
 
-	code {
-		@apply code;
+	button {
+		cursor: pointer;
 	}
 }

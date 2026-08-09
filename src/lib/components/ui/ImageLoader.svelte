@@ -37,7 +37,7 @@
 		onload={handleLoad}
 		class="{img} object-cover {loaded ? opacity : ' opacity-0'} transition-opacity duration-300"
 		loading="lazy"
-		decoding="sync"
+		decoding="async"
 		aria-hidden={aria_hidden}
 	/>
 

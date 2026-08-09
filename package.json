@@ -15,26 +15,26 @@
 		"lint": "prettier --check ."
 	},
 	"devDependencies": {
-		"@skeletonlabs/skeleton": "^4.15.2",
-		"@skeletonlabs/skeleton-svelte": "^4.15.2",
+		"@skeletonlabs/skeleton": "^5.0.0",
+		"@skeletonlabs/skeleton-svelte": "^5.0.0",
 		"@sveltejs/adapter-static": "3.0.10",
-		"@sveltejs/kit": "2.69.3",
-		"@sveltejs/vite-plugin-svelte": "7.2.0",
+		"@sveltejs/kit": "2.70.2",
+		"@sveltejs/vite-plugin-svelte": "7.3.0",
 		"@tailwindcss/forms": "0.5.11",
 		"@tailwindcss/typography": "0.5.20",
-		"@tailwindcss/vite": "4.3.2",
-		"@types/luxon": "3.7.2",
-		"autoprefixer": "10.5.3",
+		"@tailwindcss/vite": "4.3.3",
+		"@types/luxon": "3.7.4",
+		"autoprefixer": "10.5.4",
 		"lucide-svelte": "1.0.1",
 		"luxon": "3.7.2",
-		"prettier": "3.9.5",
+		"prettier": "3.9.6",
 		"prettier-plugin-svelte": "4.1.1",
 		"prettier-plugin-tailwindcss": "0.8.1",
-		"svelte": "5.56.5",
-		"svelte-check": "4.7.3",
+		"svelte": "5.56.8",
+		"svelte-check": "4.7.5",
 		"svelte-sitemap": "^4.0.4",
-		"tailwindcss": "4.3.2",
+		"tailwindcss": "4.3.3",
 		"typescript": "7.0.2",
-		"vite": "8.1.4"
+		"vite": "8.2.1"
 	}
 }

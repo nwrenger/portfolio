@@ -9,21 +9,28 @@
 	import { page } from '$app/state';
 	import { ArrowLeft, ArrowRight, CalendarDays } from 'lucide-svelte';
 
+	type ProjectFilter = Category | null | 'none';
+
 	const categories = Object.keys(categoryNames) as Category[];
 	const sortedProjects = [...projects].sort((a, b) => b.date.toMillis() - a.date.toMillis());
+	const featuredProjects = sortedProjects.filter((project) => project.featured);
 
-	let selectedCategory: Category | null | 'loading' = $state(null);
+	let selectedCategory: ProjectFilter = $state(null);
 	let activeCategory = $derived(
-		selectedCategory && categories.includes(selectedCategory) ? selectedCategory : null
+		(selectedCategory && categories.includes(selectedCategory)) || selectedCategory == 'none'
+			? selectedCategory
+			: null
 	);
 	let visibleProjects = $derived(
-		activeCategory
-			? sortedProjects.filter((project) => project.categories.includes(activeCategory))
-			: sortedProjects
+		!activeCategory
+			? featuredProjects
+			: activeCategory === 'none'
+				? sortedProjects
+				: sortedProjects.filter((p) => p.categories.includes(activeCategory))
 	);
 
 	$effect(() => {
-		selectedCategory = page.url.searchParams.get('category') as Category | null;
+		selectedCategory = page.url.searchParams.get('category') as ProjectFilter;
 	});
 </script>
 
@@ -55,20 +62,30 @@
 			<h2 class="h2 font-semibold tracking-tight">My Projects</h2>
 
 			<p>
-				A complete overview of what I have built so far. Filter by category or open a project to see
-				the full write-up and image.
+				A complete overview of what I've built so far. Filter by featured or category, then open any
+				project for the full write-up and images.
 			</p>
 		</header>
 
 		<nav class="flex flex-wrap gap-2" aria-label="Project categories">
-			<a href="/projects" class="btn btn-sm {activeCategory ? 'preset-tonal' : 'preset-filled'}">
+			<a
+				href="/projects"
+				class="btn btn-xs {activeCategory ? 'preset-tonal-brand' : 'preset-filled-brand'}"
+			>
+				Featured
+				<span class="opacity-70">{featuredProjects.length}</span>
+			</a>
+			<a
+				href="/projects?category=none"
+				class="btn btn-xs {activeCategory === 'none' ? 'preset-filled' : 'preset-tonal'}"
+			>
 				All
 				<span class="opacity-70">{sortedProjects.length}</span>
 			</a>
 			{#each categories as category}
 				<a
 					href="/projects?category={category}"
-					class="btn btn-sm {activeCategory === category ? 'preset-filled' : 'preset-tonal'}"
+					class="btn btn-xs {activeCategory === category ? 'preset-filled' : 'preset-tonal'}"
 				>
 					{categoryNames[category][1]}
 					<span class="opacity-70">
