@@ -12,21 +12,8 @@
 }
 
 @layer base {
-	html,
-	body {
+	html {
 		height: 100%;
-	}
-
-	body {
-		isolation: isolate;
-		overflow-x: hidden;
-	}
-
-	body::before {
-		position: fixed;
-		z-index: -1;
-		inset: 0;
-		content: '';
 		background-image:
 			radial-gradient(
 				at 0% 25%,
@@ -41,7 +28,13 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		pointer-events: none;
+		background-attachment: fixed;
+	}
+
+	body {
+		height: 100%;
+		overflow-x: hidden;
+		background-color: transparent;
 	}
 
 	p,

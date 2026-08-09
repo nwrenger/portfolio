@@ -51,8 +51,14 @@
 		<header
 			class="preset-tonal border-surface-200-800 relative shrink overflow-hidden rounded-xl border"
 		>
-			<a href={project.link} target="_blank" rel="noopener noreferrer" class="block w-full">
-				<ImageLoader src={imageSrc} alt={project.title} ratio="aspect-16/9" />
+			<a
+				href={project.link}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Open {project.title} project"
+				class="block w-full"
+			>
+				<ImageLoader src={imageSrc} classes="aspect-video h-full w-full object-cover" />
 			</a>
 		</header>
 
