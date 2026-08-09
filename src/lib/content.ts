@@ -141,20 +141,18 @@ export const projects: Project[] = [
 		date: DateTime.fromISO('2025-11-22'),
 		summary: 'Limit elytra flight speed and change firework boost strength and duration',
 		picture: 'elytra-tuning.webp',
-		description: `My streak for Minecraft-related projects goes on. This time, I wrote a full-on mod with multi mod loader support.<br />
-		This mod adds options to <code>limit</code> the Elytra speed as well as changing firework boost <code>strength</code> and
-		<code>duration</code>. The flight speed <code>limit</code> can be set to be <code>absolute</code>, restrict all axes, or
-		<code>horizontal</code>, x and z axes only, for letting servers choose between a strict clamp or one that leaves vertical gliding
-		untouched.<br />
-		All this can be configured inside a configuration file. There are two sides where my mod changes behavior: On the
-		server-side, it limits the player's velocity and changes the rocket's velocity. Technical Note: <em>The player attaches to the
-		rocket's entity when boosting. Therefore, to change the player's velocity, I have to change the speed of the rocket's entity.</em>
-		<br />On the client-side, it changes the prediction logic of elytra flight based on the server's configuration. Without changing the
-		client-side predictions, the player may experience visual stutter or lag back.<br />
-		It enables multiplayer servers to nerf the Elytra
-		and reduce chunk-loading lag. It also has options for the rocket boost to make the flight even faster and lengthier.
-		A lightweight and configurable mod that also runs on my own server!`,
-		link: 'https://modrinth.com/mod/elytra-speed-cap/',
+		description: `As a seasoned Minecraft player, I was thinking that the Elytra's flight behavior should be configurable.
+		That's why, I created this mod.<br />
+		It adds options to <code>limit</code> the Elytra speed as well as changing firework boost <code>strength</code> and
+		<code>duration</code>. For the flight speed <code>limit</code>, there are two ways of calculating and applying it: <code>horizontal</code>,
+		x and z axes only, or <code>absolute</code> all axes. The latter restricts vertical gliding too, so downward elytra flight is also capped.
+	 	All this can be easily configured inside the configuration file.<br />
+		Furthermore, it changes behavior both on the server and client, due to Minecraft calculating Elytra flight server-side, while the client
+		predicts motion locally. Therefore, this mod changes how the server applies Elytra physics so it's also enforced even for clients without
+		the mod. And it matches the client's predictions based on the server's configuration to enable smoother flight. Otherwise, the player may
+		experience visual stutter or lagging back.<br />
+		All in all, it's a flexible and lightweight solution with the ability to nerf or buff Elytra flight, that's up to your choice!`,
+		link: 'https://modrinth.com/mod/elytra-tuning/',
 		archived: false,
 		categories: ['mc'],
 		featured: true
