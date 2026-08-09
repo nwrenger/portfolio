@@ -32,14 +32,15 @@
 		</div>
 
 		<div class="flex flex-wrap items-center justify-center gap-3">
-			<a href="/projects" class="btn preset-tonal-primary">My Projects</a>
-			<a href="/resume" class="btn preset-tonal-secondary">View Resume</a>
+			<a href="/projects" class="btn preset-filled-brand">My Projects</a>
+			<a href="/resume" class="btn preset-filled-tertiary-600-400">View Resume</a>
 			<span class="chip preset-tonal">
-				<span class="relative flex size-2">
+				<span class="relative flex size-2 opacity-70">
 					<span
-						class="preset-filled-brand absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+						class="preset-filled-surface-950-50 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
 					></span>
-					<span class="preset-filled-brand relative inline-flex size-2 rounded-full"></span>
+					<span class="preset-filled-surface-950-50 relative inline-flex size-2 rounded-full"
+					></span>
 				</span>
 				Germany
 			</span>
