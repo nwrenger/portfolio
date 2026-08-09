@@ -12,28 +12,36 @@
 }
 
 @layer base {
-	html {
+	html,
+	body {
 		height: 100%;
 	}
 
 	body {
-		height: 100%;
-		background-attachment: fixed;
+		isolation: isolate;
+		overflow-x: hidden;
+	}
+
+	body::before {
+		position: fixed;
+		z-index: -1;
+		inset: 0;
+		content: '';
 		background-image:
 			radial-gradient(
 				at 0% 25%,
 				color-mix(in oklab, var(--color-primary-500) 10%, transparent) 0px,
-				transparent 30%
+				transparent 50%
 			),
 			radial-gradient(
 				at 15% 6%,
-				color-mix(in oklab, var(--color-success-500) 5%, transparent) 0px,
-				transparent 30%
+				color-mix(in oklab, var(--color-tertiary-500) 5%, transparent) 0px,
+				transparent 50%
 			);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		overflow-x: hidden;
+		pointer-events: none;
 	}
 
 	p,

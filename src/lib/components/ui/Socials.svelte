@@ -21,7 +21,7 @@
 			<CopyButton text={username} class="btn-icon" title={name} aria-label={name}>
 				{#snippet child({ copied })}
 					{#if copied}
-						<ClipboardCheck class="text-success-400" />
+						<ClipboardCheck class="text-success-600-400" />
 					{:else}
 						<Icon class="anchor" />
 					{/if}
