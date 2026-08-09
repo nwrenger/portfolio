@@ -3,6 +3,7 @@
 	import { ArrowLeft, CalendarDays, ExternalLink } from 'lucide-svelte';
 	import type { PageData } from './$types';
 	import ImageLoader from '$lib/components/ui/ImageLoader.svelte';
+	import { beforeNavigate, goto } from '$app/navigation';
 
 	interface Props {
 		data: PageData;
@@ -12,6 +13,26 @@
 	let project = $derived(data.project);
 	let imageSrc = $derived(`/projects/${project.picture}`);
 	let canonicalUrl = $derived(`https://nwrenger.dev${page.url.pathname}`);
+	let returning = false;
+
+	function back() {
+		if (window.history.length > 1) {
+			returning = true;
+			window.history.back();
+		} else {
+			goto('/projects');
+		}
+	}
+
+	beforeNavigate((nav) => {
+		if (!returning) return;
+		returning = false;
+
+		if (nav.to?.url.origin !== page.url.origin) {
+			nav.cancel();
+			goto('/projects');
+		}
+	});
 </script>
 
 <svelte:head>
@@ -30,13 +51,7 @@
 			<!-- Back button -->
 			<button
 				type="button"
-				onclick={() => {
-					if (window?.history.length > 1) {
-						window?.history.back();
-					} else {
-						window.close();
-					}
-				}}
+				onclick={back}
 				title="Return"
 				aria-label="Return"
 				class="btn-icon preset-tonal"
