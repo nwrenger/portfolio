@@ -129,45 +129,32 @@
 				<h3 class="h3 font-semibold tracking-tight">4. Online Functionality and APIs</h3>
 				<p>
 					Individual project pages may connect to APIs or server services operated by me in order to
-					provide <strong>online functionality</strong>. This includes, for example, functionality
-					that requires data to be exchanged between multiple users or processed on a server.
+					provide <strong>online functionality</strong>. In this context, technically necessary
+					connection data, including the IP address, as well as data entered or generated as part of
+					the respective functionality may be processed. This may include display names, randomly
+					generated identifiers, and session, lobby, game, or other state information.
 				</p>
 				<p>
-					In this context, technically necessary connection data, including the IP address, as well
-					as data entered or generated as part of the respective functionality may be processed.
-					This may include, for example, chosen display names, randomly generated identifiers, and
-					session, lobby, game, or other state information. Technically necessary connection data is
-					transmitted automatically and is required to provide the respective online functionality.
+					Where functionality involves multiple users, data necessary for the shared functionality
+					may also be made available to the other participants in the respective session.
 				</p>
 				<p>
-					Where the respective functionality involves multiple users, data necessary for the shared
-					functionality may also be made available to the other participants in the relevant
-					session.
-				</p>
-				<p>
-					This data is processed solely to provide the respective online functionality, associate
+					The data is processed to provide the respective online functionality, associate
 					connections with sessions, and ensure technical security and functionality. The legal
 					basis is Art.&nbsp;6(1)(f) GDPR. My legitimate interest is the provision and secure
-					technical operation of the respective online functionality.
+					technical operation of these functions.
 				</p>
 				<p>
-					The server services used for this online functionality are currently hosted using
+					The server services used for this purpose are hosted using
 					<a href="https://www.oracle.com/cloud/" class="anchor" target="_blank" rel="noopener"
 						>Oracle Cloud Infrastructure (OCI)</a
-					>. Insofar as Oracle processes personal data on my behalf in connection with the hosting
-					service, Oracle acts as a processor. Depending on the service, this may include
-					technically necessary connection and system-operation data.
-				</p>
-				<p>
-					Oracle generally provides mechanisms for customers to select the region in which their
-					workloads and customer content are stored. Depending on the service and the provision of
-					support or other operational functions, processing may nevertheless also take place in
-					other countries. Where international transfers are subject to legal restrictions, Oracle
-					provides appropriate safeguards under its applicable data processing terms.
-				</p>
-				<p>
-					For further information about Oracle's processing of personal data in connection with its
-					services, please refer to the
+					>
+					in the <strong>Frankfurt, Germany</strong> region. Insofar as Oracle processes personal
+					data on my behalf, Oracle acts as a processor. Processing may also take place outside the
+					European Economic Area in connection with support, security, or operational services.
+					According to Oracle, appropriate safeguards for such transfers include its Binding
+					Corporate Rules for Processors or the EU Standard Contractual Clauses. Further information
+					is available in the
 					<a
 						href="https://www.oracle.com/legal/privacy/services-privacy-policy/"
 						class="anchor"
@@ -177,10 +164,9 @@
 				</p>
 				<p>
 					Application-level project data is generally processed or stored only for as long as
-					necessary for the respective connection, session, or functionality. Project-related state
-					information is removed once it is no longer required for the respective online
-					functionality. No persistent user accounts or profiles are created as part of this
-					processing.
+					necessary for the respective connection, session, or functionality. State information that
+					is no longer required is removed. No persistent user accounts or profiles are created as
+					part of this processing.
 				</p>
 			</div>
 

@@ -135,50 +135,33 @@
 				<h3 class="h3 font-semibold tracking-tight">4. Online-Funktionen und APIs</h3>
 				<p>
 					Einzelne Projektseiten können zur Bereitstellung von <strong>Online-Funktionen</strong>
-					Verbindungen zu von mir betriebenen APIs oder Serverdiensten herstellen. Dies betrifft beispielsweise
-					Funktionen, bei denen Daten zwischen mehreren Nutzern ausgetauscht oder serverseitig verarbeitet
-					werden müssen.
+					Verbindungen zu von mir betriebenen APIs oder Serverdiensten herstellen. Dabei können technisch
+					erforderliche Verbindungsdaten, insbesondere die IP-Adresse, sowie im Rahmen der jeweiligen
+					Funktion angegebene oder erzeugte Daten verarbeitet werden. Dazu gehören beispielsweise Anzeigenamen,
+					zufällig erzeugte Kennungen sowie Sitzungs-, Lobby-, Spiel- oder sonstige Zustandsinformationen.
 				</p>
 				<p>
-					Dabei können technisch erforderliche Verbindungsdaten, insbesondere die IP-Adresse, sowie
-					Daten verarbeitet werden, die im Rahmen der jeweiligen Funktion angegeben oder erzeugt
-					werden. Dazu können beispielsweise gewählte Anzeigenamen, zufällig erzeugte Kennungen
-					sowie Sitzungs-, Lobby-, Spiel- oder sonstige Zustandsinformationen gehören. Technisch
-					erforderliche Verbindungsdaten werden automatisch übermittelt und sind zur Bereitstellung
-					der jeweiligen Online-Funktion erforderlich.
+					Soweit eine Funktion mehrere Nutzer umfasst, können hierfür erforderliche Daten auch den
+					anderen Teilnehmern der jeweiligen Sitzung bereitgestellt werden.
 				</p>
 				<p>
-					Soweit die jeweilige Funktion mehrere Nutzer umfasst, können die für die gemeinsame
-					Funktion erforderlichen Daten auch den anderen Teilnehmern der jeweiligen Sitzung
-					bereitgestellt werden.
+					Die Verarbeitung erfolgt zur Bereitstellung der jeweiligen Online-Funktion, zur Zuordnung
+					von Verbindungen und Sitzungen sowie zur Gewährleistung der technischen Sicherheit und
+					Funktionsfähigkeit. Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO. Mein
+					berechtigtes Interesse besteht in der Bereitstellung und sicheren technischen Durchführung
+					dieser Funktionen.
 				</p>
 				<p>
-					Die Verarbeitung erfolgt ausschließlich zur Bereitstellung der jeweiligen Online-Funktion,
-					zur Zuordnung von Verbindungen und Sitzungen sowie zur Gewährleistung der technischen
-					Sicherheit und Funktionsfähigkeit. Rechtsgrundlage ist Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f
-					DSGVO. Mein berechtigtes Interesse besteht in der Bereitstellung und sicheren technischen
-					Durchführung der jeweiligen Online-Funktion.
-				</p>
-				<p>
-					Die für diese Online-Funktionen verwendeten Serverdienste werden derzeit über
+					Die hierfür verwendeten Serverdienste werden über
 					<a href="https://www.oracle.com/cloud/" class="anchor" target="_blank" rel="noopener"
 						>Oracle Cloud Infrastructure (OCI)</a
 					>
-					gehostet. Soweit Oracle im Zusammenhang mit dem Hosting personenbezogene Daten in meinem Auftrag
-					verarbeitet, ist Oracle als Auftragsverarbeiter tätig. Je nach Dienst können dabei auch technisch
-					erforderliche Verbindungs- und Systembetriebsdaten verarbeitet werden.
-				</p>
-				<p>
-					Oracle stellt grundsätzlich Möglichkeiten bereit, die Region auszuwählen, in der Workloads
-					und Kundeninhalte gespeichert werden. Je nach Dienst sowie im Rahmen von Support- oder
-					sonstigen Betriebsleistungen kann eine Verarbeitung dennoch auch in anderen Ländern
-					erfolgen. Soweit internationale Datenübermittlungen rechtlichen Beschränkungen
-					unterliegen, sieht Oracle hierfür geeignete Garantien in seinen anwendbaren
-					Datenschutzbedingungen vor.
-				</p>
-				<p>
-					Weitere Informationen zur Verarbeitung personenbezogener Daten durch Oracle im
-					Zusammenhang mit dessen Diensten finden Sie in der
+					in der Region <strong>Frankfurt, Deutschland</strong> betrieben. Soweit Oracle dabei
+					personenbezogene Daten in meinem Auftrag verarbeitet, ist Oracle als Auftragsverarbeiter
+					tätig. Im Rahmen von Support-, Sicherheits- oder Betriebsleistungen kann eine Verarbeitung
+					auch außerhalb des Europäischen Wirtschaftsraums erfolgen. Oracle sieht hierfür nach
+					eigenen Angaben geeignete Garantien vor, insbesondere Binding Corporate Rules für
+					Auftragsverarbeiter oder EU-Standardvertragsklauseln. Weitere Informationen enthält die
 					<a
 						href="https://www.oracle.com/legal/privacy/services-privacy-policy/"
 						class="anchor"
@@ -189,9 +172,8 @@
 				<p>
 					Projektbezogene Daten werden auf Anwendungsebene grundsätzlich nur so lange verarbeitet
 					oder gespeichert, wie dies für die jeweilige Verbindung, Sitzung oder Funktion
-					erforderlich ist. Projektbezogene Zustandsdaten werden entfernt, sobald sie für die
-					jeweilige Online-Funktion nicht mehr benötigt werden. Dauerhafte Nutzerkonten oder
-					Nutzerprofile werden im Rahmen dieser Verarbeitung nicht erstellt.
+					erforderlich ist. Nicht mehr benötigte Zustandsdaten werden entfernt. Dauerhafte
+					Nutzerkonten oder Nutzerprofile werden dabei nicht erstellt.
 				</p>
 			</div>
 
