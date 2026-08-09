@@ -1,5 +1,14 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { ArrowLeft, Languages } from 'lucide-svelte';
+
+	function back() {
+		if (window?.history.length > 1) {
+			window?.history.back();
+		} else {
+			goto('/');
+		}
+	}
 </script>
 
 <svelte:head>
@@ -23,13 +32,7 @@
 			<!-- Back button -->
 			<button
 				type="button"
-				onclick={() => {
-					if (window?.history.length > 1) {
-						window?.history.back();
-					} else {
-						window.close();
-					}
-				}}
+				onclick={back}
 				title="Return"
 				aria-label="Return"
 				class="btn-icon preset-tonal"
