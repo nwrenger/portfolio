@@ -63,7 +63,7 @@
 
 			<p>
 				A complete overview of what I've built so far. Filter by featured or category, then open any
-				project for the full write-up and images.
+				project for the full write-up and image.
 			</p>
 		</header>
 

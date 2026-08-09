@@ -1,6 +1,5 @@
 <script>
 	import Socials from '$lib/components/ui/Socials.svelte';
-	import { Dot } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -35,15 +34,15 @@
 		<div class="flex flex-wrap items-center justify-center gap-3">
 			<a href="/projects" class="btn preset-tonal-primary">My Projects</a>
 			<a href="/resume" class="btn preset-tonal-secondary">View Resume</a>
-			<button class="btn preset-tonal pointer-events-none">
-				<span class="relative mr-0.5 flex size-2">
+			<span class="chip preset-tonal">
+				<span class="relative flex size-2">
 					<span
 						class="preset-filled-brand absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
 					></span>
 					<span class="preset-filled-brand relative inline-flex size-2 rounded-full"></span>
 				</span>
 				Germany
-			</button>
+			</span>
 		</div>
 
 		<Socials />

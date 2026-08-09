@@ -135,8 +135,7 @@ export const projects: Project[] = [
 		<br />This keeps the performance impact of this mod minimal. All of this will certainly improve the playing experience on a weaker server. Have fun trying it out!`,
 		link: 'https://modrinth.com/mod/dynamic-performance/',
 		archived: false,
-		categories: ['mc'],
-		featured: true
+		categories: ['mc']
 	},
 	{
 		title: 'Elytra Tuning',
@@ -158,7 +157,8 @@ export const projects: Project[] = [
 		A lightweight and configurable mod that also runs on my own server!`,
 		link: 'https://modrinth.com/mod/elytra-speed-cap/',
 		archived: false,
-		categories: ['mc']
+		categories: ['mc'],
+		featured: true
 	},
 	{
 		title: 'Escaping-from-the-Supernova',
