@@ -42,7 +42,7 @@
 
 		<iframe
 			src="/resume.pdf"
-			class="border-surface-200-800 min-h-0 flex-1 rounded-xl border"
+			class="border-surface-200-800 preset-tonal min-h-0 flex-1 rounded-xl border"
 			title="Resume"
 		></iframe>
 	</div>
