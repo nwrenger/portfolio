@@ -13,8 +13,7 @@
 
 @layer base {
 	html {
-		height: 100%;
-		background-image:
+		--page-background-image:
 			radial-gradient(
 				at 0% 25%,
 				color-mix(in oklab, var(--color-primary-500) 10%, transparent) 0px,
@@ -25,6 +24,8 @@
 				color-mix(in oklab, var(--color-tertiary-500) 5%, transparent) 0px,
 				transparent 50%
 			);
+		height: 100%;
+		background-image: var(--page-background-image);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -33,65 +34,83 @@
 
 	@keyframes enter-from-right {
 		from {
-			transform: translateX(100%);
+			filter: blur(6px);
+			opacity: 0;
+			transform: translateX(16%);
 		}
 		to {
+			filter: blur(0);
+			opacity: 1;
 			transform: translateX(0);
 		}
 	}
 
 	@keyframes exit-to-left {
 		from {
+			filter: blur(0);
+			opacity: 1;
 			transform: translateX(0);
 		}
 		to {
-			transform: translateX(-100%);
+			filter: blur(6px);
+			opacity: 0;
+			transform: translateX(-8%);
 		}
 	}
 
 	@keyframes enter-from-left {
 		from {
-			transform: translateX(-100%);
+			filter: blur(6px);
+			opacity: 0;
+			transform: translateX(-16%);
 		}
 		to {
+			filter: blur(0);
+			opacity: 1;
 			transform: translateX(0);
 		}
 	}
 
 	@keyframes exit-to-right {
 		from {
+			filter: blur(0);
+			opacity: 1;
 			transform: translateX(0);
 		}
 		to {
-			transform: translateX(100%);
+			filter: blur(6px);
+			opacity: 0;
+			transform: translateX(8%);
 		}
 	}
 
-	.page-transition {
-		view-transition-name: page;
-		height: 100%;
+	::view-transition {
+		background-image: var(--page-background-image);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
-	::view-transition-old(page),
-	::view-transition-new(page) {
+	::view-transition-old(root),
+	::view-transition-new(root) {
 		mix-blend-mode: normal;
 	}
 
 	/* Forward */
-	html:active-view-transition-type(forward)::view-transition-old(page) {
+	html:active-view-transition-type(forward)::view-transition-old(root) {
 		animation: exit-to-left 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
 	}
 
-	html:active-view-transition-type(forward)::view-transition-new(page) {
+	html:active-view-transition-type(forward)::view-transition-new(root) {
 		animation: enter-from-right 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
 	}
 
 	/* Back */
-	html:active-view-transition-type(back)::view-transition-old(page) {
+	html:active-view-transition-type(back)::view-transition-old(root) {
 		animation: exit-to-right 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
 	}
 
-	html:active-view-transition-type(back)::view-transition-new(page) {
+	html:active-view-transition-type(back)::view-transition-new(root) {
 		animation: enter-from-left 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
 	}
 

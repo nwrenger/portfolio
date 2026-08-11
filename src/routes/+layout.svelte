@@ -52,6 +52,4 @@
 	});
 </script>
 
-<main class="page-transition">
-	{@render children()}
-</main>
+{@render children()}
