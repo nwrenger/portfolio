@@ -5,28 +5,53 @@
 	let { children } = $props();
 
 	// View transition
-	let currentTransition: ViewTransition | null = $state(null);
+	let currentTransition: ViewTransition | null = null;
+
+	function inferDirection(from?: URL, to?: URL): 'forward' | 'back' | null {
+		if (!from || !to) return null;
+
+		const fromSegments = from.pathname.split('/').filter(Boolean);
+		const toSegments = to.pathname.split('/').filter(Boolean);
+
+		if (fromSegments.length < toSegments.length) return 'forward';
+		if (fromSegments.length > toSegments.length) return 'back';
+
+		return null;
+	}
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+		if (
+			!document.startViewTransition ||
+			navigation.willUnload ||
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches
+		)
+			return;
+
+		const direction = inferDirection(navigation.from?.url, navigation.to?.url);
 
 		return new Promise((resolve) => {
-			if (currentTransition && currentTransition.skipTransition) {
-				currentTransition.skipTransition();
-			}
+			currentTransition?.skipTransition();
 
-			currentTransition = document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
+			const transition = document.startViewTransition({
+				types: direction ? [direction] : [],
+				update: async () => {
+					resolve();
+					await navigation.complete;
+				}
 			});
 
-			currentTransition.ready.catch(() => {});
+			currentTransition = transition;
+			transition.ready.catch(() => {});
 
-			currentTransition.finished.finally(() => {
-				currentTransition = null;
+			transition.finished.finally(() => {
+				if (currentTransition === transition) {
+					currentTransition = null;
+				}
 			});
 		});
 	});
 </script>
 
-{@render children()}
+<main class="page-transition">
+	{@render children()}
+</main>

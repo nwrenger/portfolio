@@ -31,6 +31,70 @@
 		background-attachment: fixed;
 	}
 
+	@keyframes enter-from-right {
+		from {
+			transform: translateX(100%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes exit-to-left {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-100%);
+		}
+	}
+
+	@keyframes enter-from-left {
+		from {
+			transform: translateX(-100%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes exit-to-right {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(100%);
+		}
+	}
+
+	.page-transition {
+		view-transition-name: page;
+		height: 100%;
+	}
+
+	::view-transition-old(page),
+	::view-transition-new(page) {
+		mix-blend-mode: normal;
+	}
+
+	/* Forward */
+	html:active-view-transition-type(forward)::view-transition-old(page) {
+		animation: exit-to-left 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
+	}
+
+	html:active-view-transition-type(forward)::view-transition-new(page) {
+		animation: enter-from-right 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
+	}
+
+	/* Back */
+	html:active-view-transition-type(back)::view-transition-old(page) {
+		animation: exit-to-right 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
+	}
+
+	html:active-view-transition-type(back)::view-transition-new(page) {
+		animation: enter-from-left 350ms cubic-bezier(0.55, 0, 0.1, 1) both;
+	}
+
 	body {
 		height: 100%;
 		overflow-x: hidden;
