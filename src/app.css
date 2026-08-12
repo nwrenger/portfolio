@@ -25,9 +25,9 @@
 				transparent 50%
 			);
 		--transition-blur: 4px;
-		--transition-enter: clamp(48px, 6vw, 72px);
-		--transition-exit: clamp(24px, 3vw, 36px);
-		--transition-duration: 300ms;
+		--transition-enter: clamp(64px, 10vw, 110px);
+		--transition-exit: clamp(32px, 5vw, 52px);
+		--transition-duration: 325ms;
 		--transition-easing: cubic-bezier(0.55, 0, 0.1, 1);
 		height: 100%;
 		background-image: var(--page-background-image);
