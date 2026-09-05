@@ -591,7 +591,7 @@ export const socials: Social[] = [
 
 		icon: BlueSky
 	},
-	{ name: 'Discord', username: '@nilch_', icon: Discord },
+	{ name: 'Discord', username: 'nilch_', icon: Discord },
 	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', icon: Instagram },
 	{ name: 'Email', url: 'mailto:nils@wrenger.net', icon: Mail },
 	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', icon: Kofi }
