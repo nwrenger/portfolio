@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex flex-wrap items-center justify-center gap-3">
-	{#each socials as { name, url, username, icon: Icon }}
+	{#each socials as { name, url, icon: Icon }}
 		{#if url}
 			<a
 				href={url}
@@ -17,16 +17,6 @@
 			>
 				<Icon />
 			</a>
-		{:else if username}
-			<CopyButton text={username} class="btn-icon" title={name} aria-label={name}>
-				{#snippet child({ copied })}
-					{#if copied}
-						<ClipboardCheck class="text-success-600-400" />
-					{:else}
-						<Icon class="anchor" />
-					{/if}
-				{/snippet}
-			</CopyButton>
 		{/if}
 	{/each}
 </div>

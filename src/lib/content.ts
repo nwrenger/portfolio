@@ -578,8 +578,7 @@ export const categoryIcons: Record<Category, typeof Globe> = {
 
 export interface Social {
 	name: string;
-	username?: string;
-	url?: string;
+	url: string;
 	icon: typeof Icon;
 }
 
@@ -591,7 +590,7 @@ export const socials: Social[] = [
 
 		icon: BlueSky
 	},
-	{ name: 'Discord', username: 'nilch_', icon: Discord },
+	{ name: 'Discord', url: 'https://discord.com/users/567331495484719134', icon: Discord },
 	{ name: 'Instagram', url: 'https://www.instagram.com/_nilch', icon: Instagram },
 	{ name: 'Email', url: 'mailto:nils@wrenger.net', icon: Mail },
 	{ name: 'Ko-fi', url: 'https://ko-fi.com/nwrenger', icon: Kofi }
