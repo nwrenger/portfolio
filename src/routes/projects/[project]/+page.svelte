@@ -15,8 +15,12 @@
 	let canonicalUrl = $derived(`https://nwrenger.dev${page.url.pathname}`);
 
 	function back() {
-		if (window.navigation?.canGoBack) {
-			window.navigation.back();
+		let navigation = window.navigation;
+		let entries = navigation.entries();
+		let previousEntry = entries[entries.length - 2];
+
+		if (previousEntry && previousEntry.url != page.url.href && navigation?.canGoBack) {
+			navigation.back();
 		} else {
 			goto('/projects');
 		}

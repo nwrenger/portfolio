@@ -6,6 +6,7 @@
 
 	// View transition
 	let currentTransition: ViewTransition | null = null;
+	let hasUAVisualTransition = false;
 
 	function inferDirection(from?: URL, to?: URL): 'forward' | 'back' | null {
 		if (!from || !to) return null;
@@ -23,7 +24,8 @@
 		if (
 			!document.startViewTransition ||
 			navigation.willUnload ||
-			window.matchMedia('(prefers-reduced-motion: reduce)').matches
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+			hasUAVisualTransition
 		)
 			return;
 
@@ -51,5 +53,7 @@
 		});
 	});
 </script>
+
+<svelte:window on:popstate={(e) => (hasUAVisualTransition = e.hasUAVisualTransition)} />
 
 {@render children()}
