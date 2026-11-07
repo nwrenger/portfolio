@@ -21,11 +21,15 @@
 	}
 
 	onNavigate((navigation) => {
+		const browserAlreadyAnimated = navigation.type === 'popstate' && hasUAVisualTransition;
+
+		hasUAVisualTransition = false;
+
 		if (
 			!document.startViewTransition ||
 			navigation.willUnload ||
 			window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-			hasUAVisualTransition
+			browserAlreadyAnimated
 		)
 			return;
 
